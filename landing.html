@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Free Demo — Everix Automation Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #0B0B0F;
+      --purple:  #7B2FF7;
+      --teal:    #14B8A6;
+      --magenta: #D946EF;
+      --green:   #39FF14;
+      --white:   #F0F0F5;
+      --muted:   #8888AA;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
+    a { color: var(--teal); text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem 6%;
+      border-bottom: 1px solid rgba(123,47,247,0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .nav-logo img { width: 36px; height: 36px; object-fit: contain; }
+    .nav-logo span { color: var(--purple); }
+
+    /* ── LAYOUT ── */
+    .page {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 70px);
+    }
+
+    /* ── LEFT PANEL ── */
+    .left {
+      padding: 5rem 6%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border-right: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .left-bg {
+      position: absolute;
+      inset: 0;
+      background: url('theme.png') center center / cover no-repeat;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .left-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(123,47,247,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .left > *:not(.left-bg):not(.left-overlay) { position: relative; z-index: 1; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(57,255,20,0.08);
+      border: 1px solid rgba(57,255,20,0.25);
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.3rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 1.75rem;
+      letter-spacing: 0.05em;
+      width: fit-content;
+    }
+
+    .badge-dot {
+      width: 7px; height: 7px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .left h1 {
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+
+    .left h1 .purple { color: var(--purple); }
+    .left h1 .teal { color: var(--teal); }
+
+    .left .subhead {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      max-width: 460px;
+    }
+
+    .promises {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .promise {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    .promise-icon {
+      width: 32px; height: 32px;
+      background: rgba(123,47,247,0.15);
+      border: 1px solid rgba(123,47,247,0.3);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .promise h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+
+    .promise p {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .social-proof {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .social-proof strong { color: var(--white); }
+
+    /* ── RIGHT PANEL ── */
+    .right {
+      padding: 5rem 6%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: rgba(255,255,255,0.015);
+    }
+
+    .form-header {
+      margin-bottom: 2rem;
+    }
+
+    .form-header h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .form-header p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .tally-embed {
+      width: 100%;
+      border: none;
+      min-height: 520px;
+      border-radius: 10px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .page { grid-template-columns: 1fr; }
+      .left { padding: 3rem 6%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); }
+      .right { padding: 3rem 6%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <img src="logo.png" alt="Everix Logo" />
+      Everix<span>.</span>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <!-- LEFT: Value prop -->
+    <div class="left">
+      <div class="left-bg"></div>
+      <div class="left-overlay"></div>
+
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Free 20-Minute Demo
+      </div>
+
+      <h1>
+        Stop losing leads.<br />
+        Let <span class="purple">AI</span> run your<br />
+        <span class="teal">front desk.</span>
+      </h1>
+
+      <p class="subhead">
+        Book a free demo and we'll show you exactly how Everix would work for your business — no tech knowledge needed.
+      </p>
+
+      <div class="promises">
+        <div class="promise">
+          <div class="promise-icon">📞</div>
+          <div>
+            <h4>Never miss a call again</h4>
+            <p>Your AI receptionist answers 24/7, books appointments, and handles FAQs automatically.</p>
+          </div>
+        </div>
+        <div class="promise">
+          <div class="promise-icon">⚡</div>
+          <div>
+            <h4>Respond to leads in seconds</h4>
+            <p>Our Speed-to-Lead system contacts new leads instantly before your competitors can.</p>
+          </div>
+        </div>
+        <div class="promise">
+          <div class="promise-icon">📈</div>
+          <div>
+            <h4>More bookings, less admin</h4>
+            <p>Clients book, reschedule, and cancel through SMS — your calendar stays full without the back-and-forth.</p>
+          </div>
+        </div>
+        <div class="promise">
+          <div class="promise-icon">🔌</div>
+          <div>
+            <h4>We handle everything</h4>
+            <p>Done-for-you setup. You don't need to touch any technology — we install it and hand you the keys.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-proof">
+        🇨🇦 &nbsp;<div><strong>Built for Canadian service businesses.</strong> Dental clinics, salons, trades, and more.</div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Tally form -->
+    <div class="right">
+      <div class="form-header">
+        <h2>Book Your Free Demo</h2>
+        <p>Takes less than 2 minutes. We'll reach out within 24 hours to confirm.</p>
+      </div>
+      <iframe
+        class="tally-embed"
+        src="https://tally.so/embed/lbLZYp?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+        loading="lazy"
+        title="Book a Free Demo">
+      </iframe>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2026 Everix Automation Systems &mdash;
+    <a href="mailto:everixautomation@gmail.com">everixautomation@gmail.com</a> &nbsp;|&nbsp;
+    <a href="tel:6476684020">647-668-4020</a> &nbsp;|&nbsp;
+    <a href="/">Back to main site</a>
+  </footer>
+
+</body>
+</html>

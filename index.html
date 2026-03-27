@@ -261,9 +261,20 @@
     }
 
     .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      display: flex;
+      flex-direction: column;
       gap: 1.5rem;
+    }
+
+    .services-row {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .services-row .service-card {
+      flex: 1;
+      max-width: 380px;
     }
 
     .service-card {
@@ -482,7 +493,7 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#how">How It Works</a></li>
       <li><a href="#why">Why Everix</a></li>
-      <li><a href="#contact" class="nav-cta">Get Started</a></li>
+      <li><a href="https://tally.so/r/lbLZYp" class="nav-cta">Get Started</a></li>
     </ul>
   </nav>
 
@@ -502,7 +513,7 @@
       Everix Automation Systems helps service-based businesses respond instantly, never miss a lead, and fill their calendar — on autopilot.
     </p>
     <div>
-      <a href="#contact" class="btn-primary">Get Started</a>
+      <a href="https://tally.so/r/lbLZYp" class="btn-primary">Get Started</a>
       <a href="#services" class="btn-secondary">See What We Build</a>
     </div>
   </section>
@@ -515,39 +526,40 @@
 
     <div class="services-grid">
 
-      <div class="service-card">
-        <div class="service-icon">📞</div>
-        <h3>AI Receptionist</h3>
-        <p>A 24/7 voice AI that answers calls, responds to FAQs, and books appointments directly into your calendar — just like a real receptionist, without the overhead.</p>
-        <span class="service-tag">Voice AI</span>
+      <div class="services-row">
+        <div class="service-card">
+          <div class="service-icon">📞</div>
+          <h3>AI Receptionist</h3>
+          <p>A 24/7 voice AI that answers calls, responds to FAQs, and books appointments directly into your calendar — just like a real receptionist, without the overhead.</p>
+          <span class="service-tag">Voice AI</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3>Speed-to-Lead</h3>
+          <p>The moment a new lead comes in, our system contacts them instantly via SMS or email. Strike while the iron is hot — before your competitors even see the notification.</p>
+          <span class="service-tag">Lead Automation</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💬</div>
+          <h3>SMS & WhatsApp Booking Agent</h3>
+          <p>Let clients book, reschedule, or cancel appointments through text. No app downloads, no portals — just a simple conversation that gets the job done.</p>
+          <span class="service-tag">Conversational AI</span>
+        </div>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon">⚡</div>
-        <h3>Speed-to-Lead</h3>
-        <p>The moment a new lead comes in, our system contacts them instantly via SMS or email. Strike while the iron is hot — before your competitors even see the notification.</p>
-        <span class="service-tag">Lead Automation</span>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">💬</div>
-        <h3>SMS & WhatsApp Booking Agent</h3>
-        <p>Let clients book, reschedule, or cancel appointments through text. No app downloads, no portals — just a simple conversation that gets the job done.</p>
-        <span class="service-tag">Conversational AI</span>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🌐</div>
-        <h3>AI Website Building</h3>
-        <p>Fast, professional websites designed for conversion. We build and deploy sites that represent your brand and turn visitors into booked clients.</p>
-        <span class="service-tag">Web</span>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">📈</div>
-        <h3>Client Growth Engine</h3>
-        <p>A done-for-you system that collects feedback, pushes happy customers to leave Google Reviews, and captures emails to drive repeat business — all automatically.</p>
-        <span class="service-tag">Growth</span>
+      <div class="services-row">
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <h3>Client Growth Engine</h3>
+          <p>A done-for-you system that collects feedback, pushes happy customers to leave Google Reviews, and captures emails to drive repeat business — all automatically.</p>
+          <span class="service-tag">Growth</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3>AI Website Building</h3>
+          <p>Fast, professional websites designed for conversion. We build and deploy sites that represent your brand and turn visitors into booked clients.</p>
+          <span class="service-tag">Web</span>
+        </div>
       </div>
 
     </div>
