@@ -408,33 +408,88 @@
 
     /* ── CTA BANNER ───────────────────────────────────────── */
     .cta-section {
-      text-align: center;
-      padding: 7rem 6%;
+      padding: 5rem 6%;
       position: relative;
       overflow: hidden;
     }
 
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 700px; height: 400px;
-      background: radial-gradient(ellipse, rgba(123,47,247,0.15) 0%, transparent 70%);
-      pointer-events: none;
+    .cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    .cta-section h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
+    .cta-left .section-label { margin-bottom: 0.75rem; }
+
+    .cta-left h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
       font-weight: 700;
       margin-bottom: 1rem;
       letter-spacing: -0.02em;
     }
 
-    .cta-section p {
+    .cta-left p {
       color: var(--muted);
-      margin-bottom: 2.5rem;
-      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .cta-promises {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-promise {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .cta-promise span:first-child { font-size: 1rem; flex-shrink: 0; }
+    .cta-promise strong { color: var(--white); }
+
+    .cta-canada {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .cta-right {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(123,47,247,0.2);
+      border-radius: 14px;
+      padding: 2rem;
+    }
+
+    .cta-form-header {
+      margin-bottom: 1rem;
+    }
+
+    .cta-form-header h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .cta-form-header p {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .tally-embed {
+      width: 100%;
+      border: none;
+      min-height: 420px;
+    }
+
+    @media (max-width: 900px) {
+      .cta-inner { grid-template-columns: 1fr; gap: 2rem; }
     }
 
     /* ── FOOTER ───────────────────────────────────────────── */
@@ -493,7 +548,7 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#how">How It Works</a></li>
       <li><a href="#why">Why Everix</a></li>
-      <li><a href="https://tally.so/r/lbLZYp" class="nav-cta">Get Started</a></li>
+      <li><a href="#contact" class="nav-cta">Get Started</a></li>
     </ul>
   </nav>
 
@@ -513,7 +568,7 @@
       Everix Automation Systems helps service-based businesses respond instantly, never miss a lead, and fill their calendar — on autopilot.
     </p>
     <div>
-      <a href="https://tally.so/r/lbLZYp" class="btn-primary">Get Started</a>
+      <a href="#contact" class="btn-primary">Get Started</a>
       <a href="#services" class="btn-secondary">See What We Build</a>
     </div>
   </section>
@@ -627,14 +682,46 @@
 
   <!-- CTA -->
   <section id="contact" class="cta-section">
-    <div class="section-label">Get Started</div>
-    <h2>Ready to put your business on autopilot?</h2>
-    <p>Book a free 20-minute call. We'll show you exactly what we'd build for your business.</p>
-    <a href="mailto:everixautomation@gmail.com" class="btn-primary">Book a Free Demo</a>
-    <div style="margin-top: 2rem; color: var(--muted); font-size: 0.9rem;">
-      Or reach us directly &mdash;
-      <a href="mailto:everixautomation@gmail.com">everixautomation@gmail.com</a> &nbsp;|&nbsp;
-      <a href="tel:6476684020">647-668-4020</a>
+    <div class="cta-inner">
+
+      <div class="cta-left">
+        <div class="section-label">Get Started</div>
+        <h2>Ready to put your business on autopilot?</h2>
+        <p>Book a free 20-minute demo. We'll show you exactly what we'd build for your business.</p>
+        <div class="cta-promises">
+          <div class="cta-promise">
+            <span>📞</span>
+            <span><strong>24/7 AI Receptionist</strong> — never miss a call</span>
+          </div>
+          <div class="cta-promise">
+            <span>⚡</span>
+            <span><strong>Speed-to-Lead</strong> — respond in seconds</span>
+          </div>
+          <div class="cta-promise">
+            <span>📅</span>
+            <span><strong>Auto Booking</strong> — clients book via SMS</span>
+          </div>
+          <div class="cta-promise">
+            <span>🔌</span>
+            <span><strong>Done-for-you setup</strong> — we handle everything</span>
+          </div>
+        </div>
+        <div class="cta-canada">🇨🇦 &nbsp;Built for Canadian service businesses</div>
+      </div>
+
+      <div class="cta-right">
+        <div class="cta-form-header">
+          <h3>Request a Free Demo</h3>
+          <p>We'll reach out within 24 hours to confirm.</p>
+        </div>
+        <iframe
+          class="tally-embed"
+          src="https://tally.so/embed/lbLZYp?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy"
+          title="Book a Free Demo">
+        </iframe>
+      </div>
+
     </div>
   </section>
 
