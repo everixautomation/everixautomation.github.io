@@ -13,10 +13,14 @@
       --black:   #0B0B0F;
       --purple:  #7B2FF7;
       --teal:    #14B8A6;
-      --magenta: #D946EF;
       --green:   #39FF14;
       --white:   #F0F0F5;
       --muted:   #8888AA;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
     }
 
     body {
@@ -25,11 +29,11 @@
       font-family: 'Inter', sans-serif;
       font-size: 16px;
       line-height: 1.6;
-      overflow-x: hidden;
-      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
+    h1, h2 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
     a { color: var(--teal); text-decoration: none; }
 
     /* ── NAV ── */
@@ -37,8 +41,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1.25rem 6%;
+      padding: 1rem 6%;
       border-bottom: 1px solid rgba(123,47,247,0.15);
+      flex-shrink: 0;
     }
 
     .nav-logo {
@@ -46,48 +51,30 @@
       align-items: center;
       gap: 0.6rem;
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--white);
     }
 
-    .nav-logo img { width: 36px; height: 36px; object-fit: contain; }
+    .nav-logo img { width: 32px; height: 32px; object-fit: contain; }
     .nav-logo span { color: var(--purple); }
 
     /* ── LAYOUT ── */
     .page {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      min-height: calc(100vh - 70px);
+      flex: 1;
+      overflow: hidden;
     }
 
     /* ── LEFT PANEL ── */
     .left {
-      padding: 5rem 6%;
+      padding: 3rem 6%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      position: relative;
-      overflow: hidden;
       border-right: 1px solid rgba(255,255,255,0.05);
     }
-
-    .left-bg {
-      position: absolute;
-      inset: 0;
-      background: url('theme.png') center center / cover no-repeat;
-      opacity: 0.12;
-      pointer-events: none;
-    }
-
-    .left-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(123,47,247,0.08) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    .left > *:not(.left-bg):not(.left-overlay) { position: relative; z-index: 1; }
 
     .badge {
       display: inline-flex;
@@ -100,7 +87,7 @@
       font-weight: 600;
       padding: 0.3rem 0.9rem;
       border-radius: 999px;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.5rem;
       letter-spacing: 0.05em;
       width: fit-content;
     }
@@ -118,120 +105,83 @@
     }
 
     .left h1 {
-      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
       font-weight: 700;
       letter-spacing: -0.03em;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
 
     .left h1 .purple { color: var(--purple); }
     .left h1 .teal { color: var(--teal); }
 
     .left .subhead {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--muted);
-      margin-bottom: 2.5rem;
-      max-width: 460px;
+      margin-bottom: 2rem;
+      max-width: 420px;
     }
 
     .promises {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-      margin-bottom: 2.5rem;
+      gap: 0.85rem;
     }
 
     .promise {
       display: flex;
-      align-items: flex-start;
-      gap: 0.85rem;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--muted);
     }
 
-    .promise-icon {
-      width: 32px; height: 32px;
-      background: rgba(123,47,247,0.15);
-      border: 1px solid rgba(123,47,247,0.3);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.95rem;
+    .promise span:first-child {
+      font-size: 1.1rem;
       flex-shrink: 0;
-      margin-top: 2px;
     }
 
-    .promise h4 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 0.2rem;
-    }
-
-    .promise p {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    .social-proof {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem 1.25rem;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 10px;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    .social-proof strong { color: var(--white); }
+    .promise strong { color: var(--white); }
 
     /* ── RIGHT PANEL ── */
     .right {
-      padding: 5rem 6%;
+      padding: 2rem 6%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       background: rgba(255,255,255,0.015);
+      overflow: hidden;
     }
 
     .form-header {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
     .form-header h2 {
-      font-size: 1.6rem;
+      font-size: 1.3rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
       letter-spacing: -0.02em;
     }
 
     .form-header p {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--muted);
     }
 
     .tally-embed {
       width: 100%;
       border: none;
-      min-height: 520px;
-      border-radius: 10px;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      font-size: 0.82rem;
-      color: var(--muted);
+      flex: 1;
+      height: 100%;
     }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .page { grid-template-columns: 1fr; }
-      .left { padding: 3rem 6%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); }
-      .right { padding: 3rem 6%; }
+      html, body { overflow: auto; }
+      .page { grid-template-columns: 1fr; overflow: visible; }
+      .left { padding: 2.5rem 6%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); }
+      .right { padding: 2.5rem 6%; min-height: 600px; }
+      .tally-embed { min-height: 520px; }
     }
   </style>
 </head>
@@ -246,11 +196,8 @@
 
   <div class="page">
 
-    <!-- LEFT: Value prop -->
+    <!-- LEFT -->
     <div class="left">
-      <div class="left-bg"></div>
-      <div class="left-overlay"></div>
-
       <div class="badge">
         <span class="badge-dot"></span>
         Free 20-Minute Demo
@@ -263,42 +210,26 @@
       </h1>
 
       <p class="subhead">
-        Book a free demo and we'll show you exactly how Everix would work for your business — no tech knowledge needed.
+        We install AI systems that capture leads, book clients, and grow your revenue — on autopilot.
       </p>
 
       <div class="promises">
         <div class="promise">
-          <div class="promise-icon">📞</div>
-          <div>
-            <h4>Never miss a call again</h4>
-            <p>Your AI receptionist answers 24/7, books appointments, and handles FAQs automatically.</p>
-          </div>
+          <span>📞</span>
+          <span><strong>24/7 AI Receptionist</strong> — never miss a call</span>
         </div>
         <div class="promise">
-          <div class="promise-icon">⚡</div>
-          <div>
-            <h4>Respond to leads in seconds</h4>
-            <p>Our Speed-to-Lead system contacts new leads instantly before your competitors can.</p>
-          </div>
+          <span>⚡</span>
+          <span><strong>Speed-to-Lead</strong> — respond in seconds</span>
         </div>
         <div class="promise">
-          <div class="promise-icon">📈</div>
-          <div>
-            <h4>More bookings, less admin</h4>
-            <p>Clients book, reschedule, and cancel through SMS — your calendar stays full without the back-and-forth.</p>
-          </div>
+          <span>📅</span>
+          <span><strong>Auto Booking</strong> — clients book via SMS</span>
         </div>
         <div class="promise">
-          <div class="promise-icon">🔌</div>
-          <div>
-            <h4>We handle everything</h4>
-            <p>Done-for-you setup. You don't need to touch any technology — we install it and hand you the keys.</p>
-          </div>
+          <span>🔌</span>
+          <span><strong>Done-for-you setup</strong> — we handle everything</span>
         </div>
-      </div>
-
-      <div class="social-proof">
-        🇨🇦 &nbsp;<div><strong>Built for Canadian service businesses.</strong> Dental clinics, salons, trades, and more.</div>
       </div>
     </div>
 
@@ -306,7 +237,7 @@
     <div class="right">
       <div class="form-header">
         <h2>Book Your Free Demo</h2>
-        <p>Takes less than 2 minutes. We'll reach out within 24 hours to confirm.</p>
+        <p>We'll reach out within 24 hours to confirm.</p>
       </div>
       <iframe
         class="tally-embed"
@@ -317,13 +248,6 @@
     </div>
 
   </div>
-
-  <footer>
-    &copy; 2026 Everix Automation Systems &mdash;
-    <a href="mailto:everixautomation@gmail.com">everixautomation@gmail.com</a> &nbsp;|&nbsp;
-    <a href="tel:6476684020">647-668-4020</a> &nbsp;|&nbsp;
-    <a href="/">Back to main site</a>
-  </footer>
 
 </body>
 </html>
