@@ -247,19 +247,25 @@
     btn.disabled = true;
     const name  = document.getElementById('happy-name').value.trim();
     const email = document.getElementById('happy-email').value.trim();
-    const res   = await fetch(`${BACKEND}/feedback`, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        client_id: 'marcos', name, email,
-        rating: selectedRating, feedback: '', source
-      })
-    });
-    const data = await res.json();
+    let review_url = 'https://g.page/r/PLACEHOLDER/review';
+    try {
+      const res  = await fetch(`${BACKEND}/feedback`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          client_id: 'marcos', name, email,
+          rating: selectedRating, feedback: '', source
+        })
+      });
+      const data = await res.json();
+      review_url = data.review_url || review_url;
+    } catch (e) {
+      console.error('Feedback error:', e);
+    }
     document.getElementById('happy-form').classList.remove('visible');
     document.getElementById('stars').style.display = 'none';
     document.getElementById('thankyou-happy').classList.add('visible');
-    document.getElementById('review-link').href = data.review_url || 'https://g.page/r/PLACEHOLDER/review';
+    document.getElementById('review-link').href = review_url;
   }
 
   async function submitUnhappy() {
@@ -268,14 +274,18 @@
     btn.disabled = true;
     const name     = document.getElementById('unhappy-name').value.trim();
     const feedback = document.getElementById('unhappy-feedback').value.trim();
-    await fetch(`${BACKEND}/feedback`, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        client_id: 'marcos', name, email: '',
-        rating: selectedRating, feedback, source
-      })
-    });
+    try {
+      await fetch(`${BACKEND}/feedback`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          client_id: 'marcos', name, email: '',
+          rating: selectedRating, feedback, source
+        })
+      });
+    } catch (e) {
+      console.error('Feedback error:', e);
+    }
     document.getElementById('unhappy-form').classList.remove('visible');
     document.getElementById('stars').style.display = 'none';
     document.getElementById('thankyou-private').classList.add('visible');
