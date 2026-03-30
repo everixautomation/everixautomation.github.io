@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Email Generator — Everix Automation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0B0B0F;
+      --card:    #13131A;
+      --border:  rgba(123,47,247,0.2);
+      --purple:  #7B2FF7;
+      --teal:    #14B8A6;
+      --white:   #F0F0F5;
+      --muted:   #6B6B80;
+      --success: #2ECC71;
+      --error:   #E74C3C;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+    }
+
+    /* ── LOGIN ── */
+    #login-screen {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    #login-screen .icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+
+    #login-screen h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+
+    #login-screen p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+    }
+
+    /* ── MAIN TOOL ── */
+    #tool-screen { display: none; width: 100%; max-width: 700px; }
+
+    .tool-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .tool-header .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+
+    .tool-header h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, #7B2FF7, #14B8A6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.3rem;
+    }
+
+    .tool-header p { font-size: 0.9rem; color: var(--muted); }
+
+    /* ── FORM CARD ── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group.full { grid-column: 1 / -1; }
+
+    label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    input, select, textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(123,47,247,0.25);
+      border-radius: 8px;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      padding: 0.7rem 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    input::placeholder, textarea::placeholder { color: var(--muted); }
+    input:focus, select:focus, textarea:focus { border-color: var(--purple); }
+    select option { background: #1A1A2E; }
+    textarea { resize: vertical; min-height: 90px; }
+
+    /* ── BUTTONS ── */
+    .btn-generate {
+      width: 100%;
+      background: linear-gradient(135deg, #7B2FF7, #5A1FD0);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 1rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      margin-top: 1.25rem;
+    }
+
+    .btn-generate:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-generate:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+    .btn-copy {
+      background: rgba(20,184,166,0.15);
+      border: 1px solid var(--teal);
+      color: var(--teal);
+      border-radius: 8px;
+      padding: 0.5rem 1.2rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-copy:hover { background: rgba(20,184,166,0.25); }
+
+    .btn-login {
+      width: 100%;
+      background: linear-gradient(135deg, #7B2FF7, #14B8A6);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 0.9rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .btn-login:hover { opacity: 0.9; }
+
+    /* ── SHARED INPUT (login) ── */
+    #login-password {
+      text-align: center;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .error-msg {
+      color: var(--error);
+      font-size: 0.82rem;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    /* ── RESULT ── */
+    #result-card { display: none; }
+
+    .result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .result-header h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      color: var(--teal);
+    }
+
+    .result-field { margin-bottom: 1.25rem; }
+
+    .result-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.4rem;
+    }
+
+    .result-value {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(123,47,247,0.15);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      color: var(--white);
+    }
+
+    .result-value.subject { font-weight: 600; font-size: 1rem; }
+
+    .copy-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 0.5rem;
+    }
+
+    /* ── LOADING SPINNER ── */
+    .spinner {
+      display: none;
+      width: 20px; height: 20px;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      color: rgba(107,107,128,0.5);
+    }
+
+    @media (max-width: 600px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="login-screen">
+  <div class="icon">✉️</div>
+  <h1>AI Email Generator</h1>
+  <p>Everix internal tool — enter your password to continue.</p>
+  <input type="password" id="login-password" placeholder="Password" onkeydown="if(event.key==='Enter') login()" />
+  <p class="error-msg" id="login-error">Incorrect password. Try again.</p>
+  <button class="btn-login" onclick="login()">Enter →</button>
+</div>
+
+<!-- TOOL SCREEN -->
+<div id="tool-screen">
+  <div class="tool-header">
+    <div class="icon">✉️</div>
+    <h1>AI Email Generator</h1>
+    <p>Fill in the details below and let AI write your promotional email.</p>
+  </div>
+
+  <!-- INPUT FORM -->
+  <div class="card">
+    <div class="form-grid">
+      <div class="form-group full">
+        <label>Business Name</label>
+        <input type="text" id="business_name" placeholder="e.g. Marco's Italian Kitchen" />
+      </div>
+      <div class="form-group">
+        <label>Promotion Type</label>
+        <select id="promotion">
+          <option value="">Select a type…</option>
+          <option>Seasonal Discount</option>
+          <option>Special Offer</option>
+          <option>Holiday Sale</option>
+          <option>New Service Launch</option>
+          <option>Loyalty Reward</option>
+          <option>Re-engagement</option>
+          <option>Event Invitation</option>
+          <option>Referral Program</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Tone</label>
+        <select id="tone">
+          <option value="friendly">Friendly</option>
+          <option value="professional">Professional</option>
+          <option value="urgent">Urgent</option>
+          <option value="luxury">Luxury / Upscale</option>
+          <option value="casual">Casual</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label>Specific Offer</label>
+        <input type="text" id="offer" placeholder="e.g. 20% off all pasta dishes this weekend" />
+      </div>
+      <div class="form-group">
+        <label>Valid Dates</label>
+        <input type="text" id="valid_dates" placeholder="e.g. April 1–7, 2026" />
+      </div>
+      <div class="form-group">
+        <label>Extra Notes (optional)</label>
+        <input type="text" id="notes" placeholder="e.g. mention family-friendly atmosphere" />
+      </div>
+    </div>
+
+    <button class="btn-generate" onclick="generateEmail()" id="gen-btn">
+      <span id="gen-label">Generate Email ✨</span>
+      <div class="spinner" id="gen-spinner"></div>
+    </button>
+  </div>
+
+  <!-- RESULT -->
+  <div class="card" id="result-card">
+    <div class="result-header">
+      <h2>Your Email is Ready</h2>
+      <button class="btn-copy" onclick="copyAll()">Copy All</button>
+    </div>
+
+    <div class="result-field">
+      <div class="result-label">Subject Line</div>
+      <div class="result-value subject" id="out-subject"></div>
+      <div class="copy-row"><button class="btn-copy" onclick="copyField('out-subject')">Copy</button></div>
+    </div>
+
+    <div class="result-field">
+      <div class="result-label">Preview Text</div>
+      <div class="result-value" id="out-preview"></div>
+      <div class="copy-row"><button class="btn-copy" onclick="copyField('out-preview')">Copy</button></div>
+    </div>
+
+    <div class="result-field">
+      <div class="result-label">Email Body</div>
+      <div class="result-value" id="out-body"></div>
+      <div class="copy-row"><button class="btn-copy" onclick="copyField('out-body')">Copy</button></div>
+    </div>
+  </div>
+</div>
+
+<footer>Powered by Everix Automation Systems</footer>
+
+<script>
+  const BACKEND  = 'https://growth-engine-backend.onrender.com';
+  const PASSWORD = sessionStorage.getItem('email_tool_pw') || '';
+
+  function login() {
+    const pw = document.getElementById('login-password').value.trim();
+    if (!pw) return;
+    // Verify against backend
+    fetch(`${BACKEND}/generate_email`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ password: pw, business_name: 'test', promotion: 'test', offer: 'test', valid_dates: 'test' })
+    }).then(r => {
+      if (r.status === 401) {
+        document.getElementById('login-error').style.display = 'block';
+      } else {
+        sessionStorage.setItem('email_tool_pw', pw);
+        document.getElementById('login-screen').style.display = 'none';
+        document.getElementById('tool-screen').style.display = 'block';
+      }
+    }).catch(() => {
+      // If backend unreachable, still let through for UX (backend will reject later)
+      document.getElementById('login-error').style.display = 'block';
+    });
+  }
+
+  // Auto-login if password already in session
+  if (PASSWORD) {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('tool-screen').style.display = 'block';
+  }
+
+  async function generateEmail() {
+    const pw            = sessionStorage.getItem('email_tool_pw') || '';
+    const business_name = document.getElementById('business_name').value.trim();
+    const promotion     = document.getElementById('promotion').value;
+    const offer         = document.getElementById('offer').value.trim();
+    const valid_dates   = document.getElementById('valid_dates').value.trim();
+    const tone          = document.getElementById('tone').value;
+    const notes         = document.getElementById('notes').value.trim();
+
+    if (!business_name || !promotion || !offer) {
+      alert('Please fill in Business Name, Promotion Type, and Specific Offer.');
+      return;
+    }
+
+    // Show spinner
+    const btn    = document.getElementById('gen-btn');
+    const label  = document.getElementById('gen-label');
+    const spinner = document.getElementById('gen-spinner');
+    btn.disabled = true;
+    label.style.display  = 'none';
+    spinner.style.display = 'block';
+    document.getElementById('result-card').style.display = 'none';
+
+    try {
+      const res = await fetch(`${BACKEND}/generate_email`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ password: pw, business_name, promotion, offer, valid_dates, tone, notes })
+      });
+
+      if (res.status === 401) {
+        alert('Session expired. Please refresh and log in again.');
+        sessionStorage.removeItem('email_tool_pw');
+        location.reload();
+        return;
+      }
+
+      const data = await res.json();
+      if (data.status !== 'ok') throw new Error(data.message || 'Unknown error');
+
+      const email = data.email;
+      document.getElementById('out-subject').textContent = email.subject || '';
+      document.getElementById('out-preview').textContent = email.preview || '';
+      document.getElementById('out-body').textContent    = email.body    || '';
+      document.getElementById('result-card').style.display = 'block';
+      document.getElementById('result-card').scrollIntoView({ behavior: 'smooth' });
+    } catch (err) {
+      alert(`Error: ${err.message}`);
+    } finally {
+      btn.disabled = false;
+      label.style.display  = 'inline';
+      spinner.style.display = 'none';
+    }
+  }
+
+  function copyField(id) {
+    const text = document.getElementById(id).textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const btns = document.querySelectorAll('.btn-copy');
+      btns.forEach(b => { if (b.onclick && b.onclick.toString().includes(id)) {
+        const orig = b.textContent; b.textContent = 'Copied!';
+        setTimeout(() => b.textContent = orig, 1500);
+      }});
+    });
+  }
+
+  function copyAll() {
+    const subject = document.getElementById('out-subject').textContent;
+    const preview = document.getElementById('out-preview').textContent;
+    const body    = document.getElementById('out-body').textContent;
+    const full    = `SUBJECT: ${subject}\n\nPREVIEW: ${preview}\n\n${body}`;
+    navigator.clipboard.writeText(full).then(() => {
+      const btn = document.querySelector('.result-header .btn-copy');
+      const orig = btn.textContent; btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = orig, 1500);
+    });
+  }
+</script>
+
+</body>
+</html>

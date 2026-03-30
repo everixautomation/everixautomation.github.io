@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Share Your Experience — Marco's Italian Kitchen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:     #1A1208;
+      --card:   #241A0E;
+      --gold:   #C9922A;
+      --gold2:  #E8B84B;
+      --white:  #F5F0E8;
+      --muted:  #8A7A65;
+      --green:  #2ECC71;
+      --red:    #E74C3C;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(201,146,42,0.2);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .logo { font-size: 2rem; margin-bottom: 0.5rem; }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--gold2);
+      margin-bottom: 0.4rem;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    /* ── STARS ── */
+    .stars {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .star {
+      font-size: 2.8rem;
+      cursor: pointer;
+      transition: transform 0.15s;
+      filter: grayscale(1) opacity(0.4);
+      user-select: none;
+    }
+
+    .star:hover, .star.active { filter: none; transform: scale(1.15); }
+
+    /* ── FORMS ── */
+    .form-section { display: none; }
+    .form-section.visible { display: block; }
+
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--gold2);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(201,146,42,0.25);
+      border-radius: 8px;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.85rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input::placeholder, textarea::placeholder { color: var(--muted); }
+    input:focus, textarea:focus { border-color: var(--gold); }
+    textarea { resize: none; height: 100px; }
+
+    .btn {
+      width: 100%;
+      background: var(--gold);
+      color: #1A1208;
+      border: none;
+      border-radius: 8px;
+      padding: 0.85rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn:hover { background: var(--gold2); transform: translateY(-1px); }
+
+    /* ── THANK YOU ── */
+    .thankyou { display: none; text-align: center; }
+    .thankyou.visible { display: block; }
+
+    .thankyou-icon { font-size: 3rem; margin-bottom: 1rem; }
+
+    .thankyou h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--gold2);
+      margin-bottom: 0.5rem;
+    }
+
+    .thankyou p { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.5rem; }
+
+    .review-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #1A1208;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .review-btn:hover { background: var(--gold2); }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      color: rgba(138,122,101,0.5);
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="logo">🍝</div>
+  <h1>Marco's Italian Kitchen</h1>
+  <p class="subtitle">How was your experience today?</p>
+
+  <!-- Star Rating -->
+  <div class="stars" id="stars">
+    <span class="star" data-rating="1">⭐</span>
+    <span class="star" data-rating="2">⭐</span>
+    <span class="star" data-rating="3">⭐</span>
+    <span class="star" data-rating="4">⭐</span>
+    <span class="star" data-rating="5">⭐</span>
+  </div>
+
+  <!-- Happy Form (4-5 stars) -->
+  <div class="form-section" id="happy-form">
+    <p class="form-title">We love hearing that! 🎉</p>
+    <p class="form-sub">Leave your details and we'll send you a special offer — then we'd love a Google Review!</p>
+    <input type="text" id="happy-name" placeholder="Your first name" />
+    <input type="email" id="happy-email" placeholder="Your email address" />
+    <button class="btn" onclick="submitHappy()">Continue to Google Review →</button>
+  </div>
+
+  <!-- Unhappy Form (1-3 stars) -->
+  <div class="form-section" id="unhappy-form">
+    <p class="form-title">We're sorry to hear that.</p>
+    <p class="form-sub">Please tell us what went wrong so we can make it right.</p>
+    <input type="text" id="unhappy-name" placeholder="Your first name (optional)" />
+    <textarea id="unhappy-feedback" placeholder="What could we have done better?"></textarea>
+    <button class="btn" onclick="submitUnhappy()">Send Feedback</button>
+  </div>
+
+  <!-- Thank You (private feedback) -->
+  <div class="thankyou" id="thankyou-private">
+    <div class="thankyou-icon">🙏</div>
+    <h2>Thank you for your feedback.</h2>
+    <p>We take every comment seriously and will look into this right away. We hope to see you again soon.</p>
+  </div>
+
+  <!-- Thank You (happy - redirect) -->
+  <div class="thankyou" id="thankyou-happy">
+    <div class="thankyou-icon">⭐</div>
+    <h2>Thank you so much!</h2>
+    <p>Your kind words mean the world to us. Tap below to share your experience on Google — it takes less than a minute!</p>
+    <a class="review-btn" id="review-link" href="#" target="_blank">Leave a Google Review →</a>
+  </div>
+</div>
+
+<footer>Powered by Everix Automation Systems</footer>
+
+<script>
+  const BACKEND = 'https://growth-engine-backend.onrender.com';
+  const params  = new URLSearchParams(window.location.search);
+  const source  = params.get('source') || 'unknown';
+
+  let selectedRating = 0;
+
+  const stars = document.querySelectorAll('.star');
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      selectedRating = parseInt(star.dataset.rating);
+      stars.forEach((s, i) => s.classList.toggle('active', i < selectedRating));
+      document.getElementById('happy-form').classList.toggle('visible', selectedRating >= 4);
+      document.getElementById('unhappy-form').classList.toggle('visible', selectedRating < 4 && selectedRating > 0);
+    });
+
+    star.addEventListener('mouseover', () => {
+      const hover = parseInt(star.dataset.rating);
+      stars.forEach((s, i) => s.classList.toggle('active', i < hover));
+    });
+
+    star.addEventListener('mouseleave', () => {
+      stars.forEach((s, i) => s.classList.toggle('active', i < selectedRating));
+    });
+  });
+
+  async function submitHappy() {
+    const name  = document.getElementById('happy-name').value.trim();
+    const email = document.getElementById('happy-email').value.trim();
+    const res   = await fetch(`${BACKEND}/feedback`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        client_id: 'marcos', name, email,
+        rating: selectedRating, feedback: '', source
+      })
+    });
+    const data = await res.json();
+    document.getElementById('happy-form').classList.remove('visible');
+    document.getElementById('stars').style.display = 'none';
+    document.getElementById('thankyou-happy').classList.add('visible');
+    document.getElementById('review-link').href = data.review_url || 'https://g.page/r/PLACEHOLDER/review';
+  }
+
+  async function submitUnhappy() {
+    const name     = document.getElementById('unhappy-name').value.trim();
+    const feedback = document.getElementById('unhappy-feedback').value.trim();
+    await fetch(`${BACKEND}/feedback`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        client_id: 'marcos', name, email: '',
+        rating: selectedRating, feedback, source
+      })
+    });
+    document.getElementById('unhappy-form').classList.remove('visible');
+    document.getElementById('stars').style.display = 'none';
+    document.getElementById('thankyou-private').classList.add('visible');
+  }
+</script>
+
+</body>
+</html>
