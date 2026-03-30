@@ -242,6 +242,9 @@
   });
 
   async function submitHappy() {
+    const btn = document.querySelector('#happy-form .btn');
+    if (btn.disabled) return;
+    btn.disabled = true;
     const name  = document.getElementById('happy-name').value.trim();
     const email = document.getElementById('happy-email').value.trim();
     const res   = await fetch(`${BACKEND}/feedback`, {
@@ -260,6 +263,9 @@
   }
 
   async function submitUnhappy() {
+    const btn = document.querySelector('#unhappy-form .btn');
+    if (btn.disabled) return;
+    btn.disabled = true;
     const name     = document.getElementById('unhappy-name').value.trim();
     const feedback = document.getElementById('unhappy-feedback').value.trim();
     await fetch(`${BACKEND}/feedback`, {
