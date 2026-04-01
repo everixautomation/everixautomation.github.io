@@ -557,6 +557,61 @@
 
     .footer-links a:hover { color: var(--white); }
 
+    /* ── STATS STRIP ─────────────────────────────────────── */
+    .stats-strip {
+      padding: 3rem 6%;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      background: rgba(123,47,247,0.03);
+    }
+
+    .stats-inner {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .stat { text-align: center; }
+
+    .stat-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--purple);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* ── URGENCY ──────────────────────────────────────────── */
+    .urgency-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(217,70,239,0.08);
+      border: 1px solid rgba(217,70,239,0.3);
+      color: var(--magenta);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── PRICING ANCHOR ───────────────────────────────────── */
+    .pricing-anchor {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    .pricing-anchor strong { color: var(--green); }
+
     /* ── RESPONSIVE ───────────────────────────────────────── */
     @media (max-width: 768px) {
       .nav-links { display: none; }
@@ -603,6 +658,28 @@
     </div>
   </section>
 
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Always-on coverage</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">&lt;30s</div>
+        <div class="stat-label">Average lead response time</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">3x</div>
+        <div class="stat-label">More leads captured</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Missed calls</div>
+      </div>
+    </div>
+  </div>
+
   <!-- SERVICES -->
   <section id="services">
     <div class="section-label">What We Build</div>
@@ -615,7 +692,7 @@
         <div class="service-card">
           <div class="service-icon">📞</div>
           <h3>AI Receptionist</h3>
-          <p>A 24/7 voice AI that answers calls, responds to FAQs, and books appointments directly into your calendar — just like a real receptionist, without the overhead.</p>
+          <p>A 24/7 voice AI that answers calls, responds to FAQs, and books appointments directly into your calendar. Works seamlessly alongside your existing receptionist or front desk team — no replacement required.</p>
           <span class="service-tag">Voice AI</span>
         </div>
         <div class="service-card">
@@ -700,7 +777,7 @@
       <div class="why-card">
         <div class="why-icon">📊</div>
         <h4>Real Results</h4>
-        <p>More leads captured. More bookings confirmed. Less time on the phone doing admin work.</p>
+        <p>Clients see 3x more leads captured, response times under 30 seconds, and hours saved every week on phone admin.</p>
       </div>
       <div class="why-card">
         <div class="why-icon">🇨🇦</div>
@@ -715,6 +792,7 @@
     <div class="cta-inner">
 
       <div class="cta-left">
+        <div class="urgency-badge">🔥 Only accepting 5 new clients this month</div>
         <div class="section-label">Get Started</div>
         <h2>Ready to put your business on autopilot?</h2>
         <p>Book a free AI Blueprint call. We'll map out exactly what AI systems would work for your business — no obligation.</p>
@@ -750,6 +828,7 @@
         <div class="cta-form-header">
           <h3>Get Your Free AI Blueprint</h3>
           <p>We'll reach out within 24 hours to confirm your call.</p>
+          <p class="pricing-anchor">Plans starting at <strong>$495/month</strong> — no long-term contracts</p>
         </div>
         <iframe
           class="tally-embed"
