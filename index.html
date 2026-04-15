@@ -810,6 +810,213 @@
       .system-price-block { text-align: left; }
     }
 
+    /* ── VALUE STACK ─────────────────────────────────────── */
+    .vs-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(123,47,247,0.25);
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .vs-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--purple), var(--teal), var(--magenta));
+    }
+
+    .vs-top {
+      padding: 2rem 2.5rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .vs-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(212,175,55,0.1);
+      border: 1px solid rgba(212,175,55,0.35);
+      color: #D4AF37;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .vs-top-left h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    .vs-top-left p { font-size: 0.9rem; color: var(--muted); }
+
+    .vs-stack {
+      padding: 1.5rem 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .vs-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .vs-item:last-child { border-bottom: none; }
+
+    .vs-check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(57,255,20,0.1);
+      border: 1px solid rgba(57,255,20,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: var(--green);
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+      font-weight: 700;
+    }
+
+    .vs-item-body { flex: 1; }
+
+    .vs-item-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+
+    .vs-item-desc {
+      font-size: 0.83rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .vs-item-value {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--muted);
+      white-space: nowrap;
+      font-family: 'Space Grotesk', sans-serif;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      margin-top: 0.1rem;
+      flex-shrink: 0;
+    }
+
+    .vs-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2.5rem;
+      background: rgba(255,255,255,0.01);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .vs-total-label {
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .vs-total-value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--muted);
+      text-decoration: line-through;
+      text-decoration-color: rgba(255,255,255,0.3);
+    }
+
+    .vs-price-block {
+      padding: 2rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .vs-your-price-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--teal);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .vs-price-main {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .vs-price-main span {
+      font-size: 1.1rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .vs-price-setup {
+      font-size: 0.83rem;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .vs-price-saving {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--green);
+      background: rgba(57,255,20,0.08);
+      border: 1px solid rgba(57,255,20,0.2);
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+    }
+
+    .vs-compare-box {
+      background: rgba(123,47,247,0.06);
+      border: 1px solid rgba(123,47,247,0.2);
+      border-radius: 10px;
+      padding: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .vs-compare-box strong { color: var(--white); }
+
+    @media (max-width: 700px) {
+      .vs-price-block { grid-template-columns: 1fr; }
+      .vs-top, .vs-stack, .vs-total, .vs-price-block { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .vs-item { flex-wrap: wrap; }
+      .vs-item-value { margin-top: 0.4rem; }
+    }
+
     /* ── DREAM OUTCOME ───────────────────────────────────── */
     .dream-section {
       padding: 5rem 6%;
@@ -1114,67 +1321,116 @@
     </div>
   </section>
 
-  <!-- THE SYSTEM -->
+  <!-- THE SYSTEM / VALUE STACK -->
   <section id="system" class="system-section">
     <div class="system-container">
       <div class="system-header">
         <div class="section-label">The Offer</div>
-        <h2 class="section-title">One system. Three components. One outcome.</h2>
-        <p class="section-sub">One complete client acquisition system — configured for your business, live within 2 weeks. We build it. We install it. We manage it. You just check your calendar.</p>
+        <h2 class="section-title">Everything you need to never miss a lead again.</h2>
+        <p class="section-sub">One done-for-you system. Six components. One price. Live in under 2 weeks.</p>
       </div>
 
-      <div class="system-card">
-        <div class="system-card-header">
+      <div class="vs-card">
+
+        <!-- TOP -->
+        <div class="vs-top">
+          <div class="vs-top-left">
+            <div class="vs-badge">⭐ Best Value</div>
+            <h3>The Everix Growth System</h3>
+            <p>Built for Canadian dental practices, med spas, and service businesses. We build it, install it, and manage it — you just check your calendar.</p>
+          </div>
+        </div>
+
+        <!-- VALUE STACK LIST -->
+        <div class="vs-stack">
+
+          <div class="vs-item">
+            <div class="vs-check">✓</div>
+            <div class="vs-item-body">
+              <div class="vs-item-name">Speed-to-Lead AI Response System</div>
+              <div class="vs-item-desc">Instant SMS response to every new lead, 24/7/365. First to respond wins the job — every time.</div>
+            </div>
+            <div class="vs-item-value">Value: $1,500/mo</div>
+          </div>
+
+          <div class="vs-item">
+            <div class="vs-check">✓</div>
+            <div class="vs-item-body">
+              <div class="vs-item-name">24/7 AI Receptionist</div>
+              <div class="vs-item-desc">Answers calls, handles FAQs, qualifies leads, and books appointments. Works alongside your team — never replaces them.</div>
+            </div>
+            <div class="vs-item-value">Value: $2,000/mo</div>
+          </div>
+
+          <div class="vs-item">
+            <div class="vs-check">✓</div>
+            <div class="vs-item-body">
+              <div class="vs-item-name">One-Text Booking Agent</div>
+              <div class="vs-item-desc">Clients book, reschedule, and cancel via SMS. No app. No portal. Just text. WhatsApp support coming soon.</div>
+            </div>
+            <div class="vs-item-value">Value: $800/mo</div>
+          </div>
+
+          <div class="vs-item">
+            <div class="vs-check">✓</div>
+            <div class="vs-item-body">
+              <div class="vs-item-name">CRM &amp; Lead Tracking</div>
+              <div class="vs-item-desc">Every lead tracked from first contact to booked appointment. Nothing falls through the cracks.</div>
+            </div>
+            <div class="vs-item-value">Value: $500/mo</div>
+          </div>
+
+          <div class="vs-item">
+            <div class="vs-check">✓</div>
+            <div class="vs-item-body">
+              <div class="vs-item-name">Monthly Performance Report &amp; Strategy Call</div>
+              <div class="vs-item-desc">See exactly how many leads were captured, appointments booked, and revenue generated each month.</div>
+            </div>
+            <div class="vs-item-value">Value: $300/mo</div>
+          </div>
+
+          <div class="vs-item">
+            <div class="vs-check">✓</div>
+            <div class="vs-item-body">
+              <div class="vs-item-name">Done-For-You Setup &amp; Configuration</div>
+              <div class="vs-item-desc">We build, install, and configure everything. You don't touch a single line of code or learn any software.</div>
+            </div>
+            <div class="vs-item-value">Value: $2,000 one-time</div>
+          </div>
+
+        </div>
+
+        <!-- TOTAL VALUE -->
+        <div class="vs-total">
+          <div class="vs-total-label">Total standalone value</div>
+          <div class="vs-total-value">$7,100/month</div>
+        </div>
+
+        <!-- ACTUAL PRICE + COMPARE -->
+        <div class="vs-price-block">
           <div>
-            <div class="system-name">The Everix Growth System</div>
-            <h3>Stop losing leads. Start filling your calendar — automatically.</h3>
-            <p>A done-for-you AI system that works the moment a lead hits your landing page — day or night, weekday or weekend. No tech skills required on your end.</p>
+            <div class="vs-your-price-label">Your Investment</div>
+            <div class="vs-price-main">$995<span>/mo</span></div>
+            <div class="vs-price-setup">+ $500 one-time setup fee</div>
+            <div class="vs-price-saving">Saves $1,500 vs. doing it yourself</div>
+            <div style="margin-top:1rem;">
+              <a href="https://calendly.com/everixautomation/free-ai-gap-analysis" target="_blank" class="btn-primary">Book Your Free AI Blueprint Call</a>
+              <div style="font-size:0.75rem;color:var(--muted);margin-top:0.6rem;">15 min · No pitch · No long-term contract</div>
+            </div>
           </div>
-          <div class="system-price-block">
-            <div class="system-price">$995<span style="font-size:1rem;color:var(--muted);font-weight:400;">/mo</span></div>
-            <div class="system-price-period">Monthly retainer · No long-term contract</div>
-            <div class="system-price-setup">+ $500 one-time setup fee</div>
-          </div>
-        </div>
-
-        <div class="components-grid">
-          <div class="component-card">
-            <div class="component-number">COMPONENT 01</div>
-            <div class="component-icon">⚡</div>
-            <h4>Never Miss a Lead — Even at 2am</h4>
-            <p>The moment a new lead comes in — from any source — our system contacts them automatically via SMS in under 60 seconds. First to respond wins the job. Every time.</p>
-            <span class="component-tag">Instant Lead Response</span>
-          </div>
-          <div class="component-card">
-            <div class="component-number">COMPONENT 02</div>
-            <div class="component-icon">📞</div>
-            <h4>AI Receptionist</h4>
-            <p>A 24/7 AI that answers calls, handles FAQs, qualifies leads, and books appointments directly into your calendar. Works seamlessly alongside your existing team — never replaces them.</p>
-            <span class="component-tag">Voice AI</span>
-          </div>
-          <div class="component-card">
-            <div class="component-number">COMPONENT 03</div>
-            <div class="component-icon">💬</div>
-            <h4>SMS Booking Agent</h4>
-            <p>Qualified leads get booked through a simple text conversation. No app. No portal. Clients book, reschedule, or cancel — all via SMS. WhatsApp support coming soon.</p>
-            <span class="component-tag">Conversational Booking</span>
+          <div class="vs-compare-box">
+            <strong>For context:</strong> A part-time receptionist costs <strong>$2,500/month</strong>. A full-time one costs <strong>$3,500+</strong>. Everix works 24/7, never calls in sick, responds in under 60 seconds, and costs <strong>less than a third of one employee</strong>.
           </div>
         </div>
 
-        <div class="system-includes">
-          <div class="include-item"><strong>Done-for-you setup</strong> — we build everything</div>
-          <div class="include-item"><strong>Live in 10–14 business days</strong></div>
-          <div class="include-item"><strong>Google Calendar integration</strong></div>
-          <div class="include-item"><strong>CRM lead tracking</strong> included</div>
-          <div class="include-item"><strong>Monthly performance report</strong></div>
-          <div class="include-item"><strong>No long-term contract</strong> — cancel any month</div>
-        </div>
       </div>
 
-      <div class="guarantee-strip">
+      <!-- GUARANTEE -->
+      <div class="guarantee-strip" style="margin-top:1.5rem;">
         <div class="g-icon">🛡️</div>
         <p><strong>60-Day Money-Back Guarantee.</strong> If your AI system isn't delivering fewer missed leads and more booked appointments within 60 days, we'll refund you — no questions asked. We stand behind this because we've never had to use it.</p>
       </div>
+
     </div>
   </section>
 
@@ -1186,7 +1442,7 @@
         <h2>Find out exactly how much revenue your business is leaving on the table.</h2>
         <p>Answer 8 quick questions. Get a free personalized report showing your biggest AI opportunities — specific to your industry. See your estimated monthly loss, your top 3 AI fixes, and whether you're a good fit for the Everix system.</p>
         <a href="quiz.html" class="btn-primary">Take the Free Quiz</a>
-        <div class="quiz-proof">Takes under 2 minutes &nbsp;·&nbsp; No email required to start &nbsp;·&nbsp; Used by 50+ Canadian service businesses</div>
+        <div class="quiz-proof">Takes under 2 minutes &nbsp;·&nbsp; No email required to start &nbsp;·&nbsp; Instant results, no pitch</div>
       </div>
       <div class="quiz-teaser-right">
         <div class="quiz-preview-item">
