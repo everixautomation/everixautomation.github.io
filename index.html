@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Everix Automation Systems</title>
+  <title>Everix Automation Systems — AI That Captures Leads & Books Clients 24/7</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
@@ -198,6 +198,26 @@
       margin-bottom: 2.5rem;
     }
 
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero-cta-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
     .btn-primary {
       background: var(--purple);
       color: var(--white);
@@ -233,7 +253,6 @@
       transition: all 0.2s;
       display: inline-block;
       text-decoration: none;
-      margin-left: 1rem;
     }
 
     .btn-secondary:hover {
@@ -241,321 +260,6 @@
       color: var(--teal);
       transform: translateY(-2px);
     }
-
-    /* ── SERVICES ─────────────────────────────────────────── */
-    section { padding: 6rem 6%; }
-
-    .section-label {
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      color: var(--teal);
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-
-    .section-title {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 700;
-      max-width: 600px;
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-    }
-
-    .section-sub {
-      color: var(--muted);
-      max-width: 520px;
-      margin-bottom: 3.5rem;
-    }
-
-    .services-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .services-row {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-    }
-
-    .services-row .service-card {
-      flex: 1;
-      max-width: 380px;
-    }
-
-    .service-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 12px;
-      padding: 2rem;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--purple), var(--teal));
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .service-card:hover {
-      border-color: rgba(123,47,247,0.3);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    }
-
-    .service-card:hover::before { opacity: 1; }
-
-    .service-icon {
-      font-size: 2rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .service-card h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 0.6rem;
-      color: var(--white);
-    }
-
-    .service-card p {
-      font-size: 0.92rem;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .service-tag {
-      display: inline-block;
-      margin-top: 1.25rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--teal);
-      background: rgba(20,184,166,0.08);
-      border: 1px solid rgba(20,184,166,0.2);
-      padding: 0.25rem 0.75rem;
-      border-radius: 999px;
-    }
-
-    /* ── HOW IT WORKS ─────────────────────────────────────── */
-    .how-section {
-      background: rgba(123,47,247,0.04);
-      border-top: 1px solid rgba(123,47,247,0.1);
-      border-bottom: 1px solid rgba(123,47,247,0.1);
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      counter-reset: steps;
-    }
-
-    .step {
-      position: relative;
-      padding-left: 1rem;
-    }
-
-    .step-number {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 3rem;
-      font-weight: 700;
-      color: rgba(123,47,247,0.2);
-      line-height: 1;
-      margin-bottom: 1rem;
-    }
-
-    .step h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--white);
-    }
-
-    .step p {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    /* ── WHY EVERIX ───────────────────────────────────────── */
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .why-card {
-      padding: 1.75rem;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .why-card h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--white);
-    }
-
-    .why-card p {
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    .why-icon {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    /* ── CTA BANNER ───────────────────────────────────────── */
-    .cta-section {
-      padding: 5rem 6%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .cta-left .section-label { margin-bottom: 0.75rem; }
-
-    .cta-left h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      font-weight: 700;
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-    }
-
-    .cta-left p {
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-      font-size: 1rem;
-    }
-
-    .cta-promises {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .cta-promise {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .cta-promise span:first-child { font-size: 1rem; flex-shrink: 0; }
-    .cta-promise strong { color: var(--white); }
-
-    .cta-canada {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
-    }
-
-    .cta-contact {
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    .cta-contact a {
-      color: var(--teal);
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .cta-contact a:hover { color: var(--magenta); }
-
-    .cta-divider {
-      margin: 0 0.4rem;
-      color: rgba(255,255,255,0.15);
-    }
-
-    .cta-right {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(123,47,247,0.2);
-      border-radius: 14px;
-      padding: 2rem;
-    }
-
-    .cta-form-header {
-      margin-bottom: 1rem;
-    }
-
-    .cta-form-header h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-
-    .cta-form-header p {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    .tally-embed {
-      width: 100%;
-      border: none;
-      min-height: 420px;
-    }
-
-    @media (max-width: 900px) {
-      .cta-inner { grid-template-columns: 1fr; gap: 2rem; }
-    }
-
-    /* ── FOOTER ───────────────────────────────────────────── */
-    footer {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 2.5rem 6%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--white);
-    }
-
-    .footer-logo span { color: var(--purple); }
-
-    footer p {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .footer-links a {
-      font-size: 0.85rem;
-      color: var(--muted);
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--white); }
 
     /* ── STATS STRIP ─────────────────────────────────────── */
     .stats-strip {
@@ -588,7 +292,406 @@
       color: var(--muted);
     }
 
-    /* ── URGENCY ──────────────────────────────────────────── */
+    /* ── SECTIONS ─────────────────────────────────────────── */
+    section { padding: 6rem 6%; }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--teal);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      max-width: 600px;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 3.5rem;
+    }
+
+    /* ── THE SYSTEM SECTION ───────────────────────────────── */
+    .system-section {
+      background: rgba(123,47,247,0.03);
+      border-top: 1px solid rgba(123,47,247,0.1);
+      border-bottom: 1px solid rgba(123,47,247,0.1);
+    }
+
+    .system-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .system-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .system-header .section-title,
+    .system-header .section-sub {
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .system-header .section-sub {
+      margin-bottom: 0;
+    }
+
+    /* Main system card */
+    .system-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(123,47,247,0.25);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .system-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--purple), var(--teal), var(--magenta));
+    }
+
+    .system-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .system-name {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--purple);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .system-card-header h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .system-card-header p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      max-width: 520px;
+    }
+
+    .system-price-block {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .system-price {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1;
+    }
+
+    .system-price-period {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .system-price-setup {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    /* 3 component cards */
+    .components-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .component-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s;
+    }
+
+    .component-card:hover {
+      border-color: rgba(123,47,247,0.35);
+      transform: translateY(-3px);
+    }
+
+    .component-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .component-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .component-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--white);
+    }
+
+    .component-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .component-tag {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--teal);
+      background: rgba(20,184,166,0.08);
+      border: 1px solid rgba(20,184,166,0.2);
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+    }
+
+    /* What's included list */
+    .system-includes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.65rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .include-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .include-item::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .include-item strong { color: var(--white); }
+
+    /* Guarantee strip */
+    .guarantee-strip {
+      background: rgba(57,255,20,0.04);
+      border: 1px solid rgba(57,255,20,0.15);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .guarantee-strip .g-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+    .guarantee-strip p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .guarantee-strip strong { color: var(--white); }
+
+    /* ── LEAD MAGNET QUIZ TEASER ──────────────────────────── */
+    .quiz-teaser {
+      padding: 5rem 6%;
+      background: linear-gradient(135deg, rgba(123,47,247,0.06) 0%, rgba(20,184,166,0.04) 100%);
+      border-top: 1px solid rgba(123,47,247,0.12);
+    }
+
+    .quiz-teaser-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .quiz-teaser-left h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .quiz-teaser-left p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .quiz-teaser-left .quiz-proof {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    .quiz-teaser-right {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(123,47,247,0.2);
+      border-radius: 14px;
+      padding: 2rem;
+    }
+
+    .quiz-preview-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .quiz-preview-item:last-child { border-bottom: none; }
+
+    .qp-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(123,47,247,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .qp-text {
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding-top: 0.2rem;
+    }
+
+    .qp-text strong { color: var(--white); display: block; margin-bottom: 0.1rem; }
+
+    .quiz-cta-box {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+    }
+
+    .quiz-cta-box .btn-primary { width: 100%; justify-content: center; }
+
+    .quiz-time-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+    }
+
+    /* ── HOW IT WORKS ─────────────────────────────────────── */
+    .how-section {
+      background: rgba(123,47,247,0.04);
+      border-top: 1px solid rgba(123,47,247,0.1);
+      border-bottom: 1px solid rgba(123,47,247,0.1);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .step { position: relative; padding-left: 1rem; }
+
+    .step-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(123,47,247,0.2);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .step h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--white);
+    }
+
+    .step p { font-size: 0.9rem; color: var(--muted); }
+
+    /* ── WHY EVERIX ───────────────────────────────────────── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .why-card {
+      padding: 1.75rem;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .why-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--white);
+    }
+
+    .why-card p { font-size: 0.88rem; color: var(--muted); }
+
+    .why-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+
+    /* ── CTA SECTION ──────────────────────────────────────── */
+    .cta-section {
+      padding: 5rem 6%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
     .urgency-badge {
       display: inline-flex;
       align-items: center;
@@ -603,23 +706,110 @@
       margin-bottom: 1.25rem;
     }
 
-    /* ── PRICING ANCHOR ───────────────────────────────────── */
-    .pricing-anchor {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 0.75rem;
+    .cta-left .section-label { margin-bottom: 0.75rem; }
+
+    .cta-left h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
     }
 
+    .cta-left p { color: var(--muted); margin-bottom: 1.5rem; font-size: 1rem; }
+
+    .cta-promises { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem; }
+
+    .cta-promise {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .cta-promise span:first-child { font-size: 1rem; flex-shrink: 0; }
+    .cta-promise strong { color: var(--white); }
+
+    .cta-canada { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.75rem; }
+
+    .cta-contact { font-size: 0.88rem; color: var(--muted); }
+    .cta-contact a { color: var(--teal); font-weight: 500; transition: color 0.2s; }
+    .cta-contact a:hover { color: var(--magenta); }
+    .cta-divider { margin: 0 0.4rem; color: rgba(255,255,255,0.15); }
+
+    .cta-right {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(123,47,247,0.2);
+      border-radius: 14px;
+      padding: 2rem;
+    }
+
+    .cta-form-header { margin-bottom: 1rem; }
+
+    .cta-form-header h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .cta-form-header p { font-size: 0.85rem; color: var(--muted); }
+
+    .pricing-anchor { font-size: 0.85rem; color: var(--muted); margin-top: 0.75rem; }
     .pricing-anchor strong { color: var(--green); }
 
+    .tally-embed {
+      width: 100%;
+      border: none;
+      min-height: 420px;
+    }
+
+    /* ── FOOTER ───────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 2.5rem 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--white);
+    }
+
+    .footer-logo span { color: var(--purple); }
+
+    footer p { font-size: 0.85rem; color: var(--muted); }
+
+    .footer-links { display: flex; gap: 1.5rem; }
+
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
     /* ── RESPONSIVE ───────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .cta-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .quiz-teaser-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .components-grid { grid-template-columns: 1fr; }
+      .system-card-header { flex-direction: column; }
+      .system-price-block { text-align: left; }
+    }
+
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .btn-secondary { margin-left: 0; margin-top: 1rem; }
       .hero { padding-top: 6rem; }
       footer { flex-direction: column; text-align: center; }
-      .services-row { flex-direction: column; align-items: center; }
-      .services-row .service-card { max-width: 100%; width: 100%; }
+      .hero-cta-row { flex-direction: column; }
+      .btn-secondary { margin-left: 0; }
     }
   </style>
 </head>
@@ -629,11 +819,11 @@
   <nav>
     <div class="nav-logo"><img src="logo.png" alt="Everix Logo" />Everix<span>.</span></div>
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
+      <li><a href="#system">The System</a></li>
       <li><a href="#how">How It Works</a></li>
       <li><a href="#why">Why Everix</a></li>
       <li><a href="mailto:everixautomation@gmail.com" class="nav-contact">647-668-4020</a></li>
-      <li><a href="#contact" class="nav-cta">Get Started</a></li>
+      <li><a href="quiz.html" class="nav-cta">Free AI Report</a></li>
     </ul>
   </nav>
 
@@ -646,15 +836,19 @@
       Now serving Canadian businesses
     </div>
     <h1>
-      We install <span class="highlight">AI systems</span> that capture leads, book clients, and
-      <span class="highlight-teal">grow your revenue</span>
+      Your business is losing leads<br />
+      every hour you don't have <span class="highlight">AI</span> on the<br />
+      <span class="highlight-teal">front line.</span>
     </h1>
     <p>
-      Everix Automation Systems helps service-based businesses respond instantly, never miss a lead, and fill their calendar — on autopilot.
+      Everix installs one complete AI system that responds to every lead in under 60 seconds, qualifies them, and books them — 24 hours a day, 7 days a week.
     </p>
-    <div>
-      <a href="#contact" class="btn-primary">Get Started</a>
-      <a href="#services" class="btn-secondary">See What We Build</a>
+    <div class="hero-cta-group">
+      <div class="hero-cta-row">
+        <a href="quiz.html" class="btn-primary">Find Out What You're Losing</a>
+        <a href="#system" class="btn-secondary">See The System</a>
+      </div>
+      <div class="hero-cta-note">Free 90-second AI report — no pitch, no email required to start</div>
     </div>
   </section>
 
@@ -666,8 +860,8 @@
         <div class="stat-label">Always-on coverage</div>
       </div>
       <div class="stat">
-        <div class="stat-number">&lt;30s</div>
-        <div class="stat-label">Average lead response time</div>
+        <div class="stat-number">&lt;60s</div>
+        <div class="stat-label">Lead response time</div>
       </div>
       <div class="stat">
         <div class="stat-number">3x</div>
@@ -680,52 +874,109 @@
     </div>
   </div>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="section-label">What We Build</div>
-    <h2 class="section-title">AI systems built for service businesses</h2>
-    <p class="section-sub">Each product is installed, configured, and ready to run — no tech skills needed on your end.</p>
+  <!-- THE SYSTEM -->
+  <section id="system" class="system-section">
+    <div class="system-container">
+      <div class="system-header">
+        <div class="section-label">The Offer</div>
+        <h2 class="section-title">One system. Three components. One outcome.</h2>
+        <p class="section-sub">We don't sell five separate tools. We install one complete client acquisition system — configured for your business, live within 2 weeks.</p>
+      </div>
 
-    <div class="services-grid">
+      <div class="system-card">
+        <div class="system-card-header">
+          <div>
+            <div class="system-name">The Everix Growth System</div>
+            <h3>Stop losing leads. Start filling your calendar — automatically.</h3>
+            <p>A done-for-you AI system that works the moment a lead hits your landing page — day or night, weekday or weekend. No tech skills required on your end.</p>
+          </div>
+          <div class="system-price-block">
+            <div class="system-price">$495<span style="font-size:1rem;color:var(--muted);font-weight:400;">/mo</span></div>
+            <div class="system-price-period">Monthly retainer · No long-term contract</div>
+            <div class="system-price-setup">+ one-time setup fee</div>
+          </div>
+        </div>
 
-      <div class="services-row">
-        <div class="service-card">
-          <div class="service-icon">📞</div>
-          <h3>AI Receptionist</h3>
-          <p>A 24/7 voice AI that answers calls, responds to FAQs, and books appointments directly into your calendar. Works seamlessly alongside your existing receptionist or front desk team — no replacement required.</p>
-          <span class="service-tag">Voice AI</span>
+        <div class="components-grid">
+          <div class="component-card">
+            <div class="component-number">COMPONENT 01</div>
+            <div class="component-icon">⚡</div>
+            <h4>Speed-to-Lead</h4>
+            <p>The moment a new lead comes in — from any source — our system contacts them automatically via SMS in under 60 seconds. First to respond wins the job. Every time.</p>
+            <span class="component-tag">Instant Lead Response</span>
+          </div>
+          <div class="component-card">
+            <div class="component-number">COMPONENT 02</div>
+            <div class="component-icon">📞</div>
+            <h4>AI Receptionist</h4>
+            <p>A 24/7 AI that answers calls, handles FAQs, qualifies leads, and books appointments directly into your calendar. Works seamlessly alongside your existing team — never replaces them.</p>
+            <span class="component-tag">Voice AI</span>
+          </div>
+          <div class="component-card">
+            <div class="component-number">COMPONENT 03</div>
+            <div class="component-icon">💬</div>
+            <h4>SMS Booking Agent</h4>
+            <p>Qualified leads get booked through a simple text conversation. No app. No portal. Clients book, reschedule, or cancel — all via SMS. WhatsApp support coming soon.</p>
+            <span class="component-tag">Conversational Booking</span>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon">⚡</div>
-          <h3>Speed-to-Lead</h3>
-          <p>The moment a new lead comes in, our system contacts them instantly via SMS or email. Strike while the iron is hot — before your competitors even see the notification.</p>
-          <span class="service-tag">Lead Automation</span>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">💬</div>
-          <h3>SMS & WhatsApp Booking Agent</h3>
-          <p>Let clients book, reschedule, or cancel appointments through text. No app downloads, no portals — just a simple conversation that gets the job done.</p>
-          <span class="service-tag">Conversational AI</span>
+
+        <div class="system-includes">
+          <div class="include-item"><strong>Done-for-you setup</strong> — we build everything</div>
+          <div class="include-item"><strong>Live in 10–14 business days</strong></div>
+          <div class="include-item"><strong>Google Calendar integration</strong></div>
+          <div class="include-item"><strong>CRM lead tracking</strong> included</div>
+          <div class="include-item"><strong>Monthly performance report</strong></div>
+          <div class="include-item"><strong>No long-term contract</strong> — cancel any month</div>
         </div>
       </div>
 
-      <div class="services-row">
-        <div class="service-card">
-          <div class="service-icon">📈</div>
-          <h3>Client Growth Engine</h3>
-          <p>A done-for-you system that collects feedback, pushes happy customers to leave Google Reviews, and captures emails to drive repeat business — all automatically.</p>
-          <span class="service-tag">Growth</span>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🌐</div>
-          <h3>AI Website Building</h3>
-          <p>Fast, professional websites designed for conversion. We build and deploy sites that represent your brand and turn visitors into booked clients.</p>
-          <span class="service-tag">Web</span>
-        </div>
+      <div class="guarantee-strip">
+        <div class="g-icon">🛡️</div>
+        <p><strong>60-Day Money-Back Guarantee.</strong> If your AI system isn't delivering fewer missed leads and more booked appointments within 60 days, we'll refund you — no questions asked. We stand behind this because we've never had to use it.</p>
       </div>
-
     </div>
   </section>
+
+  <!-- QUIZ TEASER (LEAD MAGNET) -->
+  <div class="quiz-teaser">
+    <div class="quiz-teaser-inner">
+      <div class="quiz-teaser-left">
+        <div class="section-label">Free AI Report</div>
+        <h2>Find out exactly how much revenue your business is leaving on the table.</h2>
+        <p>Answer 8 quick questions. Get a free personalized report showing your biggest AI opportunities — specific to your industry. See your estimated monthly loss, your top 3 AI fixes, and whether you're a good fit for the Everix system.</p>
+        <a href="quiz.html" class="btn-primary">Take the Free Quiz</a>
+        <div class="quiz-proof">Takes under 2 minutes &nbsp;·&nbsp; No email required to start &nbsp;·&nbsp; Used by 50+ Canadian service businesses</div>
+      </div>
+      <div class="quiz-teaser-right">
+        <div class="quiz-preview-item">
+          <div class="qp-icon">📊</div>
+          <div class="qp-text">
+            <strong>Your AI Opportunity Score</strong>
+            A 0–100 score across Lead Capture, Follow-Up, and Operations
+          </div>
+        </div>
+        <div class="quiz-preview-item">
+          <div class="qp-icon">💸</div>
+          <div class="qp-text">
+            <strong>Your Estimated Monthly Loss</strong>
+            Calculated from your actual answers — not a generic guess
+          </div>
+        </div>
+        <div class="quiz-preview-item">
+          <div class="qp-icon">🎯</div>
+          <div class="qp-text">
+            <strong>Your Top 3 AI Fixes</strong>
+            Personalized to your industry and biggest bottleneck
+          </div>
+        </div>
+        <div class="quiz-cta-box">
+          <a href="quiz.html" class="btn-primary">Get My Free Report →</a>
+          <div class="quiz-time-note">Under 2 minutes · Instant results · No pitch</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- HOW IT WORKS -->
   <section id="how" class="how-section">
@@ -742,17 +993,17 @@
       <div class="step">
         <div class="step-number">02</div>
         <h3>We Build It</h3>
-        <p>Our team configures your AI system — voice agent, booking flows, CRM connections — customized to your business.</p>
+        <p>Our team configures your complete AI system — voice agent, speed-to-lead triggers, booking flows, CRM connections — customized to your business.</p>
       </div>
       <div class="step">
         <div class="step-number">03</div>
         <h3>We Install It</h3>
-        <p>We connect everything to your existing tools — calendar, phone number, website. No disruption to how you work.</p>
+        <p>We connect everything to your existing tools — calendar, phone number, website. No disruption to how you work today.</p>
       </div>
       <div class="step">
         <div class="step-number">04</div>
         <h3>You Scale</h3>
-        <p>Your AI runs 24/7. You get more leads captured, more bookings made, and more time back in your day.</p>
+        <p>Your AI runs 24/7. You get more leads captured, more bookings made, and hours back in your day. Every day.</p>
       </div>
     </div>
   </section>
@@ -765,29 +1016,34 @@
 
     <div class="why-grid">
       <div class="why-card">
-        <div class="why-icon">🕐</div>
-        <h4>24/7 Coverage</h4>
-        <p>Your AI never sleeps, never calls in sick, and never misses a lead — even at 2am on a Sunday.</p>
+        <div class="why-icon">⚡</div>
+        <h4>Under 60-Second Response</h4>
+        <p>Your AI contacts every new lead before your competitor sees the notification — 24 hours a day, including weekends and holidays.</p>
       </div>
       <div class="why-card">
         <div class="why-icon">🔌</div>
         <h4>Done-For-You Setup</h4>
-        <p>We install and configure everything. You don't need to touch a single line of code.</p>
+        <p>We install and configure everything. You don't need to touch a single line of code or learn any new software.</p>
       </div>
       <div class="why-card">
         <div class="why-icon">📊</div>
-        <h4>Real Results</h4>
-        <p>Clients see 3x more leads captured, response times under 30 seconds, and hours saved every week on phone admin.</p>
+        <h4>Real, Measurable Results</h4>
+        <p>Clients see 3x more leads captured, response times under 60 seconds, and hours saved every week on phone admin.</p>
       </div>
       <div class="why-card">
         <div class="why-icon">🇨🇦</div>
         <h4>Canadian Business Focus</h4>
-        <p>We work with Canadian service businesses and understand the local market.</p>
+        <p>We work with Canadian service businesses and understand the local market — trades, healthcare, real estate, and more.</p>
       </div>
       <div class="why-card">
         <div class="why-icon">🛡️</div>
         <h4>60-Day Money-Back Guarantee</h4>
-        <p>If your AI system isn't delivering results within 60 days, we'll refund you — no questions asked.</p>
+        <p>If your AI system isn't delivering results within 60 days, we'll refund you — no questions asked. Zero risk to try.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📅</div>
+        <h4>Live in Under 2 Weeks</h4>
+        <p>From our first call to your system going live: 10–14 business days. No months-long implementation. No waiting.</p>
       </div>
     </div>
   </section>
@@ -800,23 +1056,23 @@
         <div class="urgency-badge">🔥 Only accepting 5 new clients this month</div>
         <div class="section-label">Get Started</div>
         <h2>Ready to put your business on autopilot?</h2>
-        <p>Book a free AI Blueprint call. We'll map out exactly what AI systems would work for your business — no obligation.</p>
+        <p>Book a free AI Blueprint call. We'll map out exactly what the Everix system would look like for your business — no obligation.</p>
         <div class="cta-promises">
           <div class="cta-promise">
-            <span>📞</span>
-            <span><strong>24/7 AI Receptionist</strong> — never miss a call</span>
-          </div>
-          <div class="cta-promise">
             <span>⚡</span>
-            <span><strong>Speed-to-Lead</strong> — respond in seconds</span>
+            <span><strong>Speed-to-Lead</strong> — respond to every lead in under 60 seconds</span>
           </div>
           <div class="cta-promise">
-            <span>📅</span>
-            <span><strong>Auto Booking</strong> — clients book via SMS</span>
+            <span>📞</span>
+            <span><strong>AI Receptionist</strong> — 24/7 call handling and booking</span>
+          </div>
+          <div class="cta-promise">
+            <span>💬</span>
+            <span><strong>SMS Booking Agent</strong> — clients book via text, no app needed</span>
           </div>
           <div class="cta-promise">
             <span>🔌</span>
-            <span><strong>Done-for-you setup</strong> — we handle everything</span>
+            <span><strong>Done-for-you setup</strong> — live in under 2 weeks</span>
           </div>
         </div>
         <div class="cta-canada">🇨🇦 &nbsp;Built for Canadian service businesses</div>
@@ -833,7 +1089,7 @@
         <div class="cta-form-header">
           <h3>Get Your Free AI Blueprint</h3>
           <p>We'll reach out within 24 hours to confirm your call.</p>
-          <p class="pricing-anchor">Plans starting at <strong>$495/month</strong> — no long-term contracts</p>
+          <p class="pricing-anchor">One complete system starting at <strong>$495/month</strong> — no long-term contracts</p>
           <p class="pricing-anchor" style="margin-top:0.4rem;">🛡️ <strong style="color:var(--white);">60-day money-back guarantee</strong> — if it's not working, you don't pay.</p>
         </div>
         <iframe
@@ -853,7 +1109,8 @@
     <p>&copy; 2026 Everix Automation Systems. All rights reserved.</p>
     <div class="footer-links">
       <a href="mailto:everixautomation@gmail.com">Contact</a>
-      <a href="#services">Services</a>
+      <a href="#system">The System</a>
+      <a href="quiz.html">Free Report</a>
     </div>
   </footer>
 
