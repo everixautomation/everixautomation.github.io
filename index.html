@@ -1523,6 +1523,51 @@
 
     .faq-a strong { color: var(--white); }
 
+    /* ── FLOATING MOBILE CTA ─────────────────────────────── */
+    .float-cta {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 200;
+      background: #0B0B0F;
+      border-top: 1px solid rgba(212,175,55,0.35);
+      padding: 0.85rem 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .float-cta.visible { transform: translateY(0); }
+    .float-cta.hidden { display: none !important; }
+
+    .float-cta a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #D4AF37;
+      text-decoration: none;
+      flex: 1;
+    }
+
+    .float-cta-dismiss {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.3);
+      font-size: 1.1rem;
+      cursor: pointer;
+      padding: 0.25rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .float-cta-dismiss:hover { color: rgba(255,255,255,0.6); }
+
+    @media (max-width: 768px) {
+      .float-cta { display: flex; }
+    }
+
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .hero { padding-top: 6rem; }
@@ -1568,7 +1613,7 @@
     </p>
     <div class="hero-cta-group">
       <div class="hero-cta-row">
-        <a href="quiz.html" class="btn-primary">Find Out What You're Losing</a>
+        <a href="quiz.html" class="btn-primary">See How Many Leads You're Losing → Free</a>
         <a href="#system" class="btn-secondary">See The System</a>
       </div>
       <div class="hero-cta-note">Free 90-second AI report — no pitch, no email required to start</div>
@@ -1826,8 +1871,8 @@
         <div class="section-label">Free AI Report</div>
         <h2>Find out exactly how much revenue your business is leaving on the table.</h2>
         <p>Answer 8 quick questions. Get a free personalized report showing your biggest AI opportunities — specific to your industry. See your estimated monthly loss, your top 3 AI fixes, and whether you're a good fit for the Everix system.</p>
-        <a href="quiz.html" class="btn-primary">Take the Free Quiz</a>
-        <div class="quiz-proof">Takes under 2 minutes &nbsp;·&nbsp; No email required to start &nbsp;·&nbsp; Instant results, no pitch</div>
+        <a href="quiz.html" class="btn-primary">Get My Free AI Report (90 seconds)</a>
+        <div class="quiz-proof">No credit card. No commitment. Just clarity on what you're missing.</div>
       </div>
       <div class="quiz-teaser-right">
         <div class="quiz-preview-item">
@@ -2052,26 +2097,27 @@
     <div class="cta-inner">
 
       <div class="cta-left">
-        <div class="urgency-badge">🔥 Only accepting 5 new clients this month</div>
+        <!-- UPDATE MONTH AND SPOTS REMAINING MANUALLY EACH MONTH
+             Format: "Only accepting 5 new clients in [Month] — [X] spots remaining" -->
+        <div class="urgency-badge">🔥 Only accepting 5 new clients in April — 3 spots remaining</div>
         <div class="section-label">Get Started</div>
-        <h2>Ready to put your business on autopilot?</h2>
-        <p>Book a free AI Blueprint call. We'll map out exactly what the Everix system would look like for your business — no obligation.</p>
+        <h2>Every day without this system, leads are going to your competitors.</h2>
+        <p>Book a free 15-minute AI Blueprint call. We'll show you exactly how many leads you're losing and what the Everix system would look like for your business.</p>
+
+        <a href="https://calendly.com/everixautomation/free-ai-gap-analysis" target="_blank" class="btn-primary" style="display:inline-block;margin-bottom:1.25rem;">Book My Free Blueprint Call →</a>
+
         <div class="cta-promises">
           <div class="cta-promise">
             <span>⚡</span>
-            <span><strong>Speed-to-Lead</strong> — respond to every lead in under 60 seconds</span>
+            <span><strong>Free 15-min call</strong> — zero pressure</span>
           </div>
           <div class="cta-promise">
-            <span>📞</span>
-            <span><strong>AI Receptionist</strong> — 24/7 call handling and booking</span>
+            <span>📊</span>
+            <span><strong>Get your custom AI opportunity breakdown</strong></span>
           </div>
           <div class="cta-promise">
-            <span>💬</span>
-            <span><strong>SMS Booking Agent</strong> — clients book via text, no app needed</span>
-          </div>
-          <div class="cta-promise">
-            <span>🔌</span>
-            <span><strong>Done-for-you setup</strong> — live in under 2 weeks</span>
+            <span>🛡️</span>
+            <span><strong>60-day money-back guarantee</strong> if you decide to move forward</span>
           </div>
         </div>
         <div class="cta-canada">🇨🇦 &nbsp;Built for Canadian service businesses</div>
@@ -2113,7 +2159,36 @@
     </div>
   </footer>
 
+  <!-- MOBILE FLOATING CTA BAR -->
+  <div class="float-cta" id="floatCta">
+    <a href="quiz.html">See how many leads you're losing →</a>
+    <button class="float-cta-dismiss" id="floatDismiss" aria-label="Dismiss">✕</button>
+  </div>
+
   <script>
+    // Mobile floating CTA — appears after scrolling past hero
+    (function() {
+      const bar = document.getElementById('floatCta');
+      const dismiss = document.getElementById('floatDismiss');
+      if (!bar) return;
+      let dismissed = false;
+
+      window.addEventListener('scroll', function() {
+        if (dismissed) return;
+        const heroH = document.querySelector('.hero')?.offsetHeight || 500;
+        if (window.scrollY > heroH) {
+          bar.classList.add('visible');
+        } else {
+          bar.classList.remove('visible');
+        }
+      }, { passive: true });
+
+      dismiss.addEventListener('click', function() {
+        dismissed = true;
+        bar.classList.add('hidden');
+      });
+    })();
+
     // FAQ Accordion
     document.querySelectorAll('.faq-trigger').forEach(trigger => {
       trigger.addEventListener('click', () => {
