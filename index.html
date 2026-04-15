@@ -1279,6 +1279,123 @@
 
     .dream-section blockquote em { color: var(--teal); font-style: normal; }
 
+    /* ── COST COMPARISON ────────────────────────────────── */
+    .cost-section {
+      padding: 5rem 6%;
+      background: var(--black);
+    }
+
+    .cost-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .cost-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .cost-card {
+      border-radius: 14px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .cost-card-without {
+      background: rgba(239,68,68,0.04);
+      border: 1px solid rgba(239,68,68,0.25);
+    }
+
+    .cost-card-with {
+      background: rgba(57,255,20,0.03);
+      border: 1px solid rgba(57,255,20,0.2);
+    }
+
+    .cost-card-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .cost-card-without .cost-card-label { color: #f87171; }
+    .cost-card-with .cost-card-label { color: var(--green); }
+
+    .cost-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      flex: 1;
+    }
+
+    .cost-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      line-height: 1.5;
+    }
+
+    .cost-list li:last-of-type { border-bottom: none; }
+
+    .cost-bullet-bad  { color: #f87171; font-size: 0.75rem; flex-shrink: 0; margin-top: 0.2rem; }
+    .cost-bullet-good { color: var(--green); font-size: 0.75rem; flex-shrink: 0; margin-top: 0.2rem; }
+
+    .cost-bottom {
+      margin-top: 1.25rem;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .cost-card-without .cost-bottom {
+      background: rgba(239,68,68,0.08);
+      border: 1px solid rgba(239,68,68,0.2);
+    }
+
+    .cost-card-with .cost-bottom {
+      background: rgba(57,255,20,0.06);
+      border: 1px solid rgba(57,255,20,0.2);
+    }
+
+    .cost-bottom-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .cost-bottom-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .cost-card-without .cost-bottom-number { color: #f87171; }
+    .cost-card-with .cost-bottom-number { color: var(--green); }
+
+    .cost-bottom-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    @media (max-width: 680px) {
+      .cost-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── OFFER STACK ─────────────────────────────────────── */
     .offer-stack {
       margin-top: 2rem;
@@ -1748,6 +1865,54 @@
         Imagine waking up to <em>4 new appointments already booked</em> in your calendar — from leads that came in at 11pm, midnight, and 6am while you were sleeping. No staff overtime. No missed calls. No competitors stealing your clients because you were too slow to respond.
       </blockquote>
       <p style="color:var(--muted);font-size:0.95rem;text-align:left;padding-left:1.5rem;">That's not a pitch. That's what happens when your AI front desk never takes a day off.</p>
+    </div>
+  </section>
+
+  <!-- COST COMPARISON -->
+  <section class="cost-section">
+    <div class="cost-inner">
+      <div class="section-label">The Real Cost of Doing Nothing</div>
+      <h2 class="section-title">What missed leads are really costing you.</h2>
+
+      <div class="cost-grid">
+
+        <!-- WITHOUT EVERIX -->
+        <div class="cost-card cost-card-without">
+          <div class="cost-card-label">✕ &nbsp;Without Everix</div>
+          <ul class="cost-list">
+            <li><span class="cost-bullet-bad">✕</span> Lead calls at 7pm → gets voicemail</li>
+            <li><span class="cost-bullet-bad">✕</span> Average response time: 4+ hours (if at all)</li>
+            <li><span class="cost-bullet-bad">✕</span> 35% of leads come in after hours → 0% get answered</li>
+            <li><span class="cost-bullet-bad">✕</span> No-shows and cancellations → no follow-up</li>
+            <li><span class="cost-bullet-bad">✕</span> Former clients forget about you → no reactivation</li>
+            <li><span class="cost-bullet-bad">✕</span> Google reviews: "I'll ask them next time" (you won't)</li>
+          </ul>
+          <div class="cost-bottom">
+            <div class="cost-bottom-label">Estimated monthly revenue lost</div>
+            <div class="cost-bottom-number">$3,000–$8,000</div>
+            <div class="cost-bottom-sub">in leads that never converted</div>
+          </div>
+        </div>
+
+        <!-- WITH EVERIX -->
+        <div class="cost-card cost-card-with">
+          <div class="cost-card-label">✓ &nbsp;With Everix</div>
+          <ul class="cost-list">
+            <li><span class="cost-bullet-good">✓</span> Lead calls at 7pm → AI responds in 47 seconds</li>
+            <li><span class="cost-bullet-good">✓</span> Every lead gets a response — 24/7/365</li>
+            <li><span class="cost-bullet-good">✓</span> 100% of after-hours leads captured and qualified</li>
+            <li><span class="cost-bullet-good">✓</span> No-shows get automatic rebooking messages</li>
+            <li><span class="cost-bullet-good">✓</span> Past clients get reactivation outreach automatically</li>
+            <li><span class="cost-bullet-good">✓</span> Google reviews collected after every visit — automatically</li>
+          </ul>
+          <div class="cost-bottom">
+            <div class="cost-bottom-label">System cost</div>
+            <div class="cost-bottom-number">$995/month</div>
+            <div class="cost-bottom-sub">ROI from day one</div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
