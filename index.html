@@ -3,2365 +3,1240 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Everix Automation | AI Growth System for Canadian Med Spas, Dental Practices, Legal Firms & Home Services</title>
-  <meta name="description" content="Never miss another lead. Everix installs a done-for-you AI system that responds in under 60 seconds, qualifies leads, and books appointments 24/7. Built for Canadian med spas, dental practices, and service businesses." />
-  <meta property="og:title" content="Everix Automation | AI Growth System for Canadian Service Businesses" />
-  <meta property="og:description" content="Never miss another lead. AI that responds in under 60 seconds, qualifies leads, and books appointments 24/7. Built for Canadian med spas, dental practices, and service businesses." />
-  <meta property="og:url" content="https://everixautomation.com" />
+  <title>Everix Automation | AI Intake Systems for Canadian Law Firms</title>
+  <meta name="description" content="Stop losing cases to voicemail. Everix builds AI-powered intake and follow-up systems for Canadian law firms — PIPEDA-compliant, 24/7, no extra staff required." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Everix Automation | AI Intake Systems for Canadian Law Firms" />
+  <meta property="og:description" content="Stop losing cases to voicemail. Every call your firm misses is a case your competitor takes." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://everixautomation.com/theme.png" />
+  <meta property="og:url" content="https://everixautomation.com/" />
+  <link rel="canonical" href="https://everixautomation.com/" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --black:   #0B0B0F;
-      --purple:  #7B2FF7;
-      --teal:    #14B8A6;
-      --magenta: #D946EF;
-      --green:   #39FF14;
-      --white:   #F0F0F5;
-      --muted:   #8888AA;
+      --bg: #FAFAF8;
+      --text: #1a1a1a;
+      --green: #1a6b4a;
+      --green-light: #e8f5ee;
+      --green-mid: #2d8a61;
+      --border: #e2e2dd;
+      --muted: #6b6b6b;
+      --card-bg: #ffffff;
+      --mono: 'JetBrains Mono', monospace;
+      --serif: 'Source Serif 4', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      background: var(--black);
-      color: var(--white);
-      font-family: 'Inter', sans-serif;
-      font-size: 16px;
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
-      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2, h3, h4 {
-      font-family: 'Space Grotesk', sans-serif;
-      line-height: 1.15;
+    /* ── UTILITIES ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; }
+    .section-sm { padding: 56px 0; }
+
+    .label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+      display: block;
+      margin-bottom: 12px;
     }
 
-    a { color: var(--teal); text-decoration: none; }
-    a:hover { color: var(--magenta); }
+    h1, h2, h3 { font-family: var(--serif); line-height: 1.2; }
+    h1 { font-size: clamp(36px, 5vw, 64px); font-weight: 300; }
+    h2 { font-size: clamp(28px, 3.5vw, 44px); font-weight: 300; }
+    h3 { font-size: 20px; font-weight: 400; }
 
-    /* ── NAV ──────────────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 4px;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--green);
+      color: #fff;
+      border: none;
+    }
+    .btn-primary:hover { background: var(--green-mid); }
+    .btn-outline {
+      background: transparent;
+      color: var(--green);
+      border: 1.5px solid var(--green);
+    }
+    .btn-outline:hover { background: var(--green-light); }
+    .btn-ghost {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.3);
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.2); }
+
+    /* ── NAV ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
+      position: sticky;
+      top: 0;
       z-index: 100;
+      background: rgba(250, 250, 248, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.25rem 6%;
-      background: rgba(11,11,15,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(123,47,247,0.2);
+      height: 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
 
-    .nav-logo {
+    .logo {
       display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.2rem;
+      flex-direction: column;
+      line-height: 1;
+      text-decoration: none;
+    }
+    .logo-everix {
+      font-family: var(--sans);
       font-weight: 700;
-      color: var(--white);
-      letter-spacing: -0.02em;
+      font-size: 18px;
+      color: var(--text);
+      letter-spacing: -0.3px;
     }
-
-    .nav-logo img {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
+    .logo-auto {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-top: 1px;
     }
-
-    .nav-logo span { color: var(--purple); }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      align-items: center;
+      gap: 32px;
       list-style: none;
     }
-
     .nav-links a {
+      font-size: 14px;
       color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 500;
+      text-decoration: none;
       transition: color 0.2s;
     }
+    .nav-links a:hover { color: var(--text); }
 
-    .nav-links a:hover { color: var(--white); }
-
-    .nav-contact {
-      color: var(--teal) !important;
-      font-weight: 600;
-      font-size: 0.9rem;
+    .nav-cta { display: flex; align-items: center; gap: 16px; }
+    .nav-tel {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
     }
+    .nav-tel:hover { color: var(--green); }
 
-    .nav-contact:hover { color: var(--magenta) !important; }
-
-    .nav-cta {
-      background: var(--purple);
-      color: var(--white) !important;
-      padding: 0.55rem 1.4rem;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: opacity 0.2s;
+    .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger { display: block; width: 22px; height: 2px; background: var(--text); position: relative; }
+    .hamburger::before, .hamburger::after {
+      content: '';
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      position: absolute;
     }
+    .hamburger::before { top: -6px; }
+    .hamburger::after { top: 6px; }
 
-    .nav-cta:hover { opacity: 0.85; color: var(--white) !important; }
-
-    /* ── HERO ─────────────────────────────────────────────── */
+    /* ── HERO ── */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      padding: 96px 0 80px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 64px;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 8rem 6% 5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background: url('theme.png') center center / cover no-repeat;
-      opacity: 0.38;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .hero-bg-overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse at top, rgba(11,11,15,0.1) 0%, transparent 60%),
-        linear-gradient(to bottom, rgba(11,11,15,0.2) 0%, rgba(11,11,15,0.75) 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .hero > *:not(.hero-bg):not(.hero-bg-overlay) {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -100px; right: -100px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(20,184,166,0.08) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(57,255,20,0.08);
-      border: 1px solid rgba(57,255,20,0.25);
-      color: var(--green);
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 0.35rem 1rem;
-      border-radius: 999px;
-      margin-bottom: 2rem;
-      letter-spacing: 0.05em;
-    }
-
-    .badge-dot {
-      width: 7px; height: 7px;
-      background: var(--green);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
-    .hero h1 {
-      font-size: clamp(2.4rem, 6vw, 4.2rem);
-      font-weight: 700;
-      max-width: 820px;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.03em;
-    }
-
-    .hero h1 .highlight { color: var(--purple); }
-    .hero h1 .highlight-teal { color: var(--teal); }
-
-    .hero p {
-      font-size: 1.15rem;
-      color: var(--muted);
-      max-width: 560px;
-      margin-bottom: 2.5rem;
-    }
-
-    .hero-cta-group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .hero-cta-note {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .btn-primary {
-      background: var(--purple);
-      color: var(--white);
-      padding: 0.9rem 2.2rem;
-      border-radius: 8px;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      display: inline-block;
-      text-decoration: none;
-    }
-
-    .btn-primary:hover {
-      background: #6920e0;
-      color: var(--white);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(123,47,247,0.4);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--white);
-      padding: 0.9rem 2.2rem;
-      border-radius: 8px;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 600;
-      font-size: 1rem;
-      border: 1px solid rgba(255,255,255,0.15);
-      cursor: pointer;
-      transition: all 0.2s;
-      display: inline-block;
-      text-decoration: none;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--teal);
-      color: var(--teal);
-      transform: translateY(-2px);
-    }
-
-    /* ── STATS STRIP ─────────────────────────────────────── */
-    .stats-strip {
-      padding: 3rem 6%;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      background: rgba(123,47,247,0.03);
-    }
-
-    .stats-inner {
-      display: flex;
-      justify-content: center;
-      gap: 4rem;
-      flex-wrap: wrap;
-    }
-
-    .stat { text-align: center; }
-
-    .stat-number {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: var(--purple);
-      line-height: 1;
-      margin-bottom: 0.4rem;
-    }
-
-    .stat-label {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    /* ── SECTIONS ─────────────────────────────────────────── */
-    section { padding: 6rem 6%; }
-
-    .section-label {
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      color: var(--teal);
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-
-    .section-title {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 700;
-      max-width: 600px;
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-    }
-
-    .section-sub {
-      color: var(--muted);
-      max-width: 520px;
-      margin-bottom: 3.5rem;
-    }
-
-    /* ── THE SYSTEM SECTION ───────────────────────────────── */
-    .system-section {
-      background: rgba(123,47,247,0.03);
-      border-top: 1px solid rgba(123,47,247,0.1);
-      border-bottom: 1px solid rgba(123,47,247,0.1);
-    }
-
-    .system-container {
       max-width: 1100px;
       margin: 0 auto;
+      padding: 0 24px;
     }
 
-    .system-header {
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-light);
+      border: 1px solid #b8dfc8;
+      border-radius: 20px;
+      padding: 6px 14px;
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow span { font-family: var(--mono); font-size: 11px; color: var(--green); letter-spacing: 1px; }
+    .eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+    .hero h1 { margin-bottom: 24px; color: var(--text); }
+    .hero h1 em { font-style: italic; color: var(--green); }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+
+    .hero-proof { display: flex; gap: 32px; flex-wrap: wrap; }
+    .proof-item { display: flex; align-items: center; gap: 8px; }
+    .proof-icon { color: var(--green); font-size: 14px; }
+    .proof-item span { font-size: 13px; color: var(--muted); }
+
+    .hero-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    .hero-card-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .card-stat { margin-bottom: 20px; }
+    .card-stat-num {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--green);
+      line-height: 1;
+    }
+    .card-stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .card-divider { height: 1px; background: var(--border); margin: 20px 0; }
+    .card-note { font-size: 12px; color: var(--muted); font-style: italic; }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--text);
+      padding: 40px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+    .stat-cell {
+      background: var(--text);
+      padding: 28px 32px;
       text-align: center;
-      margin-bottom: 3rem;
+    }
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 40px;
+      font-weight: 300;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-num span { color: var(--green); }
+    .stat-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.4; }
+
+    /* ── PAIN ── */
+    .pain { background: var(--bg); }
+    .pain-header { text-align: center; margin-bottom: 56px; }
+    .pain-header p { font-size: 18px; color: var(--muted); margin-top: 16px; }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
 
-    .system-header .section-title,
-    .system-header .section-sub {
-      max-width: 680px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .system-header .section-sub {
-      margin-bottom: 0;
-    }
-
-    /* Main system card */
-    .system-card {
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(123,47,247,0.25);
-      border-radius: 16px;
-      padding: 2.5rem;
-      margin-bottom: 2rem;
+    .pain-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 28px;
       position: relative;
       overflow: hidden;
     }
-
-    .system-card::before {
+    .pain-card::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 3px;
-      background: linear-gradient(90deg, var(--purple), var(--teal), var(--magenta));
+      background: #dc3545;
+    }
+    .pain-card-icon { font-size: 24px; margin-bottom: 12px; }
+    .pain-card h3 { font-size: 17px; margin-bottom: 10px; font-weight: 500; font-family: var(--sans); }
+    .pain-card p { font-size: 14px; color: var(--muted); line-height: 1.55; }
+    .pain-cost {
+      margin-top: 14px;
+      padding: 10px 14px;
+      background: #fff5f5;
+      border: 1px solid #fcd4d4;
+      border-radius: 4px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: #c0392b;
     }
 
-    .system-card-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
+    /* ── PRACTICE AREAS ── */
+    .practice { background: #f4f4f2; }
+    .practice-header { text-align: center; margin-bottom: 48px; }
+    .practice-header p { font-size: 16px; color: var(--muted); margin-top: 12px; }
 
-    .system-name {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      color: var(--purple);
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-
-    .system-card-header h3 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    .system-card-header p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-top: 0.5rem;
-      max-width: 520px;
-    }
-
-    .system-price-block {
-      text-align: right;
-      flex-shrink: 0;
-    }
-
-    .system-price {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--green);
-      line-height: 1;
-    }
-
-    .system-price-period {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 0.2rem;
-    }
-
-    .system-price-setup {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 0.3rem;
-    }
-
-    /* 3 component cards */
-    .components-grid {
+    .practice-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin-bottom: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
     }
 
-    .component-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 12px;
-      padding: 1.5rem;
-      transition: all 0.3s;
+    .practice-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 24px;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
-
-    .component-card:hover {
-      border-color: rgba(123,47,247,0.35);
-      transform: translateY(-3px);
+    .practice-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 4px 16px rgba(26,107,74,0.08);
     }
-
-    .component-number {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
-    }
-
-    .component-icon {
-      font-size: 1.8rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .component-card h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--white);
-    }
-
-    .component-card p {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .component-tag {
-      display: inline-block;
-      margin-top: 1rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--teal);
-      background: rgba(20,184,166,0.08);
-      border: 1px solid rgba(20,184,166,0.2);
-      padding: 0.2rem 0.65rem;
-      border-radius: 999px;
-    }
-
-    /* What's included list */
-    .system-includes {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 0.65rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .include-item {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    .include-item::before {
-      content: '✓';
-      color: var(--green);
-      font-weight: 700;
-      font-size: 0.85rem;
-      flex-shrink: 0;
-    }
-
-    .include-item strong { color: var(--white); }
-
-    /* Guarantee strip */
-    .guarantee-strip {
-      background: rgba(57,255,20,0.04);
-      border: 1px solid rgba(57,255,20,0.15);
-      border-radius: 10px;
-      padding: 1.25rem 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .guarantee-strip .g-icon { font-size: 1.5rem; flex-shrink: 0; }
-
-    .guarantee-strip p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .guarantee-strip strong { color: var(--white); }
-
-    /* ── LEAD MAGNET QUIZ TEASER ──────────────────────────── */
-    .quiz-teaser {
-      padding: 5rem 6%;
-      background: linear-gradient(135deg, rgba(123,47,247,0.06) 0%, rgba(20,184,166,0.04) 100%);
-      border-top: 1px solid rgba(123,47,247,0.12);
-    }
-
-    .quiz-teaser-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .quiz-teaser-left h2 {
-      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-      font-weight: 700;
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-    }
-
-    .quiz-teaser-left p {
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    .quiz-teaser-left .quiz-proof {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 0.75rem;
-    }
-
-    .quiz-teaser-right {
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(123,47,247,0.2);
-      border-radius: 14px;
-      padding: 2rem;
-    }
-
-    .quiz-preview-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .quiz-preview-item:last-child { border-bottom: none; }
-
-    .qp-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      background: rgba(123,47,247,0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    .qp-text {
-      font-size: 0.88rem;
-      color: var(--muted);
-      padding-top: 0.2rem;
-    }
-
-    .qp-text strong { color: var(--white); display: block; margin-bottom: 0.1rem; }
-
-    .quiz-cta-box {
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      text-align: center;
-    }
-
-    .quiz-cta-box .btn-primary { width: 100%; justify-content: center; }
-
-    .quiz-time-note {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 0.6rem;
-    }
-
-    /* ── HOW IT WORKS ─────────────────────────────────────── */
-    .how-section {
-      background: rgba(123,47,247,0.04);
-      border-top: 1px solid rgba(123,47,247,0.1);
-      border-bottom: 1px solid rgba(123,47,247,0.1);
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-    }
-
-    .step { position: relative; padding-left: 1rem; }
-
-    .step-number {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 3rem;
-      font-weight: 700;
-      color: rgba(123,47,247,0.2);
-      line-height: 1;
-      margin-bottom: 1rem;
-    }
-
-    .step h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--white);
-    }
-
-    .step p { font-size: 0.9rem; color: var(--muted); }
-
-    /* ── WHY EVERIX ───────────────────────────────────────── */
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .why-card {
-      padding: 1.75rem;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .why-card h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--white);
-    }
-
-    .why-card p { font-size: 0.88rem; color: var(--muted); }
-
-    .why-icon { font-size: 1.5rem; margin-bottom: 1rem; }
-
-    /* ── CTA SECTION ──────────────────────────────────────── */
-    .cta-section {
-      padding: 5rem 6%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .urgency-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(217,70,239,0.08);
-      border: 1px solid rgba(217,70,239,0.3);
-      color: var(--magenta);
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 0.45rem 1rem;
-      border-radius: 999px;
-      margin-bottom: 1.25rem;
-    }
-
-    .cta-left .section-label { margin-bottom: 0.75rem; }
-
-    .cta-left h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      font-weight: 700;
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-    }
-
-    .cta-left p { color: var(--muted); margin-bottom: 1.5rem; font-size: 1rem; }
-
-    .cta-promises { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem; }
-
-    .cta-promise {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .cta-promise span:first-child { font-size: 1rem; flex-shrink: 0; }
-    .cta-promise strong { color: var(--white); }
-
-    .cta-canada { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.75rem; }
-
-    .cta-contact { font-size: 0.88rem; color: var(--muted); }
-    .cta-contact a { color: var(--teal); font-weight: 500; transition: color 0.2s; }
-    .cta-contact a:hover { color: var(--magenta); }
-    .cta-divider { margin: 0 0.4rem; color: rgba(255,255,255,0.15); }
-
-    .cta-right {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(123,47,247,0.2);
-      border-radius: 14px;
-      padding: 2rem;
-    }
-
-    .cta-form-header { margin-bottom: 1rem; }
-
-    .cta-form-header h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-
-    .cta-form-header p { font-size: 0.85rem; color: var(--muted); }
-
-    .pricing-anchor { font-size: 0.85rem; color: var(--muted); margin-top: 0.75rem; }
-    .pricing-anchor strong { color: var(--green); }
-
-    .tally-embed {
-      width: 100%;
-      border: none;
-      min-height: 420px;
-    }
-
-    /* ── FOOTER ───────────────────────────────────────────── */
-    footer {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 2.5rem 6%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--white);
-    }
-
-    .footer-logo span { color: var(--purple); }
-
-    footer p { font-size: 0.85rem; color: var(--muted); }
-
-    .footer-links { display: flex; gap: 1.5rem; }
-
-    .footer-links a {
-      font-size: 0.85rem;
-      color: var(--muted);
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--white); }
-
-    /* ── RESPONSIVE ───────────────────────────────────────── */
-    @media (max-width: 900px) {
-      .cta-inner { grid-template-columns: 1fr; gap: 2rem; }
-      .quiz-teaser-inner { grid-template-columns: 1fr; gap: 2rem; }
-      .components-grid { grid-template-columns: 1fr; }
-      .system-card-header { flex-direction: column; }
-      .system-price-block { text-align: left; }
-    }
-
-    /* ── VALUE STACK ─────────────────────────────────────── */
-    .vs-card {
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(123,47,247,0.25);
-      border-radius: 16px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .vs-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--purple), var(--teal), var(--magenta));
-    }
-
-    .vs-top {
-      padding: 2rem 2.5rem 1.5rem;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .vs-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: rgba(212,175,55,0.1);
-      border: 1px solid rgba(212,175,55,0.35);
-      color: #D4AF37;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 0.3rem 0.85rem;
-      border-radius: 999px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-
-    .vs-top-left h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.4rem;
-    }
-
-    .vs-top-left p { font-size: 0.9rem; color: var(--muted); }
-
-    .vs-stack {
-      padding: 1.5rem 2.5rem;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+    .practice-icon { font-size: 22px; margin-bottom: 10px; }
+    .practice-card h3 { font-size: 16px; font-weight: 600; font-family: var(--sans); margin-bottom: 8px; }
+    .practice-card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    /* ── THE SYSTEM ── */
+    .system { background: var(--bg); }
+    .system-header { text-align: center; margin-bottom: 56px; }
+    .system-header p { font-size: 17px; color: var(--muted); margin-top: 14px; max-width: 560px; margin-left: auto; margin-right: auto; }
+
+    .steps-grid {
       display: flex;
       flex-direction: column;
       gap: 0;
+      margin-bottom: 56px;
     }
 
-    .vs-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 1.1rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-    }
-
-    .vs-item:last-child { border-bottom: none; }
-
-    .vs-check {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: rgba(57,255,20,0.1);
-      border: 1px solid rgba(57,255,20,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      color: var(--green);
-      flex-shrink: 0;
-      margin-top: 0.15rem;
-      font-weight: 700;
-    }
-
-    .vs-item-body { flex: 1; }
-
-    .vs-item-name {
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--white);
-      margin-bottom: 0.2rem;
-    }
-
-    .vs-item-desc {
-      font-size: 0.83rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    .vs-item-value {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--muted);
-      white-space: nowrap;
-      font-family: 'Space Grotesk', sans-serif;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
-      padding: 0.25rem 0.65rem;
-      border-radius: 6px;
-      margin-top: 0.1rem;
-      flex-shrink: 0;
-    }
-
-    .vs-total {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2.5rem;
-      background: rgba(255,255,255,0.01);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .vs-total-label {
-      font-size: 0.88rem;
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    .vs-total-value {
-      font-size: 1.1rem;
-      font-weight: 700;
-      font-family: 'Space Grotesk', sans-serif;
-      color: var(--muted);
-      text-decoration: line-through;
-      text-decoration-color: rgba(255,255,255,0.3);
-    }
-
-    .vs-price-block {
-      padding: 2rem 2.5rem;
+    .step-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      align-items: start;
+      grid-template-columns: 56px 1fr;
+      gap: 24px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
     }
+    .step-row:last-child { border-bottom: none; }
 
-    .vs-your-price-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--teal);
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-
-    .vs-price-main {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--green);
-      line-height: 1;
-      margin-bottom: 0.3rem;
-    }
-
-    .vs-price-main span {
-      font-size: 1.1rem;
-      color: var(--muted);
-      font-weight: 400;
-    }
-
-    .vs-price-setup {
-      font-size: 0.83rem;
-      color: var(--muted);
-      margin-bottom: 0.25rem;
-    }
-
-    .vs-price-saving {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--green);
-      background: rgba(57,255,20,0.08);
-      border: 1px solid rgba(57,255,20,0.2);
-      padding: 0.2rem 0.65rem;
-      border-radius: 999px;
-    }
-
-    .vs-compare-box {
-      background: rgba(123,47,247,0.06);
-      border: 1px solid rgba(123,47,247,0.2);
-      border-radius: 10px;
-      padding: 1.25rem;
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .vs-compare-box strong { color: var(--white); }
-
-    @media (max-width: 700px) {
-      .vs-price-block { grid-template-columns: 1fr; }
-      .vs-top, .vs-stack, .vs-total, .vs-price-block { padding-left: 1.25rem; padding-right: 1.25rem; }
-      .vs-item { flex-wrap: wrap; }
-      .vs-item-value { margin-top: 0.4rem; }
-    }
-
-    /* ── SOCIAL PROOF ───────────────────────────────────── */
-    .trust-strip {
-      padding: 2.5rem 6%;
-      background: rgba(20,184,166,0.04);
-      border-top: 1px solid rgba(20,184,166,0.12);
-      border-bottom: 1px solid rgba(20,184,166,0.12);
-    }
-
-    .trust-strip-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .trust-strip-label {
-      font-size: 0.82rem;
-      color: var(--muted);
-      font-weight: 500;
-      white-space: nowrap;
-    }
-
-    .trust-mini-stats {
-      display: flex;
-      gap: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .trust-mini-stat { text-align: center; }
-
-    .trust-mini-number {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--teal);
-      line-height: 1;
-      margin-bottom: 0.2rem;
-    }
-
-    .trust-mini-desc {
-      font-size: 0.75rem;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    .trust-divider {
-      width: 1px;
-      height: 40px;
-      background: rgba(255,255,255,0.08);
-      flex-shrink: 0;
-    }
-
-    /* Testimonials */
-    .testimonials-section {
-      padding: 4rem 6%;
-    }
-
-    .testimonials-inner {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .testimonial-card {
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 14px;
-      padding: 1.75rem;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    .testimonial-card::before {
-      content: '\201C';
-      position: absolute;
-      top: 1rem; right: 1.5rem;
-      font-size: 4rem;
-      color: rgba(123,47,247,0.15);
-      font-family: Georgia, serif;
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    .testimonial-quote {
-      font-size: 0.92rem;
-      color: var(--white);
-      line-height: 1.8;
-      font-style: italic;
-      flex: 1;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .testimonial-avatar {
+    .step-num {
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: rgba(123,47,247,0.15);
-      border: 1px solid rgba(123,47,247,0.3);
+      background: var(--green-light);
+      border: 1.5px solid #b8dfc8;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--purple);
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--green);
       flex-shrink: 0;
-      font-family: 'Space Grotesk', sans-serif;
     }
 
-    .testimonial-name {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.1rem;
-    }
+    .step-content h3 { font-size: 18px; font-weight: 600; font-family: var(--sans); margin-bottom: 8px; }
+    .step-content p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
-    .testimonial-title {
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    .testimonial-placeholder {
-      background: rgba(255,255,255,0.01);
-      border: 1px dashed rgba(255,255,255,0.1);
-      border-radius: 14px;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    .pricing-box {
+      background: var(--text);
+      border-radius: 8px;
+      padding: 48px;
       text-align: center;
-      gap: 0.75rem;
-      min-height: 200px;
+      color: #fff;
     }
-
-    .testimonial-placeholder p {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.2);
+    .pricing-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 16px;
     }
-
-    .testimonial-placeholder .ph-icon {
-      font-size: 1.5rem;
-      opacity: 0.2;
+    .pricing-amount {
+      font-family: var(--serif);
+      font-size: 56px;
+      font-weight: 300;
+      color: #fff;
+      line-height: 1;
     }
-
-    @media (max-width: 680px) {
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .trust-strip-inner { flex-direction: column; text-align: center; }
-      .trust-divider { display: none; }
-      .trust-mini-stats { justify-content: center; }
-    }
-
-    /* ── INDUSTRY CARDS ─────────────────────────────────── */
-    .industry-section {
-      padding: 5rem 6%;
-      background: rgba(123,47,247,0.03);
-      border-top: 1px solid rgba(123,47,247,0.1);
-      border-bottom: 1px solid rgba(123,47,247,0.1);
-    }
-
-    .industry-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
-      max-width: 1000px;
-      margin: 2.5rem auto 0;
-    }
-
-    .industry-card {
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 14px;
-      padding: 1.75rem;
-      transition: border-color 0.25s, transform 0.25s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .industry-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--purple), var(--teal));
-      opacity: 0;
-      transition: opacity 0.25s;
-    }
-
-    .industry-card:hover {
-      border-color: rgba(123,47,247,0.4);
-      transform: translateY(-3px);
-    }
-
-    .industry-card:hover::before { opacity: 1; }
-
-    .industry-icon {
-      font-size: 2rem;
-      margin-bottom: 0.9rem;
-      display: block;
-    }
-
-    .industry-card h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.65rem;
-      letter-spacing: -0.01em;
-    }
-
-    .industry-card p {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    @media (max-width: 680px) {
-      .industry-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ── DREAM OUTCOME ───────────────────────────────────── */
-    .dream-section {
-      padding: 5rem 6%;
-      text-align: center;
-      background: linear-gradient(180deg, rgba(123,47,247,0.04) 0%, transparent 100%);
-    }
-
-    .dream-inner {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    .dream-section blockquote {
-      font-size: clamp(1.15rem, 2.5vw, 1.5rem);
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 500;
-      color: var(--white);
-      line-height: 1.7;
-      border-left: 3px solid var(--purple);
-      padding-left: 1.5rem;
-      text-align: left;
-      margin: 0 auto 1.5rem;
-    }
-
-    .dream-section blockquote em { color: var(--teal); font-style: normal; }
-
-    /* ── COST COMPARISON ────────────────────────────────── */
-    .cost-section {
-      padding: 5rem 6%;
-      background: var(--black);
-    }
-
-    .cost-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .cost-grid {
+    .pricing-amount sup { font-size: 24px; vertical-align: top; margin-top: 12px; display: inline-block; }
+    .pricing-amount sub { font-size: 18px; color: rgba(255,255,255,0.5); }
+    .pricing-desc { font-size: 15px; color: rgba(255,255,255,0.6); margin: 12px 0 28px; }
+    .pricing-features {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 2.5rem;
+      gap: 10px 32px;
+      text-align: left;
+      margin-bottom: 32px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
     }
-
-    .cost-card {
-      border-radius: 14px;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .cost-card-without {
-      background: rgba(239,68,68,0.04);
-      border: 1px solid rgba(239,68,68,0.25);
-    }
-
-    .cost-card-with {
-      background: rgba(57,255,20,0.03);
-      border: 1px solid rgba(57,255,20,0.2);
-    }
-
-    .cost-card-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 1.25rem;
+    .pricing-feature {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 8px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
     }
+    .pricing-feature::before { content: '✓'; color: var(--green); font-weight: 700; }
+    .pricing-note { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 16px; }
 
-    .cost-card-without .cost-card-label { color: #f87171; }
-    .cost-card-with .cost-card-label { color: var(--green); }
+    /* ── COMPLIANCE ── */
+    .compliance { background: var(--green); }
+    .compliance-header { text-align: center; margin-bottom: 48px; }
+    .compliance-header .label { color: rgba(255,255,255,0.7); }
+    .compliance-header h2 { color: #fff; }
+    .compliance-header p { font-size: 16px; color: rgba(255,255,255,0.7); margin-top: 12px; }
 
-    .cost-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      flex: 1;
-    }
-
-    .cost-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.65rem;
-      font-size: 0.88rem;
-      color: var(--muted);
-      padding: 0.7rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-      line-height: 1.5;
-    }
-
-    .cost-list li:last-of-type { border-bottom: none; }
-
-    .cost-bullet-bad  { color: #f87171; font-size: 0.75rem; flex-shrink: 0; margin-top: 0.2rem; }
-    .cost-bullet-good { color: var(--green); font-size: 0.75rem; flex-shrink: 0; margin-top: 0.2rem; }
-
-    .cost-bottom {
-      margin-top: 1.25rem;
-      padding: 1rem 1.25rem;
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    .cost-card-without .cost-bottom {
-      background: rgba(239,68,68,0.08);
-      border: 1px solid rgba(239,68,68,0.2);
-    }
-
-    .cost-card-with .cost-bottom {
-      background: rgba(57,255,20,0.06);
-      border: 1px solid rgba(57,255,20,0.2);
-    }
-
-    .cost-bottom-label {
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-bottom: 0.3rem;
-    }
-
-    .cost-bottom-number {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      line-height: 1.1;
-    }
-
-    .cost-card-without .cost-bottom-number { color: #f87171; }
-    .cost-card-with .cost-bottom-number { color: var(--green); }
-
-    .cost-bottom-sub {
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-top: 0.2rem;
-    }
-
-    @media (max-width: 680px) {
-      .cost-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ── OFFER STACK ─────────────────────────────────────── */
-    .offer-stack {
-      margin-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding-top: 1.75rem;
-    }
-
-    .offer-stack-label {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    .offer-stack-rows { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
-
-    .offer-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.9rem;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-    }
-
-    .offer-row-name { color: var(--white); }
-    .offer-row-value { color: var(--muted); font-size: 0.82rem; }
-
-    .offer-total {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.75rem 0;
-      margin-top: 0.5rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .offer-total-label { font-weight: 700; color: var(--white); font-size: 0.95rem; }
-    .offer-total-value { color: var(--muted); text-decoration: line-through; font-size: 0.9rem; }
-
-    .offer-you-pay {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(57,255,20,0.05);
-      border: 1px solid rgba(57,255,20,0.2);
-      border-radius: 8px;
-      padding: 0.75rem 1rem;
-      margin-top: 0.5rem;
-    }
-
-    .offer-you-pay span:first-child { font-weight: 700; color: var(--white); }
-    .offer-you-pay span:last-child { font-size: 1.3rem; font-weight: 700; font-family: 'Space Grotesk', sans-serif; color: var(--green); }
-
-    /* ── BEFORE / AFTER ──────────────────────────────────── */
-    .before-after {
-      padding: 5rem 6%;
-      background: rgba(123,47,247,0.03);
-      border-top: 1px solid rgba(123,47,247,0.1);
-    }
-
-    .ba-inner { max-width: 900px; margin: 0 auto; }
-
-    .ba-table { width: 100%; border-collapse: collapse; margin-top: 2.5rem; }
-
-    .ba-table th {
-      padding: 0.75rem 1.25rem;
-      font-size: 0.85rem;
-      font-weight: 700;
-      font-family: 'Space Grotesk', sans-serif;
-      text-align: center;
-      border-bottom: 2px solid rgba(255,255,255,0.08);
-    }
-
-    .ba-table th:first-child { text-align: left; color: var(--muted); }
-    .ba-table th.col-before { color: #f87171; }
-    .ba-table th.col-after { color: var(--green); }
-
-    .ba-table td {
-      padding: 0.85rem 1.25rem;
-      font-size: 0.88rem;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-      text-align: center;
-      color: var(--muted);
-    }
-
-    .ba-table td:first-child { text-align: left; color: var(--white); font-weight: 500; }
-    .ba-table td.bad { color: #f87171; }
-    .ba-table td.good { color: var(--green); }
-
-    .ba-table tr:hover td { background: rgba(255,255,255,0.01); }
-
-    /* ── FOUNDER ─────────────────────────────────────────── */
-    .founder-section {
-      padding: 5rem 6%;
-      background: var(--black);
-    }
-
-    .founder-inner {
-      max-width: 860px;
-      margin: 0 auto;
+    .compliance-grid {
       display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 3rem;
-      align-items: start;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(212,175,55,0.2);
-      border-top: 3px solid #D4AF37;
-      border-radius: 0 0 16px 16px;
-      padding: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
     }
 
-    .founder-photo-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
+    .compliance-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 6px;
+      padding: 24px;
+    }
+    .compliance-icon { font-size: 22px; margin-bottom: 12px; }
+    .compliance-card h3 { font-size: 16px; font-weight: 600; font-family: var(--sans); color: #fff; margin-bottom: 8px; }
+    .compliance-card p { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.5; }
+
+    /* ── PROCESS ── */
+    .process { background: var(--bg); }
+    .process-header { text-align: center; margin-bottom: 56px; }
+    .process-header p { font-size: 16px; color: var(--muted); margin-top: 12px; }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0;
+      position: relative;
+    }
+    .process-grid::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(12.5% + 20px);
+      right: calc(12.5% + 20px);
+      height: 1px;
+      background: var(--border);
     }
 
-    .founder-avatar {
-      width: 160px;
-      height: 160px;
+    .process-step { padding: 0 20px; text-align: center; position: relative; }
+    .process-num {
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
-      background: rgba(212,175,55,0.08);
-      border: 2px solid rgba(212,175,55,0.3);
+      background: var(--bg);
+      border: 2px solid var(--green);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 4rem;
+      font-family: var(--mono);
+      font-size: 16px;
+      color: var(--green);
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .process-step h3 { font-size: 16px; font-weight: 600; font-family: var(--sans); margin-bottom: 8px; }
+    .process-step p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+    .process-duration {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 4px 10px;
+      background: var(--green-light);
+      border-radius: 20px;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--green);
+      letter-spacing: 1px;
+    }
+
+    /* ── FOUNDER ── */
+    .founder { background: #f4f4f2; }
+    .founder-inner {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .founder-avatar {
+      width: 200px;
+      height: 200px;
+      border-radius: 4px;
+      background: var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
       overflow: hidden;
     }
-
-    /* Replace the emoji with your photo:
-       <img src="YOUR_PHOTO.jpg" alt="William" style="width:100%;height:100%;object-fit:cover;" /> */
-
+    .founder-avatar img { width: 100%; height: 100%; object-fit: cover; }
     .founder-name {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 0.2rem;
-      color: var(--white);
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 4px;
     }
+    .founder-title { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+    .founder-body { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 20px; }
+    .founder-sig { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--green); }
 
-    .founder-title {
-      font-size: 0.8rem;
-      color: #D4AF37;
-      margin-bottom: 1.25rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+    /* ── GUARANTEE ── */
+    .guarantee { background: var(--bg); }
+    .guarantee-box {
+      border: 1.5px solid var(--green);
+      border-radius: 8px;
+      padding: 56px 48px;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
     }
+    .guarantee-icon { font-size: 48px; margin-bottom: 20px; }
+    .guarantee-box h2 { margin-bottom: 16px; }
+    .guarantee-box p { font-size: 16px; color: var(--muted); line-height: 1.65; margin-bottom: 28px; }
+    .guarantee-terms { font-size: 12px; color: var(--muted); }
 
-    .founder-bio {
-      font-size: 0.95rem;
-      color: var(--muted);
-      line-height: 1.85;
-      margin-bottom: 1.25rem;
-    }
+    /* ── FAQ ── */
+    .faq { background: #f4f4f2; }
+    .faq-header { text-align: center; margin-bottom: 48px; }
 
-    .founder-bio strong { color: var(--white); }
-
-    .founder-personal {
-      font-size: 0.82rem;
-      color: rgba(212,175,55,0.7);
-      font-style: italic;
-    }
-
-    /* ── FAQ ACCORDION ───────────────────────────────────── */
-    .faq-section {
-      padding: 5rem 6%;
-      background: rgba(123,47,247,0.03);
-      border-top: 1px solid rgba(123,47,247,0.1);
-    }
-
-    .faq-inner { max-width: 760px; margin: 0 auto; }
-
+    .faq-list { max-width: 720px; margin: 0 auto; }
     .faq-item {
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
     }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
 
-    .faq-trigger {
+    .faq-question {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 1.25rem;
-      width: 100%;
+      align-items: center;
+      padding: 20px 0;
+      cursor: pointer;
       background: none;
       border: none;
-      padding: 1.35rem 0;
-      cursor: pointer;
+      width: 100%;
       text-align: left;
+      font-family: var(--sans);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text);
     }
-
-    .faq-trigger:hover .faq-q { color: var(--teal); }
-
-    .faq-q {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--white);
-      line-height: 1.4;
-      transition: color 0.2s;
-    }
+    .faq-question:hover { color: var(--green); }
 
     .faq-icon {
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
-      border: 1px solid rgba(123,47,247,0.4);
+      background: var(--green-light);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--purple);
-      font-size: 1.1rem;
+      font-size: 16px;
+      color: var(--green);
+      flex-shrink: 0;
+      transition: transform 0.25s;
       font-weight: 300;
-      flex-shrink: 0;
-      transition: all 0.25s;
       line-height: 1;
     }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
 
-    .faq-item.open .faq-icon {
-      background: var(--purple);
-      border-color: var(--purple);
-      color: var(--white);
-      transform: rotate(45deg);
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
     }
-
-    .faq-body {
-      display: none;
-      padding: 0 0 1.35rem;
-    }
-
-    .faq-item.open .faq-body { display: block; }
-
-    .faq-a {
-      font-size: 0.92rem;
+    .faq-answer-inner {
+      padding: 0 0 20px;
+      font-size: 14px;
       color: var(--muted);
-      line-height: 1.8;
+      line-height: 1.7;
     }
 
-    .faq-a strong { color: var(--white); }
-
-    /* ── FLOATING MOBILE CTA ─────────────────────────────── */
-    .float-cta {
-      display: none;
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      z-index: 200;
-      background: #0B0B0F;
-      border-top: 1px solid rgba(212,175,55,0.35);
-      padding: 0.85rem 1.25rem;
-      padding-bottom: calc(0.85rem + env(safe-area-inset-bottom));
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-      transform: translateY(100%);
-      transition: transform 0.3s ease;
-    }
-
-    .float-cta.visible { transform: translateY(0); }
-    .float-cta.hidden { display: none !important; }
-
-    .float-cta a {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: #D4AF37;
+    /* ── FINAL CTA ── */
+    .final-cta { background: var(--text); padding: 100px 0; }
+    .final-cta-inner { text-align: center; }
+    .final-cta .label { color: rgba(255,255,255,0.5); margin-bottom: 16px; }
+    .final-cta h2 { color: #fff; margin-bottom: 16px; }
+    .final-cta p { font-size: 17px; color: rgba(255,255,255,0.6); margin-bottom: 36px; }
+    .final-cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .final-tel {
+      display: block;
+      margin-top: 28px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
       text-decoration: none;
-      flex: 1;
     }
+    .final-tel:hover { color: rgba(255,255,255,0.75); }
 
-    .float-cta-dismiss {
-      background: none;
-      border: none;
+    /* ── FOOTER ── */
+    footer {
+      background: #111;
+      padding: 48px 0 32px;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+    .footer-brand .logo { margin-bottom: 12px; }
+    .footer-brand .logo-everix { color: #fff; }
+    .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6; }
+
+    .footer-col h4 {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 14px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: #fff; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.3); }
+    .footer-badges { display: flex; gap: 10px; }
+    .badge {
+      padding: 4px 10px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 3px;
+      font-family: var(--mono);
+      font-size: 10px;
       color: rgba(255,255,255,0.3);
-      font-size: 1.1rem;
-      cursor: pointer;
-      padding: 0.25rem;
-      line-height: 1;
-      flex-shrink: 0;
+      letter-spacing: 1px;
     }
 
-    .float-cta-dismiss:hover { color: rgba(255,255,255,0.6); }
-
-    @media (max-width: 768px) {
-      .float-cta { display: flex; }
+    /* ── FADE IN ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    @media (max-width: 768px) {
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-card { max-width: 420px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .founder-inner { grid-template-columns: 1fr; }
+      .founder-avatar { width: 140px; height: 140px; font-size: 48px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .pricing-features { grid-template-columns: 1fr; }
+      .process-grid::before { display: none; }
+      .process-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .guarantee-box { padding: 36px 24px; }
+    }
+
+    @media (max-width: 600px) {
       .nav-links { display: none; }
-      .hero { padding-top: 6rem; }
-      footer { flex-direction: column; text-align: center; }
-      .hero-cta-row { flex-direction: column; }
-      .btn-secondary { margin-left: 0; }
-      .founder-inner { grid-template-columns: 1fr; text-align: center; }
-      .founder-photo-wrap { align-items: center; }
-      .founder-avatar { width: 120px; height: 120px; font-size: 3rem; }
-      .ba-table td, .ba-table th { padding: 0.65rem 0.75rem; font-size: 0.8rem; }
+      .nav-mobile-toggle { display: block; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .pricing-box { padding: 32px 20px; }
+      h1 { font-size: 32px; }
+      h2 { font-size: 26px; }
+      .hero { padding: 60px 0 48px; }
+      .section { padding: 56px 0; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-logo"><img src="logo.png" alt="Everix Logo" />Everix<span>.</span></div>
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="Everix Automation home">
+      <span class="logo-everix">Everix</span>
+      <span class="logo-auto">Automation</span>
+    </a>
     <ul class="nav-links">
+      <li><a href="#pain">The Problem</a></li>
       <li><a href="#system">The System</a></li>
-      <li><a href="demo.html">Live Demo</a></li>
-      <li><a href="#why">Why Everix</a></li>
+      <li><a href="#compliance">PIPEDA</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="tel:+16476684020" class="nav-contact">647-668-4020</a></li>
-      <li><a href="quiz.html" class="nav-cta">Free AI Report</a></li>
     </ul>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-bg-overlay"></div>
-    <div class="badge">
-      <span class="badge-dot"></span>
-      Med Spas · Dental · Legal · Home Services
+    <div class="nav-cta">
+      <a href="tel:+16476684020" class="nav-tel">647-668-4020</a>
+      <a href="https://calendly.com/everixautomation/intake-audit" class="btn btn-primary" target="_blank" rel="noopener">Book Free Audit</a>
     </div>
-    <h1>
-      Every lead you don't respond to in<br />
-      5 minutes goes to <span class="highlight-teal">your</span> <span class="highlight">competitor.</span>
-    </h1>
-    <p>
-      Everix installs a done-for-you AI system that responds in under 60 seconds, handles calls 24/7, and books appointments automatically — no staff, no missed leads, no excuses.
-    </p>
-    <div class="hero-cta-group">
-      <div class="hero-cta-row">
-        <a href="quiz.html" class="btn-primary">See How Many Leads You're Losing → Free</a>
-        <a href="#system" class="btn-secondary">See The System</a>
-      </div>
-      <div class="hero-cta-note">Free 90-second AI report — no pitch, no email required to start</div>
-    </div>
-  </section>
+    <button class="nav-mobile-toggle" aria-label="Open menu" onclick="toggleMobileMenu()">
+      <span class="hamburger"></span>
+    </button>
+  </div>
+</nav>
 
-  <!-- STATS STRIP -->
-  <div class="stats-strip">
-    <div class="stats-inner">
-      <div class="stat">
-        <div class="stat-number">24/7</div>
-        <div class="stat-label">Coverage — even weekends &amp; holidays</div>
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="fade-in">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        <span>Built exclusively for Canadian law firms</span>
       </div>
-      <div class="stat">
-        <div class="stat-number">&lt;60s</div>
-        <div class="stat-label">Lead response time — vs. industry avg of 4+ hours</div>
+      <h1>Every call your firm<br>misses is a case your<br><em>competitor takes.</em></h1>
+      <p class="hero-sub">Everix builds AI-powered intake and follow-up systems that answer prospects within 60 seconds — 24/7, PIPEDA-compliant, zero extra staff required.</p>
+      <div class="hero-actions">
+        <a href="https://calendly.com/everixautomation/intake-audit" class="btn btn-primary" target="_blank" rel="noopener">Book Free Intake Audit</a>
+        <a href="#system" class="btn btn-outline">See How It Works</a>
       </div>
-      <div class="stat">
-        <div class="stat-number">3x</div>
-        <div class="stat-label">More leads captured — based on client results</div>
+      <div class="hero-proof">
+        <div class="proof-item">
+          <span class="proof-icon">✓</span>
+          <span>No long-term contracts</span>
+        </div>
+        <div class="proof-item">
+          <span class="proof-icon">✓</span>
+          <span>Live in 14 days</span>
+        </div>
+        <div class="proof-item">
+          <span class="proof-icon">✓</span>
+          <span>PIPEDA compliant</span>
+        </div>
       </div>
-      <div class="stat">
-        <div class="stat-number">0</div>
-        <div class="stat-label">Missed calls — AI handles every one</div>
+    </div>
+
+    <div class="hero-card fade-in" style="transition-delay:0.15s">
+      <div class="hero-card-label">// what your intake looks like now</div>
+      <div class="card-stat">
+        <div class="card-stat-num">67%</div>
+        <div class="card-stat-label">of law firm callers hang up if not answered within 2 minutes</div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-stat">
+        <div class="card-stat-num">$8,400</div>
+        <div class="card-stat-label">average case value lost per missed personal injury lead</div>
+      </div>
+      <div class="card-divider"></div>
+      <p class="card-note">Your receptionist goes home at 5pm. Your competition doesn't sleep.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ── -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-cell fade-in">
+        <div class="stat-num"><span>&lt;</span>60s</div>
+        <div class="stat-desc">Average response time to new inquiries</div>
+      </div>
+      <div class="stat-cell fade-in" style="transition-delay:0.1s">
+        <div class="stat-num">24<span>/7</span></div>
+        <div class="stat-desc">Coverage — evenings, weekends, holidays</div>
+      </div>
+      <div class="stat-cell fade-in" style="transition-delay:0.2s">
+        <div class="stat-num">3<span>x</span></div>
+        <div class="stat-desc">More qualified consultations booked per month</div>
+      </div>
+      <div class="stat-cell fade-in" style="transition-delay:0.3s">
+        <div class="stat-num">14<span>d</span></div>
+        <div class="stat-desc">From signed agreement to fully live system</div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- ============================================================
-       SOCIAL PROOF SECTION
-       TODO: Replace placeholder testimonials with real client
-       testimonials as soon as available. DO NOT launch ads or
-       paid traffic pointing to this page until real testimonials
-       are in place.
-       ============================================================ -->
-
-  <!-- TRUST STRIP -->
-  <div class="trust-strip">
-    <div class="trust-strip-inner">
-      <div class="trust-strip-label">Trusted by service businesses across Ontario</div>
-      <div class="trust-mini-stats">
-        <div class="trust-mini-stat">
-          <div class="trust-mini-number">23+</div>
-          <div class="trust-mini-desc">leads captured in first 14-day pilot</div>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="trust-mini-stat">
-          <div class="trust-mini-number">&lt;60s</div>
-          <div class="trust-mini-desc">average response time</div>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="trust-mini-stat">
-          <div class="trust-mini-number">100%</div>
-          <div class="trust-mini-desc">after-hours leads answered</div>
-        </div>
+<!-- ── PAIN ── -->
+<section class="section pain" id="pain">
+  <div class="container">
+    <div class="pain-header fade-in">
+      <span class="label">// the real cost of missed intake</span>
+      <h2>Your firm is bleeding cases<br>and doesn't know it.</h2>
+      <p>These aren't process problems. They're revenue problems.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card fade-in">
+        <div class="pain-card-icon">📞</div>
+        <h3>After-hours calls go to voicemail</h3>
+        <p>75% of clients who leave a voicemail never call back. They move on to the next firm in Google search results within minutes.</p>
+        <div class="pain-cost">// estimated cost: 4–6 cases/month</div>
+      </div>
+      <div class="pain-card fade-in" style="transition-delay:0.08s">
+        <div class="pain-card-icon">🐌</div>
+        <h3>Slow follow-up kills conversions</h3>
+        <p>Firms that follow up within 5 minutes are 9x more likely to convert than those that follow up after 30 minutes. Most law firms take hours — or days.</p>
+        <div class="pain-cost">// estimated cost: 30–50% of warm leads</div>
+      </div>
+      <div class="pain-card fade-in" style="transition-delay:0.16s">
+        <div class="pain-card-icon">🤷</div>
+        <h3>Reception doesn't qualify — they just book</h3>
+        <p>Every unqualified consultation costs you 90 minutes. Without intake screening, your senior lawyers sit in meetings with people who aren't viable clients.</p>
+        <div class="pain-cost">// estimated cost: 8–12 hours/week wasted</div>
+      </div>
+      <div class="pain-card fade-in" style="transition-delay:0.24s">
+        <div class="pain-card-icon">🔁</div>
+        <h3>No follow-up system for unconverted leads</h3>
+        <p>Prospects who say "I need to think about it" are rarely followed up with systematically. They simply fall through the cracks and hire someone else.</p>
+        <div class="pain-cost">// estimated cost: 20–40% of pipeline</div>
+      </div>
+      <div class="pain-card fade-in" style="transition-delay:0.32s">
+        <div class="pain-card-icon">💸</div>
+        <h3>You're paying for leads you're not capturing</h3>
+        <p>Law firms spend thousands per month on Google Ads and SEO. Without a fast intake system, that spend is generating inquiries that disappear before anyone calls them back.</p>
+        <div class="pain-cost">// estimated cost: 40–60% of ad spend wasted</div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials-section">
-    <div class="testimonials-inner">
-      <div class="section-label">What clients are saying</div>
-      <h2 class="section-title">Real results from real businesses.</h2>
-
-      <div class="testimonials-grid">
-
-        <!-- REPLACE WITH REAL TESTIMONIAL FROM FIRST CLIENT -->
-        <div class="testimonial-card">
-          <p class="testimonial-quote">
-            "We were missing at least 5–6 calls per week after hours. Within the first week of Everix, every single one of those leads got a response. Three of them booked appointments before we even opened the next morning."
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">—</div>
-            <div>
-              <div class="testimonial-name">[Name], [Title]</div>
-              <div class="testimonial-title">[Business Type] · Ontario</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PLACEHOLDER — ADD SECOND TESTIMONIAL WHEN AVAILABLE -->
-        <div class="testimonial-placeholder">
-          <div class="ph-icon">💬</div>
-          <p>Second client testimonial coming soon.</p>
-        </div>
-
+<!-- ── PRACTICE AREAS ── -->
+<section class="section practice" id="practices">
+  <div class="container">
+    <div class="practice-header fade-in">
+      <span class="label">// where we work</span>
+      <h2>Built for the cases that matter most.</h2>
+      <p>Everix is purpose-built for the highest-value, time-sensitive practice areas in Canadian law.</p>
+    </div>
+    <div class="practice-grid">
+      <div class="practice-card fade-in">
+        <div class="practice-icon">⚖️</div>
+        <h3>Personal Injury</h3>
+        <p>Statute of limitations pressure and high case values make every missed call a major loss. Our system captures and qualifies PI leads around the clock.</p>
+      </div>
+      <div class="practice-card fade-in" style="transition-delay:0.07s">
+        <div class="practice-icon">👨‍👩‍👧</div>
+        <h3>Family Law</h3>
+        <p>Clients in crisis call at all hours. Everix responds immediately, gathers key details, and routes urgent situations appropriately — with compassion.</p>
+      </div>
+      <div class="practice-card fade-in" style="transition-delay:0.14s">
+        <div class="practice-icon">🏢</div>
+        <h3>Real Estate Law</h3>
+        <p>Time-sensitive closings and deal flow require instant intake. We ensure no buyer, seller, or referral goes unanswered.</p>
+      </div>
+      <div class="practice-card fade-in" style="transition-delay:0.21s">
+        <div class="practice-icon">🌍</div>
+        <h3>Immigration Law</h3>
+        <p>Clients span time zones and urgency varies. Our multilingual-ready system handles intake and follow-up regardless of when leads come in.</p>
+      </div>
+      <div class="practice-card fade-in" style="transition-delay:0.28s">
+        <div class="practice-icon">💼</div>
+        <h3>Corporate & Commercial</h3>
+        <p>Referrals and executive-level contacts expect immediate professionalism. Our intake system reflects the quality of your firm from the first interaction.</p>
+      </div>
+      <div class="practice-card fade-in" style="transition-delay:0.35s">
+        <div class="practice-icon">⚡</div>
+        <h3>Criminal Defence</h3>
+        <p>Time is everything in criminal matters. Everix captures urgent calls, gathers initial information, and ensures the right lawyer is alerted — immediately.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- INDUSTRY SECTION -->
-  <section class="industry-section">
-    <div style="text-align:center;">
-      <div class="section-label">Built for businesses like yours</div>
-      <h2 class="section-title" style="max-width:600px;margin:0.5rem auto 0;">AI Growth System for Canadian Med Spas, Dental Practices, Legal Firms &amp; Home Service Businesses</h2>
+<!-- ── THE SYSTEM ── -->
+<section class="section system" id="system">
+  <div class="container">
+    <div class="system-header fade-in">
+      <span class="label">// how it works</span>
+      <h2>The Everix Intake System</h2>
+      <p>Five automated layers that work together to capture, qualify, and convert more of your inbound leads — without adding headcount.</p>
     </div>
-    <div class="industry-grid">
 
-      <div class="industry-card">
-        <span class="industry-icon">💉</span>
-        <h3>Med Spas &amp; Aesthetic Clinics</h3>
-        <p>Capture Instagram DMs and website inquiries at 11pm. Book Botox appointments while you sleep. Collect Google reviews after every visit — automatically.</p>
-      </div>
-
-      <div class="industry-card">
-        <span class="industry-icon">🦷</span>
-        <h3>Dental &amp; Healthcare Practices</h3>
-        <p>Answer patient calls after hours. Automate appointment reminders and no-show follow-ups. Reactivate patients overdue for their 6-month checkup.</p>
-      </div>
-
-      <div class="industry-card">
-        <span class="industry-icon">⚖️</span>
-        <h3>Legal Firms</h3>
-        <p>Never lose a potential client to voicemail again. Qualify case inquiries 24/7 and book consultations automatically. Every missed call is a $5,000+ case walking away.</p>
-      </div>
-
-      <div class="industry-card">
-        <span class="industry-icon">🔧</span>
-        <h3>Home Services &amp; Trades</h3>
-        <p>First to respond gets the job — period. Our AI contacts new leads in under 60 seconds via SMS, qualifies the job, and books an estimate. Works for HVAC, plumbing, roofing, electrical, and more.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- COST COMPARISON -->
-  <section class="cost-section">
-    <div class="cost-inner">
-      <div class="section-label">The Real Cost of Doing Nothing</div>
-      <h2 class="section-title">What missed leads are really costing you.</h2>
-
-      <div class="cost-grid">
-
-        <!-- WITHOUT EVERIX -->
-        <div class="cost-card cost-card-without">
-          <div class="cost-card-label">✕ &nbsp;Without Everix</div>
-          <ul class="cost-list">
-            <li><span class="cost-bullet-bad">✕</span> Lead calls at 7pm → gets voicemail</li>
-            <li><span class="cost-bullet-bad">✕</span> Average response time: 4+ hours (if at all)</li>
-            <li><span class="cost-bullet-bad">✕</span> 35% of leads come in after hours → 0% get answered</li>
-            <li><span class="cost-bullet-bad">✕</span> No-shows and cancellations → no follow-up</li>
-            <li><span class="cost-bullet-bad">✕</span> Former clients forget about you → no reactivation</li>
-            <li><span class="cost-bullet-bad">✕</span> Google reviews: "I'll ask them next time" (you won't)</li>
-          </ul>
-          <div class="cost-bottom">
-            <div class="cost-bottom-label">Estimated monthly revenue lost</div>
-            <div class="cost-bottom-number">$3,000–$8,000</div>
-            <div class="cost-bottom-sub">in leads that never converted</div>
-          </div>
+    <div class="steps-grid">
+      <div class="step-row fade-in">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Instant Lead Capture</h3>
+          <p>When a prospect submits your contact form, calls your number, or messages you at any hour, our system responds within 60 seconds. No more leads waiting until Monday morning. First contact is made while they're still thinking about your firm — before they've Googled the next option.</p>
         </div>
-
-        <!-- WITH EVERIX -->
-        <div class="cost-card cost-card-with">
-          <div class="cost-card-label">✓ &nbsp;With Everix</div>
-          <ul class="cost-list">
-            <li><span class="cost-bullet-good">✓</span> Lead calls at 7pm → AI responds in 47 seconds</li>
-            <li><span class="cost-bullet-good">✓</span> Every lead gets a response — 24/7/365</li>
-            <li><span class="cost-bullet-good">✓</span> 100% of after-hours leads captured and qualified</li>
-            <li><span class="cost-bullet-good">✓</span> No-shows get automatic rebooking messages</li>
-            <li><span class="cost-bullet-good">✓</span> Past clients get reactivation outreach automatically</li>
-            <li><span class="cost-bullet-good">✓</span> Google reviews collected after every visit — automatically</li>
-          </ul>
-          <div class="cost-bottom">
-            <div class="cost-bottom-label">System cost</div>
-            <div class="cost-bottom-number">$995/month</div>
-            <div class="cost-bottom-sub">ROI from day one</div>
-          </div>
+      </div>
+      <div class="step-row fade-in">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>AI-Powered Intake Screening</h3>
+          <p>Our AI asks the right questions: practice area, case details, jurisdiction, urgency, and budget signals. Only qualified, viable leads are forwarded to your team — saving senior lawyers from 90-minute consultations that go nowhere. The AI knows your firm's intake criteria intimately.</p>
         </div>
-
+      </div>
+      <div class="step-row fade-in">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Automated Consultation Booking</h3>
+          <p>Qualified leads book directly into your calendar — no phone tag, no back-and-forth email. The system syncs with your existing calendar, sends confirmation and reminders, and reduces no-shows by up to 40%.</p>
+        </div>
+      </div>
+      <div class="step-row fade-in">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h3>Smart Follow-Up Sequences</h3>
+          <p>Leads that don't book immediately receive a structured follow-up cadence — SMS and email — over 7 days. Each message is timed and personalized based on where they are in the decision process. We recover the "I'll think about it" leads that currently disappear.</p>
+        </div>
+      </div>
+      <div class="step-row fade-in">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h3>Real-Time Reporting Dashboard</h3>
+          <p>See every lead that came in, how they were handled, what was said, and what happened next. Full transparency, complete audit trail, and clear ROI metrics — so you always know what your intake system is worth.</p>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- THE SYSTEM / VALUE STACK -->
-  <section id="system" class="system-section">
-    <div class="system-container">
-      <div class="system-header">
-        <div class="section-label">The Offer</div>
-        <h2 class="section-title">Everything you need to never miss a lead again.</h2>
-        <p class="section-sub">One done-for-you system. Six components. One price. Live in under 2 weeks.</p>
+    <div class="pricing-box fade-in" id="pricing">
+      <div class="pricing-label">// investment</div>
+      <div class="pricing-amount"><sup>$</sup>495<sub>/mo</sub></div>
+      <p class="pricing-desc">Everything included. No setup fee. No per-lead charges. Cancel anytime.</p>
+      <div class="pricing-features">
+        <div class="pricing-feature">24/7 AI intake agent</div>
+        <div class="pricing-feature">Instant lead response</div>
+        <div class="pricing-feature">Intake qualification</div>
+        <div class="pricing-feature">Calendar booking</div>
+        <div class="pricing-feature">7-day follow-up sequences</div>
+        <div class="pricing-feature">SMS + email automation</div>
+        <div class="pricing-feature">Reporting dashboard</div>
+        <div class="pricing-feature">PIPEDA-compliant data handling</div>
+        <div class="pricing-feature">Onboarding in 14 days</div>
+        <div class="pricing-feature">Ongoing support & tuning</div>
       </div>
-
-      <div class="vs-card">
-
-        <!-- TOP -->
-        <div class="vs-top">
-          <div class="vs-top-left">
-            <div class="vs-badge">⭐ Best Value</div>
-            <h3>The Everix Growth System</h3>
-            <p>Built for Canadian dental practices, med spas, and service businesses. We build it, install it, and manage it — you just check your calendar.</p>
-          </div>
-        </div>
-
-        <!-- VALUE STACK LIST -->
-        <div class="vs-stack">
-
-          <div class="vs-item">
-            <div class="vs-check">✓</div>
-            <div class="vs-item-body">
-              <div class="vs-item-name">Speed-to-Lead AI Response System</div>
-              <div class="vs-item-desc">Instant SMS response to every new lead, 24/7/365. First to respond wins the job — every time.</div>
-            </div>
-            <div class="vs-item-value">Value: $1,500/mo</div>
-          </div>
-
-          <div class="vs-item">
-            <div class="vs-check">✓</div>
-            <div class="vs-item-body">
-              <div class="vs-item-name">24/7 AI Receptionist</div>
-              <div class="vs-item-desc">Answers calls, handles FAQs, qualifies leads, and books appointments. Works alongside your team — never replaces them.</div>
-            </div>
-            <div class="vs-item-value">Value: $2,000/mo</div>
-          </div>
-
-          <div class="vs-item">
-            <div class="vs-check">✓</div>
-            <div class="vs-item-body">
-              <div class="vs-item-name">One-Text Booking Agent</div>
-              <div class="vs-item-desc">Clients book, reschedule, and cancel via SMS. No app. No portal. Just text. WhatsApp support coming soon.</div>
-            </div>
-            <div class="vs-item-value">Value: $800/mo</div>
-          </div>
-
-          <div class="vs-item">
-            <div class="vs-check">✓</div>
-            <div class="vs-item-body">
-              <div class="vs-item-name">CRM &amp; Lead Tracking</div>
-              <div class="vs-item-desc">Every lead tracked from first contact to booked appointment. Nothing falls through the cracks.</div>
-            </div>
-            <div class="vs-item-value">Value: $500/mo</div>
-          </div>
-
-          <div class="vs-item">
-            <div class="vs-check">✓</div>
-            <div class="vs-item-body">
-              <div class="vs-item-name">Monthly Performance Report &amp; Strategy Call</div>
-              <div class="vs-item-desc">See exactly how many leads were captured, appointments booked, and revenue generated each month.</div>
-            </div>
-            <div class="vs-item-value">Value: $300/mo</div>
-          </div>
-
-          <div class="vs-item">
-            <div class="vs-check">✓</div>
-            <div class="vs-item-body">
-              <div class="vs-item-name">Done-For-You Setup &amp; Configuration</div>
-              <div class="vs-item-desc">We build, install, and configure everything. You don't touch a single line of code or learn any software.</div>
-            </div>
-            <div class="vs-item-value">Value: $2,000 one-time</div>
-          </div>
-
-        </div>
-
-        <!-- TOTAL VALUE -->
-        <div class="vs-total">
-          <div class="vs-total-label">Total standalone value</div>
-          <div class="vs-total-value">$7,100/month</div>
-        </div>
-
-        <!-- ACTUAL PRICE + COMPARE -->
-        <div class="vs-price-block">
-          <div>
-            <div class="vs-your-price-label">Your Investment</div>
-            <div class="vs-price-main">$995<span>/mo</span></div>
-            <div class="vs-price-setup">+ $500 one-time setup fee</div>
-            <div class="vs-price-saving">Saves $1,500 vs. doing it yourself</div>
-            <div style="margin-top:1rem;">
-              <a href="https://calendly.com/everixautomation/free-ai-gap-analysis" target="_blank" rel="noopener" class="btn-primary">Book Your Free AI Blueprint Call</a>
-              <div style="font-size:0.75rem;color:var(--muted);margin-top:0.6rem;">15 min · No pitch · No long-term contract</div>
-            </div>
-          </div>
-          <div class="vs-compare-box">
-            <strong>For context:</strong> A part-time receptionist costs <strong>$2,500/month</strong>. A full-time one costs <strong>$3,500+</strong>. Everix works 24/7, never calls in sick, responds in under 60 seconds, and costs <strong>less than a third of one employee</strong>.
-          </div>
-        </div>
-
-      </div>
-
-      <!-- GUARANTEE -->
-      <div class="guarantee-strip" style="margin-top:1.5rem;">
-        <div class="g-icon">🛡️</div>
-        <p><strong>60-Day Money-Back Guarantee.</strong> If your AI system isn't delivering fewer missed leads and more booked appointments within 60 days, we'll refund you — no questions asked. We stand behind this because we've never had to use it.</p>
-      </div>
-
+      <a href="https://calendly.com/everixautomation/intake-audit" class="btn btn-ghost" target="_blank" rel="noopener">Book Your Free Audit</a>
+      <p class="pricing-note">One case recovered per month typically covers 12–17× the cost.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- HOW IT WORKS -->
-  <section id="how" class="how-section">
-    <div class="section-label">The Process</div>
-    <h2 class="section-title">Up and running in days, not months</h2>
-    <p class="section-sub">We handle the entire setup. You just show up and start getting results.</p>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">01</div>
-        <h3>Discovery Call</h3>
-        <p>We learn how your business operates, where leads come from, and what's costing you the most time and money.</p>
+<!-- ── COMPLIANCE ── -->
+<section class="section compliance" id="compliance">
+  <div class="container">
+    <div class="compliance-header fade-in">
+      <span class="label">// trust &amp; compliance</span>
+      <h2>Built for the legal standard.</h2>
+      <p>Law firm data is sensitive. Every component of the Everix system is designed to meet PIPEDA requirements and Law Society expectations.</p>
+    </div>
+    <div class="compliance-grid">
+      <div class="compliance-card fade-in">
+        <div class="compliance-icon">🔒</div>
+        <h3>PIPEDA-Compliant Data Handling</h3>
+        <p>All prospective client data is collected, stored, and processed in accordance with Canada's Personal Information Protection and Electronic Documents Act. No data sold, shared, or used for any purpose other than your firm's intake.</p>
       </div>
-      <div class="step">
-        <div class="step-number">02</div>
-        <h3>We Build It</h3>
-        <p>Our team configures your complete AI system — voice agent, speed-to-lead triggers, booking flows, CRM connections — customized to your business.</p>
+      <div class="compliance-card fade-in" style="transition-delay:0.1s">
+        <div class="compliance-icon">🇨🇦</div>
+        <h3>Canadian Data Residency</h3>
+        <p>Where required, data can be stored on Canadian servers. We work with your firm's IT and compliance team to ensure requirements are met for your jurisdiction and Law Society.</p>
       </div>
-      <div class="step">
-        <div class="step-number">03</div>
-        <h3>We Install It</h3>
-        <p>We connect everything to your existing tools — calendar, phone number, website. No disruption to how you work today.</p>
+      <div class="compliance-card fade-in" style="transition-delay:0.2s">
+        <div class="compliance-icon">📋</div>
+        <h3>Conflict Check Integration</h3>
+        <p>Our intake flow can be configured to collect the information your team needs to run a conflict check before a consultation is confirmed — ensuring no privileged information is exchanged prematurely.</p>
       </div>
-      <div class="step">
-        <div class="step-number">04</div>
-        <h3>You Scale</h3>
-        <p>Your AI runs 24/7. You get more leads captured, more bookings made, and hours back in your day. Every day.</p>
+      <div class="compliance-card fade-in" style="transition-delay:0.3s">
+        <div class="compliance-icon">🛡️</div>
+        <h3>Privilege-Aware Design</h3>
+        <p>Everix does not provide legal advice or opinions. Our AI clearly identifies itself as an automated intake assistant — maintaining the distinction between AI-assisted intake and solicitor-client communication.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- WHY EVERIX -->
-  <section id="why">
-    <div class="section-label">Why Everix</div>
-    <h2 class="section-title">Built for business owners, not tech teams</h2>
-    <p class="section-sub">We do the heavy lifting so you don't have to think about the technology.</p>
-
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">⚡</div>
-        <h4>Under 60-Second Response</h4>
-        <p>Your AI contacts every new lead before your competitor sees the notification — 24 hours a day, including weekends and holidays.</p>
+<!-- ── PROCESS ── -->
+<section class="section process" id="process">
+  <div class="container">
+    <div class="process-header fade-in">
+      <span class="label">// getting started</span>
+      <h2>Live in 14 days. Seriously.</h2>
+      <p>We handle everything. You review, approve, and go live.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step fade-in">
+        <div class="process-num">1</div>
+        <h3>Free Intake Audit</h3>
+        <p>We analyze your current intake flow, identify exactly where leads are falling through, and show you the revenue opportunity.</p>
+        <span class="process-duration">60 MIN CALL</span>
       </div>
-      <div class="why-card">
-        <div class="why-icon">🔌</div>
-        <h4>Done-For-You Setup</h4>
-        <p>We install and configure everything. You don't need to touch a single line of code or learn any new software.</p>
+      <div class="process-step fade-in" style="transition-delay:0.1s">
+        <div class="process-num">2</div>
+        <h3>System Build</h3>
+        <p>We build your custom intake agent, follow-up sequences, and booking integration. You review and approve every message and script.</p>
+        <span class="process-duration">DAYS 1–10</span>
       </div>
-      <div class="why-card">
-        <div class="why-icon">📊</div>
-        <h4>Real, Measurable Results</h4>
-        <p>Clients see 3x more leads captured, response times under 60 seconds, and hours saved every week on phone admin.</p>
+      <div class="process-step fade-in" style="transition-delay:0.2s">
+        <div class="process-num">3</div>
+        <h3>Go Live &amp; Test</h3>
+        <p>We run full end-to-end testing, walk your team through the dashboard, and go live. First leads handled within hours.</p>
+        <span class="process-duration">DAYS 11–14</span>
       </div>
-      <div class="why-card">
-        <div class="why-icon">🇨🇦</div>
-        <h4>Canadian Business Focus</h4>
-        <p>We work with Canadian service businesses and understand the local market — trades, healthcare, real estate, and more.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🛡️</div>
-        <h4>60-Day Money-Back Guarantee</h4>
-        <p>If your AI system isn't delivering results within 60 days, we'll refund you — no questions asked. Zero risk to try.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">📅</div>
-        <h4>Live in Under 2 Weeks</h4>
-        <p>From our first call to your system going live: 10–14 business days. No months-long implementation. No waiting.</p>
+      <div class="process-step fade-in" style="transition-delay:0.3s">
+        <div class="process-num">4</div>
+        <h3>Optimize &amp; Scale</h3>
+        <p>Weekly check-ins in month one. Monthly reviews thereafter. We tune the system based on real data so it keeps improving.</p>
+        <span class="process-duration">ONGOING</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOUNDER -->
-  <section class="founder-section">
-    <div style="max-width:860px;margin:0 auto 2rem;">
-      <div class="section-label">Meet the Founder</div>
-      <h2 class="section-title">Built by someone who gets it.</h2>
-    </div>
+<!-- ── FOUNDER ── -->
+<section class="section founder" id="founder">
+  <div class="container">
     <div class="founder-inner">
-
-      <!-- LEFT: Photo -->
-      <div class="founder-photo-wrap">
-        <div class="founder-avatar">
-          <!-- REPLACE WITH REAL PHOTO:
-               Remove the emoji below and uncomment this line:
-               <img src="william.jpg" alt="William, Founder of Everix" style="width:100%;height:100%;object-fit:cover;" />
-          -->
-          👤
-        </div>
+      <div class="fade-in">
+        <div class="founder-avatar">👤</div>
       </div>
-
-      <!-- RIGHT: Bio -->
-      <div>
-        <div class="founder-name">William</div>
-        <!-- Update to full name when ready -->
-        <div class="founder-title">Founder, Everix Automation Systems</div>
-
-        <p class="founder-bio">
-          I spent years as a <strong>mortgage professional</strong> watching businesses — mine included — lose leads to slow response times. A potential client would call after hours, get voicemail, and by morning they'd already signed with whoever picked up first.
-          <br /><br />
-          I built Everix to fix that problem permanently. <strong>Every system we install is built with the same tools I use in my own business</strong>, tested on real leads, delivering real results.
-        </p>
-
-        <p class="founder-personal">
-          Based in Ontario, Canada &nbsp;·&nbsp; Father of two &nbsp;·&nbsp; Building the future of local business growth.
-        </p>
+      <div class="fade-in" style="transition-delay:0.1s">
+        <span class="label">// the person behind the system</span>
+        <h2 class="founder-name">William Milson</h2>
+        <p class="founder-title">Founder, Everix Automation Systems — Toronto, Ontario</p>
+        <p class="founder-body">I started Everix because I kept seeing the same pattern: law firms spending thousands on marketing, generating real inbound interest, and then losing those leads to slow response times and inconsistent follow-up.</p>
+        <p class="founder-body">The problem wasn't the lawyers. It was the infrastructure around intake. Receptionists who go home. Contact forms that get checked once a day. No system for following up with leads who said "maybe later."</p>
+        <p class="founder-body">Everix fixes that — specifically for Canadian law firms, with the compliance and professionalism the legal industry demands. I work with a small number of firms directly, so every system is built right.</p>
+        <p class="founder-sig">— William</p>
       </div>
-
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section id="faq" class="faq-section">
-    <div class="faq-inner">
-      <div class="section-label">FAQ</div>
-      <h2 class="section-title" style="margin-bottom:2.5rem;">Questions? We've got answers.</h2>
-
-      <div class="faq-item">
-        <button class="faq-trigger" aria-expanded="false">
-          <span class="faq-q">Will this replace my receptionist or front desk staff?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-body">
-          <p class="faq-a">No — Everix works <strong>alongside your team</strong>, not instead of them. It handles overflow, after-hours calls, and the leads your team can't get to fast enough. Think of it as a tireless assistant that never sleeps, never takes lunch, and never lets a lead slip through.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-trigger" aria-expanded="false">
-          <span class="faq-q">What if the AI says something wrong to a client?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-body">
-          <p class="faq-a">You <strong>approve all messaging before we go live</strong>. The AI only says what you've approved — your tone, your services, your pricing. We configure every response to match how your business actually operates. And you can update the messaging anytime.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-trigger" aria-expanded="false">
-          <span class="faq-q">How long until I see results?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-body">
-          <p class="faq-a">Most clients see results <strong>in the first week</strong>. Your system goes live in 10–14 business days, and from day one it starts capturing leads and booking appointments. Our 60-day guarantee means if you're not seeing results, you don't pay.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-trigger" aria-expanded="false">
-          <span class="faq-q">Do I need any technical skills?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-body">
-          <p class="faq-a"><strong>Zero.</strong> We handle 100% of the setup, configuration, and ongoing management. You don't need to learn any software, write any code, or change how you work. We plug into your existing calendar, phone number, and website.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-trigger" aria-expanded="false">
-          <span class="faq-q">What happens if I want to cancel?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-body">
-          <p class="faq-a">There's <strong>no long-term contract</strong>. You can cancel at the end of any month. But honestly? Our retention rate is over 95% because the system pays for itself many times over. Once you see your calendar filling up automatically, you won't want to turn it off.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-trigger" aria-expanded="false">
-          <span class="faq-q">How is this different from a chatbot I can buy for $50/month?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-body">
-          <p class="faq-a">Those are tools. <strong>Everix is a system.</strong> A $50 chatbot sits on your website and answers basic questions. Everix responds to leads in under 60 seconds from <em>any</em> source, qualifies them, books appointments directly into your calendar, follows up with no-shows, and reactivates past clients — all automatically, all done for you. We don't hand you software and wish you luck. We build, install, and manage the entire system.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-trigger" aria-expanded="false">
-          <span class="faq-q">Is my data secure?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-body">
-          <p class="faq-a">Yes. All data is <strong>encrypted, stored securely on Canadian/North American servers</strong>, and we comply with Canadian privacy regulations. We never share your client data with anyone.</p>
-        </div>
-      </div>
-
+<!-- ── GUARANTEE ── -->
+<section class="section guarantee" id="guarantee">
+  <div class="container">
+    <div class="guarantee-box fade-in">
+      <div class="guarantee-icon">🛡️</div>
+      <span class="label" style="text-align:center">// our commitment</span>
+      <h2>If it doesn't pay for itself<br>in 60 days, you don't pay.</h2>
+      <p>If the Everix system doesn't generate at least one additional qualified consultation per month in your first 60 days — a consultation that would not have happened without us — we refund your first month. No questions, no friction.</p>
+      <a href="https://calendly.com/everixautomation/intake-audit" class="btn btn-primary" target="_blank" rel="noopener">Book Your Free Audit</a>
+      <p class="guarantee-terms" style="margin-top:16px">Guarantee applies to firms that complete onboarding and maintain an active subscription for 60 days.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- QUIZ TEASER (LEAD MAGNET) -->
-  <div class="quiz-teaser">
-    <div class="quiz-teaser-inner">
-      <div class="quiz-teaser-left">
-        <div class="section-label">Free AI Report</div>
-        <h2>Find out exactly how much revenue your business is leaving on the table.</h2>
-        <p>Answer 8 quick questions. Get a free personalized report showing your biggest AI opportunities — specific to your industry. See your estimated monthly loss, your top 3 AI fixes, and whether you're a good fit for the Everix system.</p>
-        <a href="quiz.html" class="btn-primary">Get My Free AI Report (90 seconds)</a>
-        <div class="quiz-proof">No credit card. No commitment. Just clarity on what you're missing.</div>
+<!-- ── FAQ ── -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="faq-header fade-in">
+      <span class="label">// common questions</span>
+      <h2>Answers to what you're<br>probably already thinking.</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Is this legal? Can AI handle client intake in a law firm?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes. Everix handles administrative intake — collecting contact information, case type, and urgency — not legal advice. The AI clearly identifies itself as an automated intake assistant. This is equivalent to a virtual receptionist or intake form, both of which are widely used and accepted across Canadian law societies. We can provide our compliance documentation on request.</div>
+        </div>
       </div>
-      <div class="quiz-teaser-right">
-        <div class="quiz-preview-item">
-          <div class="qp-icon">📊</div>
-          <div class="qp-text">
-            <strong>Your AI Opportunity Score</strong>
-            A 0–100 score across Lead Capture, Follow-Up, and Operations
-          </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What happens to client data? Is it PIPEDA compliant?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">All prospective client data is collected and stored in compliance with PIPEDA. We use enterprise-grade encryption, do not sell or share data with third parties, and can accommodate Canadian data residency requirements where needed. Full data processing agreements are provided as part of your engagement.</div>
         </div>
-        <div class="quiz-preview-item">
-          <div class="qp-icon">💸</div>
-          <div class="qp-text">
-            <strong>Your Estimated Monthly Loss</strong>
-            Calculated from your actual answers — not a generic guess
-          </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How long does it take to set up?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Most firms are live within 14 days. The process: intake audit call → system build (days 1–10) → review and testing (days 11–13) → go live (day 14). We handle all the technical work. Your team reviews scripts and approves before anything goes live.</div>
         </div>
-        <div class="quiz-preview-item">
-          <div class="qp-icon">🎯</div>
-          <div class="qp-text">
-            <strong>Your Top 3 AI Fixes</strong>
-            Personalized to your industry and biggest bottleneck
-          </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Will this replace our receptionist?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">No — Everix handles intake coverage outside business hours and the immediate first-response layer during the day. Your receptionist focuses on in-person clients, complex scheduling, and tasks that require human judgement. Most firms find their reception staff become more effective, not redundant.</div>
         </div>
-        <div class="quiz-cta-box">
-          <a href="quiz.html" class="btn-primary">Get My Free Report →</a>
-          <div class="quiz-time-note">Under 2 minutes · Instant results · No pitch</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What if the AI doesn't understand our practice area?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">The system is trained on your firm's specific practice areas, intake criteria, and FAQs before going live. It learns what a qualified lead looks like for your specific situation — whether that's a minimum injury threshold for PI, jurisdiction requirements for immigration, or matter type for corporate work. Anything outside its scope is escalated to your team immediately.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What if we want to cancel?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Month-to-month, cancel anytime with 30 days notice. No long-term commitment, no cancellation fee. We're confident you'll stay because the system pays for itself — but we don't lock you in to prove it.</div>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- CTA -->
-  <section id="contact" class="cta-section">
-    <div class="cta-inner">
-
-      <div class="cta-left">
-        <!-- UPDATE MONTH AND SPOTS REMAINING MANUALLY EACH MONTH
-             Format: "Only accepting 5 new clients in [Month] — [X] spots remaining" -->
-        <div class="urgency-badge">🔥 Only accepting 5 new clients in April — 3 spots remaining</div>
-        <div class="section-label">Get Started</div>
-        <h2>Every day without this system, leads are going to your competitors.</h2>
-        <p>Book a free 15-minute AI Blueprint call. We'll show you exactly how many leads you're losing and what the Everix system would look like for your business.</p>
-
-        <a href="https://calendly.com/everixautomation/free-ai-gap-analysis" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;margin-bottom:1.25rem;">Book My Free Blueprint Call →</a>
-
-        <div class="cta-promises">
-          <div class="cta-promise">
-            <span>⚡</span>
-            <span><strong>Free 15-min call</strong> — zero pressure</span>
-          </div>
-          <div class="cta-promise">
-            <span>📊</span>
-            <span><strong>Get your custom AI opportunity breakdown</strong></span>
-          </div>
-          <div class="cta-promise">
-            <span>🛡️</span>
-            <span><strong>60-day money-back guarantee</strong> if you decide to move forward</span>
-          </div>
-        </div>
-        <div class="cta-canada">🇨🇦 &nbsp;Built for Canadian service businesses</div>
-
-        <div class="cta-contact">
-          Or reach us directly &mdash;
-          <a href="mailto:hello@everixautomation.com">hello@everixautomation.com</a>
-          <span class="cta-divider">|</span>
-          <a href="tel:+16476684020">647-668-4020</a>
-        </div>
+<!-- ── FINAL CTA ── -->
+<section class="final-cta" id="contact">
+  <div class="container">
+    <div class="final-cta-inner">
+      <span class="label">// next step</span>
+      <h2 style="color:#fff">Your next case is calling.<br><em style="font-style:italic;color:#6dbf94">Are you picking up?</em></h2>
+      <p>Book a free 60-minute intake audit. We'll show you exactly where your firm is losing leads and what it's worth to fix it. No pitch, no pressure.</p>
+      <div class="final-cta-actions">
+        <a href="https://calendly.com/everixautomation/intake-audit" class="btn btn-primary" target="_blank" rel="noopener">Book Free Intake Audit</a>
+        <a href="mailto:hello@everixautomation.com" class="btn btn-ghost">hello@everixautomation.com</a>
       </div>
-
-      <div class="cta-right">
-        <div class="cta-form-header">
-          <h3>Get Your Free AI Blueprint</h3>
-          <p>We'll reach out within 24 hours to confirm your call.</p>
-          <p class="pricing-anchor">One complete system at <strong>$995/month</strong> + $500 setup — no long-term contracts</p>
-          <p class="pricing-anchor" style="margin-top:0.4rem;">🛡️ <strong style="color:var(--white);">60-day money-back guarantee</strong> — if it's not working, you don't pay.</p>
-        </div>
-        <iframe
-          class="tally-embed"
-          src="https://tally.so/embed/lbLZYp?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-          loading="lazy"
-          title="Book a Free Demo">
-        </iframe>
-      </div>
-
+      <a href="tel:+16476684020" class="final-tel">Or call us directly: 647-668-4020</a>
     </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo">Everix<span>.</span></div>
-    <p>&copy; 2026 Everix Automation Systems. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="mailto:hello@everixautomation.com">Contact</a>
-      <a href="#system">The System</a>
-      <a href="quiz.html">Free Report</a>
-    </div>
-  </footer>
-
-  <!-- MOBILE FLOATING CTA BAR -->
-  <div class="float-cta" id="floatCta">
-    <a href="quiz.html">See how many leads you're losing →</a>
-    <button class="float-cta-dismiss" id="floatDismiss" aria-label="Dismiss">✕</button>
   </div>
+</section>
 
-  <script>
-    // Mobile floating CTA — appears after scrolling past hero
-    (function() {
-      const bar = document.getElementById('floatCta');
-      const dismiss = document.getElementById('floatDismiss');
-      if (!bar) return;
-      let dismissed = false;
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="Everix Automation home">
+          <span class="logo-everix">Everix</span>
+          <span class="logo-auto">Automation</span>
+        </a>
+        <p style="margin-top:12px">AI intake systems for Canadian law firms. PIPEDA-compliant, built to convert, live in 14 days.</p>
+      </div>
 
-      window.addEventListener('scroll', function() {
-        if (dismissed) return;
-        const heroH = document.querySelector('.hero')?.offsetHeight || 500;
-        if (window.scrollY > heroH) {
-          bar.classList.add('visible');
-        } else {
-          bar.classList.remove('visible');
-        }
-      }, { passive: true });
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#system">The Intake System</a></li>
+          <li><a href="#practices">Practice Areas</a></li>
+          <li><a href="#compliance">PIPEDA Compliance</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </div>
 
-      dismiss.addEventListener('click', function() {
-        dismissed = true;
-        bar.classList.add('hidden');
-      });
-    })();
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://calendly.com/everixautomation/intake-audit" target="_blank" rel="noopener">Book Free Audit</a></li>
+          <li><a href="mailto:hello@everixautomation.com">hello@everixautomation.com</a></li>
+          <li><a href="tel:+16476684020">647-668-4020</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
 
-    // FAQ Accordion
-    document.querySelectorAll('.faq-trigger').forEach(trigger => {
-      trigger.addEventListener('click', () => {
-        const item = trigger.closest('.faq-item');
-        const isOpen = item.classList.contains('open');
-        // Close all
-        document.querySelectorAll('.faq-item.open').forEach(el => {
-          el.classList.remove('open');
-          el.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
-        });
-        // Open clicked (unless it was already open)
-        if (!isOpen) {
-          item.classList.add('open');
-          trigger.setAttribute('aria-expanded', 'true');
-        }
-      });
+    <div class="footer-bottom">
+      <p>&copy; 2026 Everix Automation Systems. Toronto, Ontario. All rights reserved.</p>
+      <div class="footer-badges">
+        <span class="badge">PIPEDA</span>
+        <span class="badge">CANADIAN</span>
+        <span class="badge">LAW FIRMS</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── FAQ ACCORDION ──
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = item.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.faq-answer').style.maxHeight = '0';
     });
-  </script>
+
+    // Open clicked if it was closed
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  }
+
+  // ── INTERSECTION OBSERVER FADE-IN ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ── MOBILE NAV ──
+  function toggleMobileMenu() {
+    const links = document.querySelector('.nav-links');
+    if (!links) return;
+    const open = links.style.display === 'flex';
+    links.style.cssText = open
+      ? ''
+      : 'display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:16px 24px;gap:16px;z-index:99;';
+  }
+</script>
 
 </body>
 </html>

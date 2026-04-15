@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Live Demo — The Everix Growth System</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -59,17 +59,28 @@
 
     .nav-logo {
       display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--white);
+      flex-direction: column;
+      line-height: 1;
       text-decoration: none;
     }
 
-    .nav-logo img { width: 32px; height: 32px; object-fit: contain; }
-    .nav-logo span { color: var(--purple); }
+    .nav-logo .logo-everix {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #fff;
+      letter-spacing: -0.3px;
+    }
+
+    .nav-logo .logo-auto {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #6dbf94;
+      margin-top: 1px;
+    }
 
     .nav-right {
       display: flex;
@@ -816,13 +827,13 @@
 
   <!-- NAV -->
   <nav>
-    <a href="index.html" class="nav-logo">
-      <img src="logo.png" alt="Everix" />
-      Everix<span>.</span>
+    <a href="index.html" class="nav-logo" aria-label="Everix Automation home">
+      <span class="logo-everix">Everix</span>
+      <span class="logo-auto">Automation</span>
     </a>
     <div class="nav-right">
       <a href="index.html" class="nav-back">← Back to Home</a>
-      <a href="https://calendly.com/everixautomation/free-ai-gap-analysis" target="_blank" class="nav-book">Book a Call</a>
+      <a href="https://calendly.com/everixautomation/intake-audit" target="_blank" class="nav-book">Book Free Audit</a>
     </div>
   </nav>
 
