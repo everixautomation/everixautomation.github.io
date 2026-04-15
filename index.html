@@ -1448,29 +1448,79 @@
       font-style: italic;
     }
 
-    /* ── FAQ ─────────────────────────────────────────────── */
+    /* ── FAQ ACCORDION ───────────────────────────────────── */
     .faq-section {
       padding: 5rem 6%;
       background: rgba(123,47,247,0.03);
       border-top: 1px solid rgba(123,47,247,0.1);
     }
 
-    .faq-inner { max-width: 750px; margin: 0 auto; }
+    .faq-inner { max-width: 760px; margin: 0 auto; }
 
     .faq-item {
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
     }
+
+    .faq-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.35rem 0;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .faq-trigger:hover .faq-q { color: var(--teal); }
 
     .faq-q {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 1rem;
       font-weight: 600;
       color: var(--white);
-      margin-bottom: 0.6rem;
+      line-height: 1.4;
+      transition: color 0.2s;
     }
 
-    .faq-a { font-size: 0.9rem; color: var(--muted); line-height: 1.75; }
+    .faq-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid rgba(123,47,247,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--purple);
+      font-size: 1.1rem;
+      font-weight: 300;
+      flex-shrink: 0;
+      transition: all 0.25s;
+      line-height: 1;
+    }
+
+    .faq-item.open .faq-icon {
+      background: var(--purple);
+      border-color: var(--purple);
+      color: var(--white);
+      transform: rotate(45deg);
+    }
+
+    .faq-body {
+      display: none;
+      padding: 0 0 1.35rem;
+    }
+
+    .faq-item.open .faq-body { display: block; }
+
+    .faq-a {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
     .faq-a strong { color: var(--white); }
 
     @media (max-width: 768px) {
@@ -1495,6 +1545,7 @@
       <li><a href="#system">The System</a></li>
       <li><a href="demo.html">Live Demo</a></li>
       <li><a href="#why">Why Everix</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="mailto:hello@everixautomation.com" class="nav-contact">647-668-4020</a></li>
       <li><a href="quiz.html" class="nav-cta">Free AI Report</a></li>
     </ul>
@@ -1917,6 +1968,85 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section id="faq" class="faq-section">
+    <div class="faq-inner">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title" style="margin-bottom:2.5rem;">Questions? We've got answers.</h2>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">Will this replace my receptionist or front desk staff?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">No — Everix works <strong>alongside your team</strong>, not instead of them. It handles overflow, after-hours calls, and the leads your team can't get to fast enough. Think of it as a tireless assistant that never sleeps, never takes lunch, and never lets a lead slip through.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">What if the AI says something wrong to a client?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">You <strong>approve all messaging before we go live</strong>. The AI only says what you've approved — your tone, your services, your pricing. We configure every response to match how your business actually operates. And you can update the messaging anytime.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">How long until I see results?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">Most clients see results <strong>in the first week</strong>. Your system goes live in 10–14 business days, and from day one it starts capturing leads and booking appointments. Our 60-day guarantee means if you're not seeing results, you don't pay.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">Do I need any technical skills?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a"><strong>Zero.</strong> We handle 100% of the setup, configuration, and ongoing management. You don't need to learn any software, write any code, or change how you work. We plug into your existing calendar, phone number, and website.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">What happens if I want to cancel?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">There's <strong>no long-term contract</strong>. You can cancel at the end of any month. But honestly? Our retention rate is over 95% because the system pays for itself many times over. Once you see your calendar filling up automatically, you won't want to turn it off.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">How is this different from a chatbot I can buy for $50/month?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">Those are tools. <strong>Everix is a system.</strong> A $50 chatbot sits on your website and answers basic questions. Everix responds to leads in under 60 seconds from <em>any</em> source, qualifies them, books appointments directly into your calendar, follows up with no-shows, and reactivates past clients — all automatically, all done for you. We don't hand you software and wish you luck. We build, install, and manage the entire system.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">Is my data secure?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">Yes. All data is <strong>encrypted, stored securely on Canadian/North American servers</strong>, and we comply with Canadian privacy regulations. We never share your client data with anyone.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- CTA -->
   <section id="contact" class="cta-section">
     <div class="cta-inner">
@@ -1982,6 +2112,26 @@
       <a href="quiz.html">Free Report</a>
     </div>
   </footer>
+
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item.open').forEach(el => {
+          el.classList.remove('open');
+          el.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+        });
+        // Open clicked (unless it was already open)
+        if (!isOpen) {
+          item.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
