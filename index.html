@@ -1649,6 +1649,7 @@
       background: #0B0B0F;
       border-top: 1px solid rgba(212,175,55,0.35);
       padding: 0.85rem 1.25rem;
+      padding-bottom: calc(0.85rem + env(safe-area-inset-bottom));
       align-items: center;
       justify-content: space-between;
       gap: 0.75rem;
@@ -1708,7 +1709,7 @@
       <li><a href="demo.html">Live Demo</a></li>
       <li><a href="#why">Why Everix</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="mailto:hello@everixautomation.com" class="nav-contact">647-668-4020</a></li>
+      <li><a href="tel:+16476684020" class="nav-contact">647-668-4020</a></li>
       <li><a href="quiz.html" class="nav-cta">Free AI Report</a></li>
     </ul>
   </nav>
@@ -1857,17 +1858,6 @@
     </div>
   </section>
 
-  <!-- DREAM OUTCOME -->
-  <section class="dream-section">
-    <div class="dream-inner">
-      <div class="section-label" style="text-align:center;margin-bottom:1.25rem;">What Life Looks Like With Everix</div>
-      <blockquote>
-        Imagine waking up to <em>4 new appointments already booked</em> in your calendar — from leads that came in at 11pm, midnight, and 6am while you were sleeping. No staff overtime. No missed calls. No competitors stealing your clients because you were too slow to respond.
-      </blockquote>
-      <p style="color:var(--muted);font-size:0.95rem;text-align:left;padding-left:1.5rem;">That's not a pitch. That's what happens when your AI front desk never takes a day off.</p>
-    </div>
-  </section>
-
   <!-- COST COMPARISON -->
   <section class="cost-section">
     <div class="cost-inner">
@@ -2009,7 +1999,7 @@
             <div class="vs-price-setup">+ $500 one-time setup fee</div>
             <div class="vs-price-saving">Saves $1,500 vs. doing it yourself</div>
             <div style="margin-top:1rem;">
-              <a href="https://calendly.com/everixautomation/free-ai-gap-analysis" target="_blank" class="btn-primary">Book Your Free AI Blueprint Call</a>
+              <a href="https://calendly.com/everixautomation/free-ai-gap-analysis" target="_blank" rel="noopener" class="btn-primary">Book Your Free AI Blueprint Call</a>
               <div style="font-size:0.75rem;color:var(--muted);margin-top:0.6rem;">15 min · No pitch · No long-term contract</div>
             </div>
           </div>
@@ -2028,46 +2018,6 @@
 
     </div>
   </section>
-
-  <!-- QUIZ TEASER (LEAD MAGNET) -->
-  <div class="quiz-teaser">
-    <div class="quiz-teaser-inner">
-      <div class="quiz-teaser-left">
-        <div class="section-label">Free AI Report</div>
-        <h2>Find out exactly how much revenue your business is leaving on the table.</h2>
-        <p>Answer 8 quick questions. Get a free personalized report showing your biggest AI opportunities — specific to your industry. See your estimated monthly loss, your top 3 AI fixes, and whether you're a good fit for the Everix system.</p>
-        <a href="quiz.html" class="btn-primary">Get My Free AI Report (90 seconds)</a>
-        <div class="quiz-proof">No credit card. No commitment. Just clarity on what you're missing.</div>
-      </div>
-      <div class="quiz-teaser-right">
-        <div class="quiz-preview-item">
-          <div class="qp-icon">📊</div>
-          <div class="qp-text">
-            <strong>Your AI Opportunity Score</strong>
-            A 0–100 score across Lead Capture, Follow-Up, and Operations
-          </div>
-        </div>
-        <div class="quiz-preview-item">
-          <div class="qp-icon">💸</div>
-          <div class="qp-text">
-            <strong>Your Estimated Monthly Loss</strong>
-            Calculated from your actual answers — not a generic guess
-          </div>
-        </div>
-        <div class="quiz-preview-item">
-          <div class="qp-icon">🎯</div>
-          <div class="qp-text">
-            <strong>Your Top 3 AI Fixes</strong>
-            Personalized to your industry and biggest bottleneck
-          </div>
-        </div>
-        <div class="quiz-cta-box">
-          <a href="quiz.html" class="btn-primary">Get My Free Report →</a>
-          <div class="quiz-time-note">Under 2 minutes · Instant results · No pitch</div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- HOW IT WORKS -->
   <section id="how" class="how-section">
@@ -2257,6 +2207,46 @@
     </div>
   </section>
 
+  <!-- QUIZ TEASER (LEAD MAGNET) -->
+  <div class="quiz-teaser">
+    <div class="quiz-teaser-inner">
+      <div class="quiz-teaser-left">
+        <div class="section-label">Free AI Report</div>
+        <h2>Find out exactly how much revenue your business is leaving on the table.</h2>
+        <p>Answer 8 quick questions. Get a free personalized report showing your biggest AI opportunities — specific to your industry. See your estimated monthly loss, your top 3 AI fixes, and whether you're a good fit for the Everix system.</p>
+        <a href="quiz.html" class="btn-primary">Get My Free AI Report (90 seconds)</a>
+        <div class="quiz-proof">No credit card. No commitment. Just clarity on what you're missing.</div>
+      </div>
+      <div class="quiz-teaser-right">
+        <div class="quiz-preview-item">
+          <div class="qp-icon">📊</div>
+          <div class="qp-text">
+            <strong>Your AI Opportunity Score</strong>
+            A 0–100 score across Lead Capture, Follow-Up, and Operations
+          </div>
+        </div>
+        <div class="quiz-preview-item">
+          <div class="qp-icon">💸</div>
+          <div class="qp-text">
+            <strong>Your Estimated Monthly Loss</strong>
+            Calculated from your actual answers — not a generic guess
+          </div>
+        </div>
+        <div class="quiz-preview-item">
+          <div class="qp-icon">🎯</div>
+          <div class="qp-text">
+            <strong>Your Top 3 AI Fixes</strong>
+            Personalized to your industry and biggest bottleneck
+          </div>
+        </div>
+        <div class="quiz-cta-box">
+          <a href="quiz.html" class="btn-primary">Get My Free Report →</a>
+          <div class="quiz-time-note">Under 2 minutes · Instant results · No pitch</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- CTA -->
   <section id="contact" class="cta-section">
     <div class="cta-inner">
@@ -2269,7 +2259,7 @@
         <h2>Every day without this system, leads are going to your competitors.</h2>
         <p>Book a free 15-minute AI Blueprint call. We'll show you exactly how many leads you're losing and what the Everix system would look like for your business.</p>
 
-        <a href="https://calendly.com/everixautomation/free-ai-gap-analysis" target="_blank" class="btn-primary" style="display:inline-block;margin-bottom:1.25rem;">Book My Free Blueprint Call →</a>
+        <a href="https://calendly.com/everixautomation/free-ai-gap-analysis" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;margin-bottom:1.25rem;">Book My Free Blueprint Call →</a>
 
         <div class="cta-promises">
           <div class="cta-promise">
@@ -2291,7 +2281,7 @@
           Or reach us directly &mdash;
           <a href="mailto:hello@everixautomation.com">hello@everixautomation.com</a>
           <span class="cta-divider">|</span>
-          <a href="tel:6476684020">647-668-4020</a>
+          <a href="tel:+16476684020">647-668-4020</a>
         </div>
       </div>
 
