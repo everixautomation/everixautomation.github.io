@@ -1017,6 +1017,175 @@
       .vs-item-value { margin-top: 0.4rem; }
     }
 
+    /* ── SOCIAL PROOF ───────────────────────────────────── */
+    .trust-strip {
+      padding: 2.5rem 6%;
+      background: rgba(20,184,166,0.04);
+      border-top: 1px solid rgba(20,184,166,0.12);
+      border-bottom: 1px solid rgba(20,184,166,0.12);
+    }
+
+    .trust-strip-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-strip-label {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .trust-mini-stats {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-mini-stat { text-align: center; }
+
+    .trust-mini-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--teal);
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+
+    .trust-mini-desc {
+      font-size: 0.75rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .trust-divider {
+      width: 1px;
+      height: 40px;
+      background: rgba(255,255,255,0.08);
+      flex-shrink: 0;
+    }
+
+    /* Testimonials */
+    .testimonials-section {
+      padding: 4rem 6%;
+    }
+
+    .testimonials-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 1.75rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .testimonial-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 1rem; right: 1.5rem;
+      font-size: 4rem;
+      color: rgba(123,47,247,0.15);
+      font-family: Georgia, serif;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .testimonial-quote {
+      font-size: 0.92rem;
+      color: var(--white);
+      line-height: 1.8;
+      font-style: italic;
+      flex: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(123,47,247,0.15);
+      border: 1px solid rgba(123,47,247,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--purple);
+      flex-shrink: 0;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .testimonial-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.1rem;
+    }
+
+    .testimonial-title {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .testimonial-placeholder {
+      background: rgba(255,255,255,0.01);
+      border: 1px dashed rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 0.75rem;
+      min-height: 200px;
+    }
+
+    .testimonial-placeholder p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.2);
+    }
+
+    .testimonial-placeholder .ph-icon {
+      font-size: 1.5rem;
+      opacity: 0.2;
+    }
+
+    @media (max-width: 680px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .trust-strip-inner { flex-direction: column; text-align: center; }
+      .trust-divider { display: none; }
+      .trust-mini-stats { justify-content: center; }
+    }
+
     /* ── INDUSTRY CARDS ─────────────────────────────────── */
     .industry-section {
       padding: 5rem 6%;
@@ -1376,6 +1545,69 @@
       </div>
     </div>
   </div>
+
+  <!-- ============================================================
+       SOCIAL PROOF SECTION
+       TODO: Replace placeholder testimonials with real client
+       testimonials as soon as available. DO NOT launch ads or
+       paid traffic pointing to this page until real testimonials
+       are in place.
+       ============================================================ -->
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="trust-strip-inner">
+      <div class="trust-strip-label">Trusted by service businesses across Ontario</div>
+      <div class="trust-mini-stats">
+        <div class="trust-mini-stat">
+          <div class="trust-mini-number">23+</div>
+          <div class="trust-mini-desc">leads captured in first 14-day pilot</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-mini-stat">
+          <div class="trust-mini-number">&lt;60s</div>
+          <div class="trust-mini-desc">average response time</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-mini-stat">
+          <div class="trust-mini-number">100%</div>
+          <div class="trust-mini-desc">after-hours leads answered</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="testimonials-inner">
+      <div class="section-label">What clients are saying</div>
+      <h2 class="section-title">Real results from real businesses.</h2>
+
+      <div class="testimonials-grid">
+
+        <!-- REPLACE WITH REAL TESTIMONIAL FROM FIRST CLIENT -->
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "We were missing at least 5–6 calls per week after hours. Within the first week of Everix, every single one of those leads got a response. Three of them booked appointments before we even opened the next morning."
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">—</div>
+            <div>
+              <div class="testimonial-name">[Name], [Title]</div>
+              <div class="testimonial-title">[Business Type] · Ontario</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PLACEHOLDER — ADD SECOND TESTIMONIAL WHEN AVAILABLE -->
+        <div class="testimonial-placeholder">
+          <div class="ph-icon">💬</div>
+          <p>Second client testimonial coming soon.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- INDUSTRY SECTION -->
   <section class="industry-section">
