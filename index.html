@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Everix Automation | AI Growth System for Canadian Service Businesses</title>
+  <title>Everix Automation | AI Growth System for Canadian Med Spas, Dental Practices, Legal Firms & Home Services</title>
   <meta name="description" content="Never miss another lead. Everix installs a done-for-you AI system that responds in under 60 seconds, qualifies leads, and books appointments 24/7. Built for Canadian med spas, dental practices, and service businesses." />
   <meta property="og:title" content="Everix Automation | AI Growth System for Canadian Service Businesses" />
   <meta property="og:description" content="Never miss another lead. AI that responds in under 60 seconds, qualifies leads, and books appointments 24/7. Built for Canadian med spas, dental practices, and service businesses." />
@@ -1017,6 +1017,73 @@
       .vs-item-value { margin-top: 0.4rem; }
     }
 
+    /* ── INDUSTRY CARDS ─────────────────────────────────── */
+    .industry-section {
+      padding: 5rem 6%;
+      background: rgba(123,47,247,0.03);
+      border-top: 1px solid rgba(123,47,247,0.1);
+      border-bottom: 1px solid rgba(123,47,247,0.1);
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      max-width: 1000px;
+      margin: 2.5rem auto 0;
+    }
+
+    .industry-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 1.75rem;
+      transition: border-color 0.25s, transform 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .industry-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--purple), var(--teal));
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .industry-card:hover {
+      border-color: rgba(123,47,247,0.4);
+      transform: translateY(-3px);
+    }
+
+    .industry-card:hover::before { opacity: 1; }
+
+    .industry-icon {
+      font-size: 2rem;
+      margin-bottom: 0.9rem;
+      display: block;
+    }
+
+    .industry-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.65rem;
+      letter-spacing: -0.01em;
+    }
+
+    .industry-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 680px) {
+      .industry-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── DREAM OUTCOME ───────────────────────────────────── */
     .dream-section {
       padding: 5rem 6%;
@@ -1270,7 +1337,7 @@
     <div class="hero-bg-overlay"></div>
     <div class="badge">
       <span class="badge-dot"></span>
-      Now serving Canadian businesses
+      Med Spas · Dental · Legal · Home Services
     </div>
     <h1>
       Every lead you don't respond to in<br />
@@ -1309,6 +1376,41 @@
       </div>
     </div>
   </div>
+
+  <!-- INDUSTRY SECTION -->
+  <section class="industry-section">
+    <div style="text-align:center;">
+      <div class="section-label">Built for businesses like yours</div>
+      <h2 class="section-title" style="max-width:600px;margin:0.5rem auto 0;">AI Growth System for Canadian Med Spas, Dental Practices, Legal Firms &amp; Home Service Businesses</h2>
+    </div>
+    <div class="industry-grid">
+
+      <div class="industry-card">
+        <span class="industry-icon">💉</span>
+        <h3>Med Spas &amp; Aesthetic Clinics</h3>
+        <p>Capture Instagram DMs and website inquiries at 11pm. Book Botox appointments while you sleep. Collect Google reviews after every visit — automatically.</p>
+      </div>
+
+      <div class="industry-card">
+        <span class="industry-icon">🦷</span>
+        <h3>Dental &amp; Healthcare Practices</h3>
+        <p>Answer patient calls after hours. Automate appointment reminders and no-show follow-ups. Reactivate patients overdue for their 6-month checkup.</p>
+      </div>
+
+      <div class="industry-card">
+        <span class="industry-icon">⚖️</span>
+        <h3>Legal Firms</h3>
+        <p>Never lose a potential client to voicemail again. Qualify case inquiries 24/7 and book consultations automatically. Every missed call is a $5,000+ case walking away.</p>
+      </div>
+
+      <div class="industry-card">
+        <span class="industry-icon">🔧</span>
+        <h3>Home Services &amp; Trades</h3>
+        <p>First to respond gets the job — period. Our AI contacts new leads in under 60 seconds via SMS, qualifies the job, and books an estimate. Works for HVAC, plumbing, roofing, electrical, and more.</p>
+      </div>
+
+    </div>
+  </section>
 
   <!-- DREAM OUTCOME -->
   <section class="dream-section">
