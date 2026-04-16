@@ -867,31 +867,26 @@
     </div>
     <div class="pain-grid">
       <div class="pain-card fade-in">
-        <div class="pain-icon">📞</div>
         <h3>After-hours calls go to voicemail</h3>
         <p>75% of clients who leave a voicemail never call back. They move on to the next firm in search results within minutes.</p>
         <div class="pain-cost">// estimated cost: 4–6 cases/month</div>
       </div>
       <div class="pain-card fade-in" style="transition-delay:0.07s">
-        <div class="pain-icon">🐌</div>
         <h3>Slow follow-up kills conversions</h3>
         <p>Firms that respond within 5 minutes are 9× more likely to convert. Most law firms take hours — or days.</p>
         <div class="pain-cost">// estimated cost: 30–50% of warm leads</div>
       </div>
       <div class="pain-card fade-in" style="transition-delay:0.14s">
-        <div class="pain-icon">🤷</div>
         <h3>Reception books without qualifying</h3>
         <p>Every unqualified consultation costs 90 minutes. Without intake screening, senior lawyers sit in meetings with non-viable prospects.</p>
         <div class="pain-cost">// estimated cost: 8–12 hours/week wasted</div>
       </div>
       <div class="pain-card fade-in" style="transition-delay:0.21s">
-        <div class="pain-icon">🔁</div>
         <h3>No system for unconverted leads</h3>
         <p>Prospects who say "I need to think about it" are rarely followed up systematically. They fall through the cracks and hire someone else.</p>
         <div class="pain-cost">// estimated cost: 20–40% of pipeline</div>
       </div>
       <div class="pain-card fade-in" style="transition-delay:0.28s">
-        <div class="pain-icon">💸</div>
         <h3>You're paying for leads you can't capture</h3>
         <p>Law firms spend thousands monthly on Google Ads and SEO. Without fast intake, that spend generates inquiries that vanish before anyone calls back.</p>
         <div class="pain-cost">// estimated cost: 40–60% of ad spend wasted</div>
@@ -935,7 +930,7 @@
             <label>New inquiries your firm receives per day</label>
             <span class="calc-val" id="disp-inq">15</span>
           </div>
-          <input type="range" min="1" max="50" value="15" id="sl-inq" oninput="calcSync('disp-inq', this.value, '')">
+          <input type="range" min="1" max="50" value="15" id="sl-inq" oninput="calcSync('disp-inq', this.value, '', this)">
           <div class="calc-range-ends"><span>1</span><span>50+</span></div>
           <p class="calc-field-hint">Include phone calls, web forms, emails, and social media DMs</p>
         </div>
@@ -946,7 +941,7 @@
             <label>% of inquiries your team responds to within 5 minutes</label>
             <span class="calc-val" id="disp-resp">40%</span>
           </div>
-          <input type="range" min="0" max="100" step="5" value="40" id="sl-resp" oninput="calcSync('disp-resp', this.value, '%')">
+          <input type="range" min="0" max="100" step="5" value="40" id="sl-resp" oninput="calcSync('disp-resp', this.value, '%', this)">
           <div class="calc-range-ends"><span>0%</span><span>100%</span></div>
           <p class="calc-field-hint">Industry average: 35–50% · Top-performing firms: 80%+</p>
         </div>
@@ -957,7 +952,7 @@
             <label>Your consultation-to-retainer conversion rate</label>
             <span class="calc-val" id="disp-conv">25%</span>
           </div>
-          <input type="range" min="5" max="80" step="5" value="25" id="sl-conv" oninput="calcSync('disp-conv', this.value, '%')">
+          <input type="range" min="5" max="80" step="5" value="25" id="sl-conv" oninput="calcSync('disp-conv', this.value, '%', this)">
           <div class="calc-range-ends"><span>5%</span><span>80%</span></div>
           <p class="calc-field-hint">Legal industry average: 20–35%</p>
         </div>
@@ -1033,32 +1028,26 @@
     </div>
     <div class="practice-grid">
       <div class="practice-card fade-in">
-        <div class="practice-icon">⚖️</div>
         <h3>Personal Injury</h3>
         <p>Statute of limitations pressure and high case values make every missed call a major loss. Our system captures and qualifies PI leads around the clock.</p>
       </div>
       <div class="practice-card fade-in" style="transition-delay:0.07s">
-        <div class="practice-icon">👨‍👩‍👧</div>
         <h3>Family Law</h3>
         <p>Clients in crisis call at all hours. Everix responds immediately, gathers key details, and routes urgent situations appropriately — with compassion.</p>
       </div>
       <div class="practice-card fade-in" style="transition-delay:0.14s">
-        <div class="practice-icon">🏢</div>
         <h3>Real Estate Law</h3>
         <p>Time-sensitive closings and deal flow require instant intake. We ensure no buyer, seller, or referral goes unanswered.</p>
       </div>
       <div class="practice-card fade-in" style="transition-delay:0.21s">
-        <div class="practice-icon">🌍</div>
         <h3>Immigration Law</h3>
         <p>Clients span time zones and urgency varies. Our system handles intake and follow-up regardless of when leads come in.</p>
       </div>
       <div class="practice-card fade-in" style="transition-delay:0.28s">
-        <div class="practice-icon">💼</div>
         <h3>Corporate & Commercial</h3>
         <p>Referrals and executive-level contacts expect immediate professionalism. Our intake reflects the quality of your firm from the first interaction.</p>
       </div>
       <div class="practice-card fade-in" style="transition-delay:0.35s">
-        <div class="practice-icon">⚡</div>
         <h3>Criminal Defence</h3>
         <p>Time is everything in criminal matters. Everix captures urgent calls, gathers initial information, and ensures the right lawyer is alerted immediately.</p>
       </div>
@@ -1145,22 +1134,18 @@
     </div>
     <div class="compliance-grid">
       <div class="compliance-card fade-in">
-        <div class="compliance-icon">🔒</div>
         <h3>PIPEDA-Compliant Data Handling</h3>
         <p>All prospective client data is collected, stored, and processed in accordance with Canada's Personal Information Protection and Electronic Documents Act.</p>
       </div>
       <div class="compliance-card fade-in" style="transition-delay:0.1s">
-        <div class="compliance-icon">🇨🇦</div>
         <h3>Canadian Data Residency</h3>
         <p>Where required, data can be stored on Canadian servers. We work with your firm's IT and compliance team to meet your jurisdiction's requirements.</p>
       </div>
       <div class="compliance-card fade-in" style="transition-delay:0.2s">
-        <div class="compliance-icon">📋</div>
         <h3>Conflict Check Integration</h3>
         <p>Our intake flow collects the information your team needs to run a conflict check before a consultation is confirmed.</p>
       </div>
       <div class="compliance-card fade-in" style="transition-delay:0.3s">
-        <div class="compliance-icon">🛡️</div>
         <h3>Privilege-Aware Design</h3>
         <p>Everix does not provide legal advice or opinions. The AI clearly identifies itself as an automated intake assistant at all times.</p>
       </div>
@@ -1229,7 +1214,6 @@
 <section class="section section-alt" id="guarantee">
   <div class="container">
     <div class="guarantee-box fade-in">
-      <div class="guarantee-icon">🛡️</div>
       <span class="label" style="display:block;margin-bottom:14px">Our commitment</span>
       <h2>If it doesn't pay for itself<br>in 60 days, you don't pay.</h2>
       <p>If the Everix system doesn't generate at least one additional qualified consultation per month in your first 60 days — a consultation that would not have happened without us — we refund your first month. No questions, no friction.</p>
@@ -1362,14 +1346,30 @@
 
 <script>
   // ── CALCULATOR ──
-  function calcSync(dispId, val, suffix) {
+  function updateSliderTrack(el) {
+    const min = +el.min || 0;
+    const max = +el.max || 100;
+    const pct = ((+el.value - min) / (max - min)) * 100;
+    el.style.background = `linear-gradient(to right, #2D6A4F ${pct}%, #E0DED8 ${pct}%)`;
+  }
+
+  function calcSync(dispId, val, suffix, el) {
     document.getElementById(dispId).textContent = val + suffix;
+    if (el) updateSliderTrack(el);
   }
 
   function calcAreaChange() {
     const sel = document.getElementById('calc-area');
     document.getElementById('inp-case').value = sel.value;
   }
+
+  // Initialise slider tracks on load
+  document.addEventListener('DOMContentLoaded', function() {
+    ['sl-inq', 'sl-resp', 'sl-conv'].forEach(function(id) {
+      const el = document.getElementById(id);
+      if (el) updateSliderTrack(el);
+    });
+  });
 
   function calcRun() {
     const inqPerDay   = +document.getElementById('sl-inq').value;

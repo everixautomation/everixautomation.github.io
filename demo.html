@@ -878,7 +878,7 @@
 
     <!-- ── STEP 1: SPEED-TO-LEAD ── -->
     <div class="demo-section s1" id="section-stl">
-      <span class="section-tag">⚡ Component 1</span>
+      <span class="section-tag">Component 1</span>
       <h2>Speed-to-Lead</h2>
       <p class="sec-sub">
         Enter your name and phone number below. The moment you hit the button, our system sends you a real SMS — exactly like it does for your clients' leads. Watch how fast it fires.
@@ -886,12 +886,20 @@
 
       <div class="stl-form">
         <input type="text" class="demo-input" id="stl-name" placeholder="Your first name" />
-        <input type="text" class="demo-input" id="stl-biz" placeholder="Business type (e.g. HVAC)" />
+        <select class="demo-input" id="stl-practice">
+          <option value="Personal Injury">Personal Injury</option>
+          <option value="Family Law">Family Law</option>
+          <option value="Real Estate Law">Real Estate Law</option>
+          <option value="Criminal Defence">Criminal Defence</option>
+          <option value="Corporate &amp; Commercial">Corporate &amp; Commercial</option>
+          <option value="Wills &amp; Estates">Wills &amp; Estates</option>
+          <option value="Immigration Law">Immigration Law</option>
+        </select>
       </div>
       <div class="stl-row2">
         <input type="tel" class="demo-input" id="stl-phone" placeholder="Your phone number (+1 xxx-xxx-xxxx)" />
         <button class="btn-demo" id="stl-btn" onclick="fireSpeedToLead()">
-          <span>⚡</span> Fire Speed-to-Lead
+          Fire Speed-to-Lead
         </button>
       </div>
 
@@ -904,23 +912,20 @@
       </div>
 
       <div class="status-box sending" id="stl-sending">
-        <span class="status-icon">📡</span>
         <div class="status-body">
           <strong>Sending your lead to the system…</strong>
-          AI is processing and preparing your response now.
+          Processing and preparing your response now.
         </div>
       </div>
 
       <div class="status-box success" id="stl-success" style="display:none;">
-        <span class="status-icon">✅</span>
         <div class="status-body">
-          <strong>SMS sent! Check your phone.</strong>
+          <strong>SMS sent. Check your phone.</strong>
           Your lead was captured and responded to automatically — no human involved.
         </div>
       </div>
 
       <div class="status-box error" id="stl-error" style="display:none;">
-        <span class="status-icon">⚠️</span>
         <div class="status-body">
           <strong>Demo SMS unavailable right now.</strong>
           See the simulated version below to understand how it works.
@@ -962,14 +967,14 @@
 
     <!-- ── STEP 2: AI RECEPTIONIST ── -->
     <div class="demo-section s2" id="section-rec">
-      <span class="section-tag">📞 Component 2</span>
+      <span class="section-tag">Component 2</span>
       <h2>AI Receptionist</h2>
       <p class="sec-sub">
         Your AI receptionist answers every call 24/7, qualifies leads, answers FAQs, and books appointments — all without a human picking up the phone. Call the demo number below and talk to it live.
       </p>
 
       <div class="receptionist-card">
-        <div class="rec-avatar">🤖</div>
+        <div class="rec-avatar">AI</div>
         <div class="rec-name">Everix AI Receptionist</div>
         <div class="rec-title">Available 24/7 — fully configured for your business</div>
         <div class="rec-status" style="margin-bottom:1.25rem;">Handles calls, FAQs, and appointment booking in real-time</div>
@@ -1026,7 +1031,7 @@
 
     <!-- ── STEP 3: SMS BOOKING ── -->
     <div class="demo-section s3" id="section-book">
-      <span class="section-tag">💬 Component 3</span>
+      <span class="section-tag">Component 3</span>
       <h2>SMS Booking Agent</h2>
       <p class="sec-sub">
         Qualified leads get booked through a simple text conversation. No app download. No login. No portal. The client books, reschedules, or cancels — all via SMS. Here's a real example flow:
@@ -1035,7 +1040,7 @@
       <div class="booking-flow">
 
         <div class="booking-msg left">
-          <div class="bm-avatar ai">🤖</div>
+          <div class="bm-avatar ai">AI</div>
           <div>
             <div class="bm-bubble">Hi Sarah! This is the Everix booking assistant. You requested an appointment — I have Wednesday Oct 15 at 10:00am available. Does that work for you? Reply YES to confirm or NO to see other times.</div>
             <div class="bm-time">Everix AI · 10:42am</div>
@@ -1043,7 +1048,7 @@
         </div>
 
         <div class="booking-msg right">
-          <div class="bm-avatar client">👤</div>
+          <div class="bm-avatar client">S</div>
           <div>
             <div class="bm-bubble">YES</div>
             <div class="bm-time">10:43am</div>
@@ -1051,7 +1056,7 @@
         </div>
 
         <div class="booking-msg left">
-          <div class="bm-avatar ai">🤖</div>
+          <div class="bm-avatar ai">AI</div>
           <div>
             <div class="bm-bubble">Perfect! You're confirmed for Wednesday Oct 15 at 10:00am. I'll send you a reminder 24 hours before. Reply CHANGE if you ever need to reschedule. See you then!</div>
             <div class="bm-time">Everix AI · 10:43am</div>
@@ -1059,7 +1064,6 @@
         </div>
 
         <div class="booking-confirmed">
-          <div class="booking-confirmed-icon">✅</div>
           <div class="booking-confirmed-text">
             <strong>Appointment booked — automatically added to calendar</strong>
             <span>No human involved. Sarah goes from lead to confirmed booking in under 2 minutes. Reminder SMS fires automatically 24 hours before.</span>
@@ -1067,7 +1071,7 @@
         </div>
 
         <div class="booking-msg left" style="margin-top:0.5rem;">
-          <div class="bm-avatar ai">🤖</div>
+          <div class="bm-avatar ai">AI</div>
           <div>
             <div class="bm-bubble">Hi Sarah! Just a reminder: your appointment is tomorrow, Wednesday Oct 15 at 10:00am. Reply CONFIRM to let us know you're good, or CHANGE if you need to reschedule.</div>
             <div class="bm-time">Everix AI · Day before · 10:00am</div>
@@ -1075,9 +1079,9 @@
         </div>
 
         <div class="booking-msg right">
-          <div class="bm-avatar client">👤</div>
+          <div class="bm-avatar client">S</div>
           <div>
-            <div class="bm-bubble">CONFIRM 👍</div>
+            <div class="bm-bubble">CONFIRM</div>
             <div class="bm-time">10:15am</div>
           </div>
         </div>
@@ -1089,7 +1093,7 @@
     <div class="bottom-cta">
       <h3>Ready to install this in your business?</h3>
       <p>Book a free 15-minute AI Gap Analysis. We'll show you exactly what this system would look like for your specific business — and give you a real ROI estimate before you commit to anything.</p>
-      <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" target="_blank" class="btn-cta-main">Book My Free AI Gap Analysis →</a>
+      <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" target="_blank" class="btn-cta-main">Book Your Free Lost Lead Analysis →</a>
       <div class="cta-meta">15 minutes · No pitch · No pressure · 60-day money-back guarantee · Starts at $995/month</div>
       <div class="cta-contact">
         Or call/text us: <a href="tel:16476684020">647-668-4020</a> · <a href="mailto:hello@everixautomation.com">hello@everixautomation.com</a>
@@ -1110,7 +1114,8 @@
     async function fireSpeedToLead() {
       const name  = document.getElementById('stl-name').value.trim();
       const phone = document.getElementById('stl-phone').value.trim();
-      const biz   = document.getElementById('stl-biz').value.trim() || 'your service';
+      const practiceEl = document.getElementById('stl-practice');
+      const biz = practiceEl.options[practiceEl.selectedIndex].text || 'your legal matter';
 
       if (!name || !phone) {
         alert('Please enter your name and phone number to try the live demo.');
@@ -1124,7 +1129,7 @@
       // Disable button
       const btn = document.getElementById('stl-btn');
       btn.disabled = true;
-      btn.innerHTML = '<span>📡</span> Sending…';
+      btn.innerHTML = 'Sending…';
 
       // Show timer
       const timerEl = document.getElementById('stl-timer');
@@ -1205,7 +1210,7 @@
       // Reset button
       const btn = document.getElementById('stl-btn');
       btn.disabled = false;
-      btn.innerHTML = '<span>✓</span> SMS Sent';
+      btn.innerHTML = 'SMS Sent';
       btn.style.background = '#E8F2EC';
       btn.style.border = '1.5px solid rgba(45,106,79,0.35)';
       btn.style.color = '#2D6A4F';
@@ -1223,7 +1228,7 @@
 
       const btn = document.getElementById('stl-btn');
       btn.disabled = false;
-      btn.innerHTML = '<span>⚡</span> Try Again';
+      btn.innerHTML = 'Try Again';
     }
 
     function showStatus(id) {
