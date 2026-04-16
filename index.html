@@ -239,17 +239,20 @@
     }
 
     /* ── PAIN ── */
-    .pain-header { margin-bottom: 56px; }
+    .pain-header { margin-bottom: 56px; text-align: center; }
     .pain-header .label { display: block; margin-bottom: 14px; }
-    .pain-header h2 { max-width: 560px; }
-    .pain-header p { font-size: 17px; color: var(--text-muted); margin-top: 14px; max-width: 500px; }
+    .pain-header h2 { max-width: 680px; margin-left: auto; margin-right: auto; }
+    .pain-header p { font-size: 17px; color: var(--text-muted); margin-top: 14px; max-width: 500px; margin-left: auto; margin-right: auto; }
 
     .pain-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 16px;
     }
     .pain-card {
+      flex: 1 1 290px;
+      max-width: 360px;
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 10px;
@@ -560,6 +563,202 @@
       color: rgba(255,255,255,0.25);
     }
 
+    /* ── CALCULATOR ── */
+    .calc-header { text-align: center; margin-bottom: 48px; }
+    .calc-header .label { display: block; margin-bottom: 14px; }
+    .calc-header p { font-size: 17px; color: var(--text-muted); margin-top: 14px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    .calc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      max-width: 720px;
+      margin: 0 auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+
+    .calc-inputs { padding: 40px; }
+    .calc-field { margin-bottom: 28px; }
+    .calc-field:last-child { margin-bottom: 0; }
+    .calc-field-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 10px;
+    }
+    .calc-field-top label { font-size: 14px; font-weight: 500; color: var(--text); }
+    .calc-field-hint { font-size: 11px; color: var(--text-muted); margin-top: 5px; font-style: italic; }
+    .calc-val { font-family: var(--mono); font-size: 14px; color: var(--green); font-weight: 600; }
+
+    select.calc-select {
+      width: 100%;
+      font-family: var(--sans);
+      font-size: 14px;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b65' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      outline: none;
+      cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--green);
+      cursor: pointer;
+      border: 2px solid #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+    }
+    input[type="range"]::-moz-range-thumb {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--green);
+      cursor: pointer;
+      border: 2px solid #fff;
+    }
+    .calc-range-ends {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-family: var(--mono);
+      margin-top: 5px;
+    }
+    .calc-currency-wrap { position: relative; }
+    .calc-currency-wrap span {
+      position: absolute;
+      left: 14px; top: 50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    input.calc-number {
+      width: 100%;
+      font-family: var(--sans);
+      font-size: 14px;
+      padding: 12px 14px 12px 28px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+    }
+    input.calc-number:focus { outline: none; border-color: var(--green); }
+
+    .calc-submit {
+      width: 100%;
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 600;
+      background: var(--btn-dark);
+      color: #fff;
+      padding: 16px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.18s;
+      margin-top: 32px;
+    }
+    .calc-submit:hover { background: var(--green); }
+
+    .calc-results {
+      display: none;
+      animation: fadeUp 0.4s ease;
+    }
+    .calc-results.show { display: block; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+    .calc-results-inner {
+      margin-top: 20px;
+      background: var(--btn-dark);
+      color: #f5f4f0;
+      border-radius: 12px;
+      padding: 36px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .calc-res-kicker {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+    .calc-res-headline { font-size: 20px; font-weight: 700; margin-bottom: 24px; color: #f5f4f0; }
+
+    .calc-top-nums {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: #2a2a28;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+    .calc-top-cell { background: var(--btn-dark); padding: 20px 16px; text-align: center; }
+    .calc-top-label { font-family: var(--sans); font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .calc-top-num { font-family: var(--sans); font-size: 28px; font-weight: 700; color: #ff6b6b; }
+
+    .calc-breakdown {
+      background: #0d0d0c;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 18px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: #888;
+      line-height: 2;
+    }
+    .calc-breakdown .loss-line { color: #ff6b6b; font-weight: 600; border-top: 1px solid #2a2a28; margin-top: 6px; padding-top: 6px; }
+
+    .calc-recovery {
+      background: rgba(45,106,79,0.15);
+      border: 1px solid rgba(45,106,79,0.3);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .calc-recovery-label { font-family: var(--sans); font-size: 10px; color: var(--green); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .calc-recovery-num { font-family: var(--sans); font-size: 26px; font-weight: 700; color: #4ade80; margin-bottom: 8px; }
+    .calc-recovery p { font-size: 13px; color: #ccc; line-height: 1.6; margin: 0; }
+    .calc-recovery strong { color: #4ade80; }
+
+    .calc-cta-box {
+      background: #f5f4f0;
+      color: var(--text);
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+    }
+    .calc-cta-box h3 { font-size: 18px; margin-bottom: 8px; color: var(--text); }
+    .calc-cta-box p { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.6; }
+    .calc-disclaimer { font-size: 10px; color: #555; margin-top: 16px; text-align: center; font-style: italic; }
+
+    @media (max-width: 640px) {
+      .calc-inputs { padding: 24px; }
+      .calc-results-inner { padding: 24px; }
+      .calc-top-nums { grid-template-columns: 1fr; }
+    }
+
     /* ── FADE IN ── */
     .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
     .fade-in.visible { opacity: 1; transform: none; }
@@ -605,7 +804,7 @@
       <li><a href="#results">Results</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
-    <a href="https://calendly.com/everixautomation/intake-audit" class="btn btn-dark" target="_blank" rel="noopener">Book a Call</a>
+    <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-dark" target="_blank" rel="noopener">Book Free Analysis</a>
     <button class="nav-mobile-toggle" aria-label="Menu" onclick="toggleNav()">
       <span></span><span></span><span></span>
     </button>
@@ -621,11 +820,11 @@
     <h1 class="fade-in" style="transition-delay:0.05s">Every call your firm misses is a case your competitor takes.</h1>
     <p class="hero-sub fade-in" style="transition-delay:0.1s">Everix installs a PIPEDA-compliant AI intake system that responds to every inquiry in under 60 seconds, qualifies leads, and books consultations — 24/7, even when your team is in court.</p>
     <div class="hero-actions fade-in" style="transition-delay:0.15s">
-      <a href="https://calendly.com/everixautomation/intake-audit" class="btn btn-dark" target="_blank" rel="noopener">See What You're Losing — Free</a>
+      <a href="#calculator" class="btn btn-dark">See What You're Losing — Free</a>
       <a href="#system" class="btn btn-outline">How It Works</a>
     </div>
     <p class="hero-fine fade-in" style="transition-delay:0.2s">
-      Free intake audit <span>·</span> No commitment <span>·</span> Takes 15 minutes
+      Free lost lead analysis <span>·</span> No commitment <span>·</span> Takes 15 minutes
     </p>
   </div>
 </section>
@@ -663,7 +862,7 @@
   <div class="container">
     <div class="pain-header fade-in">
       <span class="label">The real cost of missed intake</span>
-      <h2>Your firm is bleeding cases<br>and doesn't know it.</h2>
+      <h2>Your firm is bleeding cases and doesn't know it.</h2>
       <p>These aren't process problems. They're revenue problems.</p>
     </div>
     <div class="pain-grid">
@@ -698,6 +897,129 @@
         <div class="pain-cost">// estimated cost: 40–60% of ad spend wasted</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ── LOST LEAD CALCULATOR ── -->
+<section class="section section-alt" id="calculator">
+  <div class="container">
+    <div class="calc-header fade-in">
+      <span class="label">Lost lead calculator</span>
+      <h2>How much is your firm losing to missed inquiries?</h2>
+      <p>Answer 4 quick questions. See exactly what your current intake process is costing you — in real dollars, based on your practice area.</p>
+    </div>
+
+    <div class="calc-card fade-in">
+      <div class="calc-inputs">
+
+        <!-- Practice Area -->
+        <div class="calc-field">
+          <div class="calc-field-top">
+            <label>Your primary practice area</label>
+          </div>
+          <select class="calc-select" id="calc-area" onchange="calcAreaChange()">
+            <option value="4500">Family Law (divorce, custody, support)</option>
+            <option value="15000">Personal Injury</option>
+            <option value="2200">Real Estate Law (purchases, sales)</option>
+            <option value="3500" selected>Immigration Law</option>
+            <option value="5000">Criminal Defence</option>
+            <option value="1500">Wills &amp; Estates</option>
+            <option value="6000">Corporate / Commercial</option>
+            <option value="8000">Civil Litigation</option>
+          </select>
+        </div>
+
+        <!-- Inquiries per day -->
+        <div class="calc-field">
+          <div class="calc-field-top">
+            <label>New inquiries your firm receives per day</label>
+            <span class="calc-val" id="disp-inq">15</span>
+          </div>
+          <input type="range" min="1" max="50" value="15" id="sl-inq" oninput="calcSync('disp-inq', this.value, '')">
+          <div class="calc-range-ends"><span>1</span><span>50+</span></div>
+          <p class="calc-field-hint">Include phone calls, web forms, emails, and social media DMs</p>
+        </div>
+
+        <!-- Response rate -->
+        <div class="calc-field">
+          <div class="calc-field-top">
+            <label>% of inquiries your team responds to within 5 minutes</label>
+            <span class="calc-val" id="disp-resp">40%</span>
+          </div>
+          <input type="range" min="0" max="100" step="5" value="40" id="sl-resp" oninput="calcSync('disp-resp', this.value, '%')">
+          <div class="calc-range-ends"><span>0%</span><span>100%</span></div>
+          <p class="calc-field-hint">Industry average: 35–50% · Top-performing firms: 80%+</p>
+        </div>
+
+        <!-- Conversion rate -->
+        <div class="calc-field">
+          <div class="calc-field-top">
+            <label>Your consultation-to-retainer conversion rate</label>
+            <span class="calc-val" id="disp-conv">25%</span>
+          </div>
+          <input type="range" min="5" max="80" step="5" value="25" id="sl-conv" oninput="calcSync('disp-conv', this.value, '%')">
+          <div class="calc-range-ends"><span>5%</span><span>80%</span></div>
+          <p class="calc-field-hint">Legal industry average: 20–35%</p>
+        </div>
+
+        <!-- Avg case value -->
+        <div class="calc-field">
+          <div class="calc-field-top">
+            <label>Average revenue per retained client</label>
+          </div>
+          <div class="calc-currency-wrap">
+            <span>$</span>
+            <input type="number" class="calc-number" id="inp-case" value="3500" min="500" step="100">
+          </div>
+          <p class="calc-field-hint">Pre-filled based on your practice area — adjust if yours differs</p>
+        </div>
+
+        <button class="calc-submit" onclick="calcRun()">See What You're Losing →</button>
+      </div>
+    </div>
+
+    <!-- RESULTS (hidden until button clicked) -->
+    <div class="calc-results" id="calc-results">
+      <div class="calc-results-inner">
+        <div class="calc-res-kicker">Your Results</div>
+        <h3 class="calc-res-headline">Here's what your current intake process is actually costing you.</h3>
+
+        <div class="calc-top-nums">
+          <div class="calc-top-cell">
+            <div class="calc-top-label">Lost per month</div>
+            <div class="calc-top-num" id="res-monthly">—</div>
+          </div>
+          <div class="calc-top-cell">
+            <div class="calc-top-label">Lost per year</div>
+            <div class="calc-top-num" id="res-annual">—</div>
+          </div>
+        </div>
+
+        <div class="calc-breakdown" id="res-breakdown">
+          <div>Inquiries per month.............<span id="rb-inq">—</span></div>
+          <div>Inquiries your team misses.......<span id="rb-missed">—</span></div>
+          <div>Lost cases per month.............<span id="rb-cases">—</span></div>
+          <div>Value per lost case..............<span id="rb-val">—</span></div>
+          <div class="loss-line">Total monthly loss...............<span id="rb-total">—</span></div>
+        </div>
+
+        <div class="calc-recovery">
+          <div class="calc-recovery-label">What Everix could recover</div>
+          <div class="calc-recovery-num" id="res-recover">—</div>
+          <p>Clients typically recover 80–90% of missed lead value after installing Everix. For $995/month, you'd see a <strong id="res-roi">—</strong> return in month one.</p>
+        </div>
+
+        <div class="calc-cta-box">
+          <h3 id="res-cta-head">Want to stop losing this every month?</h3>
+          <p>Book a free 15-minute call. We'll walk through your firm's specific situation and show you exactly what the Everix system would look like for your practice. No pitch, no pressure.</p>
+          <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-green" target="_blank" rel="noopener">Book Your Free Lost Lead Analysis →</a>
+          <p style="font-size:11px;color:var(--text-muted);margin-top:12px">15 minutes · No commitment · 60-day guarantee if you move forward</p>
+        </div>
+
+        <p class="calc-disclaimer">Estimates based on the numbers you provided. Actual results vary. Calculation assumes average industry response patterns and conversion rates.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -807,7 +1129,7 @@
         <div class="pricing-feature">Onboarding in 14 days</div>
         <div class="pricing-feature">Ongoing support & tuning</div>
       </div>
-      <a href="https://calendly.com/everixautomation/intake-audit" class="btn btn-green" target="_blank" rel="noopener">Book Your Free Audit</a>
+      <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-green" target="_blank" rel="noopener">Book Your Free Lost Lead Analysis</a>
       <p class="pricing-note">One recovered case per month typically covers 8–10× the cost.</p>
     </div>
   </div>
@@ -857,7 +1179,7 @@
     <div class="process-grid">
       <div class="process-step fade-in">
         <div class="process-num">1</div>
-        <h3>Free Intake Audit</h3>
+        <h3>Free Lost Lead Analysis</h3>
         <p>We analyze your current intake flow, identify where leads are falling through, and show you the revenue opportunity.</p>
         <span class="process-tag">60 min call</span>
       </div>
@@ -911,7 +1233,7 @@
       <span class="label" style="display:block;margin-bottom:14px">Our commitment</span>
       <h2>If it doesn't pay for itself<br>in 60 days, you don't pay.</h2>
       <p>If the Everix system doesn't generate at least one additional qualified consultation per month in your first 60 days — a consultation that would not have happened without us — we refund your first month. No questions, no friction.</p>
-      <a href="https://calendly.com/everixautomation/intake-audit" class="btn btn-dark" target="_blank" rel="noopener">Book Your Free Audit</a>
+      <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-dark" target="_blank" rel="noopener">Book Your Free Lost Lead Analysis</a>
       <p class="guarantee-fine">Guarantee applies to firms that complete onboarding and maintain an active subscription for 60 days.</p>
     </div>
   </div>
@@ -988,9 +1310,9 @@
   <div class="container-sm">
     <span class="label">Next step</span>
     <h2>Your next case is calling.<br><em style="font-style:italic;color:#6dbf94">Are you picking up?</em></h2>
-    <p>Book a free 60-minute intake audit. We'll show you exactly where your firm is losing leads and what it's worth to fix it. No pitch, no pressure.</p>
+    <p>Book a free lost lead analysis. We'll show you exactly where your firm is losing leads and what it's worth to fix it. No pitch, no pressure.</p>
     <div class="cta-actions">
-      <a href="https://calendly.com/everixautomation/intake-audit" class="btn btn-green" target="_blank" rel="noopener">Book Free Intake Audit</a>
+      <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-green" target="_blank" rel="noopener">Book Free Lost Lead Analysis</a>
       <a href="mailto:hello@everixautomation.com" class="btn btn-ghost" style="background:rgba(255,255,255,0.08);color:#fff;border:1.5px solid rgba(255,255,255,0.2)">hello@everixautomation.com</a>
     </div>
     <a href="tel:+16476684020" class="cta-tel">Or call: 647-668-4020</a>
@@ -1020,7 +1342,7 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="https://calendly.com/everixautomation/intake-audit" target="_blank" rel="noopener">Book Free Audit</a></li>
+          <li><a href="https://calendly.com/everixautomation/free-lost-lead-analysis" target="_blank" rel="noopener">Book Free Lost Lead Analysis</a></li>
           <li><a href="mailto:hello@everixautomation.com">hello@everixautomation.com</a></li>
           <li><a href="tel:+16476684020">647-668-4020</a></li>
           <li><a href="#faq">FAQ</a></li>
@@ -1039,6 +1361,49 @@
 </footer>
 
 <script>
+  // ── CALCULATOR ──
+  function calcSync(dispId, val, suffix) {
+    document.getElementById(dispId).textContent = val + suffix;
+  }
+
+  function calcAreaChange() {
+    const sel = document.getElementById('calc-area');
+    document.getElementById('inp-case').value = sel.value;
+  }
+
+  function calcRun() {
+    const inqPerDay   = +document.getElementById('sl-inq').value;
+    const respRate    = +document.getElementById('sl-resp').value / 100;
+    const convRate    = +document.getElementById('sl-conv').value / 100;
+    const caseVal     = +document.getElementById('inp-case').value || 0;
+
+    const monthlyInq  = inqPerDay * 22;
+    const missed      = Math.round(monthlyInq * (1 - respRate));
+    const lostCases   = Math.round(missed * convRate * 10) / 10;
+    const monthlyLoss = Math.round(lostCases * caseVal);
+    const annualLoss  = monthlyLoss * 12;
+    const recoverable = Math.round(monthlyLoss * 0.85);
+    const roi         = Math.round((recoverable / 995) * 10) / 10;
+
+    const fmt = n => '$' + n.toLocaleString('en-CA');
+    const fmtM = n => n >= 1000000 ? '$' + (n/1000000).toFixed(2) + 'M' : fmt(n);
+
+    document.getElementById('res-monthly').textContent  = fmt(monthlyLoss);
+    document.getElementById('res-annual').textContent   = fmtM(annualLoss);
+    document.getElementById('rb-inq').textContent       = monthlyInq;
+    document.getElementById('rb-missed').textContent    = missed;
+    document.getElementById('rb-cases').textContent     = lostCases;
+    document.getElementById('rb-val').textContent       = fmt(caseVal);
+    document.getElementById('rb-total').textContent     = fmt(monthlyLoss);
+    document.getElementById('res-recover').textContent  = fmt(recoverable) + '/month';
+    document.getElementById('res-roi').textContent      = roi + 'x return';
+    document.getElementById('res-cta-head').textContent = 'Want to stop losing ' + fmt(monthlyLoss) + ' every month?';
+
+    const results = document.getElementById('calc-results');
+    results.classList.add('show');
+    setTimeout(() => results.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+  }
+
   // FAQ accordion
   function toggleFaq(btn) {
     const item = btn.closest('.faq-item');
