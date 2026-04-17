@@ -267,7 +267,15 @@
       background: #e05c5c;
       border-radius: 0 0 2px 2px;
     }
-    .pain-icon { font-size: 22px; margin-bottom: 14px; }
+    .pain-card h3::before {
+      content: '—';
+      display: block;
+      color: #b84040;
+      font-size: 20px;
+      font-weight: 300;
+      margin-bottom: 12px;
+      line-height: 1;
+    }
     .pain-card h3 { font-family: var(--sans); font-size: 16px; font-weight: 600; margin-bottom: 10px; }
     .pain-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
     .pain-cost {
@@ -299,7 +307,14 @@
       border-color: var(--green);
       box-shadow: 0 4px 20px rgba(45,106,79,0.07);
     }
-    .practice-icon { font-size: 22px; margin-bottom: 12px; }
+    .practice-card h3::before {
+      content: '→';
+      display: block;
+      color: var(--green);
+      font-size: 18px;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
     .practice-card h3 { font-family: var(--sans); font-size: 16px; font-weight: 600; margin-bottom: 8px; }
     .practice-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
 
@@ -395,7 +410,15 @@
       border-radius: 10px;
       padding: 24px;
     }
-    .compliance-icon { font-size: 20px; margin-bottom: 12px; }
+    .compliance-card h3::before {
+      content: '✓';
+      display: block;
+      color: #6dbf94;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
     .compliance-card h3 { font-family: var(--sans); font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 8px; }
     .compliance-card p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.55; }
 
@@ -465,7 +488,16 @@
       max-width: 680px;
       margin: 0 auto;
     }
-    .guarantee-icon { font-size: 44px; margin-bottom: 20px; }
+    .guarantee-box::before {
+      content: '§';
+      display: block;
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--green);
+      margin-bottom: 20px;
+      font-family: var(--serif);
+      line-height: 1;
+    }
     .guarantee-box h2 { margin-bottom: 16px; }
     .guarantee-box p { font-size: 16px; color: var(--text-muted); line-height: 1.7; margin-bottom: 32px; }
     .guarantee-fine { font-size: 12px; color: var(--text-muted); margin-top: 16px; }
@@ -1064,7 +1096,7 @@
       <p>Five automated layers that capture, qualify, and convert more of your inbound leads — without adding headcount.</p>
     </div>
 
-    <div class="steps-list">
+    <div class="steps-list" style="margin-bottom:40px;">
       <div class="step-row fade-in">
         <div class="step-num">01</div>
         <div class="step-content">
@@ -1100,6 +1132,11 @@
           <p>See every lead, how they were handled, what was said, and what happened next. Full transparency, complete audit trail, and clear ROI metrics so you always know what your intake system is worth.</p>
         </div>
       </div>
+    </div>
+
+    <div class="fade-in" style="text-align:center;margin-bottom:64px;">
+      <a href="demo.html" class="btn btn-dark">See It Working Live →</a>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">Real SMS · Live AI receptionist · Automated booking flow</p>
     </div>
 
     <div class="pricing-box fade-in" id="pricing">

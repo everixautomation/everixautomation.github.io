@@ -649,21 +649,35 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.75rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
       flex-shrink: 0;
     }
 
     .bm-avatar.ai {
       background: linear-gradient(135deg, var(--green), #6dbf94);
+      color: #fff;
     }
 
     .bm-avatar.client {
-      background: var(--border);
+      background: #D8D8D4;
       border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    /* inner content wrapper for both directions */
+    .booking-msg > div:not(.bm-avatar) {
+      display: flex;
+      flex-direction: column;
+      max-width: 75%;
+    }
+
+    .booking-msg.right > div:not(.bm-avatar) {
+      align-items: flex-end;
     }
 
     .bm-bubble {
-      max-width: 75%;
       padding: 0.65rem 0.9rem;
       border-radius: 12px;
       font-size: 0.85rem;
@@ -678,11 +692,10 @@
     }
 
     .booking-msg.right .bm-bubble {
-      background: #F0F0F0;
+      background: #EBEBEB;
       border: 1px solid var(--border);
       color: var(--text);
       border-radius: 12px 4px 12px 12px;
-      text-align: right;
     }
 
     .bm-time {
@@ -690,8 +703,6 @@
       color: var(--muted);
       margin-top: 0.2rem;
     }
-
-    .booking-msg.right .bm-time { text-align: right; }
 
     .booking-confirmed {
       background: var(--green-light);
@@ -878,7 +889,7 @@
 
     <!-- ── STEP 1: SPEED-TO-LEAD ── -->
     <div class="demo-section s1" id="section-stl">
-      <span class="section-tag">Component 1</span>
+      <span class="section-tag">01 · Speed to Lead</span>
       <h2>Speed-to-Lead</h2>
       <p class="sec-sub">
         Enter your name and phone number below. The moment you hit the button, our system sends you a real SMS — exactly like it does for your clients' leads. Watch how fast it fires.
@@ -967,7 +978,7 @@
 
     <!-- ── STEP 2: AI RECEPTIONIST ── -->
     <div class="demo-section s2" id="section-rec">
-      <span class="section-tag">Component 2</span>
+      <span class="section-tag">02 · AI Receptionist</span>
       <h2>AI Receptionist</h2>
       <p class="sec-sub">
         Your AI receptionist answers every call 24/7, qualifies leads, answers FAQs, and books appointments — all without a human picking up the phone. Call the demo number below and talk to it live.
@@ -1031,7 +1042,7 @@
 
     <!-- ── STEP 3: SMS BOOKING ── -->
     <div class="demo-section s3" id="section-book">
-      <span class="section-tag">Component 3</span>
+      <span class="section-tag">03 · SMS Booking</span>
       <h2>SMS Booking Agent</h2>
       <p class="sec-sub">
         Qualified leads get booked through a simple text conversation. No app download. No login. No portal. The client books, reschedules, or cancels — all via SMS. Here's a real example flow:
