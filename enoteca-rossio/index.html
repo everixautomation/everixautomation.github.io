@@ -18,7 +18,6 @@
       --muted:   #8A7A6A;
       --border:  rgba(61,26,24,0.18);
       --green:   #3A7D44;
-      --red:     #C0392B;
     }
 
     body {
@@ -121,6 +120,15 @@
       line-height: 1.65;
     }
 
+    .form-label {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--muted);
+      text-align: left;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
     input, textarea {
       width: 100%;
       background: var(--bg);
@@ -158,7 +166,7 @@
     .btn:hover { background: var(--accent); transform: translateY(-1px); }
     .btn:disabled { opacity: 0.55; pointer-events: none; }
 
-    /* ── THANK YOU — HAPPY ── */
+    /* ── THANK YOU ── */
     .thankyou { display: none; text-align: center; }
     .thankyou.visible { display: block; }
 
@@ -183,32 +191,8 @@
       font-size: 0.85rem;
       font-weight: 300;
       color: var(--muted);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
       line-height: 1.65;
-    }
-
-    .offer-line {
-      font-family: 'Lato', sans-serif;
-      font-size: 0.78rem;
-      color: var(--accent);
-      margin-bottom: 0.4rem;
-    }
-
-    .offer-highlight {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      font-weight: 600;
-      font-style: italic;
-      color: var(--dark);
-      line-height: 1.2;
-      margin-bottom: 0.25rem;
-    }
-
-    .offer-sub {
-      font-family: 'Lato', sans-serif;
-      font-size: 0.78rem;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
     }
 
     .review-btn {
@@ -224,20 +208,83 @@
       border-radius: 3px;
       text-decoration: none;
       transition: background 0.2s;
-      margin-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
     }
 
     .review-btn:hover { background: var(--accent); }
 
-    .review-note {
-      font-size: 0.75rem;
-      font-weight: 300;
-      color: var(--muted);
+    /* ── VOUCHER ── */
+    .voucher {
+      border: 1px solid var(--divider);
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+      background: var(--bg);
+      text-align: center;
     }
 
-    /* ── THANK YOU — PRIVATE ── */
-    .private-icon {
+    .voucher-instruction {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .voucher-offer {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 0.2rem;
+    }
+
+    .voucher-sub {
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .voucher-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 1rem;
+    }
+
+    .voucher-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 0.2rem;
+    }
+
+    .voucher-date {
       font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .voucher-verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      border: 1px solid var(--green);
+      border-radius: 2px;
+      padding: 0.25rem 0.65rem;
+    }
+
+    /* ── PRIVATE THANK YOU ── */
+    .private-label {
+      font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -262,8 +309,8 @@
   <!-- Header -->
   <div class="restaurant-name">Enoteca<br>Rossio</div>
   <div class="divider"></div>
-  <p class="tagline">Your opinion matters to us</p>
-  <p class="subtitle">Tell us about your experience<br>and help us serve you better.</p>
+  <p class="tagline">How was your experience?</p>
+  <p class="subtitle">Rate your visit below.</p>
 
   <!-- Stars -->
   <div class="stars" id="stars">
@@ -276,39 +323,44 @@
 
   <!-- Happy Form (4–5 stars) -->
   <div class="form-section" id="happy-form">
-    <p class="form-title">Wonderful to hear.</p>
-    <p class="form-sub">Leave your name and email, then share your experience on Google — show your review to a server anytime for a free espresso or cappuccino.</p>
+    <p class="form-title">Thank you!</p>
+    <p class="form-sub">Claim your free espresso or cappuccino:</p>
     <input type="text" id="happy-name" placeholder="Your first name" />
     <input type="email" id="happy-email" placeholder="Your email address" />
-    <button class="btn" onclick="submitHappy()">Continue to Google Review</button>
+    <button class="btn" onclick="submitHappy()">Claim Offer</button>
   </div>
 
   <!-- Unhappy Form (1–3 stars) -->
   <div class="form-section" id="unhappy-form">
-    <p class="form-title">We're sorry to hear that.</p>
-    <p class="form-sub">Please tell us what happened. Your feedback goes directly to our team and helps us do better.</p>
-    <input type="text" id="unhappy-name" placeholder="Your name (optional)" />
+    <p class="form-title">We'd like to make this right.</p>
     <textarea id="unhappy-feedback" placeholder="What could we have done better?"></textarea>
+    <label class="form-label">Your email so we can follow up:</label>
+    <input type="email" id="unhappy-email" placeholder="Your email address" />
     <button class="btn" onclick="submitUnhappy()">Send Feedback</button>
   </div>
 
-  <!-- Thank You — Happy (redirect to Google) -->
+  <!-- Thank You — Happy -->
   <div class="thankyou" id="thankyou-happy">
     <div class="thankyou-label">One more thing</div>
-    <h2>Tell others about your experience.</h2>
-    <p>A few kind words on Google helps us reach more guests like you — and it only takes a minute.</p>
-    <div class="offer-line">Leave a Google review and show it to your server</div>
-    <div class="offer-highlight">free espresso<br>or cappuccino</div>
-    <div class="offer-sub">redeemable anytime on any visit</div>
-    <a class="review-btn" id="review-link" href="#" target="_blank">Leave a Google Review</a>
-    <div class="review-note">Show the review to your server — no expiry, no catch.</div>
+    <h2>Would you mind sharing on Google?</h2>
+    <p>It only takes a minute and means a lot to us.</p>
+    <a class="review-btn" id="review-link" href="https://search.google.com/local/writereview?placeid=ChIJT7YYbjQ1K4gRRoYTOek9dsU" target="_blank">Leave a Google Review</a>
+    <div class="voucher">
+      <div class="voucher-instruction">Show this screen to your server</div>
+      <div class="voucher-offer">free espresso<br>or cappuccino</div>
+      <div class="voucher-sub">on your next visit</div>
+      <div class="voucher-divider"></div>
+      <div class="voucher-name" id="voucher-name"></div>
+      <div class="voucher-date" id="voucher-date"></div>
+      <div class="voucher-verified">&#10003; Verified</div>
+    </div>
   </div>
 
-  <!-- Thank You — Private feedback -->
+  <!-- Thank You — Private -->
   <div class="thankyou" id="thankyou-private">
-    <div class="private-icon">Thank you</div>
-    <h2>Your feedback is appreciated.</h2>
-    <p>We take every comment seriously and will look into this personally. We hope to welcome you back and make it right.</p>
+    <div class="private-label">Thank you</div>
+    <h2>Your feedback has been sent directly to our manager.</h2>
+    <p>We'll reach out to make it right.</p>
   </div>
 
 </div>
@@ -348,7 +400,7 @@
     btn.textContent = 'Submitting…';
     const name  = document.getElementById('happy-name').value.trim();
     const email = document.getElementById('happy-email').value.trim();
-    let review_url = 'https://www.google.com/search?q=Enoteca+Rossio+Reviews#lrd=0x882b35346e18b64f:0xc5763de939138646,3,,,,';
+    let review_url = 'https://search.google.com/local/writereview?placeid=ChIJT7YYbjQ1K4gRRoYTOek9dsU';
     try {
       const res  = await fetch(`${BACKEND}/feedback`, {
         method: 'POST',
@@ -363,10 +415,16 @@
     } catch (e) {
       console.error('Feedback error:', e);
     }
+
+    // Populate voucher
+    const today = new Date().toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+    document.getElementById('voucher-name').textContent = name || 'Guest';
+    document.getElementById('voucher-date').textContent = today;
+    document.getElementById('review-link').href = review_url;
+
     document.getElementById('happy-form').classList.remove('visible');
     document.getElementById('stars').style.display = 'none';
     document.getElementById('thankyou-happy').classList.add('visible');
-    document.getElementById('review-link').href = review_url;
   }
 
   async function submitUnhappy() {
@@ -374,14 +432,14 @@
     if (btn.disabled) return;
     btn.disabled = true;
     btn.textContent = 'Sending…';
-    const name     = document.getElementById('unhappy-name').value.trim();
     const feedback = document.getElementById('unhappy-feedback').value.trim();
+    const email    = document.getElementById('unhappy-email').value.trim();
     try {
       await fetch(`${BACKEND}/feedback`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
-          client_id: 'enoteca_rossio', name, email: '',
+          client_id: 'enoteca_rossio', name: '', email,
           rating: selectedRating, feedback, source
         })
       });
