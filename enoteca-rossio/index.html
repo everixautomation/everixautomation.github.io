@@ -354,26 +354,16 @@
 
   <!-- Thank You — Happy (Google review prompt) -->
   <div class="thankyou" id="thankyou-happy">
-    <div class="thankyou-label">One more thing</div>
-    <h2>Would you mind sharing on Google?</h2>
-    <p>It means a lot to us.</p>
-    <a class="review-btn" id="review-link" href="https://search.google.com/local/writereview?placeid=ChIJT7YYbjQ1K4gRRoYTOek9dsU" target="_blank" onclick="showVoucher()">Leave a Google Review</a>
+    <div class="thankyou-label">Almost there</div>
+    <h2>Leave a Google review and show it to your server on your next visit to claim your complimentary dessert.</h2>
+    <a class="review-btn" id="review-link" href="https://search.google.com/local/writereview?placeid=ChIJT7YYbjQ1K4gRRoYTOek9dsU" target="_blank" onclick="showFinal()">Leave a Google Review</a>
   </div>
 
-  <!-- Voucher Screen (shown after Google review clicked) -->
-  <div class="thankyou" id="voucher-screen">
+  <!-- Final Screen (shown after Google review clicked) -->
+  <div class="thankyou" id="final-screen">
     <div class="thankyou-label">Thank you!</div>
-    <h2>Your complimentary coffee is confirmed.</h2>
-    <p>Show this screen to your server on your next visit to redeem your complimentary dessert.</p>
-    <div class="voucher">
-      <div class="voucher-instruction">Show this screen to your server</div>
-      <div class="voucher-offer">complimentary<br>dessert</div>
-      <div class="voucher-sub">on your next visit</div>
-      <div class="voucher-divider"></div>
-      <div class="voucher-name" id="voucher-name"></div>
-      <div class="voucher-date" id="voucher-date"></div>
-      <div class="voucher-verified">&#10003; Verified</div>
-    </div>
+    <h2>Once your review is posted, show this screen and your Google review to your server.</h2>
+    <p>We appreciate your support — enjoy your complimentary dessert on your next visit.</p>
   </div>
 
   <!-- Thank You — Private -->
@@ -436,20 +426,15 @@
       console.error('Feedback error:', e);
     }
 
-    // Populate voucher
-    const today = new Date().toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
-    document.getElementById('voucher-name').textContent = name || 'Guest';
-    document.getElementById('voucher-date').textContent = today;
     document.getElementById('review-link').href = review_url;
-
     document.getElementById('happy-form').classList.remove('visible');
     document.getElementById('stars').style.display = 'none';
     document.getElementById('thankyou-happy').classList.add('visible');
   }
 
-  function showVoucher() {
+  function showFinal() {
     document.getElementById('thankyou-happy').classList.remove('visible');
-    document.getElementById('voucher-screen').classList.add('visible');
+    document.getElementById('final-screen').classList.add('visible');
   }
 
   async function submitUnhappy() {
