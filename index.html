@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Everix Automation | AI Intake Systems for Canadian Law Firms</title>
-  <meta name="description" content="Stop losing cases to voicemail. Everix builds AI-powered intake and follow-up systems for Canadian law firms — PIPEDA-compliant, 24/7, no extra staff required." />
+  <title>Everix Automation | Google Reviews, Client Reactivation &amp; AI Intake for Canadian Law Firms</title>
+  <meta name="description" content="Free Google review management, targeted client reactivation campaigns, and 24/7 AI intake systems — built exclusively for Canadian law firms. PIPEDA-compliant. Live in 14 days." />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Everix Automation | AI Intake Systems for Canadian Law Firms" />
-  <meta property="og:description" content="Stop losing cases to voicemail. Every call your firm misses is a case your competitor takes." />
+  <meta property="og:title" content="Everix Automation | Google Reviews, Client Reactivation &amp; AI Intake for Canadian Law Firms" />
+  <meta property="og:description" content="Free Google review management, targeted client reactivation campaigns, and 24/7 AI intake systems — built exclusively for Canadian law firms. PIPEDA-compliant. Live in 14 days." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://everixautomation.com/" />
   <link rel="canonical" href="https://everixautomation.com/" />
@@ -24,7 +24,8 @@
       --bg-white:    #FDFCFA;
       --text:        #111110;
       --text-muted:  #6b6b65;
-      --green:       #2D6A4F;
+      --green:       #1a6b4a;
+      --green-mid:   #2D6A4F;
       --green-light: #E8F2EC;
       --green-label: #2D6A4F;
       --border:      #E0DED8;
@@ -43,18 +44,19 @@
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
     /* ── LAYOUT ── */
-    .container      { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
-    .container-sm   { max-width: 720px;  margin: 0 auto; padding: 0 28px; }
-    .section        { padding: 88px 0; }
-    .section-alt    { background: var(--bg-white); }
+    .container    { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+    .container-sm { max-width: 720px;  margin: 0 auto; padding: 0 28px; }
+    .section      { padding: 88px 0; }
+    .section-alt  { background: var(--bg-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
     /* ── TYPE ── */
     h1, h2, h3 { font-family: var(--serif); line-height: 1.15; }
-    h1 { font-size: clamp(38px, 5.5vw, 68px); font-weight: 700; letter-spacing: -0.5px; }
-    h2 { font-size: clamp(30px, 4vw, 50px); font-weight: 700; }
+    h1 { font-size: clamp(34px, 5.5vw, 68px); font-weight: 700; letter-spacing: -0.5px; }
+    h2 { font-size: clamp(26px, 4vw, 48px); font-weight: 700; }
     h3 { font-size: 20px; font-weight: 700; }
 
     .label {
@@ -79,32 +81,23 @@
       text-decoration: none;
       transition: all 0.18s;
       white-space: nowrap;
+      min-height: 48px;
     }
-    .btn-dark {
-      background: var(--btn-dark);
-      color: #fff;
-      border: 1.5px solid var(--btn-dark);
-    }
+    .btn-dark  { background: var(--btn-dark); color: #fff; border: 1.5px solid var(--btn-dark); }
     .btn-dark:hover { background: #2a2a28; border-color: #2a2a28; }
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1.5px solid var(--border);
-    }
+    .btn-outline { background: transparent; color: var(--text); border: 1.5px solid var(--border); }
     .btn-outline:hover { border-color: var(--text); }
-    .btn-green {
-      background: var(--green);
-      color: #fff;
-      border: 1.5px solid var(--green);
-    }
-    .btn-green:hover { background: #235840; }
+    .btn-green { background: var(--green); color: #fff; border: 1.5px solid var(--green); }
+    .btn-green:hover { background: #145538; }
+    .btn-outline-green { background: transparent; color: var(--green); border: 1.5px solid var(--green); }
+    .btn-outline-green:hover { background: var(--green-light); }
 
     /* ── NAV ── */
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(245, 244, 240, 0.92);
+      background: rgba(245,244,240,0.94);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
@@ -117,42 +110,22 @@
       max-width: 1080px;
       margin: 0 auto;
       padding: 0 28px;
+      gap: 16px;
     }
-    .logo {
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-      text-decoration: none;
-    }
-    .logo-everix {
-      font-family: var(--sans);
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--text);
-      letter-spacing: -0.3px;
-    }
-    .logo-auto {
-      font-family: var(--sans);
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
+    .logo { display: flex; align-items: baseline; gap: 6px; text-decoration: none; flex-shrink: 0; }
+    .logo-everix { font-family: var(--sans); font-weight: 700; font-size: 18px; color: var(--text); letter-spacing: -0.3px; }
+    .logo-auto  { font-family: var(--sans); font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); }
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 36px;
+      gap: 28px;
       list-style: none;
+      flex: 1;
+      justify-content: center;
     }
-    .nav-links a {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; white-space: nowrap; }
     .nav-links a:hover { color: var(--text); }
+    .nav-book { flex-shrink: 0; }
     .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; flex-direction: column; gap: 5px; }
     .nav-mobile-toggle span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
 
@@ -172,149 +145,83 @@
       padding: 7px 18px;
       margin-bottom: 36px;
     }
-    .hero-badge span {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--green);
-    }
-    .hero h1 {
-      max-width: 820px;
-      margin: 0 auto 28px;
-      color: var(--text);
-    }
-    .hero-sub {
-      font-size: 19px;
-      color: var(--text-muted);
-      line-height: 1.65;
-      max-width: 580px;
-      margin: 0 auto 40px;
-    }
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-    .hero-fine {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
+    .hero-badge span { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--green-mid); }
+    .hero h1 { max-width: 820px; margin: 0 auto 28px; color: var(--text); }
+    .hero-sub { font-size: 18px; color: var(--text-muted); line-height: 1.65; max-width: 620px; margin: 0 auto 40px; }
+    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+    .hero-fine { font-size: 13px; color: var(--text-muted); }
     .hero-fine span { margin: 0 6px; opacity: 0.4; }
 
     /* ── STATS ── */
-    .stats {
-      background: var(--bg-white);
-      border-bottom: 1px solid var(--border);
-    }
-    .stats-inner {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-    .stat-cell {
-      padding: 40px 32px;
-      border-right: 1px solid var(--border);
-      text-align: center;
-    }
+    .stats { background: var(--bg-white); border-bottom: 1px solid var(--border); }
+    .stats-inner { display: grid; grid-template-columns: repeat(4,1fr); }
+    .stat-cell { padding: 40px 32px; border-right: 1px solid var(--border); text-align: center; }
     .stat-cell:last-child { border-right: none; }
-    .stat-num {
-      font-family: var(--serif);
-      font-size: 44px;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1;
-      margin-bottom: 8px;
+    .stat-num { font-family: var(--serif); font-size: 44px; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 8px; }
+    .stat-label { font-size: 13px; font-weight: 600; color: var(--green-label); margin-bottom: 4px; }
+    .stat-sub { font-size: 12px; color: var(--text-muted); }
+
+    /* ── THREE LAYERS ── */
+    .layers-header { text-align: center; margin-bottom: 52px; }
+    .layers-header .label { display: block; margin-bottom: 14px; }
+    .layers-header h2 { max-width: 680px; margin: 0 auto 14px; }
+    .layers-header p { font-size: 16px; color: var(--text-muted); max-width: 560px; margin: 0 auto; }
+
+    .layers-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 16px;
     }
-    .stat-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--green-label);
-      margin-bottom: 4px;
+    .layer-card {
+      background: var(--card-bg);
+      border: 1px solid #e8e6e1;
+      border-radius: 10px;
+      padding: 28px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
     }
-    .stat-sub {
-      font-size: 12px;
-      color: var(--text-muted);
+    .layer-card:hover { border-color: #1a6b4a; box-shadow: 0 4px 20px rgba(26,107,74,0.08); }
+    .layer-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      align-self: flex-start;
     }
+    .layer-badge-free { background: var(--green-light); color: var(--green-mid); border: 1px solid #b8d8c6; }
+    .layer-badge-paid { background: #FEF3C7; color: #92400E; border: 1px solid #F59E0B; }
+    .layer-badge-retainer { background: #EEF2FF; color: #3730A3; border: 1px solid #C7D2FE; }
+    .layer-icon { font-size: 28px; margin-bottom: 14px; line-height: 1; }
+    .layer-card h3 { font-family: var(--sans); font-size: 17px; font-weight: 700; margin-bottom: 12px; }
+    .layer-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; flex: 1; }
+    .layer-bottom { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-muted); font-style: italic; }
 
     /* ── PAIN ── */
     .pain-header { margin-bottom: 56px; text-align: center; }
     .pain-header .label { display: block; margin-bottom: 14px; }
-    .pain-header h2 { max-width: 680px; margin-left: auto; margin-right: auto; }
+    .pain-header h2 { max-width: 680px; margin: 0 auto; }
     .pain-header p { font-size: 17px; color: var(--text-muted); margin-top: 14px; max-width: 500px; margin-left: auto; margin-right: auto; }
-
-    .pain-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 16px;
-    }
-    .pain-card {
-      flex: 1 1 290px;
-      max-width: 360px;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 28px;
-      position: relative;
-    }
-    .pain-card::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 24px; right: 24px;
-      height: 2px;
-      background: #e05c5c;
-      border-radius: 0 0 2px 2px;
-    }
-    .pain-card h3::before {
-      content: '—';
-      display: block;
-      color: #b84040;
-      font-size: 20px;
-      font-weight: 300;
-      margin-bottom: 12px;
-      line-height: 1;
-    }
+    .pain-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .pain-card { flex: 1 1 290px; max-width: 360px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 28px; position: relative; }
+    .pain-card::after { content: ''; position: absolute; top: 0; left: 24px; right: 24px; height: 2px; background: #e05c5c; border-radius: 0 0 2px 2px; }
+    .pain-card h3::before { content: '—'; display: block; color: #b84040; font-size: 20px; font-weight: 300; margin-bottom: 12px; line-height: 1; }
     .pain-card h3 { font-family: var(--sans); font-size: 16px; font-weight: 600; margin-bottom: 10px; }
     .pain-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
-    .pain-cost {
-      margin-top: 14px;
-      font-family: var(--mono);
-      font-size: 11px;
-      color: #b84040;
-      letter-spacing: 0.5px;
-    }
+    .pain-cost { margin-top: 14px; font-family: var(--mono); font-size: 11px; color: #b84040; letter-spacing: 0.5px; }
 
     /* ── PRACTICE AREAS ── */
     .practice-header { text-align: center; margin-bottom: 52px; }
     .practice-header .label { display: block; margin-bottom: 14px; }
     .practice-header p { font-size: 16px; color: var(--text-muted); margin-top: 14px; }
-
-    .practice-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 14px;
-    }
-    .practice-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 24px 28px;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .practice-card:hover {
-      border-color: var(--green);
-      box-shadow: 0 4px 20px rgba(45,106,79,0.07);
-    }
-    .practice-card h3::before {
-      content: '→';
-      display: block;
-      color: var(--green);
-      font-size: 18px;
-      margin-bottom: 10px;
-      line-height: 1;
-    }
+    .practice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px,1fr)); gap: 14px; }
+    .practice-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 24px 28px; transition: border-color 0.2s, box-shadow 0.2s; }
+    .practice-card:hover { border-color: var(--green-mid); box-shadow: 0 4px 20px rgba(45,106,79,0.07); }
+    .practice-card h3::before { content: '→'; display: block; color: var(--green-mid); font-size: 18px; margin-bottom: 10px; line-height: 1; }
     .practice-card h3 { font-family: var(--sans); font-size: 16px; font-weight: 600; margin-bottom: 8px; }
     .practice-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
 
@@ -322,103 +229,102 @@
     .system-header { text-align: center; margin-bottom: 64px; }
     .system-header .label { display: block; margin-bottom: 14px; }
     .system-header p { font-size: 17px; color: var(--text-muted); margin-top: 14px; max-width: 520px; margin-left: auto; margin-right: auto; }
-
     .steps-list { max-width: 720px; margin: 0 auto 64px; }
-    .step-row {
-      display: grid;
-      grid-template-columns: 40px 1fr;
-      gap: 28px;
-      padding: 32px 0;
-      border-bottom: 1px solid var(--border);
-      align-items: start;
-    }
+    .step-row { display: grid; grid-template-columns: 40px 1fr; gap: 28px; padding: 32px 0; border-bottom: 1px solid var(--border); align-items: start; }
     .step-row:last-child { border-bottom: none; }
-    .step-num {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      border: 1.5px solid var(--green);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--green);
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
+    .step-num { width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid var(--green-mid); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 12px; color: var(--green-mid); flex-shrink: 0; margin-top: 2px; }
     .step-content h3 { font-family: var(--sans); font-size: 17px; font-weight: 600; margin-bottom: 8px; }
     .step-content p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
 
+    /* ── GOOGLE REVIEW SECTION ── */
+    .review-blocks { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-bottom: 52px; }
+    .review-block { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 28px; }
+    .review-block h3 { font-family: var(--sans); font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--text); }
+    .review-block h3::before { content: '→'; display: block; color: var(--green-mid); font-size: 16px; margin-bottom: 8px; line-height: 1; }
+    .review-block p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+    .review-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; margin-bottom: 48px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .review-stat-cell { padding: 32px 24px; text-align: center; border-right: 1px solid var(--border); background: var(--card-bg); }
+    .review-stat-cell:last-child { border-right: none; }
+    .review-stat-num { font-family: var(--serif); font-size: 40px; font-weight: 700; color: var(--green); line-height: 1; margin-bottom: 8px; }
+    .review-stat-label { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+    /* ── REACTIVATION SECTION ── */
+    .reactivation-blocks { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 32px; }
+    .reactivation-block { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 28px; }
+    .reactivation-block h3 { font-family: var(--sans); font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+    .reactivation-block p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+    .reactivation-list { list-style: none; margin-top: 10px; }
+    .reactivation-list li { font-size: 14px; color: var(--text-muted); line-height: 1.6; padding: 5px 0 5px 20px; position: relative; }
+    .reactivation-list li::before { content: '—'; position: absolute; left: 0; color: var(--green-mid); }
+
+    .roi-box { background: #1a1a1a; border-radius: 12px; padding: 40px 48px; margin-bottom: 32px; }
+    .roi-box-inner { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 40px; align-items: center; }
+    .roi-divider { background: rgba(255,255,255,0.1); height: 100%; }
+    .roi-side h4 { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+    .roi-side p { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 2; }
+    .roi-side p strong { color: #4ade80; }
+    .roi-side p.roi-big { font-family: var(--serif); font-size: 22px; color: #fff; line-height: 1.4; }
+
+    .campaign-types { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 28px; margin-bottom: 40px; }
+    .campaign-types h3 { font-family: var(--sans); font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .campaign-types > p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
+    .campaign-list { list-style: none; }
+    .campaign-list li { font-size: 14px; color: var(--text-muted); padding: 6px 0 6px 20px; position: relative; border-bottom: 1px solid var(--border); }
+    .campaign-list li:last-child { border-bottom: none; }
+    .campaign-list li::before { content: '→'; position: absolute; left: 0; color: var(--green-mid); }
+
     /* ── PRICING ── */
-    .pricing-box {
-      background: var(--btn-dark);
+    .pricing-header { text-align: center; margin-bottom: 52px; }
+    .pricing-header .label { display: block; margin-bottom: 14px; }
+    .pricing-header h2 { margin-bottom: 12px; }
+    .pricing-header p { font-size: 16px; color: var(--text-muted); }
+
+    .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-bottom: 32px; }
+    .pricing-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 56px 48px;
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    .pricing-kicker {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 20px;
-    }
-    .pricing-price {
-      font-family: var(--serif);
-      font-size: 64px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1;
-    }
-    .pricing-price sup { font-size: 28px; vertical-align: top; margin-top: 14px; display: inline-block; }
-    .pricing-price sub { font-size: 20px; font-weight: 400; color: rgba(255,255,255,0.45); font-family: var(--sans); }
-    .pricing-desc { font-size: 15px; color: rgba(255,255,255,0.5); margin: 14px 0 32px; }
-    .pricing-features {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px 40px;
-      text-align: left;
-      max-width: 500px;
-      margin: 0 auto 36px;
-    }
-    .pricing-feature {
+      padding: 32px 28px;
       display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      color: rgba(255,255,255,0.75);
+      flex-direction: column;
+      position: relative;
     }
-    .pricing-feature::before { content: '✓'; color: #6dbf94; font-weight: 700; flex-shrink: 0; }
-    .pricing-note { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 18px; }
+    .pricing-card.featured { border-color: var(--green); box-shadow: 0 0 0 1px var(--green); }
+    .pricing-popular-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--green);
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .pricing-card-name { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
+    .pricing-card-price { font-family: var(--serif); font-size: clamp(28px,4vw,48px); font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 6px; }
+    .pricing-card-price-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; line-height: 1.5; }
+    .pricing-card-features { list-style: none; margin-bottom: 28px; flex: 1; }
+    .pricing-card-features li { font-size: 13px; color: var(--text-muted); padding: 6px 0 6px 22px; position: relative; border-bottom: 1px solid var(--border); line-height: 1.6; }
+    .pricing-card-features li:last-child { border-bottom: none; }
+    .pricing-card-features li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+    .pricing-card-note { font-size: 11px; color: var(--text-muted); margin-top: 12px; text-align: center; font-style: italic; }
+    .pricing-footer-note { text-align: center; font-size: 13px; color: var(--text-muted); }
 
     /* ── COMPLIANCE ── */
-    .compliance-wrap { background: var(--green); }
+    .compliance-wrap { background: var(--green-mid); }
     .compliance-header { text-align: center; margin-bottom: 48px; }
     .compliance-header .label { color: rgba(255,255,255,0.6); display: block; margin-bottom: 14px; }
     .compliance-header h2 { color: #fff; }
     .compliance-header p { font-size: 16px; color: rgba(255,255,255,0.65); margin-top: 14px; }
-
-    .compliance-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 14px;
-    }
-    .compliance-card {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 10px;
-      padding: 24px;
-    }
-    .compliance-card h3::before {
-      content: '✓';
-      display: block;
-      color: #6dbf94;
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 10px;
-      line-height: 1;
-    }
+    .compliance-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 14px; }
+    .compliance-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 10px; padding: 24px; }
+    .compliance-card h3::before { content: '✓'; display: block; color: #6dbf94; font-size: 18px; font-weight: 700; margin-bottom: 10px; line-height: 1; }
     .compliance-card h3 { font-family: var(--sans); font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 8px; }
     .compliance-card p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.55; }
 
@@ -426,78 +332,25 @@
     .process-header { text-align: center; margin-bottom: 56px; }
     .process-header .label { display: block; margin-bottom: 14px; }
     .process-header p { font-size: 16px; color: var(--text-muted); margin-top: 14px; }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
+    .process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
     .process-step { text-align: center; }
-    .process-num {
-      width: 52px; height: 52px;
-      border-radius: 50%;
-      border: 1.5px solid var(--green);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--serif);
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--green);
-      margin: 0 auto 18px;
-    }
+    .process-num { width: 52px; height: 52px; border-radius: 50%; border: 1.5px solid var(--green-mid); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--green-mid); margin: 0 auto 18px; }
     .process-step h3 { font-family: var(--sans); font-size: 15px; font-weight: 600; margin-bottom: 8px; }
     .process-step p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
-    .process-tag {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 4px 12px;
-      background: var(--green-light);
-      border-radius: 100px;
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 1px;
-      color: var(--green);
-    }
+    .process-tag { display: inline-block; margin-top: 10px; padding: 4px 12px; background: var(--green-light); border-radius: 100px; font-family: var(--mono); font-size: 10px; letter-spacing: 1px; color: var(--green-mid); }
 
     /* ── FOUNDER ── */
-    .founder-inner {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 64px;
-      align-items: start;
-    }
-    .founder-photo {
-      width: 180px; height: 180px;
-      border-radius: 8px;
-      background: var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 56px;
-      overflow: hidden;
-    }
+    .founder-inner { display: grid; grid-template-columns: 200px 1fr; gap: 64px; align-items: start; }
+    .founder-photo { width: 180px; height: 180px; border-radius: 8px; background: var(--border); display: flex; align-items: center; justify-content: center; font-size: 56px; overflow: hidden; }
     .founder-photo img { width: 100%; height: 100%; object-fit: cover; }
     .founder-name { font-size: 28px; margin-bottom: 4px; }
     .founder-role { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; }
     .founder-body { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 18px; }
-    .founder-sig { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--green); }
+    .founder-sig { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--green-mid); }
 
     /* ── GUARANTEE ── */
-    .guarantee-box {
-      border: 1.5px solid var(--green);
-      border-radius: 12px;
-      padding: 56px 48px;
-      text-align: center;
-      max-width: 680px;
-      margin: 0 auto;
-    }
-    .guarantee-box::before {
-      content: '§';
-      display: block;
-      font-size: 36px;
-      font-weight: 300;
-      color: var(--green);
-      margin-bottom: 20px;
-      font-family: var(--serif);
-      line-height: 1;
-    }
+    .guarantee-box { border: 1.5px solid var(--green-mid); border-radius: 12px; padding: 56px 48px; text-align: center; max-width: 680px; margin: 0 auto; }
+    .guarantee-box::before { content: '§'; display: block; font-size: 36px; font-weight: 300; color: var(--green-mid); margin-bottom: 20px; font-family: var(--serif); line-height: 1; }
     .guarantee-box h2 { margin-bottom: 16px; }
     .guarantee-box p { font-size: 16px; color: var(--text-muted); line-height: 1.7; margin-bottom: 32px; }
     .guarantee-fine { font-size: 12px; color: var(--text-muted); margin-top: 16px; }
@@ -508,35 +361,9 @@
     .faq-list { max-width: 680px; margin: 0 auto; }
     .faq-item { border-bottom: 1px solid var(--border); }
     .faq-item:first-child { border-top: 1px solid var(--border); }
-    .faq-btn {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 22px 0;
-      font-family: var(--sans);
-      font-size: 16px;
-      font-weight: 500;
-      color: var(--text);
-      cursor: pointer;
-      text-align: left;
-      gap: 16px;
-    }
+    .faq-btn { display: flex; justify-content: space-between; align-items: center; width: 100%; background: none; border: none; padding: 22px 0; font-family: var(--sans); font-size: 15px; font-weight: 500; color: var(--text); cursor: pointer; text-align: left; gap: 16px; min-height: 48px; }
     .faq-btn:hover { color: var(--green); }
-    .faq-icon {
-      width: 26px; height: 26px;
-      border-radius: 50%;
-      background: var(--green-light);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px;
-      color: var(--green);
-      flex-shrink: 0;
-      transition: transform 0.25s;
-      line-height: 1;
-      font-weight: 300;
-    }
+    .faq-icon { width: 26px; height: 26px; border-radius: 50%; background: var(--green-light); display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--green-mid); flex-shrink: 0; transition: transform 0.25s; line-height: 1; font-weight: 300; }
     .faq-item.open .faq-icon { transform: rotate(45deg); }
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
     .faq-answer-body { padding: 0 0 22px; font-size: 14px; color: var(--text-muted); line-height: 1.75; max-width: 560px; }
@@ -552,244 +379,69 @@
 
     /* ── FOOTER ── */
     footer { background: #0D0D0C; padding: 56px 0 32px; }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
-    }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
     .footer-logo { text-decoration: none; display: inline-flex; align-items: baseline; gap: 6px; margin-bottom: 12px; }
     .footer-logo .logo-everix { color: #fff; }
     .footer-logo .logo-auto { color: rgba(255,255,255,0.35); }
     .footer-desc { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.65; }
-    .footer-col h4 {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-      margin-bottom: 16px;
-    }
+    .footer-col h4 { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 16px; }
     .footer-col ul { list-style: none; }
     .footer-col ul li { margin-bottom: 10px; }
     .footer-col ul li a { font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.15s; }
     .footer-col ul li a:hover { color: #fff; }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.07);
-      padding-top: 28px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
     .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.25); }
     .footer-badges { display: flex; gap: 8px; }
-    .badge {
-      padding: 4px 10px;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 4px;
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 1px;
-      color: rgba(255,255,255,0.25);
-    }
+    .badge { padding: 4px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; font-family: var(--mono); font-size: 10px; letter-spacing: 1px; color: rgba(255,255,255,0.25); }
 
     /* ── CALCULATOR ── */
     .calc-header { text-align: center; margin-bottom: 48px; }
     .calc-header .label { display: block; margin-bottom: 14px; }
     .calc-header p { font-size: 17px; color: var(--text-muted); margin-top: 14px; max-width: 520px; margin-left: auto; margin-right: auto; }
-
-    .calc-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      max-width: 720px;
-      margin: 0 auto;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    }
-
+    .calc-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; max-width: 720px; margin: 0 auto; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
     .calc-inputs { padding: 40px; }
     .calc-field { margin-bottom: 28px; }
     .calc-field:last-child { margin-bottom: 0; }
-    .calc-field-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 10px;
-    }
+    .calc-field-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
     .calc-field-top label { font-size: 14px; font-weight: 500; color: var(--text); }
     .calc-field-hint { font-size: 11px; color: var(--text-muted); margin-top: 5px; font-style: italic; }
     .calc-val { font-family: var(--mono); font-size: 14px; color: var(--green); font-weight: 600; }
-
-    select.calc-select {
-      width: 100%;
-      font-family: var(--sans);
-      font-size: 14px;
-      padding: 12px 14px;
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      background: #fff;
-      color: var(--text);
-      cursor: pointer;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b65' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 14px center;
-    }
-
-    input[type="range"] {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 100%;
-      height: 4px;
-      background: var(--border);
-      border-radius: 2px;
-      outline: none;
-      cursor: pointer;
-    }
-    input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 20px; height: 20px;
-      border-radius: 50%;
-      background: var(--green);
-      cursor: pointer;
-      border: 2px solid #fff;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.18);
-    }
-    input[type="range"]::-moz-range-thumb {
-      width: 20px; height: 20px;
-      border-radius: 50%;
-      background: var(--green);
-      cursor: pointer;
-      border: 2px solid #fff;
-    }
-    .calc-range-ends {
-      display: flex;
-      justify-content: space-between;
-      font-size: 11px;
-      color: var(--text-muted);
-      font-family: var(--mono);
-      margin-top: 5px;
-    }
+    select.calc-select { width: 100%; font-family: var(--sans); font-size: 14px; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 8px; background: #fff; color: var(--text); cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b65' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+    input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; background: var(--border); border-radius: 3px; outline: none; cursor: pointer; }
+    input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%; background: var(--green-mid); cursor: pointer; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.18); }
+    input[type="range"]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: var(--green-mid); cursor: pointer; border: 2px solid #fff; }
+    .calc-range-ends { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); font-family: var(--mono); margin-top: 5px; }
     .calc-currency-wrap { position: relative; }
-    .calc-currency-wrap span {
-      position: absolute;
-      left: 14px; top: 50%;
-      transform: translateY(-50%);
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-    input.calc-number {
-      width: 100%;
-      font-family: var(--sans);
-      font-size: 14px;
-      padding: 12px 14px 12px 28px;
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      background: #fff;
-      color: var(--text);
-    }
+    .calc-currency-wrap span { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 14px; color: var(--text-muted); }
+    input.calc-number { width: 100%; font-family: var(--sans); font-size: 14px; padding: 12px 14px 12px 28px; border: 1.5px solid var(--border); border-radius: 8px; background: #fff; color: var(--text); }
     input.calc-number:focus { outline: none; border-color: var(--green); }
-
-    .calc-submit {
-      width: 100%;
-      font-family: var(--sans);
-      font-size: 15px;
-      font-weight: 600;
-      background: var(--btn-dark);
-      color: #fff;
-      padding: 16px 24px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.18s;
-      margin-top: 32px;
-    }
+    .calc-submit { width: 100%; font-family: var(--sans); font-size: 15px; font-weight: 600; background: var(--btn-dark); color: #fff; padding: 16px 24px; border: none; border-radius: 8px; cursor: pointer; transition: background 0.18s; margin-top: 32px; min-height: 52px; }
     .calc-submit:hover { background: var(--green); }
-
-    .calc-results {
-      display: none;
-      animation: fadeUp 0.4s ease;
-    }
+    .calc-results { display: none; animation: fadeUp 0.4s ease; }
     .calc-results.show { display: block; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-
-    .calc-results-inner {
-      margin-top: 20px;
-      background: var(--btn-dark);
-      color: #f5f4f0;
-      border-radius: 12px;
-      padding: 36px;
-      max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .calc-res-kicker {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 8px;
-    }
+    .calc-results-inner { margin-top: 20px; background: var(--btn-dark); color: #f5f4f0; border-radius: 12px; padding: 36px; max-width: 720px; margin-left: auto; margin-right: auto; }
+    .calc-res-kicker { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 8px; }
     .calc-res-headline { font-size: 20px; font-weight: 700; margin-bottom: 24px; color: #f5f4f0; }
-
-    .calc-top-nums {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: #2a2a28;
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 18px;
-    }
+    .calc-top-nums { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #2a2a28; border-radius: 8px; overflow: hidden; margin-bottom: 18px; }
     .calc-top-cell { background: var(--btn-dark); padding: 20px 16px; text-align: center; }
     .calc-top-label { font-family: var(--sans); font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
     .calc-top-num { font-family: var(--sans); font-size: 28px; font-weight: 700; color: #ff6b6b; }
-
-    .calc-breakdown {
-      background: #0d0d0c;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 18px;
-      font-family: var(--mono);
-      font-size: 12px;
-      color: #888;
-      line-height: 2;
-    }
+    .calc-breakdown { background: #0d0d0c; border-radius: 8px; padding: 20px; margin-bottom: 18px; font-family: var(--mono); font-size: 12px; color: #888; line-height: 2; }
     .calc-breakdown .loss-line { color: #ff6b6b; font-weight: 600; border-top: 1px solid #2a2a28; margin-top: 6px; padding-top: 6px; }
-
-    .calc-recovery {
-      background: rgba(45,106,79,0.15);
-      border: 1px solid rgba(45,106,79,0.3);
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
+    .calc-recovery { background: rgba(45,106,79,0.15); border: 1px solid rgba(45,106,79,0.3); border-radius: 8px; padding: 20px; margin-bottom: 20px; }
     .calc-recovery-label { font-family: var(--sans); font-size: 10px; color: var(--green); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
     .calc-recovery-num { font-family: var(--sans); font-size: 26px; font-weight: 700; color: #4ade80; margin-bottom: 8px; }
     .calc-recovery p { font-size: 13px; color: #ccc; line-height: 1.6; margin: 0; }
     .calc-recovery strong { color: #4ade80; }
-
-    .calc-cta-box {
-      background: #f5f4f0;
-      color: var(--text);
-      border-radius: 8px;
-      padding: 24px;
-      text-align: center;
-    }
+    .calc-cta-box { background: #f5f4f0; color: var(--text); border-radius: 8px; padding: 24px; text-align: center; }
     .calc-cta-box h3 { font-size: 18px; margin-bottom: 8px; color: var(--text); }
     .calc-cta-box p { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.6; }
     .calc-disclaimer { font-size: 10px; color: #555; margin-top: 16px; text-align: center; font-style: italic; }
 
-    @media (max-width: 640px) {
-      .calc-inputs { padding: 24px; }
-      .calc-results-inner { padding: 24px; }
-      .calc-top-nums { grid-template-columns: 1fr; }
-    }
+    /* ── SECTION CTA BLOCK ── */
+    .section-cta { text-align: center; }
+    .section-cta p { font-size: 13px; color: var(--text-muted); margin-top: 12px; }
 
     /* ── FADE IN ── */
     .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
@@ -797,28 +449,63 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { gap: 18px; }
+      .stats-inner { grid-template-columns: repeat(2,1fr); }
       .stat-cell:nth-child(2) { border-right: none; }
       .stat-cell:nth-child(3) { border-top: 1px solid var(--border); }
       .stat-cell:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
-      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .layers-grid { grid-template-columns: 1fr; }
+      .review-blocks { grid-template-columns: 1fr; }
+      .review-stats { grid-template-columns: 1fr; }
+      .review-stat-cell { border-right: none; border-bottom: 1px solid var(--border); }
+      .review-stat-cell:last-child { border-bottom: none; }
+      .reactivation-blocks { grid-template-columns: 1fr; }
+      .roi-box { padding: 28px 24px; }
+      .roi-box-inner { grid-template-columns: 1fr; gap: 24px; }
+      .roi-divider { display: none; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: repeat(2,1fr); }
       .founder-inner { grid-template-columns: 1fr; gap: 32px; }
-      .pricing-features { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    @media (max-width: 768px) {
+      .layers-grid { grid-template-columns: 1fr; gap: 12px; }
+      .layer-badge { align-self: flex-start; }
+      .pricing-grid { grid-template-columns: 1fr; gap: 16px; }
+      .pricing-card.featured { margin-top: 0; }
     }
 
     @media (max-width: 640px) {
       .nav-links { display: none; }
+      .nav-book { display: none; }
       .nav-mobile-toggle { display: flex; }
-      h1 { font-size: 36px; }
-      h2 { font-size: 28px; }
-      .hero { padding: 72px 0 60px; }
-      .section { padding: 64px 0; }
+      h1 { font-size: 32px; }
+      h2 { font-size: 26px; }
+      h3 { font-size: 18px; }
+      body { font-size: 15px; }
+      .hero { padding: 64px 0 48px; }
+      .section { padding: 60px 0; }
+      .container { padding: 0 18px; }
+      .container-sm { padding: 0 18px; }
+      .stat-cell { padding: 28px 16px; }
+      .stat-num { font-size: 32px; }
       .stats-inner { grid-template-columns: 1fr 1fr; }
       .process-grid { grid-template-columns: 1fr; }
-      .pricing-box { padding: 40px 24px; }
-      .guarantee-box { padding: 40px 24px; }
+      .guarantee-box { padding: 36px 20px; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .calc-inputs { padding: 20px; }
+      .calc-results-inner { padding: 20px; }
+      .calc-top-nums { grid-template-columns: 1fr; }
+      .review-stats { grid-template-columns: 1fr; border-radius: 8px; }
+      .roi-box { padding: 24px 18px; }
+      .roi-box-inner { grid-template-columns: 1fr; gap: 20px; }
+      .roi-divider { display: none; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .pricing-card-price { font-size: 36px; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+      .section-cta .btn { width: 100%; justify-content: center; }
     }
   </style>
 </head>
@@ -831,12 +518,14 @@
       <span class="logo-everix">Everix</span>
       <span class="logo-auto">Automation</span>
     </a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-links">
       <li><a href="#system">The System</a></li>
-      <li><a href="#results">Results</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#reactivation">Reactivation</a></li>
+      <li><a href="#pricing">Pricing</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
-    <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-dark" target="_blank" rel="noopener">Book Free Analysis</a>
+    <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-dark nav-book" target="_blank" rel="noopener">Book Free Analysis</a>
     <button class="nav-mobile-toggle" aria-label="Menu" onclick="toggleNav()">
       <span></span><span></span><span></span>
     </button>
@@ -850,13 +539,13 @@
       <span>Built for Canadian Law Firms</span>
     </div>
     <h1 class="fade-in" style="transition-delay:0.05s">Every call your firm misses is a case your competitor takes.</h1>
-    <p class="hero-sub fade-in" style="transition-delay:0.1s">Everix installs a PIPEDA-compliant AI intake system that responds to every inquiry in under 60 seconds, qualifies leads, and books consultations — 24/7, even when your team is in court.</p>
+    <p class="hero-sub fade-in" style="transition-delay:0.1s">Everix helps Canadian law firms capture more clients through three integrated systems: AI-powered Google review management that builds your reputation, targeted reactivation campaigns that recover lost revenue from past leads, and a 24/7 AI intake system that ensures you never miss another case.</p>
     <div class="hero-actions fade-in" style="transition-delay:0.15s">
-      <a href="#calculator" class="btn btn-dark">See What You're Losing — Free</a>
+      <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-dark" target="_blank" rel="noopener">Get Your Free Review Audit →</a>
       <a href="#system" class="btn btn-outline">How It Works</a>
     </div>
     <p class="hero-fine fade-in" style="transition-delay:0.2s">
-      Free lost lead analysis <span>·</span> No commitment <span>·</span> Takes 15 minutes
+      Free Google review audit <span>·</span> No commitment <span>·</span> See where you rank vs. competitors
     </p>
   </div>
 </section>
@@ -866,7 +555,7 @@
   <div class="container">
     <div class="stats-inner">
       <div class="stat-cell fade-in">
-        <div class="stat-num">&lt; 60s</div>
+        <div class="stat-num">&lt;60s</div>
         <div class="stat-label">Response time</div>
         <div class="stat-sub">vs. 4+ hour industry avg</div>
       </div>
@@ -889,8 +578,42 @@
   </div>
 </section>
 
+<!-- ── THREE LAYERS ── -->
+<section class="section">
+  <div class="container">
+    <div class="layers-header fade-in">
+      <span class="label">The growth engine</span>
+      <h2>Three systems. One growth engine.</h2>
+      <p>Most firms try to fix one problem at a time. Everix fixes the entire pipeline — from reputation to reactivation to real-time intake.</p>
+    </div>
+    <div class="layers-grid">
+      <div class="layer-card fade-in">
+        <span class="layer-badge layer-badge-free">Free — No cost, no commitment</span>
+        <div class="layer-icon">⭐</div>
+        <h3>Google Review Management</h3>
+        <p>We install a smart review collection system at your office, respond to every Google review within 24 hours, and track your rankings against local competitors. Your firm's reputation grows on autopilot.</p>
+        <div class="layer-bottom">This is where we start with every firm.</div>
+      </div>
+      <div class="layer-card fade-in" style="transition-delay:0.08s">
+        <span class="layer-badge layer-badge-paid">$500 per campaign</span>
+        <div class="layer-icon">🔄</div>
+        <h3>Client Reactivation Campaigns</h3>
+        <p>We write and deploy targeted email sequences to your past consultation leads who never retained and former clients who may need you again. You only pay a $200 bonus per client who comes back and retains. If nobody retains, you're out $500.</p>
+        <div class="layer-bottom">Proven ROI — one retained client covers the cost 5–10×.</div>
+      </div>
+      <div class="layer-card fade-in" style="transition-delay:0.16s">
+        <span class="layer-badge layer-badge-retainer">$995/month</span>
+        <div class="layer-icon">⚡</div>
+        <h3>AI Intake &amp; Speed-to-Lead</h3>
+        <p>The full 24/7 AI receptionist. Responds to every inquiry in under 60 seconds, qualifies leads, books consultations automatically, and follows up with leads who don't book immediately. PIPEDA-compliant and live in 14 days.</p>
+        <div class="layer-bottom">Most firms add this after seeing reactivation results.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── PAIN ── -->
-<section class="section" id="pain">
+<section class="section section-alt" id="pain">
   <div class="container">
     <div class="pain-header fade-in">
       <span class="label">The real cost of missed intake</span>
@@ -928,22 +651,17 @@
 </section>
 
 <!-- ── LOST LEAD CALCULATOR ── -->
-<section class="section section-alt" id="calculator">
+<section class="section" id="calculator">
   <div class="container">
     <div class="calc-header fade-in">
       <span class="label">Lost lead calculator</span>
       <h2>How much is your firm losing to missed inquiries?</h2>
       <p>Answer 4 quick questions. See exactly what your current intake process is costing you — in real dollars, based on your practice area.</p>
     </div>
-
     <div class="calc-card fade-in">
       <div class="calc-inputs">
-
-        <!-- Practice Area -->
         <div class="calc-field">
-          <div class="calc-field-top">
-            <label>Your primary practice area</label>
-          </div>
+          <div class="calc-field-top"><label>Your primary practice area</label></div>
           <select class="calc-select" id="calc-area" onchange="calcAreaChange()">
             <option value="4500">Family Law (divorce, custody, support)</option>
             <option value="15000">Personal Injury</option>
@@ -955,8 +673,6 @@
             <option value="8000">Civil Litigation</option>
           </select>
         </div>
-
-        <!-- Inquiries per day -->
         <div class="calc-field">
           <div class="calc-field-top">
             <label>New inquiries your firm receives per day</label>
@@ -966,8 +682,6 @@
           <div class="calc-range-ends"><span>1</span><span>50+</span></div>
           <p class="calc-field-hint">Include phone calls, web forms, emails, and social media DMs</p>
         </div>
-
-        <!-- Response rate -->
         <div class="calc-field">
           <div class="calc-field-top">
             <label>% of inquiries your team responds to within 5 minutes</label>
@@ -977,8 +691,6 @@
           <div class="calc-range-ends"><span>0%</span><span>100%</span></div>
           <p class="calc-field-hint">Industry average: 35–50% · Top-performing firms: 80%+</p>
         </div>
-
-        <!-- Conversion rate -->
         <div class="calc-field">
           <div class="calc-field-top">
             <label>Your consultation-to-retainer conversion rate</label>
@@ -988,29 +700,21 @@
           <div class="calc-range-ends"><span>5%</span><span>80%</span></div>
           <p class="calc-field-hint">Legal industry average: 20–35%</p>
         </div>
-
-        <!-- Avg case value -->
         <div class="calc-field">
-          <div class="calc-field-top">
-            <label>Average revenue per retained client</label>
-          </div>
+          <div class="calc-field-top"><label>Average revenue per retained client</label></div>
           <div class="calc-currency-wrap">
             <span>$</span>
             <input type="number" class="calc-number" id="inp-case" value="3500" min="500" step="100">
           </div>
           <p class="calc-field-hint">Pre-filled based on your practice area — adjust if yours differs</p>
         </div>
-
         <button class="calc-submit" onclick="calcRun()">See What You're Losing →</button>
       </div>
     </div>
-
-    <!-- RESULTS (hidden until button clicked) -->
     <div class="calc-results" id="calc-results">
       <div class="calc-results-inner">
         <div class="calc-res-kicker">Your Results</div>
         <h3 class="calc-res-headline">Here's what your current intake process is actually costing you.</h3>
-
         <div class="calc-top-nums">
           <div class="calc-top-cell">
             <div class="calc-top-label">Lost per month</div>
@@ -1021,7 +725,6 @@
             <div class="calc-top-num" id="res-annual">—</div>
           </div>
         </div>
-
         <div class="calc-breakdown" id="res-breakdown">
           <div>Inquiries per month.............<span id="rb-inq">—</span></div>
           <div>Inquiries your team misses.......<span id="rb-missed">—</span></div>
@@ -1029,24 +732,20 @@
           <div>Value per lost case..............<span id="rb-val">—</span></div>
           <div class="loss-line">Total monthly loss...............<span id="rb-total">—</span></div>
         </div>
-
         <div class="calc-recovery">
           <div class="calc-recovery-label">What Everix could recover</div>
           <div class="calc-recovery-num" id="res-recover">—</div>
           <p>Clients typically recover 80–90% of missed lead value after installing Everix. For $995/month, you'd see a <strong id="res-roi">—</strong> return in month one.</p>
         </div>
-
         <div class="calc-cta-box">
           <h3 id="res-cta-head">Want to stop losing this every month?</h3>
           <p>Book a free 15-minute call. We'll walk through your firm's specific situation and show you exactly what the Everix system would look like for your practice. No pitch, no pressure.</p>
           <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-green" target="_blank" rel="noopener">Book Your Free Lost Lead Analysis →</a>
           <p style="font-size:11px;color:var(--text-muted);margin-top:12px">15 minutes · No commitment · 60-day guarantee if you move forward</p>
         </div>
-
-        <p class="calc-disclaimer">Estimates based on the numbers you provided. Actual results vary. Calculation assumes average industry response patterns and conversion rates.</p>
+        <p class="calc-disclaimer">Estimates based on the numbers you provided. Actual results vary.</p>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -1059,30 +758,12 @@
       <p>Purpose-built for the highest-value, time-sensitive practice areas in Canadian law.</p>
     </div>
     <div class="practice-grid">
-      <div class="practice-card fade-in">
-        <h3>Personal Injury</h3>
-        <p>Statute of limitations pressure and high case values make every missed call a major loss. Our system captures and qualifies PI leads around the clock.</p>
-      </div>
-      <div class="practice-card fade-in" style="transition-delay:0.07s">
-        <h3>Family Law</h3>
-        <p>Clients in crisis call at all hours. Everix responds immediately, gathers key details, and routes urgent situations appropriately — with compassion.</p>
-      </div>
-      <div class="practice-card fade-in" style="transition-delay:0.14s">
-        <h3>Real Estate Law</h3>
-        <p>Time-sensitive closings and deal flow require instant intake. We ensure no buyer, seller, or referral goes unanswered.</p>
-      </div>
-      <div class="practice-card fade-in" style="transition-delay:0.21s">
-        <h3>Immigration Law</h3>
-        <p>Clients span time zones and urgency varies. Our system handles intake and follow-up regardless of when leads come in.</p>
-      </div>
-      <div class="practice-card fade-in" style="transition-delay:0.28s">
-        <h3>Corporate & Commercial</h3>
-        <p>Referrals and executive-level contacts expect immediate professionalism. Our intake reflects the quality of your firm from the first interaction.</p>
-      </div>
-      <div class="practice-card fade-in" style="transition-delay:0.35s">
-        <h3>Criminal Defence</h3>
-        <p>Time is everything in criminal matters. Everix captures urgent calls, gathers initial information, and ensures the right lawyer is alerted immediately.</p>
-      </div>
+      <div class="practice-card fade-in"><h3>Personal Injury</h3><p>Statute of limitations pressure and high case values make every missed call a major loss. Our system captures and qualifies PI leads around the clock.</p></div>
+      <div class="practice-card fade-in" style="transition-delay:0.07s"><h3>Family Law</h3><p>Clients in crisis call at all hours. Everix responds immediately, gathers key details, and routes urgent situations appropriately — with compassion.</p></div>
+      <div class="practice-card fade-in" style="transition-delay:0.14s"><h3>Real Estate Law</h3><p>Time-sensitive closings and deal flow require instant intake. We ensure no buyer, seller, or referral goes unanswered.</p></div>
+      <div class="practice-card fade-in" style="transition-delay:0.21s"><h3>Immigration Law</h3><p>Clients span time zones and urgency varies. Our system handles intake and follow-up regardless of when leads come in.</p></div>
+      <div class="practice-card fade-in" style="transition-delay:0.28s"><h3>Corporate &amp; Commercial</h3><p>Referrals and executive-level contacts expect immediate professionalism. Our intake reflects the quality of your firm from the first interaction.</p></div>
+      <div class="practice-card fade-in" style="transition-delay:0.35s"><h3>Criminal Defence</h3><p>Time is everything in criminal matters. Everix captures urgent calls, gathers initial information, and ensures the right lawyer is alerted immediately.</p></div>
     </div>
   </div>
 </section>
@@ -1095,7 +776,6 @@
       <h2>The Everix Intake System</h2>
       <p>Five automated layers that capture, qualify, and convert more of your inbound leads — without adding headcount.</p>
     </div>
-
     <div class="steps-list" style="margin-bottom:40px;">
       <div class="step-row fade-in">
         <div class="step-num">01</div>
@@ -1122,42 +802,183 @@
         <div class="step-num">04</div>
         <div class="step-content">
           <h3>Smart Follow-Up Sequences</h3>
-          <p>Leads that don't book immediately receive a structured 7-day follow-up cadence — SMS and email — timed and personalized based on where they are in the decision process. We recover the "I'll think about it" leads that currently disappear.</p>
+          <p>Leads that don't book immediately receive a structured 7-day follow-up cadence — SMS and email — timed and personalized based on where they are in the decision process.</p>
         </div>
       </div>
       <div class="step-row fade-in">
         <div class="step-num">05</div>
         <div class="step-content">
           <h3>Real-Time Reporting Dashboard</h3>
-          <p>See every lead, how they were handled, what was said, and what happened next. Full transparency, complete audit trail, and clear ROI metrics so you always know what your intake system is worth.</p>
+          <p>See every lead, how they were handled, what was said, and what happened next. Full transparency, complete audit trail, and clear ROI metrics.</p>
         </div>
       </div>
     </div>
-
-    <div class="fade-in" style="text-align:center;margin-bottom:64px;">
+    <div class="fade-in" style="text-align:center;margin-bottom:0;">
       <a href="demo.html" class="btn btn-dark">See It Working Live →</a>
       <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">Real SMS · Live AI receptionist · Automated booking flow</p>
     </div>
+  </div>
+</section>
 
-    <div class="pricing-box fade-in" id="pricing">
-      <div class="pricing-kicker">Investment</div>
-      <div class="pricing-price"><sup>$</sup>995<sub>/mo</sub></div>
-      <p class="pricing-desc">Everything included. No setup fee. No per-lead charges. Cancel anytime.</p>
-      <div class="pricing-features">
-        <div class="pricing-feature">24/7 AI intake agent</div>
-        <div class="pricing-feature">Instant lead response</div>
-        <div class="pricing-feature">Intake qualification</div>
-        <div class="pricing-feature">Calendar booking</div>
-        <div class="pricing-feature">7-day follow-up sequences</div>
-        <div class="pricing-feature">SMS + email automation</div>
-        <div class="pricing-feature">Reporting dashboard</div>
-        <div class="pricing-feature">PIPEDA-compliant data handling</div>
-        <div class="pricing-feature">Onboarding in 14 days</div>
-        <div class="pricing-feature">Ongoing support & tuning</div>
-      </div>
-      <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-green" target="_blank" rel="noopener">Book Your Free Lost Lead Analysis</a>
-      <p class="pricing-note">One recovered case per month typically covers 8–10× the cost.</p>
+<!-- ── GOOGLE REVIEW MANAGEMENT ── -->
+<section class="section section-alt" id="reviews">
+  <div class="container">
+    <div class="fade-in" style="text-align:center;margin-bottom:52px;">
+      <span class="label" style="display:block;margin-bottom:14px;">Free for every firm</span>
+      <h2>Your Google reviews are your firm's first impression.</h2>
+      <p style="font-size:16px;color:var(--text-muted);max-width:560px;margin:14px auto 0;">87% of potential clients read reviews before choosing a lawyer. Google ranks firms with more recent, responded-to reviews above firms without. We manage the entire process — for free.</p>
     </div>
+    <div class="review-blocks fade-in">
+      <div class="review-block">
+        <h3>Smart Review Collection</h3>
+        <p>We install a branded QR-based review system at your office — reception, meeting rooms, and client materials. Positive ratings are directed to Google. Negative feedback goes straight to your team privately — before it goes public. The system also builds your email list automatically with client consent.</p>
+      </div>
+      <div class="review-block">
+        <h3>24-Hour Professional Responses</h3>
+        <p>Every Google review receives a personalized, professional response within 24 hours. Google has confirmed that businesses responding to 80%+ of reviews see a measurable ranking boost. We draft every response — your team approves before posting. Each response includes your practice area and location, creating additional SEO signals.</p>
+      </div>
+      <div class="review-block">
+        <h3>Competitor Review Audit</h3>
+        <p>We track your Google review count, rating, response rate, and recency against your top 3 local competitors. You'll see exactly where you stand and what it takes to outrank them. Included free with your review management — no additional cost.</p>
+      </div>
+    </div>
+    <div class="review-stats fade-in">
+      <div class="review-stat-cell">
+        <div class="review-stat-num">#11</div>
+        <div class="review-stat-label">Review velocity is now the #11 ranking factor on Google</div>
+      </div>
+      <div class="review-stat-cell">
+        <div class="review-stat-num">80%+</div>
+        <div class="review-stat-label">Response rate threshold for a measurable ranking boost</div>
+      </div>
+      <div class="review-stat-cell">
+        <div class="review-stat-num">5/mo</div>
+        <div class="review-stat-label">Fresh reviews per month beats 200 stale ones</div>
+      </div>
+    </div>
+    <div class="section-cta fade-in">
+      <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-green" target="_blank" rel="noopener">Get Your Free Review Audit →</a>
+      <p>We'll show you your review count, rating, and response rate vs. your top competitors. Takes 15 minutes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CLIENT REACTIVATION ── -->
+<section class="section" id="reactivation">
+  <div class="container">
+    <div class="fade-in" style="text-align:center;margin-bottom:52px;">
+      <span class="label" style="display:block;margin-bottom:14px;">$500 per campaign</span>
+      <h2>Your biggest revenue opportunity is already in your database.</h2>
+      <p style="font-size:16px;color:var(--text-muted);max-width:560px;margin:14px auto 0;">Every law firm has past leads who never retained and former clients who may need help again. We bring them back — and you only pay when it works.</p>
+    </div>
+    <div class="reactivation-blocks fade-in">
+      <div class="reactivation-block">
+        <h3>How It Works</h3>
+        <p>For $500, we research your past leads, write a complete 5-email reactivation sequence, set up the sending, and track every result. Each email is personalized to your firm's voice and practice areas. You approve everything before it sends. We handle the rest.</p>
+      </div>
+      <div class="reactivation-block">
+        <h3>What You Get</h3>
+        <ul class="reactivation-list">
+          <li>5-email sequence targeting one segment of your past contacts</li>
+          <li>Full personalization with your firm's branding and voice</li>
+          <li>CASL-compliant sending with proper consent verification</li>
+          <li>Unique tracking links for every email</li>
+          <li>30-day results report: emails sent, opened, clicked, consultations booked, clients retained</li>
+          <li>$200 bonus per confirmed retained client (only if it works)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="roi-box fade-in">
+      <div class="roi-box-inner">
+        <div class="roi-side">
+          <h4>Your Investment</h4>
+          <p class="roi-big">$500 per campaign<br>+ $200 per retained client</p>
+        </div>
+        <div class="roi-divider"></div>
+        <div class="roi-side">
+          <h4>The Return</h4>
+          <p>Average family law retainer: <strong>$4,500</strong></p>
+          <p>If just ONE lead retains: <strong>9× return</strong></p>
+          <p>If three retain: <strong>$13,500 in new revenue</strong> for a $1,100 investment</p>
+        </div>
+      </div>
+    </div>
+    <div class="campaign-types fade-in">
+      <h3>Campaign Types</h3>
+      <p>Each campaign targets a different segment of your database. Most firms can run 3–4 per year:</p>
+      <ul class="campaign-list">
+        <li>Unconverted consultation leads — people who spoke to you but never retained</li>
+        <li>Former clients whose matters closed 12+ months ago — they may need you again</li>
+        <li>Website and contact form inquiries that were never followed up on</li>
+        <li>Referral leads that went cold before a consultation was booked</li>
+      </ul>
+    </div>
+    <div class="section-cta fade-in">
+      <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-green" target="_blank" rel="noopener">See How Much Revenue You're Sitting On →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING ── -->
+<section class="section section-alt" id="pricing">
+  <div class="container">
+    <div class="pricing-header fade-in">
+      <span class="label">Pricing</span>
+      <h2>Simple pricing. Serious results.</h2>
+      <p>Start with free review management. Add what you need, when you need it.</p>
+    </div>
+    <div class="pricing-grid fade-in">
+      <div class="pricing-card">
+        <div class="pricing-card-name">Review Management</div>
+        <div class="pricing-card-price">Free</div>
+        <div class="pricing-card-price-sub">No cost. No catch. No commitment.</div>
+        <ul class="pricing-card-features">
+          <li>QR-based review collection system</li>
+          <li>Professional review responses within 24 hours</li>
+          <li>Monthly competitor review audit</li>
+          <li>Reputation tracking and reporting</li>
+          <li>Email list building from review interactions</li>
+        </ul>
+        <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-outline-green" target="_blank" rel="noopener" style="width:100%;justify-content:center;">Start Free →</a>
+        <p class="pricing-card-note">This is where every engagement starts.</p>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-card-name">Reactivation Campaign</div>
+        <div class="pricing-card-price">$500</div>
+        <div class="pricing-card-price-sub">per campaign + $200 per retained client</div>
+        <ul class="pricing-card-features">
+          <li>5-email AI-written reactivation sequence</li>
+          <li>Targeting one segment of your past contacts</li>
+          <li>Full setup, personalization, and sending</li>
+          <li>Unique tracking links and booking codes</li>
+          <li>30-day results report with revenue attribution</li>
+          <li>CASL-compliant with proper consent handling</li>
+        </ul>
+        <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-outline-green" target="_blank" rel="noopener" style="width:100%;justify-content:center;">Learn More →</a>
+        <p class="pricing-card-note">Most firms run 3–4 campaigns per year.</p>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-popular-badge">Most Popular</div>
+        <div class="pricing-card-name">AI Intake System</div>
+        <div class="pricing-card-price">$995</div>
+        <div class="pricing-card-price-sub">/month · Cancel anytime</div>
+        <ul class="pricing-card-features">
+          <li>Everything in Review Management</li>
+          <li>24/7 AI receptionist and intake screening</li>
+          <li>Speed-to-lead response in under 60 seconds</li>
+          <li>Automated consultation booking</li>
+          <li>7-day smart follow-up sequences</li>
+          <li>SMS + email automation</li>
+          <li>Real-time reporting dashboard</li>
+          <li>PIPEDA-compliant data handling</li>
+          <li>Onboarding in 14 days</li>
+          <li>Ongoing optimization and support</li>
+        </ul>
+        <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-green" target="_blank" rel="noopener" style="width:100%;justify-content:center;">Book Free Analysis →</a>
+        <p class="pricing-card-note">One recovered case per month covers 8–10× the cost.</p>
+      </div>
+    </div>
+    <p class="pricing-footer-note fade-in">No setup fees · No per-lead charges · 60-day money-back guarantee on the AI Intake System</p>
   </div>
 </section>
 
@@ -1165,27 +986,15 @@
 <section class="section compliance-wrap" id="compliance">
   <div class="container">
     <div class="compliance-header fade-in">
-      <span class="label">Trust & Compliance</span>
+      <span class="label">Trust &amp; Compliance</span>
       <h2>Built for the legal standard.</h2>
       <p>Law firm data is sensitive. Every component of Everix is designed to meet PIPEDA requirements and Law Society expectations.</p>
     </div>
     <div class="compliance-grid">
-      <div class="compliance-card fade-in">
-        <h3>PIPEDA-Compliant Data Handling</h3>
-        <p>All prospective client data is collected, stored, and processed in accordance with Canada's Personal Information Protection and Electronic Documents Act.</p>
-      </div>
-      <div class="compliance-card fade-in" style="transition-delay:0.1s">
-        <h3>Canadian Data Residency</h3>
-        <p>Where required, data can be stored on Canadian servers. We work with your firm's IT and compliance team to meet your jurisdiction's requirements.</p>
-      </div>
-      <div class="compliance-card fade-in" style="transition-delay:0.2s">
-        <h3>Conflict Check Integration</h3>
-        <p>Our intake flow collects the information your team needs to run a conflict check before a consultation is confirmed.</p>
-      </div>
-      <div class="compliance-card fade-in" style="transition-delay:0.3s">
-        <h3>Privilege-Aware Design</h3>
-        <p>Everix does not provide legal advice or opinions. The AI clearly identifies itself as an automated intake assistant at all times.</p>
-      </div>
+      <div class="compliance-card fade-in"><h3>PIPEDA-Compliant Data Handling</h3><p>All prospective client data is collected, stored, and processed in accordance with Canada's Personal Information Protection and Electronic Documents Act.</p></div>
+      <div class="compliance-card fade-in" style="transition-delay:0.1s"><h3>Canadian Data Residency</h3><p>Where required, data can be stored on Canadian servers. We work with your firm's IT and compliance team to meet your jurisdiction's requirements.</p></div>
+      <div class="compliance-card fade-in" style="transition-delay:0.2s"><h3>Conflict Check Integration</h3><p>Our intake flow collects the information your team needs to run a conflict check before a consultation is confirmed.</p></div>
+      <div class="compliance-card fade-in" style="transition-delay:0.3s"><h3>Privilege-Aware Design</h3><p>Everix does not provide legal advice or opinions. The AI clearly identifies itself as an automated intake assistant at all times.</p></div>
     </div>
   </div>
 </section>
@@ -1213,13 +1022,13 @@
       </div>
       <div class="process-step fade-in" style="transition-delay:0.2s">
         <div class="process-num">3</div>
-        <h3>Go Live & Test</h3>
+        <h3>Go Live &amp; Test</h3>
         <p>Full end-to-end testing, team walkthrough, and go live. First leads handled within hours of launch.</p>
         <span class="process-tag">Days 11–14</span>
       </div>
       <div class="process-step fade-in" style="transition-delay:0.3s">
         <div class="process-num">4</div>
-        <h3>Optimize & Scale</h3>
+        <h3>Optimize &amp; Scale</h3>
         <p>Weekly check-ins in month one. Monthly reviews thereafter. The system keeps improving based on real data.</p>
         <span class="process-tag">Ongoing</span>
       </div>
@@ -1269,58 +1078,48 @@
     </div>
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          Is this legal? Can AI handle client intake in a law firm?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-body">Yes. Everix handles administrative intake — collecting contact information, case type, and urgency — not legal advice. The AI clearly identifies itself as an automated intake assistant. This is equivalent to a virtual receptionist or intake form, both widely accepted across Canadian law societies. We provide full compliance documentation on request.</div>
-        </div>
+        <button class="faq-btn" onclick="toggleFaq(this)">Is this legal? Can AI handle client intake in a law firm?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-body">Yes. Everix handles administrative intake — collecting contact information, case type, and urgency — not legal advice. The AI clearly identifies itself as an automated intake assistant. This is equivalent to a virtual receptionist or intake form, both widely accepted across Canadian law societies. We provide full compliance documentation on request.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          What happens to client data? Is it PIPEDA compliant?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-body">All prospective client data is collected and stored in compliance with PIPEDA. We use enterprise-grade encryption, do not sell or share data with third parties, and can accommodate Canadian data residency requirements where needed. Full data processing agreements are provided as part of your engagement.</div>
-        </div>
+        <button class="faq-btn" onclick="toggleFaq(this)">What happens to client data? Is it PIPEDA compliant?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-body">All prospective client data is collected and stored in compliance with PIPEDA. We use enterprise-grade encryption, do not sell or share data with third parties, and can accommodate Canadian data residency requirements where needed. Full data processing agreements are provided as part of your engagement.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          How long does it take to set up?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-body">Most firms are live within 14 days. The process: intake audit call → system build (days 1–10) → review and testing (days 11–13) → go live (day 14). We handle all technical work. Your team reviews and approves before anything goes live.</div>
-        </div>
+        <button class="faq-btn" onclick="toggleFaq(this)">How long does it take to set up?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-body">Most firms are live within 14 days. The process: intake audit call → system build (days 1–10) → review and testing (days 11–13) → go live (day 14). We handle all technical work. Your team reviews and approves before anything goes live.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          Will this replace our receptionist?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-body">No — Everix handles coverage outside business hours and the immediate first-response layer during the day. Your receptionist focuses on in-person clients, complex scheduling, and tasks that require human judgement. Most firms find their reception staff become more effective, not redundant.</div>
-        </div>
+        <button class="faq-btn" onclick="toggleFaq(this)">Will this replace our receptionist?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-body">No — Everix handles coverage outside business hours and the immediate first-response layer during the day. Your receptionist focuses on in-person clients, complex scheduling, and tasks that require human judgement. Most firms find their reception staff become more effective, not redundant.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          What if the AI doesn't understand our practice area?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-body">The system is trained on your firm's specific practice areas, intake criteria, and FAQs before going live. It learns what a qualified lead looks like for your situation — whether that's a minimum injury threshold for PI, jurisdiction requirements for immigration, or matter type for corporate work. Anything outside its scope is escalated to your team immediately.</div>
-        </div>
+        <button class="faq-btn" onclick="toggleFaq(this)">What if the AI doesn't understand our practice area?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-body">The system is trained on your firm's specific practice areas, intake criteria, and FAQs before going live. It learns what a qualified lead looks like for your situation. Anything outside its scope is escalated to your team immediately.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          What if we want to cancel?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-body">Month-to-month, cancel anytime with 30 days notice. No long-term commitment, no cancellation fee. We're confident you'll stay because the system pays for itself — but we don't lock you in to prove it.</div>
-        </div>
+        <button class="faq-btn" onclick="toggleFaq(this)">What if we want to cancel?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-body">Month-to-month, cancel anytime with 30 days notice. No long-term commitment, no cancellation fee. We're confident you'll stay because the system pays for itself — but we don't lock you in to prove it.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">How does the review management system work?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-body">We install branded QR codes at your office. When clients scan, they rate their experience. Ratings of 4–5 stars are directed to leave a Google review. Ratings of 1–3 stars are routed privately to your team, giving you a chance to address concerns before they become public. We also respond to every Google review within 24 hours with a personalized, professional response — drafted by AI, approved by your team. The entire system is free.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">What is a client reactivation campaign?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-body">It's a 5-email sequence targeting people who previously interacted with your firm but aren't currently active — past consultation leads who didn't retain, or former clients whose matters closed over a year ago. We write the emails, configure the sending, track the results, and report on exactly how many leads returned and what revenue was generated. Each campaign costs $500 plus a $200 bonus per client who retains.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">Why is the review management free?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-body">Because it's the fastest way to demonstrate what we can do. Most firms see their review count and response rate improve within the first 2–3 weeks. Once you see those results firsthand, the conversation about reactivation campaigns and AI intake happens naturally. We'd rather prove our value than pitch it.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">Can I start with just reviews and add other services later?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-body">That's exactly how most firms start. Begin with free review management, see the results, then add a reactivation campaign when you're ready. The AI intake system is there when you want to capture new leads 24/7. There's no pressure to upgrade — each layer works independently.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">How do you track reactivation results?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-body">Every reactivation email contains unique tracking links and booking codes tied specifically to that campaign. We can see exactly how many people opened the emails, clicked through, booked consultations, and ultimately retained. You receive a complete report at the end of each campaign showing the exact revenue generated. We never guess at ROI — we measure it.</div></div>
       </div>
     </div>
   </div>
@@ -1334,7 +1133,7 @@
     <p>Book a free lost lead analysis. We'll show you exactly where your firm is losing leads and what it's worth to fix it. No pitch, no pressure.</p>
     <div class="cta-actions">
       <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-green" target="_blank" rel="noopener">Book Free Lost Lead Analysis</a>
-      <a href="mailto:hello@everixautomation.com" class="btn btn-ghost" style="background:rgba(255,255,255,0.08);color:#fff;border:1.5px solid rgba(255,255,255,0.2)">hello@everixautomation.com</a>
+      <a href="mailto:hello@everixautomation.com" class="btn" style="background:rgba(255,255,255,0.08);color:#fff;border:1.5px solid rgba(255,255,255,0.2)">hello@everixautomation.com</a>
     </div>
     <a href="tel:+16476684020" class="cta-tel">Or call: 647-668-4020</a>
   </div>
@@ -1354,7 +1153,9 @@
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="#system">The Intake System</a></li>
+          <li><a href="#reviews">Google Review Management</a></li>
+          <li><a href="#reactivation">Client Reactivation</a></li>
+          <li><a href="#system">AI Intake System</a></li>
           <li><a href="#practices">Practice Areas</a></li>
           <li><a href="#compliance">PIPEDA Compliance</a></li>
           <li><a href="#pricing">Pricing</a></li>
@@ -1384,36 +1185,25 @@
 <script>
   // ── CALCULATOR ──
   function updateSliderTrack(el) {
-    const min = +el.min || 0;
-    const max = +el.max || 100;
+    const min = +el.min || 0, max = +el.max || 100;
     const pct = ((+el.value - min) / (max - min)) * 100;
     el.style.background = `linear-gradient(to right, #2D6A4F ${pct}%, #E0DED8 ${pct}%)`;
   }
-
   function calcSync(dispId, val, suffix, el) {
     document.getElementById(dispId).textContent = val + suffix;
     if (el) updateSliderTrack(el);
   }
-
   function calcAreaChange() {
-    const sel = document.getElementById('calc-area');
-    document.getElementById('inp-case').value = sel.value;
+    document.getElementById('inp-case').value = document.getElementById('calc-area').value;
   }
-
-  // Initialise slider tracks on load
   document.addEventListener('DOMContentLoaded', function() {
-    ['sl-inq', 'sl-resp', 'sl-conv'].forEach(function(id) {
-      const el = document.getElementById(id);
-      if (el) updateSliderTrack(el);
-    });
+    ['sl-inq','sl-resp','sl-conv'].forEach(id => { const el = document.getElementById(id); if (el) updateSliderTrack(el); });
   });
-
   function calcRun() {
-    const inqPerDay   = +document.getElementById('sl-inq').value;
-    const respRate    = +document.getElementById('sl-resp').value / 100;
-    const convRate    = +document.getElementById('sl-conv').value / 100;
-    const caseVal     = +document.getElementById('inp-case').value || 0;
-
+    const inqPerDay = +document.getElementById('sl-inq').value;
+    const respRate  = +document.getElementById('sl-resp').value / 100;
+    const convRate  = +document.getElementById('sl-conv').value / 100;
+    const caseVal   = +document.getElementById('inp-case').value || 0;
     const monthlyInq  = inqPerDay * 22;
     const missed      = Math.round(monthlyInq * (1 - respRate));
     const lostCases   = Math.round(missed * convRate * 10) / 10;
@@ -1421,27 +1211,24 @@
     const annualLoss  = monthlyLoss * 12;
     const recoverable = Math.round(monthlyLoss * 0.85);
     const roi         = Math.round((recoverable / 995) * 10) / 10;
-
-    const fmt = n => '$' + n.toLocaleString('en-CA');
+    const fmt  = n => '$' + n.toLocaleString('en-CA');
     const fmtM = n => n >= 1000000 ? '$' + (n/1000000).toFixed(2) + 'M' : fmt(n);
-
-    document.getElementById('res-monthly').textContent  = fmt(monthlyLoss);
-    document.getElementById('res-annual').textContent   = fmtM(annualLoss);
-    document.getElementById('rb-inq').textContent       = monthlyInq;
-    document.getElementById('rb-missed').textContent    = missed;
-    document.getElementById('rb-cases').textContent     = lostCases;
-    document.getElementById('rb-val').textContent       = fmt(caseVal);
-    document.getElementById('rb-total').textContent     = fmt(monthlyLoss);
-    document.getElementById('res-recover').textContent  = fmt(recoverable) + '/month';
-    document.getElementById('res-roi').textContent      = roi + 'x return';
+    document.getElementById('res-monthly').textContent = fmt(monthlyLoss);
+    document.getElementById('res-annual').textContent  = fmtM(annualLoss);
+    document.getElementById('rb-inq').textContent      = monthlyInq;
+    document.getElementById('rb-missed').textContent   = missed;
+    document.getElementById('rb-cases').textContent    = lostCases;
+    document.getElementById('rb-val').textContent      = fmt(caseVal);
+    document.getElementById('rb-total').textContent    = fmt(monthlyLoss);
+    document.getElementById('res-recover').textContent = fmt(recoverable) + '/month';
+    document.getElementById('res-roi').textContent     = roi + 'x return';
     document.getElementById('res-cta-head').textContent = 'Want to stop losing ' + fmt(monthlyLoss) + ' every month?';
-
     const results = document.getElementById('calc-results');
     results.classList.add('show');
     setTimeout(() => results.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
   }
 
-  // FAQ accordion
+  // ── FAQ ──
   function toggleFaq(btn) {
     const item = btn.closest('.faq-item');
     const answer = item.querySelector('.faq-answer');
@@ -1456,19 +1243,32 @@
     }
   }
 
-  // Fade-in on scroll
+  // ── FADE IN ──
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  // Mobile nav
+  // ── MOBILE NAV ──
   function toggleNav() {
-    const ul = document.querySelector('.nav-links');
-    const open = ul.style.display === 'flex';
-    ul.style.cssText = open ? '' :
-      'display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:20px 28px;gap:18px;z-index:99;';
+    const ul = document.getElementById('nav-links');
+    const isOpen = ul.classList.contains('mobile-open');
+    if (isOpen) {
+      ul.classList.remove('mobile-open');
+      ul.style.cssText = '';
+    } else {
+      ul.classList.add('mobile-open');
+      ul.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:20px 18px;gap:18px;z-index:99;';
+    }
   }
+  // Close mobile nav on link click
+  document.querySelectorAll('#nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      const ul = document.getElementById('nav-links');
+      ul.classList.remove('mobile-open');
+      ul.style.cssText = '';
+    });
+  });
 </script>
 </body>
 </html>
