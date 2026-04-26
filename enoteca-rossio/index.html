@@ -213,6 +213,35 @@
 
     .review-btn:hover { background: var(--accent); }
 
+    /* ── REVIEW PROMPTS ── */
+    .review-prompts {
+      margin: 1rem 0 1.5rem;
+    }
+
+    .review-prompts-label {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .review-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      justify-content: center;
+    }
+
+    .review-chip {
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: var(--accent);
+      border: 1px solid var(--divider);
+      border-radius: 100px;
+      padding: 0.3rem 0.75rem;
+      background: var(--bg);
+    }
+
     /* ── VOUCHER ── */
     .voucher {
       border: 1px solid var(--divider);
@@ -356,6 +385,15 @@
   <div class="thankyou" id="thankyou-happy">
     <div class="thankyou-label">Almost there</div>
     <h2>Leave a Google review and show it to your server on your next visit to claim your complimentary dessert.</h2>
+    <div class="review-prompts">
+      <p class="review-prompts-label">What made your visit special?</p>
+      <div class="review-chips">
+        <span class="review-chip">A dish you loved</span>
+        <span class="review-chip">Your server's name</span>
+        <span class="review-chip">The atmosphere</span>
+        <span class="review-chip">A wine pairing</span>
+      </div>
+    </div>
     <a class="review-btn" id="review-link" href="https://search.google.com/local/writereview?placeid=ChIJT7YYbjQ1K4gRRoYTOek9dsU" target="_blank" onclick="showFinal()">Leave a Google Review</a>
   </div>
 
