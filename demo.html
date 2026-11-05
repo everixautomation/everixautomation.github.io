@@ -138,7 +138,7 @@
       <ol class="timeline" id="timeline">
         <li data-step="0"><div class="dot">1</div><div><h3>Your inquiry comes in</h3><p>Just like a lead filling out a clinic's website form.</p></div></li>
         <li data-step="1"><div class="dot">2</div><div><h3>The front desk is alerted instantly</h3><p>You'll get the staff alert too: who you are, what you want, and a "Mark contacted" link. Tap it to see the receptionist's view.</p></div></li>
-        <li data-step="2"><div class="dot">3</div><div><h3>Your personal reply arrives</h3><p>About 30 to 60 seconds later, a text from the business asking the best time to reach you.</p></div></li>
+        <li data-step="2"><div class="dot">3</div><div><h3>Your personal reply arrives</h3><p>About 15 to 30 seconds later, a text from the business asking the best time to reach you.</p></div></li>
         <li data-step="3"><div class="dot">4</div><div><h3>Reply and keep chatting</h3><p>The AI reads your reply and answers, flags you as hot, or passes you to the team.</p></div></li>
       </ol>
       <div class="try">
@@ -185,9 +185,9 @@
     setStep(1);
     const tick = setInterval(() => {
       const s = Math.round((Date.now() - start) / 1000);
-      timer.textContent = s < 60 ? `${s}s since your inquiry` : "Check your texts, and reply to keep going";
+      timer.textContent = s < 30 ? `${s}s since your inquiry` : "Check your texts, and reply to keep going";
       if (s >= 3) setStep(2);
-      if (s >= 60) { setStep(3); clearInterval(tick); }
+      if (s >= 30) { setStep(3); clearInterval(tick); }
     }, 500);
   }
 
