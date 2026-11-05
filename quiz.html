@@ -214,7 +214,7 @@
     <div class="recs" id="res-recs"></div>
     <div class="plan">
       <span class="label">The plan that fits</span>
-      <div class="row"><span class="name" id="plan-name">Growth</span><span class="price" id="plan-price">$1,000/month</span></div>
+      <div class="row"><span class="name" id="plan-name">Growth</span><span class="price" id="plan-price">$995/month</span></div>
       <p id="plan-why"></p>
       <div class="cta-row">
         <a href="demo.html" class="btn btn-green">Try the Live Demo →</a>
@@ -369,9 +369,9 @@
   }
 
   function planFor(a) {
-    if (a.volume.n >= 50 && a.frontdesk.s <= 1) return { name: "Full", price: "$1,800/month", why: "High lead volume and a stretched front desk: you'd get everything in Growth, plus an AI assistant that calls back leads who ask for a call, review management and reactivation campaigns." };
-    if (a.volume.n >= 10 || a.frontdesk.s <= 1) return { name: "Growth", price: "$1,000/month", why: "With your lead volume, AI conversations pay off fast: questions answered instantly from your FAQ, hot leads flagged first, and only the right ones sent to your team." };
-    return { name: "Core", price: "$500/month", why: "Instant replies, front desk alerts, automatic follow-ups and a monthly report. Everything you need so no lead is missed, and you can upgrade any time." };
+    if (a.volume.n >= 50 && a.frontdesk.s <= 1) return { name: "Full", price: "$1,995/month", why: "High lead volume and a stretched front desk: you'd get everything in Growth, plus an AI assistant that calls back leads who ask for a call, review management and reactivation campaigns." };
+    if (a.volume.n >= 10 || a.frontdesk.s <= 1) return { name: "Growth", price: "$995/month", why: "With your lead volume, AI conversations pay off fast: questions answered instantly from your FAQ, hot leads flagged first, and only the right ones sent to your team." };
+    return { name: "Core", price: "$495/month", why: "Instant replies, front desk alerts, automatic follow-ups and a monthly report. Everything you need so no lead is missed, and you can upgrade any time." };
   }
 
   async function submitGate(e) {
