@@ -3,1543 +3,425 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free AI Opportunity Report — Everix Automation</title>
+  <title>Speed-to-Lead Score | Everix Automation</title>
+  <meta name="description" content="A free 2-minute quiz for med spas, dental clinics and law firms. See how fast you answer new leads, what slow replies cost you each month, and the three fixes that matter most." />
+  <link rel="canonical" href="https://everixautomation.com/quiz.html" />
+  <meta name="theme-color" content="#0B1A15" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg:          #F5F4F0;
-      --card:        #FFFFFF;
-      --text:        #111110;
-      --green:       #2D6A4F;
-      --green-light: #E8F2EC;
-      --muted:       #6B6B65;
-      --border:      #E0DED8;
-      --btn-dark:    #111110;
+      --bg: #F6F7F4; --surface: #FFFFFF; --ink: #0B1A15; --ink-2: #12271F; --text: #0E1B16; --muted: #5A6A63;
+      --line: #E2E8E4; --green: #0E9F6E; --green-dark: #0A7A55; --green-light: #E5F5EE; --amber: #F5A524; --red: #D9534F;
+      --sans: 'Plus Jakarta Sans', system-ui, sans-serif; --serif: 'Instrument Serif', Georgia, serif; --mono: 'JetBrains Mono', monospace;
+      --shadow: 0 1px 2px rgba(11,26,21,0.04), 0 10px 30px rgba(11,26,21,0.07);
+      --shadow-lg: 0 2px 6px rgba(11,26,21,0.06), 0 24px 60px rgba(11,26,21,0.14);
     }
+    body { font-family: var(--sans); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased;
+      background: radial-gradient(800px 420px at 85% 0%, rgba(14,159,110,0.14), transparent 60%), var(--bg); min-height: 100vh; }
+    a { color: var(--green-dark); }
+    nav { border-bottom: 1px solid var(--line); background: rgba(246,247,244,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 10; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1040px; margin: 0 auto; padding: 0 20px; gap: 12px; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; background: linear-gradient(140deg, #13C08A, #0A7A55); color: #fff; box-shadow: 0 4px 12px rgba(14,159,110,0.35); }
+    .logo-mark svg { width: 16px; height: 16px; }
+    .logo-everix { font-weight: 800; font-size: 19px; letter-spacing: -0.03em; color: var(--text); }
+    .logo-auto { font-size: 10px; font-weight: 700; letter-spacing: 2.6px; text-transform: uppercase; color: var(--muted); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 12px; font: 700 15px var(--sans); cursor: pointer; text-decoration: none; min-height: 50px; border: 1.5px solid transparent; transition: transform 0.15s, background 0.2s, opacity 0.2s; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-dark { background: var(--ink); color: #fff; box-shadow: 0 6px 18px rgba(11,26,21,0.18); }
+    .btn-green { background: var(--green); color: #fff; box-shadow: 0 8px 22px rgba(14,159,110,0.32); }
+    .btn-green:hover { background: var(--green-dark); }
+    .btn-outline { background: #fff; color: var(--text); border-color: var(--line); }
+    .btn[disabled] { opacity: 0.45; cursor: not-allowed; transform: none; box-shadow: none; }
+    .nav-inner .btn { min-height: 42px; padding: 10px 18px; font-size: 14px; }
 
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      min-height: 100vh;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', serif;
-      line-height: 1.2;
-    }
-
-    /* ── BACKGROUND ── */
-    .page-bg { display: none; }
-
-    /* ── NAV ── */
-    nav {
-      position: relative;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.25rem 6%;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-logo {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-      text-decoration: none;
-    }
-
-    .nav-logo .logo-everix {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--text);
-      letter-spacing: -0.3px;
-    }
-
-    .nav-logo .logo-auto {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: #6dbf94;
-      margin-top: 1px;
-    }
-
-    .nav-back {
-      font-size: 0.85rem;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-back:hover { color: var(--text); }
-
-    /* ── MAIN WRAPPER ── */
-    .quiz-wrap {
-      position: relative;
-      z-index: 1;
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem 5rem;
-    }
-
-    /* ── SCREENS ── */
+    main { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
     .screen { display: none; }
-    .screen.active { display: block; }
-
-    /* ── INTRO SCREEN ── */
-    .intro-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--green-light);
-      border: 1px solid rgba(45,106,79,0.3);
-      color: var(--green);
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 0.3rem 0.9rem;
-      border-radius: 999px;
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.05em;
-    }
-
-    .intro-badge-dot {
-      width: 6px; height: 6px;
-      background: var(--green);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
-    .intro-screen h1 {
-      font-size: clamp(1.8rem, 5vw, 2.6rem);
-      font-weight: 700;
-      margin-bottom: 1rem;
-      letter-spacing: -0.03em;
-    }
-
-    .intro-screen h1 .purple { color: var(--green); }
-    .intro-screen h1 .teal { color: var(--green); }
-
-    .intro-screen .sub {
-      font-size: 1.05rem;
-      color: var(--muted);
-      margin-bottom: 2rem;
-      line-height: 1.7;
-    }
-
-    .intro-proof {
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-      margin-bottom: 2rem;
-    }
-
-    .intro-proof-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .intro-proof-item::before {
-      content: '✓';
-      color: var(--green);
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
-    .intro-proof-item strong { color: var(--text); }
-
-    .btn-start {
-      width: 100%;
-      background: var(--btn-dark);
-      color: #FFFFFF;
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 700;
-      font-size: 1.05rem;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      display: block;
-      text-align: center;
-    }
-
-    .btn-start:hover {
-      background: #2a2a28;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(17,17,16,0.2);
-    }
-
-    .intro-note {
-      text-align: center;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 0.75rem;
-    }
-
-    /* ── PROGRESS BAR ── */
-    .progress-bar-wrap {
-      margin-bottom: 2rem;
-    }
-
-    .progress-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.5rem;
-    }
-
-    .progress-label {
-      font-size: 0.78rem;
-      color: var(--muted);
-      font-weight: 500;
-    }
-
-    .progress-pct {
-      font-size: 0.78rem;
-      color: var(--green);
-      font-weight: 600;
-    }
-
-    .progress-track {
-      height: 4px;
-      background: var(--border);
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: var(--green);
-      border-radius: 999px;
-      transition: width 0.4s ease;
-    }
-
-    /* ── QUESTION CARD ── */
-    .q-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 2rem;
-    }
-
-    .q-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--green);
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-
-    .q-text {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.01em;
-    }
-
-    .q-subtext {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-    }
-
-    /* ── OPTIONS ── */
-    .options {
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-    }
-
-    .option {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.9rem 1.1rem;
-      background: var(--bg);
-      border: 1.5px solid var(--border);
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-align: left;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.95rem;
-      color: var(--muted);
-      width: 100%;
-    }
-
-    .option:hover {
-      border-color: var(--green);
-      color: var(--text);
-      background: var(--green-light);
-    }
-
-    .option.selected {
-      border-color: var(--green);
-      background: var(--green-light);
-      color: var(--text);
-    }
-
-    .option-indicator {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      border: 2px solid var(--border);
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s;
-    }
-
-    .option.selected .option-indicator {
-      border-color: var(--green);
-      background: var(--green);
-    }
-
-    .option.selected .option-indicator::after {
-      content: '';
-      width: 6px;
-      height: 6px;
-      background: white;
-      border-radius: 50%;
-    }
-
-    /* ── NAV BUTTONS ── */
-    .q-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 1.5rem;
-    }
-
-    .btn-back {
-      background: none;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      padding: 0.7rem 1.4rem;
-      border-radius: 8px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .btn-back:hover {
-      border-color: var(--text);
-      color: var(--text);
-    }
-
-    .btn-next {
-      background: var(--btn-dark);
-      color: #FFFFFF;
-      padding: 0.7rem 1.8rem;
-      border-radius: 8px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      opacity: 0.4;
-      pointer-events: none;
-    }
-
-    .btn-next.enabled {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    .btn-next.enabled:hover {
-      background: #2a2a28;
-      transform: translateY(-1px);
-    }
-
-    /* ── EMAIL GATE SCREEN ── */
-    .gate-screen {
-      text-align: center;
-    }
-
-    .gate-teaser {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .score-teaser {
-      margin-bottom: 1.5rem;
-    }
-
-    .score-badge-large {
-      display: inline-block;
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      font-weight: 700;
-      color: var(--green);
-      line-height: 1;
-    }
-
-    .score-badge-label {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 0.25rem;
-    }
-
-    .score-bar-preview {
-      margin-top: 1.25rem;
-      text-align: left;
-    }
-
-    .score-bar-item {
-      margin-bottom: 0.75rem;
-    }
-
-    .score-bar-meta {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.82rem;
-      margin-bottom: 0.35rem;
-    }
-
-    .score-bar-name { color: var(--muted); }
-    .score-bar-value { color: var(--text); font-weight: 600; }
-
-    .score-bar-track {
-      height: 6px;
-      background: var(--border);
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .score-bar-fill {
-      height: 100%;
-      border-radius: 999px;
-      transition: width 1s ease;
-    }
-
-    .score-bar-fill.lead { background: linear-gradient(90deg, var(--green), #6dbf94); }
-    .score-bar-fill.followup { background: linear-gradient(90deg, #2D6A4F, #6dbf94); }
-    .score-bar-fill.ops { background: linear-gradient(90deg, #B45309, #D97706); }
-
-    .gate-blur {
-      position: relative;
-      padding: 1rem;
-      border-radius: 10px;
-      background: var(--bg);
-      border: 1px dashed var(--border);
-      overflow: hidden;
-    }
-
-    .gate-blur-content {
-      filter: blur(5px);
-      user-select: none;
-      pointer-events: none;
-    }
-
-    .gate-blur-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(245,244,240,0.7);
-      backdrop-filter: blur(2px);
-    }
-
-    .gate-blur-label {
-      font-size: 0.8rem;
-      color: var(--green);
-      font-weight: 600;
-      background: var(--bg);
-      padding: 0.4rem 0.9rem;
-      border-radius: 999px;
-      border: 1px solid rgba(45,106,79,0.3);
-    }
-
-    .gate-form-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 2rem;
-    }
-
-    .gate-form-box h2 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .gate-form-box p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-
-    .gate-form {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .gate-input {
-      width: 100%;
-      background: var(--bg);
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      padding: 0.85rem 1rem;
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.95rem;
-      transition: border-color 0.2s;
-      outline: none;
-    }
-
-    .gate-input:focus { border-color: var(--green); }
-    .gate-input::placeholder { color: var(--muted); }
-
-    .btn-gate {
-      width: 100%;
-      background: var(--btn-dark);
-      color: #FFFFFF;
-      padding: 0.9rem 1.5rem;
-      border-radius: 8px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .btn-gate:hover {
-      background: #2a2a28;
-      transform: translateY(-1px);
-    }
-
-    .btn-gate:disabled {
-      opacity: 0.6;
-      pointer-events: none;
-    }
-
-    .gate-privacy {
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-top: 0.5rem;
-    }
-
-    /* ── RESULTS SCREEN ── */
-    .results-screen h2 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 0.35rem;
-      letter-spacing: -0.02em;
-    }
-
-    .results-screen .results-sub {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
-
-    .results-header {
-      margin-bottom: 1.5rem;
-    }
-
-    /* Score section */
-    .results-score-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 2rem;
-      margin-bottom: 1.25rem;
-      text-align: center;
-    }
-
-    .results-score-top {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .big-score {
-      font-family: 'Playfair Display', serif;
-      font-size: 5rem;
-      font-weight: 700;
-      line-height: 1;
-      color: var(--green);
-    }
-
-    .score-label-block { text-align: left; }
-
-    .score-label-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.25rem;
-    }
-
-    .score-label-sub {
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
-    .results-bars {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      text-align: left;
-    }
-
-    /* Loss callout */
-    .loss-callout {
-      background: rgba(220,38,38,0.06);
-      border: 1px solid rgba(220,38,38,0.2);
-      border-left: 3px solid #DC2626;
-      border-radius: 10px;
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .loss-callout-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: #DC2626;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-
-    .loss-amount {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: #DC2626;
-      line-height: 1;
-      margin-bottom: 0.35rem;
-    }
-
-    .loss-desc {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    /* Recommendations */
-    .recs-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 2rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .recs-card h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .rec-item {
-      display: flex;
-      gap: 1rem;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .rec-item:last-child { border-bottom: none; padding-bottom: 0; }
-
-    .rec-num {
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
-      background: var(--green-light);
-      border: 1px solid rgba(45,106,79,0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--green);
-      flex-shrink: 0;
-      font-family: 'DM Sans', sans-serif;
-    }
-
-    .rec-content h4 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-      color: var(--text);
-    }
-
-    .rec-content p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* CTA card */
-    .results-cta-card {
-      background: var(--green-light);
-      border: 1px solid rgba(45,106,79,0.2);
-      border-radius: 14px;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .results-cta-card h3 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .results-cta-card p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-
-    .btn-book {
-      display: inline-block;
-      background: var(--btn-dark);
-      color: #FFFFFF;
-      padding: 0.9rem 2.2rem;
-      border-radius: 8px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: none;
-      transition: all 0.2s;
-      margin-bottom: 0.75rem;
-    }
-
-    .btn-book:hover {
-      background: #2a2a28;
-      color: #FFFFFF;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(17,17,16,0.2);
-    }
-
-    .results-cta-meta {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .results-contact {
-      margin-top: 0.5rem;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    .results-contact a {
-      color: var(--green);
-      text-decoration: none;
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .quiz-wrap { padding: 2rem 1rem 4rem; }
-      .q-card { padding: 1.5rem; }
-      .gate-form-box { padding: 1.5rem; }
-      .results-cta-card { padding: 1.5rem; }
-      .big-score { font-size: 4rem; }
-    }
+    .screen.active { display: block; animation: in 0.35s ease; }
+    @keyframes in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    .label { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--green-dark); }
+    .label::before { content: ''; width: 18px; height: 1.5px; background: currentColor; opacity: 0.6; }
+    h1 { font-weight: 800; letter-spacing: -0.035em; font-size: clamp(34px, 5.5vw, 56px); line-height: 1.08; margin: 14px 0 18px; }
+    h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--green); }
+    h2 { font-weight: 800; letter-spacing: -0.025em; font-size: clamp(26px, 4vw, 36px); line-height: 1.15; }
+    .lead { font-size: 18px; color: var(--muted); max-width: 600px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 32px; box-shadow: var(--shadow); }
+
+    /* intro */
+    .intro { text-align: center; }
+    .intro .lead { margin: 0 auto 30px; }
+    .perks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 34px 0; text-align: left; }
+    .perk { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
+    .perk b { display: block; font-size: 15px; margin-bottom: 4px; }
+    .perk span { font-size: 14px; color: var(--muted); }
+    .fine { font-size: 13px; color: var(--muted); margin-top: 14px; }
+
+    /* quiz */
+    .progress { margin-bottom: 22px; }
+    .progress-meta { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); font-weight: 600; margin-bottom: 8px; }
+    .progress-track { height: 8px; background: var(--line); border-radius: 100px; overflow: hidden; }
+    .progress-fill { height: 100%; width: 0; background: linear-gradient(90deg, #13C08A, #0A7A55); border-radius: 100px; transition: width 0.35s ease; }
+    .q-text { font-size: clamp(22px, 3.2vw, 28px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.25; margin-bottom: 8px; }
+    .q-sub { font-size: 15px; color: var(--muted); margin-bottom: 22px; }
+    .options { display: grid; gap: 10px; margin-top: 18px; }
+    .option { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; padding: 16px 18px; border: 1.5px solid var(--line); border-radius: 14px; background: #fff; font: 600 15.5px var(--sans); color: var(--text); cursor: pointer; transition: border-color 0.15s, background 0.15s, transform 0.1s; }
+    .option:hover { border-color: #BFE5D4; }
+    .option:active { transform: scale(0.995); }
+    .option .dot { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--line); flex-shrink: 0; display: grid; place-items: center; }
+    .option.selected { border-color: var(--green); background: var(--green-light); }
+    .option.selected .dot { border-color: var(--green); background: var(--green); box-shadow: inset 0 0 0 3px #fff; }
+    .option:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+    .nav-btns { display: flex; justify-content: space-between; align-items: center; margin-top: 26px; gap: 12px; }
+    .link-btn { background: none; border: none; font: 600 15px var(--sans); color: var(--muted); cursor: pointer; padding: 10px 4px; }
+    .link-btn:hover { color: var(--text); }
+
+    /* gate */
+    .gate { text-align: center; }
+    .score-ring { --p: 0; --c: var(--green); width: 160px; height: 160px; border-radius: 50%; margin: 6px auto 22px; display: grid; place-items: center;
+      background: conic-gradient(var(--c) calc(var(--p) * 1%), var(--line) 0); }
+    .score-ring > div { width: 128px; height: 128px; border-radius: 50%; background: #fff; display: grid; place-items: center; align-content: center; }
+    .score-ring b { font-size: 44px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+    .score-ring small { font-size: 12px; color: var(--muted); }
+    .gate form { max-width: 420px; margin: 24px auto 0; text-align: left; }
+    .field { margin-bottom: 14px; }
+    .field label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .field label span { font-weight: 400; color: var(--muted); }
+    .field input { width: 100%; font: 15px var(--sans); padding: 13px 14px; border: 1.5px solid var(--line); border-radius: 12px; background: #fff; color: var(--text); }
+    .field input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 4px var(--green-light); }
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .err { color: var(--red); font-size: 14px; margin-top: 8px; display: none; }
+
+    /* results */
+    .results-head { text-align: center; margin-bottom: 26px; }
+    .results-grid { display: grid; grid-template-columns: 220px 1fr; gap: 28px; align-items: center; }
+    .bars { display: grid; gap: 16px; }
+    .bar-meta { display: flex; justify-content: space-between; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .bar-meta span:last-child { font-family: var(--mono); font-weight: 500; color: var(--muted); }
+    .bar-track { height: 10px; background: var(--line); border-radius: 100px; overflow: hidden; }
+    .bar-fill { height: 100%; width: 0; border-radius: 100px; transition: width 1s ease; }
+    .verdict { text-align: center; font-size: 15px; color: var(--muted); margin-top: 4px; }
+    .loss { margin-top: 20px; background: var(--ink); color: #fff; border-radius: 20px; padding: 28px 30px; box-shadow: var(--shadow-lg); position: relative; overflow: hidden; }
+    .loss::after { content: ''; position: absolute; inset: 0; background: radial-gradient(500px 200px at 90% 0%, rgba(14,159,110,0.3), transparent 70%); pointer-events: none; }
+    .loss .k { font-family: var(--mono); font-size: 11px; letter-spacing: 1.8px; text-transform: uppercase; color: #9FDCC4; }
+    .loss .n { font-size: clamp(34px, 6vw, 48px); font-weight: 800; letter-spacing: -0.04em; color: #FF8A82; line-height: 1.1; margin: 6px 0 8px; }
+    .loss p { font-size: 15px; color: rgba(255,255,255,0.75); position: relative; }
+    .recs { margin-top: 20px; display: grid; gap: 12px; }
+    .rec { display: grid; grid-template-columns: 40px 1fr; gap: 14px; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; }
+    .rec .num { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--green-light); color: var(--green-dark); font-weight: 800; }
+    .rec h3 { font-size: 16.5px; font-weight: 800; margin-bottom: 4px; }
+    .rec p { font-size: 14.5px; color: var(--muted); }
+    .plan { margin-top: 20px; border-radius: 20px; padding: 26px 28px; border: 2px solid transparent;
+      background: linear-gradient(#fff, #fff) padding-box, linear-gradient(135deg, #13C08A, #F5A524) border-box; box-shadow: var(--shadow); }
+    .plan .row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 6px 0 8px; }
+    .plan .name { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; }
+    .plan .price { font-weight: 800; font-size: 20px; color: var(--green-dark); }
+    .plan p { font-size: 15px; color: var(--muted); }
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+    .disclaimer { font-size: 12px; color: var(--muted); text-align: center; margin-top: 22px; }
+
+    @media (max-width: 640px) {
+      main { padding: 32px 16px 64px; }
+      .card { padding: 22px; }
+      .perks { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: 1fr; }
+      .cta-row .btn { width: 100%; }
+      .nav-inner .btn { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) { .screen.active { animation: none; } .bar-fill, .progress-fill { transition: none; } }
   </style>
 </head>
 <body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="Everix Automation home"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.2 2L4.6 13.4h6.1L9.9 22l8.6-11.4h-6.1L13.2 2z"/></svg></span><span class="logo-everix">Everix</span><span class="logo-auto">Automation</span></a>
+    <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-dark" target="_blank" rel="noopener">Book a Free Call</a>
+  </div>
+</nav>
 
-  <div class="page-bg"></div>
-
-  <!-- NAV -->
-  <nav>
-    <a href="index.html" class="nav-logo" aria-label="Everix Automation home">
-      <span class="logo-everix">Everix</span>
-      <span class="logo-auto">Automation</span>
-    </a>
-    <a href="index.html" class="nav-back">← Back to Home</a>
-  </nav>
-
-  <div class="quiz-wrap">
-
-    <!-- ── INTRO SCREEN ── -->
-    <div id="screen-intro" class="screen active intro-screen">
-      <div class="intro-badge">
-        <span class="intro-badge-dot"></span>
-        Free AI Opportunity Report
-      </div>
-      <h1>
-        Find out exactly how much<br />
-        your business loses each week<br />
-        without <span class="purple">AI</span> — in <span class="teal">90 seconds.</span>
-      </h1>
-      <p class="sub">Answer 8 questions about how your business handles leads, follow-up, and admin. Get a free personalized report with your AI Opportunity Score, estimated monthly loss, and top 3 fixes — specific to your industry.</p>
-      <div class="intro-proof">
-        <div class="intro-proof-item">Takes <strong>under 2 minutes</strong></div>
-        <div class="intro-proof-item"><strong>Free instant results</strong> — no waiting</div>
-        <div class="intro-proof-item">Used by <strong>50+ Canadian service businesses</strong></div>
-        <div class="intro-proof-item"><strong>No pitch</strong> — just your numbers</div>
-      </div>
-      <button class="btn-start" onclick="startQuiz()">Get My Free AI Report →</button>
-      <div class="intro-note">No credit card. No obligation. Takes 90 seconds.</div>
+<main>
+  <!-- INTRO -->
+  <section class="screen active intro" id="screen-intro">
+    <span class="label">Free 2-minute quiz</span>
+    <h1>What's your <em>Speed-to-Lead</em> score?</h1>
+    <p class="lead">For med spas, dental clinics and law firms. Answer 8 quick questions and see how fast you really answer new leads, what slow replies are likely costing you each month, and the three fixes that matter most.</p>
+    <button class="btn btn-green" onclick="startQuiz()">Start the Quiz →</button>
+    <div class="perks">
+      <div class="perk"><b>Your score</b><span>Response speed, follow-up and visibility, out of 100.</span></div>
+      <div class="perk"><b>Your monthly leak</b><span>A dollar estimate based on your own numbers.</span></div>
+      <div class="perk"><b>Your 3 fixes</b><span>Specific to your answers, plus the plan that fits.</span></div>
     </div>
+    <p class="fine">No sales pitch in the quiz. Takes about 2 minutes.</p>
+  </section>
 
-    <!-- ── QUIZ SCREEN ── -->
-    <div id="screen-quiz" class="screen">
-      <div class="progress-bar-wrap">
-        <div class="progress-meta">
-          <span class="progress-label" id="progress-label">Question 1 of 8</span>
-          <span class="progress-pct" id="progress-pct">0%</span>
-        </div>
-        <div class="progress-track">
-          <div class="progress-fill" id="progress-fill" style="width:0%"></div>
-        </div>
-      </div>
-
-      <div class="q-card" id="question-card">
-        <!-- rendered by JS -->
-      </div>
-
-      <div class="q-nav">
-        <button class="btn-back" id="btn-back" onclick="goBack()">← Back</button>
-        <button class="btn-next" id="btn-next" onclick="goNext()">Continue →</button>
+  <!-- QUIZ -->
+  <section class="screen" id="screen-quiz">
+    <div class="progress">
+      <div class="progress-meta"><span id="progress-label">Question 1 of 8</span><span id="progress-pct">0%</span></div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    </div>
+    <div class="card">
+      <div id="question"></div>
+      <div class="nav-btns">
+        <button class="link-btn" id="btn-back" onclick="goBack()">← Back</button>
+        <button class="btn btn-dark" id="btn-next" onclick="goNext()" disabled>Next →</button>
       </div>
     </div>
+  </section>
 
-    <!-- ── EMAIL GATE SCREEN ── -->
-    <div id="screen-gate" class="screen gate-screen">
-      <div class="gate-teaser">
-        <div class="score-teaser">
-          <div class="score-badge-large" id="gate-score">—</div>
-          <div class="score-badge-label">Your AI Opportunity Score (out of 100)</div>
-        </div>
-        <div class="score-bar-preview" id="gate-bars">
-          <!-- rendered by JS -->
-        </div>
+  <!-- GATE -->
+  <section class="screen gate" id="screen-gate">
+    <div class="card">
+      <span class="label">Your score is ready</span>
+      <h2 style="margin:12px 0 18px">Here's your <em>Speed-to-Lead</em> score.</h2>
+      <div class="score-ring" id="gate-ring"><div><b id="gate-score">0</b><small>out of 100</small></div></div>
+      <p class="lead" style="margin:0 auto;font-size:16px">Where should we send your full report? You'll see your breakdown, your estimated monthly leak and your top 3 fixes right away.</p>
+      <form id="gate-form" novalidate onsubmit="submitGate(event)">
+        <div class="field"><label for="g-name">First name</label><input id="g-name" autocomplete="given-name" maxlength="80"></div>
+        <div class="field"><label for="g-business">Business name <span>(optional)</span></label><input id="g-business" autocomplete="organization" maxlength="120"></div>
+        <div class="field"><label for="g-email">Email</label><input id="g-email" type="email" autocomplete="email" required></div>
+        <div class="hp" aria-hidden="true"><label for="g-website">Website</label><input id="g-website" tabindex="-1" autocomplete="off"></div>
+        <button class="btn btn-green" id="btn-gate" type="submit" style="width:100%">See My Full Report →</button>
+        <p class="err" id="gate-err" role="alert">Please enter a valid email.</p>
+        <p class="fine" style="text-align:center">Everix may email you about your results. No spam, and you can opt out any time.</p>
+      </form>
+    </div>
+  </section>
 
-        <div class="gate-blur" style="margin-top:1.25rem;">
-          <div class="gate-blur-content">
-            <div style="height:60px;background:rgba(220,38,38,0.1);border-radius:8px;margin-bottom:0.5rem;"></div>
-            <div style="height:40px;background:rgba(45,106,79,0.08);border-radius:8px;"></div>
-          </div>
-          <div class="gate-blur-overlay">
-            <span class="gate-blur-label">🔒 Unlock your full report below</span>
-          </div>
+  <!-- RESULTS -->
+  <section class="screen" id="screen-results">
+    <div class="results-head">
+      <span class="label">Your report</span>
+      <h2 id="results-title" style="margin-top:12px">Your Speed-to-Lead report</h2>
+    </div>
+    <div class="card">
+      <div class="results-grid">
+        <div>
+          <div class="score-ring" id="res-ring"><div><b id="res-score">0</b><small>out of 100</small></div></div>
+          <p class="verdict" id="res-verdict"></p>
         </div>
-      </div>
-
-      <div class="gate-form-box">
-        <h2>Unlock Your Full AI Report</h2>
-        <p>Enter your email to see your estimated monthly loss, your top 3 AI fixes, and your personalized next steps. No pitch. Just your numbers.</p>
-        <div class="gate-form">
-          <input type="text" class="gate-input" id="gate-name" placeholder="First name" />
-          <input type="email" class="gate-input" id="gate-email" placeholder="Business email address" />
-          <button class="btn-gate" id="btn-gate" onclick="submitGate()">Unlock My Full Report →</button>
-          <div class="gate-privacy">🔒 No spam. Unsubscribe any time. Your info is never shared.</div>
-        </div>
+        <div class="bars" id="res-bars"></div>
       </div>
     </div>
-
-    <!-- ── RESULTS SCREEN ── -->
-    <div id="screen-results" class="screen results-screen">
-      <div class="results-header">
-        <h2 id="results-title">Your AI Opportunity Report</h2>
-        <p class="results-sub" id="results-sub">Here's what we found based on your answers — and what to do about it.</p>
-      </div>
-
-      <!-- Score card -->
-      <div class="results-score-card">
-        <div class="results-score-top">
-          <div class="big-score" id="results-score-big">—</div>
-          <div class="score-label-block">
-            <div class="score-label-title">AI Opportunity Score</div>
-            <div class="score-label-sub" id="results-score-interpretation">out of 100</div>
-          </div>
-        </div>
-        <div class="results-bars" id="results-bars">
-          <!-- rendered by JS -->
-        </div>
-      </div>
-
-      <!-- Loss callout -->
-      <div class="loss-callout">
-        <div class="loss-callout-label">Estimated Monthly Loss Without AI</div>
-        <div class="loss-amount" id="results-loss">—</div>
-        <div class="loss-desc" id="results-loss-desc">Based on your answers, here is the estimated revenue left on the table each month.</div>
-      </div>
-
-      <!-- Top 3 Recommendations -->
-      <div class="recs-card">
-        <h3>Your Top 3 AI Opportunities</h3>
-        <div id="results-recs">
-          <!-- rendered by JS -->
-        </div>
-      </div>
-
-      <!-- CTA -->
-      <div class="results-cta-card">
-        <h3>Want us to build this for your business?</h3>
-        <p>Book a free 15-minute AI Gap Analysis. We'll walk through your results together, show you exactly what we'd build for your business, and give you a real ROI estimate — no commitment needed.</p>
-        <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" target="_blank" class="btn-book">Book My Free Lost Lead Analysis →</a>
-        <div class="results-cta-meta">15 minutes · No pitch · No pressure · 60-day money-back guarantee</div>
-        <div class="results-contact">
-          Or call/text us directly: <a href="tel:6476684020">647-668-4020</a>
-        </div>
+    <div class="loss">
+      <div class="k">Estimated monthly leak</div>
+      <div class="n" id="res-loss">$0</div>
+      <p id="res-loss-desc"></p>
+    </div>
+    <h2 style="margin:36px 0 4px;font-size:24px">Your top 3 fixes</h2>
+    <div class="recs" id="res-recs"></div>
+    <div class="plan">
+      <span class="label">The plan that fits</span>
+      <div class="row"><span class="name" id="plan-name">Growth</span><span class="price" id="plan-price">$1,000/month</span></div>
+      <p id="plan-why"></p>
+      <div class="cta-row">
+        <a href="demo.html" class="btn btn-green">Try the Live Demo →</a>
+        <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-outline" target="_blank" rel="noopener">Book a Free Call</a>
       </div>
     </div>
+    <p class="disclaimer">Estimates are based on your answers and typical conversion rates. Actual results vary.</p>
+  </section>
+</main>
 
-  </div><!-- /quiz-wrap -->
+<script>
+  const QUIZ_API = "https://speed-to-lead-production-fa73.up.railway.app/demo/quiz";
 
-  <script>
-    // ── CONFIG ──────────────────────────────────────────────────────────
-    // Replace this with your Make.com / GoHighLevel / Zapier webhook URL
-    // when ready. The quiz works without it — email just won't be captured.
-    const WEBHOOK_URL = '';  // e.g. 'https://hook.us1.make.com/XXXX'
+  const VALUE_OPTIONS = {
+    medspa: [["Under $600", 450], ["$600 – $1,500", 1000], ["$1,500 – $3,000", 2200], ["$3,000+", 3500]],
+    dental: [["Under $800", 600], ["$800 – $1,500", 1100], ["$1,500 – $3,000", 2200], ["$3,000+", 3500]],
+    law:    [["Under $2,000", 1500], ["$2,000 – $5,000", 3500], ["$5,000 – $15,000", 9000], ["$15,000+", 20000]],
+    other:  [["Under $500", 350], ["$500 – $1,500", 1000], ["$1,500 – $5,000", 3000], ["$5,000+", 6000]],
+  };
 
-    // ── QUIZ DATA ───────────────────────────────────────────────────────
-    const UNIVERSAL_QUESTIONS = [
-      {
-        id: 'q1',
-        label: 'Question 1 of 8',
-        text: 'What type of business do you run?',
-        subtext: 'This helps us show you industry-specific results.',
-        options: [
-          { text: 'Trades / Home Services (HVAC, Plumbing, Electrical, Roofing, Landscaping)', value: 'trades', score: null },
-          { text: 'Healthcare / Dental Practice', value: 'healthcare', score: null },
-          { text: 'Real Estate (Agent, Broker, or Property Manager)', value: 'realestate', score: null },
-          { text: 'Other service business', value: 'other', score: null },
-        ]
-      },
-      {
-        id: 'q2',
-        label: 'Question 2 of 8',
-        text: 'How many people are on your team (including you)?',
-        subtext: 'Used to estimate admin time savings.',
-        options: [
-          { text: 'Just me', value: 'solo', score: 0, bonus: 0 },
-          { text: '2–5', value: '2-5', score: 1, bonus: 1 },
-          { text: '6–15', value: '6-15', score: 2, bonus: 2 },
-          { text: '16+', value: '16+', score: 3, bonus: 3 },
-        ]
-      }
+  const QUESTIONS = [
+    { id: "industry", text: "What kind of business do you run?", sub: "So your numbers match your industry.",
+      options: [{ t: "Med spa / aesthetics", v: "medspa" }, { t: "Dental clinic", v: "dental" }, { t: "Law firm", v: "law" }, { t: "Other appointment-based business", v: "other" }] },
+    { id: "volume", text: "About how many new inquiries do you get per week?", sub: "Web forms, lead ads, emails and DMs. Not existing clients.",
+      options: [{ t: "1 – 5", n: 3 }, { t: "6 – 15", n: 10 }, { t: "16 – 40", n: 28 }, { t: "40+", n: 50 }] },
+    { id: "speed", text: "How fast does a new web inquiry usually hear back from you?", sub: "Be honest. Think about a normal busy weekday.",
+      options: [{ t: "Under 5 minutes", s: 4, leak: 0.05 }, { t: "Within an hour", s: 3, leak: 0.15 }, { t: "Same day", s: 1, leak: 0.3 }, { t: "Next day or later", s: 0, leak: 0.45 }] },
+    { id: "afterhours", text: "What happens to inquiries that come in evenings and weekends?",
+      options: [{ t: "Someone replies, even after hours", s: 4, leak: 0 }, { t: "We reply first thing next business day", s: 2, leak: 0.05 }, { t: "They wait until someone gets to them", s: 1, leak: 0.1 }, { t: "Honestly, not sure", s: 0, leak: 0.1 }] },
+    { id: "followup", text: "If a lead doesn't answer your first call or text, how many more times do you try?",
+      options: [{ t: "3 or more, we have a system", s: 4, leak: 0 }, { t: "Once or twice", s: 2, leak: 0.05 }, { t: "Rarely", s: 1, leak: 0.1 }, { t: "We don't follow up", s: 0, leak: 0.15 }] },
+    { id: "frontdesk", text: "How busy is your front desk during the day?",
+      options: [{ t: "Plenty of time for new inquiries", s: 4 }, { t: "Busy but manageable", s: 3 }, { t: "Slammed at peak times", s: 1 }, { t: "Constantly overwhelmed", s: 0 }] },
+    { id: "tracking", text: "Do you know how many leads you got last month, and how many booked?",
+      options: [{ t: "Yes, exact numbers", s: 4 }, { t: "Roughly", s: 2 }, { t: "No idea", s: 0 }] },
+    { id: "value", text: "What's a new client worth to you in their first year?", sub: "A rough average is fine.", options: [] },
+  ];
+
+  const state = { step: 0, answers: {} };
+
+  function el(id) { return document.getElementById(id); }
+  function show(id) {
+    document.querySelectorAll(".screen").forEach((s) => s.classList.remove("active"));
+    el(id).classList.add("active");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function questionAt(i) {
+    const q = QUESTIONS[i];
+    if (q.id !== "value") return q;
+    const industry = state.answers.industry?.v || "other";
+    return { ...q, options: VALUE_OPTIONS[industry].map(([t, n]) => ({ t, n })) };
+  }
+
+  function startQuiz() { show("screen-quiz"); render(); }
+
+  function render() {
+    const q = questionAt(state.step);
+    const pct = Math.round((state.step / QUESTIONS.length) * 100);
+    el("progress-label").textContent = `Question ${state.step + 1} of ${QUESTIONS.length}`;
+    el("progress-pct").textContent = `${pct}%`;
+    el("progress-fill").style.width = `${pct}%`;
+    const chosen = state.answers[q.id];
+    el("question").innerHTML =
+      `<div class="q-text">${q.text}</div>` + (q.sub ? `<div class="q-sub">${q.sub}</div>` : "") +
+      `<div class="options" role="radiogroup">` +
+      q.options.map((o, i) => `<button class="option${chosen && chosen.t === o.t ? " selected" : ""}" role="radio" aria-checked="${chosen && chosen.t === o.t}" onclick="pick(${i})"><span class="dot"></span>${o.t}</button>`).join("") +
+      `</div>`;
+    el("btn-next").disabled = !chosen;
+    el("btn-next").textContent = state.step === QUESTIONS.length - 1 ? "See My Score →" : "Next →";
+    el("btn-back").style.visibility = state.step === 0 ? "hidden" : "visible";
+  }
+
+  function pick(i) {
+    const q = questionAt(state.step);
+    state.answers[q.id] = q.options[i];
+    if (q.id === "industry") delete state.answers.value; // value options depend on industry
+    render();
+    setTimeout(goNext, 260);
+  }
+
+  function goNext() {
+    if (!state.answers[questionAt(state.step).id]) return;
+    if (state.step < QUESTIONS.length - 1) { state.step++; render(); }
+    else showGate();
+  }
+  function goBack() { if (state.step > 0) { state.step--; render(); } }
+
+  // ── scoring ──
+  function score() {
+    const a = state.answers;
+    const pct = (x) => Math.round((x / 4) * 100);
+    const response = pct((a.speed.s + a.afterhours.s) / 2);
+    const followUp = pct(a.followup.s * 0.7 + a.frontdesk.s * 0.3);
+    const visibility = pct(a.tracking.s * 0.6 + a.frontdesk.s * 0.4);
+    const total = Math.round(response * 0.45 + followUp * 0.35 + visibility * 0.2);
+    const leak = Math.min(0.6, a.speed.leak + a.afterhours.leak + a.followup.leak);
+    const monthlyLeads = a.volume.n * 4.33;
+    const lostClients = monthlyLeads * leak * 0.25;
+    const monthlyLoss = Math.round((lostClients * a.value.n) / 100) * 100;
+    return { response, followUp, visibility, total, leak, monthlyLeads, lostClients, monthlyLoss };
+  }
+
+  function colorFor(s) { return s >= 70 ? "#0E9F6E" : s >= 45 ? "#F5A524" : "#D9534F"; }
+  function verdict(s) {
+    if (s >= 70) return "Strong. A few upgrades and you'll be the fastest in your area.";
+    if (s >= 45) return "Leaky. Good leads are going cold before your team gets to them.";
+    return "Big opportunity. Most of your leads are slipping away.";
+  }
+
+  function setRing(id, scoreId, s) {
+    const ring = el(id);
+    ring.style.setProperty("--c", colorFor(s));
+    let n = 0;
+    const tick = setInterval(() => {
+      n = Math.min(s, n + 2);
+      ring.style.setProperty("--p", n);
+      el(scoreId).textContent = n;
+      if (n >= s) clearInterval(tick);
+    }, 16);
+  }
+
+  function showGate() {
+    show("screen-gate");
+    setRing("gate-ring", "gate-score", score().total);
+  }
+
+  function recommendations(a, sc) {
+    const recs = [];
+    if (a.speed.s <= 3 || a.afterhours.s <= 2) recs.push({
+      title: "Answer every lead in under 60 seconds",
+      desc: `Right now leads usually hear back ${a.speed.t.toLowerCase()}, and after-hours inquiries ${a.afterhours.s >= 2 ? "wait for the next business day" : "wait until someone gets to them"}. An instant, personal text and email, day or night, means you're first, and the first reply usually wins.` });
+    if (a.frontdesk.s <= 1) recs.push({
+      title: "Hand your front desk warm leads, not more work",
+      desc: "Your team is stretched. Instead of another inbox to check, they get one alert per lead: who it is, what they want, and the best time to call, with one tap to call and one to mark it done." });
+    if (a.followup.s <= 2) recs.push({
+      title: "Follow up automatically, and stop when they reply",
+      desc: "Most leads need more than one touch. A check-in on day 1 and day 3 catches the ones who got busy, and it stops the moment they reply or book, so nobody gets over-messaged." });
+    if (a.tracking.s <= 2) recs.push({
+      title: "See every lead and every booking in one report",
+      desc: "You can't fix what you can't see. A live sheet of every lead plus a monthly report shows response time, replies, how fast your team followed up, and what booked." });
+    if (a.frontdesk.s <= 1 || a.volume.n >= 28) recs.push({
+      title: "Let the AI answer the easy questions",
+      desc: "Free consult? Parking? Hours? The AI answers from your own approved FAQ, flags hot leads who want a call now, and sends anything personal straight to your team." });
+    const fallback = [
+      { title: "Get faster than your competitors, not just fast", desc: "You're already quick. Instant replies at night and on weekends are where most businesses still lose leads." },
+      { title: "Prove it every month", desc: "A results report showing response time and bookings keeps your team sharp and shows exactly what your marketing produces." },
+      { title: "Never let a quiet lead go cold", desc: "Automatic follow-ups catch the leads who were interested but got busy." },
     ];
+    for (const f of fallback) if (recs.length < 3) recs.push(f);
+    return recs.slice(0, 3);
+  }
 
-    const NICHE_QUESTIONS = {
-      trades: [
-        {
-          id: 'q3',
-          label: 'Question 3 of 8',
-          text: 'How do you handle missed calls after hours?',
-          options: [
-            { text: 'We have someone on call', score: 4 },
-            { text: 'Answering service', score: 3 },
-            { text: 'Voicemail only', score: 1 },
-            { text: 'We miss them', score: 0 },
-          ]
-        },
-        {
-          id: 'q4',
-          label: 'Question 4 of 8',
-          text: 'How long does it take to send a quote after a job visit?',
-          options: [
-            { text: 'Same day', score: 4 },
-            { text: '1–3 days', score: 2 },
-            { text: '3+ days', score: 1 },
-            { text: 'We do it manually on paper', score: 0 },
-          ]
-        },
-        {
-          id: 'q5',
-          label: 'Question 5 of 8',
-          text: 'Do you follow up with leads who don\'t book?',
-          options: [
-            { text: 'Always — we have a system', score: 4 },
-            { text: 'Sometimes', score: 2 },
-            { text: 'Rarely', score: 1 },
-            { text: 'Never', score: 0 },
-          ]
-        },
-        {
-          id: 'q6',
-          label: 'Question 6 of 8',
-          text: 'How do you schedule jobs?',
-          options: [
-            { text: 'Software / app', score: 4 },
-            { text: 'Spreadsheet', score: 2 },
-            { text: 'Phone calls back and forth', score: 1 },
-            { text: 'Whiteboard or paper', score: 0 },
-          ]
-        },
-        {
-          id: 'q7',
-          label: 'Question 7 of 8',
-          text: 'What\'s your average job value?',
-          options: [
-            { text: '$200–$500', multiplier: 350 },
-            { text: '$500–$2,000', multiplier: 1250 },
-            { text: '$2,000–$10,000', multiplier: 6000 },
-            { text: '$10,000+', multiplier: 10000 },
-          ]
-        },
-        {
-          id: 'q8',
-          label: 'Question 8 of 8',
-          text: 'What\'s your biggest bottleneck right now?',
-          subtext: 'This personalizes your top 3 AI recommendations.',
-          options: [
-            { text: 'Getting leads', value: 'getting_leads' },
-            { text: 'Following up with leads', value: 'followup' },
-            { text: 'Scheduling and dispatch', value: 'scheduling' },
-            { text: 'Admin and paperwork', value: 'admin' },
-          ]
-        }
-      ],
-      healthcare: [
-        {
-          id: 'q3',
-          label: 'Question 3 of 8',
-          text: 'How do you handle appointment reminders?',
-          options: [
-            { text: 'Fully automated', score: 4 },
-            { text: 'We send a text but it\'s manual', score: 2 },
-            { text: 'Staff calls patients', score: 1 },
-            { text: 'We don\'t have a reminder system', score: 0 },
-          ]
-        },
-        {
-          id: 'q4',
-          label: 'Question 4 of 8',
-          text: 'What percentage of appointments result in no-shows or late cancellations?',
-          options: [
-            { text: 'Under 5%', score: 4, pct: 0.03 },
-            { text: '5–10%', score: 3, pct: 0.075 },
-            { text: '10–20%', score: 1, pct: 0.15 },
-            { text: 'Over 20%', score: 0, pct: 0.25 },
-          ]
-        },
-        {
-          id: 'q5',
-          label: 'Question 5 of 8',
-          text: 'How do you collect patient reviews?',
-          options: [
-            { text: 'Automated — we have a system that asks', score: 4 },
-            { text: 'Staff asks at checkout', score: 2 },
-            { text: 'We rely on patients doing it voluntarily', score: 1 },
-            { text: 'We don\'t collect reviews', score: 0 },
-          ]
-        },
-        {
-          id: 'q6',
-          label: 'Question 6 of 8',
-          text: 'How long does new patient intake paperwork take?',
-          options: [
-            { text: 'Under 5 minutes — digital', score: 4 },
-            { text: '5–15 minutes', score: 2 },
-            { text: '15+ minutes — still paper-based', score: 0 },
-          ]
-        },
-        {
-          id: 'q7',
-          label: 'Question 7 of 8',
-          text: 'Do you have a system to re-activate lapsed patients?',
-          options: [
-            { text: 'Yes — fully automated', multiplier: 400, score: 4 },
-            { text: 'Yes — someone does it manually', multiplier: 400, score: 2 },
-            { text: 'No', multiplier: 400, score: 0 },
-          ]
-        },
-        {
-          id: 'q8',
-          label: 'Question 8 of 8',
-          text: 'What\'s your biggest bottleneck right now?',
-          subtext: 'This personalizes your top 3 AI recommendations.',
-          options: [
-            { text: 'Front desk overload', value: 'front_desk' },
-            { text: 'No-shows and last-minute cancellations', value: 'noshows' },
-            { text: 'Getting new patients through the door', value: 'new_patients' },
-            { text: 'Admin and insurance paperwork', value: 'admin' },
-          ]
-        }
-      ],
-      realestate: [
-        {
-          id: 'q3',
-          label: 'Question 3 of 8',
-          text: 'How fast do you typically respond to new leads?',
-          options: [
-            { text: 'Under 5 minutes — I have a system', score: 4 },
-            { text: 'Within an hour', score: 3 },
-            { text: 'Same day', score: 1 },
-            { text: 'Whenever I see it', score: 0 },
-          ]
-        },
-        {
-          id: 'q4',
-          label: 'Question 4 of 8',
-          text: 'Do you have an automated follow-up sequence for leads who don\'t convert right away?',
-          options: [
-            { text: 'Yes — fully automated', score: 4 },
-            { text: 'Sort of — I do it manually', score: 2 },
-            { text: 'No', score: 0 },
-          ]
-        },
-        {
-          id: 'q5',
-          label: 'Question 5 of 8',
-          text: 'How do you nurture past clients for repeat business and referrals?',
-          options: [
-            { text: 'Automated check-in sequence', score: 4 },
-            { text: 'Occasional email or holiday card', score: 2 },
-            { text: 'I rely on them reaching out', score: 0 },
-          ]
-        },
-        {
-          id: 'q6',
-          label: 'Question 6 of 8',
-          text: 'How long does it take you to prepare a CMA or listing presentation?',
-          options: [
-            { text: 'Under 30 minutes', score: 4 },
-            { text: '30–60 minutes', score: 3 },
-            { text: '1–2 hours', score: 1 },
-            { text: '2+ hours', score: 0 },
-          ]
-        },
-        {
-          id: 'q7',
-          label: 'Question 7 of 8',
-          text: 'How many active leads are you working at once?',
-          options: [
-            { text: 'Under 10', multiplier: 8000 },
-            { text: '10–30', multiplier: 8000 },
-            { text: '30–75', multiplier: 8000 },
-            { text: '75+', multiplier: 8000 },
-          ]
-        },
-        {
-          id: 'q8',
-          label: 'Question 8 of 8',
-          text: 'What\'s your biggest bottleneck right now?',
-          subtext: 'This personalizes your top 3 AI recommendations.',
-          options: [
-            { text: 'Lead response speed', value: 'lead_speed' },
-            { text: 'Follow-up consistency', value: 'followup' },
-            { text: 'Admin and paperwork', value: 'admin' },
-            { text: 'Client communication and updates', value: 'communication' },
-          ]
-        }
-      ]
-    };
+  function planFor(a) {
+    if (a.volume.n >= 50 && a.frontdesk.s <= 1) return { name: "Full", price: "$1,800/month", why: "High lead volume and a stretched front desk: you'd get everything in Growth, plus an AI assistant that calls back leads who ask for a call, review management and reactivation campaigns." };
+    if (a.volume.n >= 10 || a.frontdesk.s <= 1) return { name: "Growth", price: "$1,000/month", why: "With your lead volume, AI conversations pay off fast: questions answered instantly from your FAQ, hot leads flagged first, and only the right ones sent to your team." };
+    return { name: "Core", price: "$500/month", why: "Instant replies, front desk alerts, automatic follow-ups and a monthly report. Everything you need so no lead is missed, and you can upgrade any time." };
+  }
 
-    // 'other' uses trades questions
-    NICHE_QUESTIONS['other'] = NICHE_QUESTIONS['trades'];
-
-    // ── RECOMMENDATIONS ──────────────────────────────────────────────────
-    const RECOMMENDATIONS = {
-      trades: {
-        getting_leads: [
-          { title: 'Speed-to-Lead SMS System', desc: 'The moment a lead submits a form or calls and misses, an automated text goes out within 30 seconds. First to respond gets 50%+ of jobs in trades.' },
-          { title: 'AI Receptionist (After-Hours)', desc: 'An AI that answers calls 24/7, qualifies the lead, and books them directly into your calendar — even at midnight.' },
-          { title: '5-Touch Follow-Up Sequence', desc: 'Automated SMS sequence that contacts every lead 5 times over 7 days. 80% of jobs are won after the 5th touch.' },
-        ],
-        followup: [
-          { title: '5-Touch Follow-Up Sequence', desc: 'Automated SMS sequence that contacts every unsold lead over 7 days. Most trades businesses follow up once. This runs 5 touches automatically.' },
-          { title: 'Speed-to-Lead SMS System', desc: 'Respond to every new inquiry in under 30 seconds — before your competitors even see it.' },
-          { title: 'Quote Follow-Up Automation', desc: 'Every quote you send gets a 3-touch follow-up if the client goes quiet. Turns cold quotes into booked jobs.' },
-        ],
-        scheduling: [
-          { title: 'SMS Booking Agent', desc: 'Clients book, confirm, and reschedule via text. No phone tag. No back-and-forth. Jobs go straight into your calendar.' },
-          { title: 'AI Receptionist', desc: 'Handles inbound calls, qualifies the job, and books it — your team only steps in for complex situations.' },
-          { title: 'Job Reminder Automation', desc: 'Automated reminders to clients 24 hours and 2 hours before their appointment — reduces no-shows by 40%+.' },
-        ],
-        admin: [
-          { title: 'AI Receptionist', desc: 'Handles FAQs, booking, and basic intake — frees your team from repetitive calls and questions.' },
-          { title: 'Digital Quote & Intake Forms', desc: 'Automated digital forms capture job details before your team ever speaks to the client.' },
-          { title: 'Review Collection Automation', desc: 'After every completed job, an automated SMS asks for a Google Review — no manual follow-up needed.' },
-        ],
-      },
-      healthcare: {
-        front_desk: [
-          { title: '3-Touch Appointment Reminders', desc: 'Automated text + email reminders at 48hrs, 24hrs, and 2hrs before each appointment. Eliminates reminder calls from your front desk.' },
-          { title: 'AI Receptionist', desc: 'Handles after-hours calls, books appointments, and answers FAQs — your front desk focuses on patients in the room.' },
-          { title: 'Digital Intake Automation', desc: 'New patient forms sent automatically after booking, completed before arrival, pre-loaded into your system.' },
-        ],
-        noshows: [
-          { title: '3-Touch Appointment Reminders', desc: 'Automated reminders reduce no-shows by 40–60%. Each message includes a one-tap confirm or reschedule link.' },
-          { title: 'Cancellation Recovery System', desc: 'When a patient cancels, an instant SMS goes to your waitlist. If no response in 30 min, lapsed patients get an offer for the slot.' },
-          { title: 'Last-Minute Slot Filler', desc: 'AI automatically contacts patients who haven\'t been in for 90+ days when a same-day slot opens.' },
-        ],
-        new_patients: [
-          { title: 'Speed-to-Lead for Inquiries', desc: 'Every web form, phone inquiry, or referral gets an instant response — before the patient calls somewhere else.' },
-          { title: 'Review Collection Engine', desc: 'After every visit, happy patients get a nudge to leave a Google Review. More reviews = more patients finding you.' },
-          { title: 'Referral Request Automation', desc: 'Automated post-visit messages ask satisfied patients to refer a friend — the most trusted source of new patients.' },
-        ],
-        admin: [
-          { title: 'Digital Intake Forms', desc: 'Eliminate paper intake. Forms sent automatically, completed digitally, and pre-loaded before the patient arrives.' },
-          { title: '3-Touch Appointment Reminders', desc: 'Stop spending 2 hours/day on reminder calls. Automated reminders handle the entire process.' },
-          { title: 'AI Receptionist', desc: 'Handles routine calls and FAQs so your front desk can focus on the patients in front of them.' },
-        ],
-      },
-      realestate: {
-        lead_speed: [
-          { title: 'Speed-to-Lead SMS System', desc: 'Every inbound inquiry gets an automated text within 30 seconds — any time of day. First agent to respond wins the client 78% of the time.' },
-          { title: 'After-Hours AI Receptionist', desc: 'Captures leads who contact you at 9pm, qualifies their timeline and budget, and books a callback — all automatically.' },
-          { title: '90-Day Lead Nurture Sequence', desc: 'Keeps every lead warm with personalized follow-ups over 90 days — even the ones who said "maybe in 6 months."' },
-        ],
-        followup: [
-          { title: '90-Day Lead Nurture Sequence', desc: 'Automated follow-up that keeps leads warm for 90 days without any manual effort. References their target area and timeline.' },
-          { title: 'Past Client Reactivation', desc: 'Quarterly automated touchpoints to your past client database — timed around market shifts and closing anniversaries.' },
-          { title: 'Speed-to-Lead SMS', desc: 'Capture leads the moment they come in so your follow-up starts from a warm position.' },
-        ],
-        admin: [
-          { title: 'Showing Coordination Bot', desc: 'Handles back-and-forth scheduling via text or WhatsApp — no more phone tag to book showings.' },
-          { title: 'Automated Client Updates', desc: 'Buyers and sellers get automatic status updates at key milestones — without you writing a single message.' },
-          { title: 'CMA Prep Automation', desc: 'AI-assisted tools that pull and format market data so your listing presentations take minutes, not hours.' },
-        ],
-        communication: [
-          { title: 'Automated Client Updates', desc: 'Milestone-triggered messages keep buyers and sellers informed without you having to remember to reach out.' },
-          { title: 'Showing Coordination Bot', desc: 'Handles all showing scheduling conversations via SMS — eliminates 80% of back-and-forth.' },
-          { title: 'Review & Referral Engine', desc: 'After every closing, an automated sequence asks for a Google Review and a warm referral introduction.' },
-        ],
-      }
-    };
-
-    // other = trades
-    RECOMMENDATIONS['other'] = RECOMMENDATIONS['trades'];
-
-    // ── STATE ────────────────────────────────────────────────────────────
-    let state = {
-      step: 0,          // 0 = q1, 1 = q2, 2..7 = niche q3-q8
-      answers: {},      // { q1: {option}, q2: {option}, q3: {option}, ... }
-      niche: null,
-    };
-
-    function getAllQuestions() {
-      const niche = state.niche || 'trades';
-      return [...UNIVERSAL_QUESTIONS, ...NICHE_QUESTIONS[niche]];
-    }
-
-    function getCurrentQ() {
-      return getAllQuestions()[state.step];
-    }
-
-    // ── RENDER ───────────────────────────────────────────────────────────
-    function startQuiz() {
-      show('screen-quiz');
-      renderQuestion();
-    }
-
-    function renderQuestion() {
-      const q = getCurrentQ();
-      const total = 8;
-      const current = state.step + 1;
-      const pct = Math.round(((state.step) / total) * 100);
-
-      document.getElementById('progress-label').textContent = `Question ${current} of ${total}`;
-      document.getElementById('progress-pct').textContent = `${pct}%`;
-      document.getElementById('progress-fill').style.width = `${pct}%`;
-
-      const selected = state.answers[q.id];
-
-      const optionsHtml = q.options.map((opt, i) => {
-        const isSelected = selected && selected.index === i;
-        return `
-          <button class="option ${isSelected ? 'selected' : ''}" onclick="selectOption(${i})">
-            <span class="option-indicator"></span>
-            ${opt.text}
-          </button>
-        `;
-      }).join('');
-
-      document.getElementById('question-card').innerHTML = `
-        <div class="q-label">${q.label}</div>
-        <div class="q-text">${q.text}</div>
-        ${q.subtext ? `<div class="q-subtext">${q.subtext}</div>` : ''}
-        <div class="options" id="options-list">${optionsHtml}</div>
-      `;
-
-      const nextBtn = document.getElementById('btn-next');
-      const backBtn = document.getElementById('btn-back');
-
-      nextBtn.className = 'btn-next' + (selected ? ' enabled' : '');
-      backBtn.style.visibility = state.step === 0 ? 'hidden' : 'visible';
-    }
-
-    function selectOption(index) {
-      const q = getCurrentQ();
-      const opt = q.options[index];
-      state.answers[q.id] = { index, ...opt };
-
-      // Set niche after Q1
-      if (q.id === 'q1') {
-        state.niche = opt.value;
-      }
-
-      // Re-render to show selection
-      const optEls = document.querySelectorAll('.option');
-      optEls.forEach((el, i) => {
-        el.classList.toggle('selected', i === index);
+  async function submitGate(e) {
+    e.preventDefault();
+    const name = el("g-name").value.trim();
+    const email = el("g-email").value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { el("gate-err").style.display = "block"; el("g-email").focus(); return; }
+    el("gate-err").style.display = "none";
+    const btn = el("btn-gate");
+    btn.disabled = true;
+    btn.textContent = "Building your report…";
+    const sc = score();
+    const plan = planFor(state.answers);
+    try {
+      await fetch(QUIZ_API, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          name, email, business: el("g-business").value.trim(), website: el("g-website").value,
+          scores: { total: sc.total, response: sc.response, followUp: sc.followUp, visibility: sc.visibility, monthlyLoss: sc.monthlyLoss },
+          plan: plan.name,
+          answers: QUESTIONS.map((q, i) => ({ q: questionAt(i).text, a: state.answers[q.id]?.t })),
+        }),
       });
+    } catch { /* still show the report */ }
+    showResults(name, sc, plan);
+  }
 
-      document.getElementById('btn-next').classList.add('enabled');
-    }
+  function showResults(name, sc, plan) {
+    const a = state.answers;
+    el("results-title").innerHTML = name ? `${escapeHtml(name)}'s <em>Speed-to-Lead</em> report` : "Your <em>Speed-to-Lead</em> report";
+    el("res-verdict").textContent = verdict(sc.total);
+    const bars = [["Response speed", sc.response], ["Follow-up", sc.followUp], ["Visibility", sc.visibility]];
+    el("res-bars").innerHTML = bars.map(([label, v]) =>
+      `<div><div class="bar-meta"><span>${label}</span><span>${v}/100</span></div><div class="bar-track"><div class="bar-fill" data-w="${v}" style="background:${colorFor(v)}"></div></div></div>`).join("");
+    el("res-loss").textContent = "$" + sc.monthlyLoss.toLocaleString("en-CA") + "/month";
+    el("res-loss-desc").textContent =
+      `About ${Math.round(sc.monthlyLeads)} inquiries a month, with roughly ${Math.round(sc.leak * 100)}% going cold from slow replies and missed follow-ups. ` +
+      `That's about ${sc.lostClients.toFixed(1)} lost clients a month at around $${a.value.n.toLocaleString("en-CA")} each.`;
+    el("res-recs").innerHTML = recommendations(a, sc).map((r, i) =>
+      `<div class="rec"><div class="num">${i + 1}</div><div><h3>${r.title}</h3><p>${r.desc}</p></div></div>`).join("");
+    el("plan-name").textContent = plan.name;
+    el("plan-price").textContent = plan.price;
+    el("plan-why").textContent = plan.why;
+    show("screen-results");
+    setRing("res-ring", "res-score", sc.total);
+    setTimeout(() => document.querySelectorAll(".bar-fill").forEach((b) => (b.style.width = b.dataset.w + "%")), 150);
+  }
 
-    function goNext() {
-      const q = getCurrentQ();
-      if (!state.answers[q.id]) return;
-
-      if (state.step < 7) {
-        state.step++;
-        renderQuestion();
-      } else {
-        // All done — show gate
-        showGate();
-      }
-    }
-
-    function goBack() {
-      if (state.step > 0) {
-        state.step--;
-        renderQuestion();
-      }
-    }
-
-    // ── SCORING ──────────────────────────────────────────────────────────
-    function calcScores() {
-      const a = state.answers;
-      const niche = state.niche || 'trades';
-
-      const q3s = a.q3?.score ?? 0;
-      const q4s = a.q4?.score ?? 0;
-      const q5s = a.q5?.score ?? 0;
-      const q6s = a.q6?.score ?? 0;
-      const q2bonus = a.q2?.bonus ?? 0;
-
-      const leadCapture   = Math.round(((q3s + q5s) / 8) * 100);
-      const followUp      = Math.round(((q5s + q4s) / 8) * 100);
-      const operations    = Math.min(100, Math.round(((q6s + q2bonus) / 5) * 100));
-      const total         = Math.round((leadCapture + followUp + operations) / 3);
-
-      let monthlyLoss = 0;
-
-      if (niche === 'trades' || niche === 'other') {
-        const q5score = q5s;
-        const multiplier = a.q7?.multiplier ?? 1250;
-        const leads_lost = (5 - q5score) * 3;
-        monthlyLoss = Math.round(leads_lost * 0.20 * multiplier);
-      } else if (niche === 'healthcare') {
-        const pct = a.q4?.pct ?? 0.15;
-        monthlyLoss = Math.round(pct * 20 * 200 * 4.3);
-      } else if (niche === 'realestate') {
-        const multiplier = a.q7?.multiplier ?? 8000;
-        monthlyLoss = Math.round(0.60 * 20 * 0.10 * multiplier);
-      }
-
-      return { leadCapture, followUp, operations, total, monthlyLoss };
-    }
-
-    function getScoreColor(score) {
-      if (score >= 70) return '#39FF14';
-      if (score >= 41) return '#F59E0B';
-      return '#DC2626';
-    }
-
-    function getScoreInterpretation(score) {
-      if (score >= 70) return 'Strong foundation — a few targeted AI upgrades could deliver major ROI';
-      if (score >= 41) return 'Significant opportunity — AI could recover substantial revenue monthly';
-      return 'High opportunity — AI could transform how leads are captured and converted';
-    }
-
-    // ── GATE SCREEN ──────────────────────────────────────────────────────
-    function showGate() {
-      const scores = calcScores();
-      const color = getScoreColor(scores.total);
-
-      document.getElementById('gate-score').textContent = scores.total;
-      document.getElementById('gate-score').style.color = color;
-
-      document.getElementById('gate-bars').innerHTML = `
-        <div class="score-bar-item">
-          <div class="score-bar-meta">
-            <span class="score-bar-name">Lead Capture &amp; Response</span>
-            <span class="score-bar-value">${scores.leadCapture}/100</span>
-          </div>
-          <div class="score-bar-track">
-            <div class="score-bar-fill lead" style="width:${scores.leadCapture}%"></div>
-          </div>
-        </div>
-        <div class="score-bar-item">
-          <div class="score-bar-meta">
-            <span class="score-bar-name">Follow-Up &amp; Nurture</span>
-            <span class="score-bar-value">🔒 Unlock below</span>
-          </div>
-          <div class="score-bar-track">
-            <div class="score-bar-fill followup" style="width:0%;background:#E0DED8"></div>
-          </div>
-        </div>
-        <div class="score-bar-item">
-          <div class="score-bar-meta">
-            <span class="score-bar-name">Admin &amp; Operations</span>
-            <span class="score-bar-value">🔒 Unlock below</span>
-          </div>
-          <div class="score-bar-track">
-            <div class="score-bar-fill ops" style="width:0%;background:#E0DED8"></div>
-          </div>
-        </div>
-      `;
-
-      show('screen-gate');
-    }
-
-    // ── GATE SUBMIT ──────────────────────────────────────────────────────
-    async function submitGate() {
-      const name  = document.getElementById('gate-name').value.trim();
-      const email = document.getElementById('gate-email').value.trim();
-
-      if (!email || !email.includes('@')) {
-        document.getElementById('gate-email').focus();
-        return;
-      }
-
-      const btn = document.getElementById('btn-gate');
-      btn.disabled = true;
-      btn.textContent = 'Loading your report…';
-
-      const scores = calcScores();
-      const niche  = state.niche || 'trades';
-      const q8val  = state.answers.q8?.value || Object.keys(RECOMMENDATIONS[niche])[0];
-
-      // Send to webhook if configured
-      if (WEBHOOK_URL) {
-        try {
-          await fetch(WEBHOOK_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              email,
-              first_name: name,
-              niche,
-              q2_team_size: state.answers.q2?.value,
-              q8_bottleneck: q8val,
-              score_lead_capture: scores.leadCapture,
-              score_followup: scores.followUp,
-              score_operations: scores.operations,
-              total_score: scores.total,
-              estimated_monthly_loss: scores.monthlyLoss,
-              created_at: new Date().toISOString(),
-            })
-          });
-        } catch (e) {
-          // Silent fail — still show results
-        }
-      }
-
-      showResults(name, scores, niche, q8val);
-    }
-
-    // ── RESULTS SCREEN ───────────────────────────────────────────────────
-    function showResults(name, scores, niche, bottleneck) {
-      const color = getScoreColor(scores.total);
-      const nicheLabels = { trades: 'Trades / Home Services', healthcare: 'Healthcare / Dental', realestate: 'Real Estate', other: 'Service Business' };
-
-      document.getElementById('results-title').textContent =
-        name ? `${name}'s AI Opportunity Report` : 'Your AI Opportunity Report';
-      document.getElementById('results-sub').textContent =
-        `Here's what we found for your ${nicheLabels[niche] || 'service'} business — based on your exact answers.`;
-
-      // Score
-      document.getElementById('results-score-big').textContent = scores.total;
-      document.getElementById('results-score-big').style.color = color;
-      document.getElementById('results-score-interpretation').textContent = getScoreInterpretation(scores.total);
-
-      document.getElementById('results-bars').innerHTML = `
-        <div class="score-bar-item">
-          <div class="score-bar-meta">
-            <span class="score-bar-name">Lead Capture &amp; Response</span>
-            <span class="score-bar-value">${scores.leadCapture}/100</span>
-          </div>
-          <div class="score-bar-track">
-            <div class="score-bar-fill lead" style="width:${scores.leadCapture}%"></div>
-          </div>
-        </div>
-        <div class="score-bar-item">
-          <div class="score-bar-meta">
-            <span class="score-bar-name">Follow-Up &amp; Nurture</span>
-            <span class="score-bar-value">${scores.followUp}/100</span>
-          </div>
-          <div class="score-bar-track">
-            <div class="score-bar-fill followup" style="width:${scores.followUp}%"></div>
-          </div>
-        </div>
-        <div class="score-bar-item">
-          <div class="score-bar-meta">
-            <span class="score-bar-name">Admin &amp; Operations</span>
-            <span class="score-bar-value">${scores.operations}/100</span>
-          </div>
-          <div class="score-bar-track">
-            <div class="score-bar-fill ops" style="width:${scores.operations}%"></div>
-          </div>
-        </div>
-      `;
-
-      // Loss callout
-      document.getElementById('results-loss').textContent =
-        '$' + scores.monthlyLoss.toLocaleString() + '/month';
-      document.getElementById('results-loss-desc').textContent =
-        `Based on your answers, businesses like yours at your current setup level are leaving an estimated $${scores.monthlyLoss.toLocaleString()}/month on the table in unrecovered leads and missed opportunities.`;
-
-      // Recommendations
-      const recs = RECOMMENDATIONS[niche]?.[bottleneck] || RECOMMENDATIONS[niche]?.[Object.keys(RECOMMENDATIONS[niche])[0]] || [];
-      document.getElementById('results-recs').innerHTML = recs.map((r, i) => `
-        <div class="rec-item">
-          <div class="rec-num">${i + 1}</div>
-          <div class="rec-content">
-            <h4>${r.title}</h4>
-            <p>${r.desc}</p>
-          </div>
-        </div>
-      `).join('');
-
-      show('screen-results');
-
-      // Animate bars in after a short delay
-      setTimeout(() => {
-        document.querySelectorAll('#results-bars .score-bar-fill').forEach(el => {
-          el.style.transition = 'width 1s ease';
-        });
-      }, 100);
-    }
-
-    // ── HELPERS ──────────────────────────────────────────────────────────
-    function show(screenId) {
-      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-      document.getElementById(screenId).classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
-
+  function escapeHtml(s) { return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]); }
+</script>
 </body>
 </html>
