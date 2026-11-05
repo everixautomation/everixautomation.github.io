@@ -3,1278 +3,225 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Live Demo — The Everix Growth System</title>
+  <title>Live Demo | Everix Automation</title>
+  <meta name="description" content="Try Everix on your own phone. Enter your number, get a text in under a minute, and see the front desk alert your team would get." />
+  <link rel="canonical" href="https://everixautomation.com/demo.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg:          #F5F4F0;
-      --card:        #FFFFFF;
-      --card2:       #F5F4F0;
-      --text:        #111110;
-      --green:       #2D6A4F;
-      --green-light: #E8F2EC;
-      --amber:       #B45309;
-      --muted:       #6B6B65;
-      --border:      #E0DED8;
-      --btn-dark:    #111110;
-      --red:         #EF4444;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
-
-    .page-bg { display: none; }
-
-    /* ── NAV ── */
-    nav {
-      position: relative;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.25rem 6%;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-logo {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-      text-decoration: none;
-    }
-
-    .nav-logo .logo-everix {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--text);
-      letter-spacing: -0.3px;
-    }
-
-    .nav-logo .logo-auto {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: #6dbf94;
-      margin-top: 1px;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
-
-    .nav-back {
-      font-size: 0.85rem;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-back:hover { color: var(--text); }
-
-    .nav-book {
-      background: var(--btn-dark);
-      color: #FFFFFF;
-      padding: 0.5rem 1.2rem;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-
-    .nav-book:hover { opacity: 0.8; color: #FFFFFF; }
-
-    /* ── PAGE WRAP ── */
-    .page-wrap {
-      position: relative;
-      z-index: 1;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem 6rem;
-    }
-
-    /* ── HEADER ── */
-    .demo-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .live-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--green-light);
-      border: 1px solid rgba(45,106,79,0.3);
-      color: var(--green);
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 0.3rem 0.9rem;
-      border-radius: 999px;
-      margin-bottom: 1.25rem;
-      letter-spacing: 0.05em;
-    }
-
-    .live-dot {
-      width: 7px; height: 7px;
-      background: var(--green);
-      border-radius: 50%;
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
-    .demo-header h1 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.75rem;
-    }
-
-    .demo-header h1 .purple { color: var(--green); }
-    .demo-header h1 .teal { color: var(--green); }
-
-    .demo-header p {
-      color: var(--muted);
-      font-size: 1rem;
-      max-width: 520px;
-      margin: 0 auto;
-    }
-
-    /* ── STEP FLOW ── */
-    .steps-flow {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 2.5rem;
-      flex-wrap: wrap;
-    }
-
-    .flow-step {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--muted);
-    }
-
-    .flow-step.active { color: var(--text); }
-    .flow-step.done { color: var(--green); }
-
-    .flow-step-num {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      border: 1.5px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.68rem;
-      font-family: 'DM Sans', sans-serif;
-    }
-
-    .flow-step.active .flow-step-num {
-      background: var(--btn-dark);
-      border-color: var(--btn-dark);
-      color: white;
-    }
-
-    .flow-step.done .flow-step-num {
-      background: var(--green);
-      border-color: var(--green);
-      color: white;
-    }
-
-    .flow-arrow {
-      color: var(--border);
-      font-size: 1rem;
-    }
-
-    /* ── SECTION CARDS ── */
-    .demo-section {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .demo-section::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-    }
-
-    .demo-section.s1::before { background: var(--btn-dark); }
-    .demo-section.s2::before { background: var(--green); }
-    .demo-section.s3::before { background: var(--amber); }
-
-    .section-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      margin-bottom: 1rem;
-    }
-
-    .s1 .section-tag { background: rgba(17,17,16,0.06); color: var(--text); border: 1px solid rgba(17,17,16,0.15); }
-    .s2 .section-tag { background: var(--green-light); color: var(--green); border: 1px solid rgba(45,106,79,0.25); }
-    .s3 .section-tag { background: rgba(180,83,9,0.08); color: var(--amber); border: 1px solid rgba(180,83,9,0.25); }
-
-    .demo-section h2 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 0.35rem;
-      letter-spacing: -0.02em;
-    }
-
-    .demo-section .sec-sub {
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-
-    /* ── SPEED TO LEAD DEMO ── */
-    .stl-form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-
-    .demo-input {
-      background: var(--bg);
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      padding: 0.75rem 1rem;
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.92rem;
-      outline: none;
-      transition: border-color 0.2s;
-      width: 100%;
-    }
-
-    .demo-input:focus { border-color: var(--green); }
-    .demo-input::placeholder { color: var(--muted); }
-
-    .stl-row2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-
-    .btn-demo {
-      width: 100%;
-      background: var(--btn-dark);
-      color: #FFFFFF;
-      padding: 0.85rem 1.5rem;
-      border-radius: 8px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-
-    .btn-demo:hover { background: #2a2a28; transform: translateY(-1px); }
-    .btn-demo:disabled { opacity: 0.5; pointer-events: none; }
-
-    .stl-disclaimer {
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-align: center;
-      margin-top: 0.5rem;
-      line-height: 1.5;
-    }
-
-    /* Status messages */
-    .status-box {
-      display: none;
-      align-items: flex-start;
-      gap: 0.75rem;
-      padding: 1rem 1.25rem;
-      border-radius: 10px;
-      margin-top: 1rem;
-      font-size: 0.9rem;
-    }
-
-    .status-box.sending {
-      display: flex;
-      background: rgba(17,17,16,0.04);
-      border: 1px solid var(--border);
-      color: var(--muted);
-    }
-
-    .status-box.success {
-      display: flex;
-      background: var(--green-light);
-      border: 1px solid rgba(45,106,79,0.25);
-      color: var(--green);
-    }
-
-    .status-box.error {
-      display: flex;
-      background: rgba(239,68,68,0.08);
-      border: 1px solid rgba(239,68,68,0.25);
-      color: var(--red);
-    }
-
-    .status-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
-
-    .status-body strong { display: block; margin-bottom: 0.2rem; color: var(--text); }
-
-    /* Timer */
-    .response-timer {
-      display: none;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 0.75rem;
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
-    .response-timer.visible { display: flex; }
-
-    .timer-bar-track {
-      flex: 1;
-      height: 4px;
-      background: var(--border);
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .timer-bar-fill {
-      height: 100%;
-      background: var(--green);
-      border-radius: 999px;
-      width: 0%;
-      transition: width 3s linear;
-    }
-
-    .timer-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      color: var(--green);
-      min-width: 48px;
-      text-align: right;
-    }
-
-    /* ── PHONE MOCK ── */
-    .phone-mock {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 1.25rem;
-      max-width: 320px;
-      margin: 1.25rem auto 0;
-      font-family: 'DM Sans', sans-serif;
-    }
-
-    .phone-mock-header {
-      text-align: center;
-      font-size: 0.72rem;
-      color: var(--muted);
-      margin-bottom: 1rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .phone-mock-sender {
-      font-weight: 600;
-      color: var(--text);
-      font-size: 0.82rem;
-    }
-
-    .sms-bubble {
-      background: var(--green-light);
-      border: 1px solid rgba(45,106,79,0.2);
-      border-radius: 12px 12px 12px 4px;
-      padding: 0.75rem 1rem;
-      font-size: 0.85rem;
-      color: var(--text);
-      line-height: 1.5;
-      margin-bottom: 0.35rem;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: all 0.4s ease;
-    }
-
-    .sms-bubble.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .sms-time {
-      font-size: 0.68rem;
-      color: var(--muted);
-      text-align: left;
-      margin-bottom: 0.75rem;
-    }
-
-    .sms-reply {
-      background: #F0F0F0;
-      border: 1px solid var(--border);
-      border-radius: 12px 12px 4px 12px;
-      padding: 0.65rem 0.9rem;
-      font-size: 0.82rem;
-      color: var(--text);
-      text-align: right;
-      margin-top: 0.5rem;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: all 0.4s ease;
-    }
-
-    .sms-reply.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .typing-indicator {
-      display: none;
-      gap: 0.3rem;
-      padding: 0.5rem 0;
-      align-items: center;
-    }
-
-    .typing-indicator.visible { display: flex; }
-
-    .typing-dot {
-      width: 6px; height: 6px;
-      background: var(--muted);
-      border-radius: 50%;
-      animation: typingBounce 1.2s infinite;
-    }
-
-    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
-    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
-
-    @keyframes typingBounce {
-      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
-      30% { transform: translateY(-4px); opacity: 1; }
-    }
-
-    /* ── AI RECEPTIONIST ── */
-    .receptionist-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .rec-avatar {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--green), #6dbf94);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .rec-name {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--green);
-      text-transform: uppercase;
-      margin-bottom: 0.25rem;
-    }
-
-    .rec-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-
-    .rec-status {
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
-    .call-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      width: 100%;
-      background: var(--green-light);
-      border: 1.5px solid rgba(45,106,79,0.35);
-      color: var(--green);
-      padding: 0.9rem 1.5rem;
-      border-radius: 10px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-decoration: none;
-      margin-bottom: 1rem;
-    }
-
-    .call-btn:hover {
-      background: rgba(45,106,79,0.15);
-      color: var(--green);
-      transform: translateY(-1px);
-    }
-
-    .call-pulse {
-      width: 10px; height: 10px;
-      background: var(--green);
-      border-radius: 50%;
-      animation: pulse 1.5s infinite;
-    }
-
-    .rec-capabilities {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.5rem;
-    }
-
-    .rec-cap {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
-    .rec-cap::before {
-      content: '✓';
-      color: var(--green);
-      font-weight: 700;
-      font-size: 0.78rem;
-    }
-
-    /* Transcript preview */
-    .transcript-preview {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.25rem;
-      margin-top: 1rem;
-    }
-
-    .transcript-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    .transcript-line {
-      display: flex;
-      gap: 0.75rem;
-      margin-bottom: 0.85rem;
-      font-size: 0.85rem;
-      line-height: 1.5;
-    }
-
-    .t-speaker {
-      font-weight: 600;
-      font-size: 0.75rem;
-      white-space: nowrap;
-      padding-top: 0.1rem;
-      min-width: 40px;
-    }
-
-    .t-ai { color: var(--green); }
-    .t-caller { color: var(--text); font-weight: 700; }
-    .t-text { color: var(--muted); }
-
-    /* ── SMS BOOKING ── */
-    .booking-flow {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .booking-msg {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-    }
-
-    .booking-msg.right {
-      flex-direction: row-reverse;
-    }
-
-    .bm-avatar {
-      width: 28px; height: 28px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      flex-shrink: 0;
-    }
-
-    .bm-avatar.ai {
-      background: linear-gradient(135deg, var(--green), #6dbf94);
-      color: #fff;
-    }
-
-    .bm-avatar.client {
-      background: #D8D8D4;
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
-
-    /* inner content wrapper for both directions */
-    .booking-msg > div:not(.bm-avatar) {
-      display: flex;
-      flex-direction: column;
-      max-width: 75%;
-    }
-
-    .booking-msg.right > div:not(.bm-avatar) {
-      align-items: flex-end;
-    }
-
-    .bm-bubble {
-      padding: 0.65rem 0.9rem;
-      border-radius: 12px;
-      font-size: 0.85rem;
-      line-height: 1.5;
-    }
-
-    .booking-msg.left .bm-bubble {
-      background: var(--green-light);
-      border: 1px solid rgba(45,106,79,0.2);
-      color: var(--text);
-      border-radius: 4px 12px 12px 12px;
-    }
-
-    .booking-msg.right .bm-bubble {
-      background: #EBEBEB;
-      border: 1px solid var(--border);
-      color: var(--text);
-      border-radius: 12px 4px 12px 12px;
-    }
-
-    .bm-time {
-      font-size: 0.68rem;
-      color: var(--muted);
-      margin-top: 0.2rem;
-    }
-
-    .booking-confirmed {
-      background: var(--green-light);
-      border: 1px solid rgba(45,106,79,0.25);
-      border-radius: 10px;
-      padding: 0.85rem 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-top: 0.5rem;
-    }
-
-    .booking-confirmed-icon { font-size: 1.2rem; }
-
-    .booking-confirmed-text {
-      font-size: 0.85rem;
-      line-height: 1.5;
-    }
-
-    .booking-confirmed-text strong { color: var(--green); display: block; font-weight: 700; margin-bottom: 0.1rem; }
-    .booking-confirmed-text span { color: var(--muted); }
-
-    /* ── STAT ROW ── */
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .stat-mini {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    .stat-mini-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--green);
-      line-height: 1;
-      margin-bottom: 0.25rem;
-    }
-
-    .stat-mini-label {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    /* ── BOTTOM CTA ── */
-    .bottom-cta {
-      background: var(--green-light);
-      border: 1px solid rgba(45,106,79,0.2);
-      border-radius: 16px;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 1.5rem;
-    }
-
-    .bottom-cta h3 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .bottom-cta p {
-      font-size: 0.92rem;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .btn-cta-main {
-      display: inline-block;
-      background: var(--btn-dark);
-      color: #FFFFFF;
-      padding: 0.9rem 2.2rem;
-      border-radius: 8px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: none;
-      transition: all 0.2s;
-      margin-bottom: 0.75rem;
-    }
-
-    .btn-cta-main:hover {
-      background: #2a2a28;
-      color: #FFFFFF;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(17,17,16,0.2);
-    }
-
-    .cta-meta {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .cta-contact {
-      margin-top: 0.5rem;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    .cta-contact a { color: var(--green); text-decoration: none; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .page-wrap { padding: 2rem 1rem 4rem; }
-      .stl-form { grid-template-columns: 1fr; }
-      .stl-row2 { grid-template-columns: 1fr; }
-      .stats-row { grid-template-columns: 1fr; }
-      .rec-capabilities { grid-template-columns: 1fr; }
-    }
+      --bg: #F5F4F0; --bg-white: #FDFCFA; --text: #111110; --text-muted: #6b6b65;
+      --green: #1a6b4a; --green-mid: #2D6A4F; --green-light: #E8F2EC; --border: #E0DED8; --red: #b84040;
+      --serif: 'Playfair Display', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif; --mono: 'JetBrains Mono', monospace;
+    }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: var(--green); }
+    nav { border-bottom: 1px solid var(--border); background: rgba(245,244,240,0.94); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1080px; margin: 0 auto; padding: 0 20px; gap: 12px; }
+    .logo { display: flex; align-items: baseline; gap: 6px; text-decoration: none; }
+    .logo-everix { font-weight: 700; font-size: 18px; color: var(--text); }
+    .logo-auto { font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 22px; border-radius: 8px; font: 600 15px var(--sans); cursor: pointer; text-decoration: none; min-height: 48px; border: 1.5px solid transparent; }
+    .btn-dark { background: var(--text); color: #fff; }
+    .btn-dark:hover { background: #2a2a28; }
+    .btn-dark:disabled { opacity: 0.55; cursor: wait; }
+    .btn-outline { background: transparent; color: var(--text); border-color: var(--border); }
+    main { max-width: 1080px; margin: 0 auto; padding: 56px 20px 80px; }
+    .intro { text-align: center; max-width: 640px; margin: 0 auto 40px; }
+    .label { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--green-mid); }
+    h1 { font-family: var(--serif); font-size: clamp(30px, 5vw, 48px); line-height: 1.15; margin: 12px 0 14px; }
+    .intro p { color: var(--text-muted); font-size: 17px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+    .card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 28px; }
+    h2 { font-family: var(--serif); font-size: 22px; margin-bottom: 18px; }
+    fieldset { border: none; margin-bottom: 18px; }
+    legend, label.field { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+    .industries { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .industries input { position: absolute; opacity: 0; pointer-events: none; }
+    .industries label { display: block; text-align: center; padding: 12px 8px; border: 1.5px solid var(--border); border-radius: 8px; cursor: pointer; font-size: 14px; }
+    .industries label span { display: block; font-size: 22px; margin-bottom: 2px; }
+    .industries input:checked + label { border-color: var(--green); background: var(--green-light); font-weight: 600; }
+    .industries input:focus-visible + label { outline: 2px solid var(--green); outline-offset: 2px; }
+    .row { margin-bottom: 16px; }
+    input[type=text], input[type=tel], input[type=email] { width: 100%; font: 15px var(--sans); padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 8px; background: #fff; color: var(--text); }
+    input:focus { outline: none; border-color: var(--green); }
+    .optional { font-weight: 400; color: var(--text-muted); }
+    .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--text-muted); margin: 6px 0 20px; }
+    .consent input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--green); flex-shrink: 0; }
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .msg { margin-top: 14px; font-size: 14px; padding: 12px 14px; border-radius: 8px; display: none; }
+    .msg.error { display: block; background: #fdecec; color: var(--red); }
+    .fine { font-size: 12px; color: var(--text-muted); margin-top: 14px; text-align: center; }
+    .timeline { list-style: none; }
+    .timeline li { display: grid; grid-template-columns: 34px 1fr; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+    .timeline li:last-child { border-bottom: none; }
+    .dot { width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 11px; color: var(--text-muted); transition: all 0.3s; }
+    .timeline li.done .dot { background: var(--green); border-color: var(--green); color: #fff; }
+    .timeline li.active .dot { border-color: var(--green); color: var(--green); animation: pulse 1.2s infinite; }
+    @keyframes pulse { 50% { box-shadow: 0 0 0 6px rgba(26,107,74,0.15); } }
+    .timeline h3 { font-size: 15px; margin-bottom: 2px; }
+    .timeline p { font-size: 14px; color: var(--text-muted); }
+    .timer { font-family: var(--mono); font-size: 13px; color: var(--green-mid); margin-bottom: 8px; min-height: 20px; }
+    .try { margin-top: 18px; background: var(--green-light); border-radius: 10px; padding: 16px 18px; font-size: 14px; }
+    .try strong { display: block; margin-bottom: 6px; }
+    .try ul { padding-left: 18px; color: var(--text-muted); }
+    .try li { margin: 3px 0; }
+    .cta { text-align: center; margin-top: 48px; }
+    .cta p { color: var(--text-muted); margin-bottom: 16px; }
+    @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
+    @media (max-width: 420px) { .industries { grid-template-columns: 1fr; } .card { padding: 20px; } .nav-inner .btn { display: none; } }
   </style>
 </head>
 <body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="Everix Automation home"><span class="logo-everix">Everix</span><span class="logo-auto">Automation</span></a>
+    <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-dark" target="_blank" rel="noopener">Book a Free Call</a>
+  </div>
+</nav>
 
-  <div class="page-bg"></div>
+<main>
+  <div class="intro">
+    <span class="label">Live demo</span>
+    <h1>Be the lead. See it on your phone.</h1>
+    <p>Pick a business, enter your mobile number, and you'll get the same texts a real lead gets, plus the alert their front desk would see.</p>
+  </div>
 
-  <!-- NAV -->
-  <nav>
-    <a href="index.html" class="nav-logo" aria-label="Everix Automation home">
-      <span class="logo-everix">Everix</span>
-      <span class="logo-auto">Automation</span>
-    </a>
-    <div class="nav-right">
-      <a href="index.html" class="nav-back">← Back to Home</a>
-      <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" target="_blank" class="nav-book">Book Free Analysis</a>
-    </div>
-  </nav>
-
-  <div class="page-wrap">
-
-    <!-- HEADER -->
-    <div class="demo-header">
-      <div class="live-badge">
-        <span class="live-dot"></span>
-        Live Interactive Demo
-      </div>
-      <h1>See the <span class="purple">Everix Growth System</span><br />working in <span class="teal">real time.</span></h1>
-      <p>Three components. One system. Watch it fire a real SMS, hear the AI receptionist, and see how bookings happen automatically — without any human involvement.</p>
-    </div>
-
-    <!-- FLOW INDICATOR -->
-    <div class="steps-flow">
-      <div class="flow-step active" id="flow-1">
-        <span class="flow-step-num">1</span>
-        Speed-to-Lead
-      </div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-step" id="flow-2">
-        <span class="flow-step-num">2</span>
-        AI Receptionist
-      </div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-step" id="flow-3">
-        <span class="flow-step-num">3</span>
-        SMS Booking
-      </div>
-    </div>
-
-    <!-- STATS -->
-    <div class="stats-row">
-      <div class="stat-mini">
-        <div class="stat-mini-num">&lt;60s</div>
-        <div class="stat-mini-label">Lead response time</div>
-      </div>
-      <div class="stat-mini">
-        <div class="stat-mini-num">24/7</div>
-        <div class="stat-mini-label">Always on — no staff needed</div>
-      </div>
-      <div class="stat-mini">
-        <div class="stat-mini-num">0</div>
-        <div class="stat-mini-label">Missed leads</div>
-      </div>
-    </div>
-
-    <!-- ── STEP 1: SPEED-TO-LEAD ── -->
-    <div class="demo-section s1" id="section-stl">
-      <span class="section-tag">01 · Speed to Lead</span>
-      <h2>Speed-to-Lead</h2>
-      <p class="sec-sub">
-        Enter your name and phone number below. The moment you hit the button, our system sends you a real SMS — exactly like it does for your clients' leads. Watch how fast it fires.
-      </p>
-
-      <div class="stl-form">
-        <input type="text" class="demo-input" id="stl-name" placeholder="Your first name" />
-        <select class="demo-input" id="stl-practice">
-          <option value="Personal Injury">Personal Injury</option>
-          <option value="Family Law">Family Law</option>
-          <option value="Real Estate Law">Real Estate Law</option>
-          <option value="Criminal Defence">Criminal Defence</option>
-          <option value="Corporate &amp; Commercial">Corporate &amp; Commercial</option>
-          <option value="Wills &amp; Estates">Wills &amp; Estates</option>
-          <option value="Immigration Law">Immigration Law</option>
-        </select>
-      </div>
-      <div class="stl-row2">
-        <input type="tel" class="demo-input" id="stl-phone" placeholder="Your phone number (+1 xxx-xxx-xxxx)" />
-        <button class="btn-demo" id="stl-btn" onclick="fireSpeedToLead()">
-          Fire Speed-to-Lead
-        </button>
-      </div>
-
-      <div class="response-timer" id="stl-timer">
-        <span style="font-size:0.78rem;color:var(--muted);white-space:nowrap;">Response time:</span>
-        <div class="timer-bar-track">
-          <div class="timer-bar-fill" id="timer-fill"></div>
+  <div class="grid">
+    <form class="card" id="demo-form" novalidate>
+      <h2>Start the demo</h2>
+      <fieldset>
+        <legend>Which business are you texting?</legend>
+        <div class="industries">
+          <input type="radio" name="industry" id="ind-medspa" value="medspa" checked>
+          <label for="ind-medspa"><span>✨</span>Med spa</label>
+          <input type="radio" name="industry" id="ind-dental" value="dental">
+          <label for="ind-dental"><span>🦷</span>Dental</label>
+          <input type="radio" name="industry" id="ind-law" value="law">
+          <label for="ind-law"><span>⚖️</span>Law firm</label>
         </div>
-        <span class="timer-label" id="timer-label">0s</span>
+      </fieldset>
+      <div class="row">
+        <label class="field" for="name">Your first name</label>
+        <input type="text" id="name" name="name" autocomplete="given-name" required maxlength="80">
       </div>
-
-      <div class="status-box sending" id="stl-sending">
-        <div class="status-body">
-          <strong>Sending your lead to the system…</strong>
-          Processing and preparing your response now.
-        </div>
+      <div class="row">
+        <label class="field" for="phone">Mobile number</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="(416) 555-0123" required>
       </div>
-
-      <div class="status-box success" id="stl-success" style="display:none;">
-        <div class="status-body">
-          <strong>SMS sent. Check your phone.</strong>
-          Your lead was captured and responded to automatically — no human involved.
-        </div>
+      <div class="row">
+        <label class="field" for="business">Your business <span class="optional">(optional)</span></label>
+        <input type="text" id="business" name="business" autocomplete="organization" maxlength="120">
       </div>
-
-      <div class="status-box error" id="stl-error" style="display:none;">
-        <div class="status-body">
-          <strong>Demo SMS unavailable right now.</strong>
-          See the simulated version below to understand how it works.
-        </div>
+      <div class="row">
+        <label class="field" for="email">Email <span class="optional">(optional, so we can follow up)</span></label>
+        <input type="email" id="email" name="email" autocomplete="email">
       </div>
-
-      <!-- Phone mock (always visible as reference) -->
-      <div class="phone-mock" id="phone-mock">
-        <div class="phone-mock-header">
-          <div class="phone-mock-sender">Everix AI System</div>
-          <div style="font-size:0.7rem;color:var(--muted);margin-top:0.2rem;">SMS · just now</div>
-        </div>
-
-        <div class="typing-indicator" id="typing-dots">
-          <div class="typing-dot"></div>
-          <div class="typing-dot"></div>
-          <div class="typing-dot"></div>
-        </div>
-
-        <div class="sms-bubble" id="sms-msg1">
-          Hi <span id="sms-name-1">there</span>! I saw you just reached out about <span id="sms-biz-1">your service</span> — I'm on it. Do you have 2 minutes for a quick call today, or would you prefer we connect by text?
-        </div>
-        <div class="sms-time" id="sms-time1" style="display:none;">Delivered · 0:12 ago</div>
-
-        <div class="sms-reply" id="sms-reply1">
-          I'd prefer text — what are your availability options?
-        </div>
-
-        <div class="sms-bubble" id="sms-msg2" style="margin-top:0.5rem;">
-          Perfect! I can check availability for you right now. What day works best this week — would Tuesday or Wednesday be good?
-        </div>
-        <div class="sms-time" id="sms-time2" style="display:none;">Delivered · 0:08 ago</div>
+      <div class="hp" aria-hidden="true">
+        <label for="website">Website</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
       </div>
+      <label class="consent">
+        <input type="checkbox" id="consent" name="consent">
+        <span>Text me this demo. I agree to receive a few demo texts from Everix Automation, and Everix may contact me about the demo. Reply STOP any time.</span>
+      </label>
+      <button type="submit" class="btn btn-dark" id="submit" style="width:100%">Send Me the Demo →</button>
+      <div class="msg" id="msg" role="alert"></div>
+      <p class="fine">Canadian and US mobile numbers. Standard message rates may apply.</p>
+    </form>
 
-      <div class="stl-disclaimer">
-        By entering your phone number you consent to receive a demo SMS from Everix Automation. One message only. Standard rates may apply.
+    <div class="card" aria-live="polite">
+      <h2>What happens next</h2>
+      <div class="timer" id="timer"></div>
+      <ol class="timeline" id="timeline">
+        <li data-step="0"><div class="dot">1</div><div><h3>Your inquiry comes in</h3><p>Just like a lead filling out a clinic's website form.</p></div></li>
+        <li data-step="1"><div class="dot">2</div><div><h3>The front desk is alerted instantly</h3><p>You'll get the staff alert too: who you are, what you want, and a "Mark contacted" link. Tap it to see the receptionist's view.</p></div></li>
+        <li data-step="2"><div class="dot">3</div><div><h3>Your personal reply arrives</h3><p>About 30 to 60 seconds later, a text from the business asking the best time to reach you.</p></div></li>
+        <li data-step="3"><div class="dot">4</div><div><h3>Reply and keep chatting</h3><p>The AI reads your reply and answers, flags you as hot, or passes you to the team.</p></div></li>
+      </ol>
+      <div class="try">
+        <strong>Try replying with:</strong>
+        <ul>
+          <li>"Afternoons work best"</li>
+          <li>"Is the consultation free?"</li>
+          <li>"Can someone call me?"</li>
+          <li>"How much does it cost?"</li>
+        </ul>
       </div>
     </div>
+  </div>
 
-    <!-- ── STEP 2: AI RECEPTIONIST ── -->
-    <div class="demo-section s2" id="section-rec">
-      <span class="section-tag">02 · AI Receptionist</span>
-      <h2>AI Receptionist</h2>
-      <p class="sec-sub">
-        Your AI receptionist answers every call 24/7, qualifies leads, answers FAQs, and books appointments — all without a human picking up the phone. Call the demo number below and talk to it live.
-      </p>
+  <div class="cta">
+    <p>Like what you see? We'll set this up for your business in about a week.</p>
+    <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-dark" target="_blank" rel="noopener">Book a Free Call</a>
+    <a href="/" class="btn btn-outline" style="margin-left:8px">Back to Home</a>
+  </div>
+</main>
 
-      <div class="receptionist-card">
-        <div class="rec-avatar">AI</div>
-        <div class="rec-name">Everix AI Receptionist</div>
-        <div class="rec-title">Available 24/7 — fully configured for your business</div>
-        <div class="rec-status" style="margin-bottom:1.25rem;">Handles calls, FAQs, and appointment booking in real-time</div>
+<script>
+  const API = "https://speed-to-lead-production-fa73.up.railway.app/demo/lead";
+  const form = document.getElementById("demo-form");
+  const msg = document.getElementById("msg");
+  const submit = document.getElementById("submit");
+  const steps = [...document.querySelectorAll("#timeline li")];
 
-        <a href="tel:+16476921660" class="call-btn">
-          <span class="call-pulse"></span>
-          Call the Demo: (647) 692-1660
-        </a>
+  function showError(text) {
+    msg.textContent = text;
+    msg.className = "msg error";
+  }
 
-        <div class="rec-capabilities">
-          <div class="rec-cap">Answers FAQs instantly</div>
-          <div class="rec-cap">Books appointments</div>
-          <div class="rec-cap">Qualifies leads</div>
-          <div class="rec-cap">Works after hours</div>
-          <div class="rec-cap">Handles call transfers</div>
-          <div class="rec-cap">Zero hold time</div>
-        </div>
-      </div>
+  function setStep(n) {
+    steps.forEach((li, i) => {
+      li.classList.toggle("done", i < n);
+      li.classList.toggle("active", i === n);
+    });
+  }
 
-      <div class="transcript-preview">
-        <div class="transcript-label">Sample Call Transcript</div>
+  function runTimeline() {
+    const start = Date.now();
+    const timer = document.getElementById("timer");
+    setStep(1);
+    const tick = setInterval(() => {
+      const s = Math.round((Date.now() - start) / 1000);
+      timer.textContent = s < 60 ? `${s}s since your inquiry` : "Check your texts, and reply to keep going";
+      if (s >= 3) setStep(2);
+      if (s >= 60) { setStep(3); clearInterval(tick); }
+    }, 500);
+  }
 
-        <div class="transcript-line">
-          <span class="t-speaker t-ai">AI</span>
-          <span class="t-text">Thank you for calling — you've reached the AI assistant. I can help you book an appointment, answer questions, or connect you with the team. How can I help you today?</span>
-        </div>
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    msg.className = "msg";
+    const data = Object.fromEntries(new FormData(form));
+    if (!data.name || !data.phone) return showError("Please enter your first name and mobile number.");
+    if (!document.getElementById("consent").checked) return showError("Please tick the box so we can text you.");
 
-        <div class="transcript-line">
-          <span class="t-speaker t-caller">Caller</span>
-          <span class="t-text">Hi, I'm looking to book an appointment for this week if possible.</span>
-        </div>
-
-        <div class="transcript-line">
-          <span class="t-speaker t-ai">AI</span>
-          <span class="t-text">Absolutely — I can get that sorted for you right now. Can I grab your name and the best phone number to confirm with you?</span>
-        </div>
-
-        <div class="transcript-line">
-          <span class="t-speaker t-caller">Caller</span>
-          <span class="t-text">Sure, it's Sarah, and my number is 647-555-0192.</span>
-        </div>
-
-        <div class="transcript-line">
-          <span class="t-speaker t-ai">AI</span>
-          <span class="t-text">Got it, Sarah. I have availability Tuesday at 2pm and Wednesday at 10am — which works better for you?</span>
-        </div>
-
-        <div class="transcript-line" style="margin-bottom:0;">
-          <span class="t-speaker t-caller">Caller</span>
-          <span class="t-text">Wednesday morning works great.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── STEP 3: SMS BOOKING ── -->
-    <div class="demo-section s3" id="section-book">
-      <span class="section-tag">03 · SMS Booking</span>
-      <h2>SMS Booking Agent</h2>
-      <p class="sec-sub">
-        Qualified leads get booked through a simple text conversation. No app download. No login. No portal. The client books, reschedules, or cancels — all via SMS. Here's a real example flow:
-      </p>
-
-      <div class="booking-flow">
-
-        <div class="booking-msg left">
-          <div class="bm-avatar ai">AI</div>
-          <div>
-            <div class="bm-bubble">Hi Sarah! This is the Everix booking assistant. You requested an appointment — I have Wednesday Oct 15 at 10:00am available. Does that work for you? Reply YES to confirm or NO to see other times.</div>
-            <div class="bm-time">Everix AI · 10:42am</div>
-          </div>
-        </div>
-
-        <div class="booking-msg right">
-          <div class="bm-avatar client">S</div>
-          <div>
-            <div class="bm-bubble">YES</div>
-            <div class="bm-time">10:43am</div>
-          </div>
-        </div>
-
-        <div class="booking-msg left">
-          <div class="bm-avatar ai">AI</div>
-          <div>
-            <div class="bm-bubble">Perfect! You're confirmed for Wednesday Oct 15 at 10:00am. I'll send you a reminder 24 hours before. Reply CHANGE if you ever need to reschedule. See you then!</div>
-            <div class="bm-time">Everix AI · 10:43am</div>
-          </div>
-        </div>
-
-        <div class="booking-confirmed">
-          <div class="booking-confirmed-text">
-            <strong>Appointment booked — automatically added to calendar</strong>
-            <span>No human involved. Sarah goes from lead to confirmed booking in under 2 minutes. Reminder SMS fires automatically 24 hours before.</span>
-          </div>
-        </div>
-
-        <div class="booking-msg left" style="margin-top:0.5rem;">
-          <div class="bm-avatar ai">AI</div>
-          <div>
-            <div class="bm-bubble">Hi Sarah! Just a reminder: your appointment is tomorrow, Wednesday Oct 15 at 10:00am. Reply CONFIRM to let us know you're good, or CHANGE if you need to reschedule.</div>
-            <div class="bm-time">Everix AI · Day before · 10:00am</div>
-          </div>
-        </div>
-
-        <div class="booking-msg right">
-          <div class="bm-avatar client">S</div>
-          <div>
-            <div class="bm-bubble">CONFIRM</div>
-            <div class="bm-time">10:15am</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- BOTTOM CTA -->
-    <div class="bottom-cta">
-      <h3>Ready to install this in your business?</h3>
-      <p>Book a free 15-minute AI Gap Analysis. We'll show you exactly what this system would look like for your specific business — and give you a real ROI estimate before you commit to anything.</p>
-      <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" target="_blank" class="btn-cta-main">Book Your Free Lost Lead Analysis →</a>
-      <div class="cta-meta">15 minutes · No pitch · No pressure · 60-day money-back guarantee · Starts at $995/month</div>
-      <div class="cta-contact">
-        Or call/text us: <a href="tel:16476684020">647-668-4020</a> · <a href="mailto:hello@everixautomation.com">hello@everixautomation.com</a>
-      </div>
-    </div>
-
-  </div><!-- /page-wrap -->
-
-  <script>
-    // ── CONFIG ───────────────────────────────────────────────────────────
-    // Set this to your Render backend URL once deployed
-    // e.g. 'https://everix-demo.onrender.com'
-    const BACKEND_URL = 'https://everix-demo-backend.onrender.com';
-
-    // ── SPEED-TO-LEAD DEMO ───────────────────────────────────────────────
-    let timerInterval = null;
-
-    async function fireSpeedToLead() {
-      const name  = document.getElementById('stl-name').value.trim();
-      const phone = document.getElementById('stl-phone').value.trim();
-      const practiceEl = document.getElementById('stl-practice');
-      const biz = practiceEl.options[practiceEl.selectedIndex].text || 'your legal matter';
-
-      if (!name || !phone) {
-        alert('Please enter your name and phone number to try the live demo.');
+    submit.disabled = true;
+    submit.textContent = "Sending…";
+    try {
+      const res = await fetch(API, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ ...data, consent: true }),
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        showError(out.message || "Something went wrong. Please try again, or book a call.");
+        submit.disabled = false;
+        submit.textContent = "Send Me the Demo →";
         return;
       }
-
-      // Update phone mock preview
-      document.getElementById('sms-name-1').textContent = name;
-      document.getElementById('sms-biz-1').textContent = biz;
-
-      // Disable button
-      const btn = document.getElementById('stl-btn');
-      btn.disabled = true;
-      btn.innerHTML = 'Sending…';
-
-      // Show timer
-      const timerEl = document.getElementById('stl-timer');
-      const timerFill = document.getElementById('timer-fill');
-      const timerLabel = document.getElementById('timer-label');
-      timerEl.classList.add('visible');
-
-      let elapsed = 0;
-      timerInterval = setInterval(() => {
-        elapsed += 0.1;
-        timerFill.style.width = Math.min((elapsed / 60) * 100, 100) + '%';
-        timerLabel.textContent = elapsed.toFixed(1) + 's';
-      }, 100);
-
-      // Show sending
-      showStatus('stl-sending');
-
-      // Show typing dots in phone mock
-      document.getElementById('typing-dots').classList.add('visible');
-
-      // Mark flow step 1 active
-      markFlowStep(1);
-
-      if (BACKEND_URL) {
-        try {
-          const res = await fetch(`${BACKEND_URL}/api/demo/speed-to-lead`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, phone, business: biz })
-          });
-          clearInterval(timerInterval);
-
-          if (res.ok) {
-            showSTLSuccess(name, biz);
-          } else {
-            showSTLFallback();
-          }
-        } catch (e) {
-          clearInterval(timerInterval);
-          showSTLFallback();
-        }
-      } else {
-        // Simulate the demo flow (no backend yet)
-        setTimeout(() => {
-          clearInterval(timerInterval);
-          showSTLSuccess(name, biz);
-        }, 2800);
-      }
+      submit.textContent = "Demo sent ✓ Check your phone";
+      setStep(0);
+      setTimeout(runTimeline, 400);
+    } catch {
+      showError("We couldn't reach the demo right now. Please try again in a minute.");
+      submit.disabled = false;
+      submit.textContent = "Send Me the Demo →";
     }
-
-    function showSTLSuccess(name, biz) {
-      // Hide sending, show success
-      hideAllStatus();
-      showStatus('stl-success');
-
-      // Animate phone mock
-      const typing = document.getElementById('typing-dots');
-      typing.classList.remove('visible');
-
-      setTimeout(() => {
-        const msg1 = document.getElementById('sms-msg1');
-        msg1.classList.add('visible');
-        document.getElementById('sms-time1').style.display = 'block';
-      }, 300);
-
-      setTimeout(() => {
-        document.getElementById('sms-reply1').classList.add('visible');
-      }, 1400);
-
-      setTimeout(() => {
-        document.getElementById('sms-msg2').classList.add('visible');
-        document.getElementById('sms-time2').style.display = 'block';
-      }, 2200);
-
-      // Mark flow step 2
-      setTimeout(() => markFlowStep(2), 1000);
-
-      // Reset button
-      const btn = document.getElementById('stl-btn');
-      btn.disabled = false;
-      btn.innerHTML = 'SMS Sent';
-      btn.style.background = '#E8F2EC';
-      btn.style.border = '1.5px solid rgba(45,106,79,0.35)';
-      btn.style.color = '#2D6A4F';
-    }
-
-    function showSTLFallback() {
-      hideAllStatus();
-      showStatus('stl-error');
-      document.getElementById('typing-dots').classList.remove('visible');
-
-      // Still animate mock
-      setTimeout(() => document.getElementById('sms-msg1').classList.add('visible'), 400);
-      setTimeout(() => document.getElementById('sms-reply1').classList.add('visible'), 1200);
-      setTimeout(() => document.getElementById('sms-msg2').classList.add('visible'), 2000);
-
-      const btn = document.getElementById('stl-btn');
-      btn.disabled = false;
-      btn.innerHTML = 'Try Again';
-    }
-
-    function showStatus(id) {
-      document.getElementById(id).style.display = 'flex';
-    }
-
-    function hideAllStatus() {
-      ['stl-sending', 'stl-success', 'stl-error'].forEach(id => {
-        document.getElementById(id).style.display = 'none';
-      });
-    }
-
-    function markFlowStep(num) {
-      for (let i = 1; i <= 3; i++) {
-        const el = document.getElementById(`flow-${i}`);
-        el.classList.remove('active', 'done');
-        if (i < num) el.classList.add('done');
-        if (i === num) el.classList.add('active');
-      }
-    }
-
-    // Mark step 3 when user scrolls to booking section
-    const bookSection = document.getElementById('section-book');
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) markFlowStep(3);
-    }, { threshold: 0.3 });
-    observer.observe(bookSection);
-
-    // Mark step 2 when user scrolls to rec section
-    const recSection = document.getElementById('section-rec');
-    const observer2 = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) markFlowStep(2);
-    }, { threshold: 0.3 });
-    observer2.observe(recSection);
-  </script>
-
+  });
+</script>
 </body>
 </html>
