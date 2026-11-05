@@ -8,45 +8,49 @@
   <link rel="canonical" href="https://everixautomation.com/demo.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #F5F4F0; --bg-white: #FDFCFA; --text: #111110; --text-muted: #6b6b65;
-      --green: #1a6b4a; --green-mid: #2D6A4F; --green-light: #E8F2EC; --border: #E0DED8; --red: #b84040;
-      --serif: 'Playfair Display', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif; --mono: 'JetBrains Mono', monospace;
+      --bg: #F6F7F4; --bg-white: #FFFFFF; --text: #0E1B16; --text-muted: #5A6A63; --ink: #0B1A15;
+      --green: #0E9F6E; --green-mid: #0A7A55; --green-light: #E5F5EE; --border: #E2E8E4; --red: #D9534F;
+      --serif: 'Instrument Serif', Georgia, serif; --sans: 'Plus Jakarta Sans', system-ui, sans-serif; --mono: 'JetBrains Mono', monospace;
+      --shadow: 0 1px 2px rgba(11,26,21,0.04), 0 10px 30px rgba(11,26,21,0.07);
     }
-    body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--sans); background: radial-gradient(800px 420px at 85% 0%, rgba(14,159,110,0.14), transparent 60%), var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
     a { color: var(--green); }
     nav { border-bottom: 1px solid var(--border); background: rgba(245,244,240,0.94); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1080px; margin: 0 auto; padding: 0 20px; gap: 12px; }
-    .logo { display: flex; align-items: baseline; gap: 6px; text-decoration: none; }
-    .logo-everix { font-weight: 700; font-size: 18px; color: var(--text); }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; background: linear-gradient(140deg, #13C08A, #0A7A55); color: #fff; box-shadow: 0 4px 12px rgba(14,159,110,0.35); }
+    .logo-mark svg { width: 16px; height: 16px; }
+    .logo-everix { font-weight: 800; font-size: 19px; letter-spacing: -0.03em; color: var(--text); }
     .logo-auto { font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 22px; border-radius: 8px; font: 600 15px var(--sans); cursor: pointer; text-decoration: none; min-height: 48px; border: 1.5px solid transparent; }
-    .btn-dark { background: var(--text); color: #fff; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 22px; border-radius: 12px; font: 700 15px var(--sans); cursor: pointer; text-decoration: none; min-height: 48px; border: 1.5px solid transparent; }
+    .btn-dark { background: var(--ink); color: #fff; box-shadow: 0 6px 18px rgba(11,26,21,0.18); }
     .btn-dark:hover { background: #2a2a28; }
     .btn-dark:disabled { opacity: 0.55; cursor: wait; }
     .btn-outline { background: transparent; color: var(--text); border-color: var(--border); }
     main { max-width: 1080px; margin: 0 auto; padding: 56px 20px 80px; }
     .intro { text-align: center; max-width: 640px; margin: 0 auto 40px; }
     .label { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--green-mid); }
-    h1 { font-family: var(--serif); font-size: clamp(30px, 5vw, 48px); line-height: 1.15; margin: 12px 0 14px; }
+    h1 { font-family: var(--sans); font-weight: 800; letter-spacing: -0.035em; font-size: clamp(32px, 5vw, 52px); line-height: 1.1; margin: 12px 0 14px; }
+    h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--green); }
     .intro p { color: var(--text-muted); font-size: 17px; }
     .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
-    .card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 28px; }
-    h2 { font-family: var(--serif); font-size: 22px; margin-bottom: 18px; }
+    .card { background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 30px; box-shadow: var(--shadow); }
+    h2 { font-family: var(--sans); font-weight: 800; letter-spacing: -0.02em; font-size: 21px; margin-bottom: 18px; }
     fieldset { border: none; margin-bottom: 18px; }
     legend, label.field { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
     .industries { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
     .industries input { position: absolute; opacity: 0; pointer-events: none; }
-    .industries label { display: block; text-align: center; padding: 12px 8px; border: 1.5px solid var(--border); border-radius: 8px; cursor: pointer; font-size: 14px; }
+    .industries label { display: block; text-align: center; padding: 12px 8px; border: 1.5px solid var(--border); border-radius: 12px; cursor: pointer; font-size: 14px; }
     .industries label span { display: block; font-size: 22px; margin-bottom: 2px; }
     .industries input:checked + label { border-color: var(--green); background: var(--green-light); font-weight: 600; }
     .industries input:focus-visible + label { outline: 2px solid var(--green); outline-offset: 2px; }
     .row { margin-bottom: 16px; }
-    input[type=text], input[type=tel], input[type=email] { width: 100%; font: 15px var(--sans); padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 8px; background: #fff; color: var(--text); }
-    input:focus { outline: none; border-color: var(--green); }
+    input[type=text], input[type=tel], input[type=email] { width: 100%; font: 15px var(--sans); padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 12px; background: #fff; color: var(--text); }
+    input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 4px var(--green-light); }
     .optional { font-weight: 400; color: var(--text-muted); }
     .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--text-muted); margin: 6px 0 20px; }
     .consent input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--green); flex-shrink: 0; }
@@ -77,7 +81,7 @@
 <body>
 <nav>
   <div class="nav-inner">
-    <a href="/" class="logo" aria-label="Everix Automation home"><span class="logo-everix">Everix</span><span class="logo-auto">Automation</span></a>
+    <a href="/" class="logo" aria-label="Everix Automation home"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.2 2L4.6 13.4h6.1L9.9 22l8.6-11.4h-6.1L13.2 2z"/></svg></span><span class="logo-everix">Everix</span><span class="logo-auto">Automation</span></a>
     <a href="https://calendly.com/everixautomation/free-lost-lead-analysis" class="btn btn-dark" target="_blank" rel="noopener">Book a Free Call</a>
   </div>
 </nav>
@@ -85,7 +89,7 @@
 <main>
   <div class="intro">
     <span class="label">Live demo</span>
-    <h1>Be the lead. See it on your phone.</h1>
+    <h1>Be the lead. <em>See it on your phone.</em></h1>
     <p>Pick a business, enter your mobile number, and you'll get the same texts a real lead gets, plus the alert their front desk would see.</p>
   </div>
 
